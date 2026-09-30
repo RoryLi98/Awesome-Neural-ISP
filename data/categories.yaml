@@ -1,0 +1,76 @@
+# Sections of the list, in README order.
+# id    : file name under data/papers/ (id.yaml)
+# short : label used on the pipeline map of the interactive page
+- id: e2e
+  title: End-to-End RAW-to-sRGB
+  short: End-to-end
+  description: >-
+    One network replaces the whole ISP. Early work is CNN-based (DeepISP, PyNET, LiteISPNet); recent work moves to
+    diffusion and autoregressive priors, camera-parameter conditioning and modular designs. Misaligned RAW/sRGB
+    training pairs are a recurring problem.
+- id: mobile
+  title: Mobile & Lightweight ISP
+  short: Mobile
+  description: >-
+    ISPs built to run in real time on phone NPUs and GPUs, mostly from the Mobile AI (MAI) and NTIRE challenges.
+    Since 2025 the focus has shifted to training without paired data.
+- id: denoise
+  title: RAW Denoising & Noise Modeling
+  short: Denoising
+  description: >-
+    The front of the pipeline. The main thread runs from Poisson-Gaussian models to physics-based noise formation
+    (ELD), dark-frame sampling, generative noise models, and calibration-free and blind denoising.
+- id: lowlight
+  title: Low-Light RAW Enhancement
+  short: Low-light RAW
+  description: >-
+    Extreme low-light RAW-to-sRGB, started by SID. Methods progress from U-Nets to decoupled two-stage designs (DNF),
+    Mamba and diffusion models.
+- id: demosaic
+  title: Demosaicing, Joint Restoration & RAW Super-Resolution
+  short: Demosaic / SR
+  description: >-
+    CFA interpolation modeled jointly with denoising and super-resolution, extended in recent years to Quad, Nona,
+    HybridEVS and other non-Bayer sensors.
+- id: burst
+  title: Burst & HDR
+  short: Burst / HDR
+  description: >-
+    Aligning and fusing multiple RAW frames for super-resolution, denoising and HDR. BurstSR and the NTIRE
+    challenges are the main benchmarks.
+- id: video
+  title: RAW Video
+  short: RAW video
+  description: >-
+    RAW video denoising, super-resolution and low-light enhancement, including two binarized networks (BRVE, BinRVR).
+- id: color
+  title: White Balance, Color & Tone
+  short: WB / Color / Tone
+  description: >-
+    The middle and back of the pipeline: illuminant estimation (color constancy), sRGB white-balance correction,
+    color correction and 3D LUTs, tone mapping and retouching. Cross-camera generalization and the use of metadata
+    are recent priorities.
+- id: inverse
+  title: Inverse ISP, RAW Reconstruction & Compression
+  short: Inverse ISP
+  description: >-
+    Recovering RAW from sRGB to synthesize training data, save RAW storage or transfer between cameras, from
+    Unprocessing, CycleISP and InvISP to the diffusion and flow-matching methods of 2025-2026.
+- id: task
+  title: ISP for Machine Vision
+  short: For vision tasks
+  description: >-
+    The ISP output feeds a detector or segmenter instead of a human viewer: jointly trained ISPs, perception
+    directly on RAW, adapters and RAW detection datasets.
+- id: tuning
+  title: ISP Parameter Tuning
+  short: ISP tuning
+  description: >-
+    Instead of replacing the ISP, automatically tune the parameters of a hardware or differentiable ISP with
+    differentiable proxies, evolution strategies, reinforcement learning and, since 2025, multimodal LLM judges.
+- id: report
+  title: Challenges & Surveys
+  short: Challenges / surveys
+  description: >-
+    AIM, Mobile AI, NTIRE and MIPI challenge reports plus survey papers: the quickest way to see the methods and
+    data of a sub-field.

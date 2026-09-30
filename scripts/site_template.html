@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>__TITLE__</title>
+<meta name="description" content="__NP__ neural ISP papers organized by pipeline stage, with links to released code and pretrained weights (checked __CHECKED__).">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a sensor datasheet — spec header, the ISP stage strip as the index, then dense reference tables. */
+:root{
+  --bg:#F3F5F4; --surface:#FFFFFF; --ink:#16201B; --muted:#56645D; --faint:#86938C; --line:#D6DDD9; --line-strong:#B9C4BE;
+  --accent:#1D7550; --accent-ink:#FFFFFF; --accent-soft:#E0EFE7;
+  --bayer-r:#B8433A; --bayer-g:#1D7550; --bayer-b:#2F5E9E;
+  --amber:#8E6310; --amber-soft:#F5EBD5; --blue:#2F5E9E; --blue-soft:#E3EAF5;
+  --f-display:"IBM Plex Sans Condensed",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  --s-1:12px; --s0:14px; --s1:15.5px; --s2:19px; --s3:25px; --s4:40px;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#0E1412; --surface:#151D1A; --ink:#E2E9E5; --muted:#9AA8A1; --faint:#6F7D76; --line:#26312D; --line-strong:#384641;
+  --accent:#5CC495; --accent-ink:#06140E; --accent-soft:#163428;
+  --bayer-r:#E0776C; --bayer-g:#5CC495; --bayer-b:#7FA6E4;
+  --amber:#DDB05A; --amber-soft:#35291A; --blue:#8FB2EA; --blue-soft:#1B2638; color-scheme:dark; } }
+:root[data-theme="dark"]{
+  --bg:#0E1412; --surface:#151D1A; --ink:#E2E9E5; --muted:#9AA8A1; --faint:#6F7D76; --line:#26312D; --line-strong:#384641;
+  --accent:#5CC495; --accent-ink:#06140E; --accent-soft:#163428;
+  --bayer-r:#E0776C; --bayer-g:#5CC495; --bayer-b:#7FA6E4;
+  --amber:#DDB05A; --amber-soft:#35291A; --blue:#8FB2EA; --blue-soft:#1B2638; color-scheme:dark; }
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:var(--s0);line-height:1.6;margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-inline:20px;padding-block:28px 64px}
+a{color:var(--accent);text-decoration:none;text-underline-offset:2px}
+a:hover{text-decoration:underline}
+a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+h1,h2,h3{font-family:var(--f-display);text-wrap:balance;margin:0;letter-spacing:.005em}
+h2{font-size:var(--s3);font-weight:600;line-height:1.25}
+h3{font-size:var(--s2);font-weight:600}
+p{margin:0}
+.mono{font-family:var(--f-mono)}
+.label{font-family:var(--f-display);font-size:var(--s-1);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+/* header */
+header.sheet{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:end;border-bottom:2px solid var(--ink);padding-bottom:20px}
+.brand{display:flex;gap:14px;align-items:center}
+.cfa{display:grid;grid-template-columns:repeat(2,14px);gap:2px;flex:none}
+.cfa i{width:14px;height:14px;display:block}
+.cfa i:nth-child(1){background:var(--bayer-r)} .cfa i:nth-child(2),.cfa i:nth-child(3){background:var(--bayer-g)} .cfa i:nth-child(4){background:var(--bayer-b)}
+h1{font-size:var(--s4);font-weight:700;line-height:1.1}
+.lede{margin-top:12px;max-width:68ch;color:var(--muted);font-size:var(--s1)}
+.spec{display:grid;grid-template-columns:repeat(2,auto);gap:4px 18px;font-size:var(--s-1);color:var(--muted);white-space:nowrap}
+.spec b{font-family:var(--f-mono);font-weight:500;color:var(--ink)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--line)}
+.stat{padding:16px 0 14px;border-right:1px solid var(--line);padding-inline:16px}
+.stat:first-child{padding-left:0}.stat:last-child{border-right:0}
+.stat .v{font-family:var(--f-display);font-size:32px;font-weight:600;line-height:1;font-variant-numeric:tabular-nums}
+.stat .k{margin-top:6px;font-size:var(--s-1);color:var(--muted)}
+.stat.hl .v{color:var(--accent)}
+
+section{margin-top:44px}
+.sec-head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:14px}
+.sec-head p{color:var(--muted);max-width:72ch}
+
+/* pipeline strip */
+.pipe-scroll{overflow-x:auto;padding-bottom:6px}
+.pipe{min-width:900px;display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:0;border:1px solid var(--line-strong);background:var(--surface)}
+.stage{padding:10px 10px 8px;border-right:1px solid var(--line);min-width:0}
+.stage:nth-child(7){border-right:0}
+.lane{padding:4px 10px 12px;border-right:1px solid var(--line);display:flex;flex-wrap:wrap;gap:6px;align-content:flex-start;min-width:0}
+.lane.last{border-right:0}
+.lane .cat-chip{white-space:normal}
+.stage .sn{font-family:var(--f-display);font-weight:600;font-size:var(--s0)}
+.stage .sx{font-family:var(--f-mono);font-size:11px;color:var(--faint)}
+.span{grid-column:1 / -1;border-top:1px solid var(--line);padding:8px 10px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.span .arrow{font-family:var(--f-mono);font-size:12px;color:var(--faint)}
+.cat-chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line-strong);background:var(--bg);color:var(--ink);border-radius:5px;padding:3px 8px;font:500 12.5px/1.4 var(--f-body);cursor:pointer;text-align:left;white-space:nowrap}
+.cat-chip:hover{border-color:var(--accent)}
+.cat-chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.cat-chip .n{font-family:var(--f-mono);font-size:11px;opacity:.8}
+.pipe-note{margin-top:8px;font-size:var(--s-1);color:var(--muted)}
+
+/* trends */
+.trends{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--line)}
+.trend{padding:16px 18px 18px 0;border-bottom:1px solid var(--line)}
+.trend:nth-child(3n+2),.trend:nth-child(3n){padding-left:18px;border-left:1px solid var(--line)}
+.trend h3{font-size:var(--s1);margin-bottom:6px}
+.trend p{color:var(--muted);font-size:13.5px}
+.trend .ex{margin-top:8px;font-family:var(--f-mono);font-size:11.5px;color:var(--faint)}
+
+/* controls */
+.controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:12px 0 10px}
+.controls input[type=search]{flex:1 1 240px;min-width:0;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink);border-radius:6px;padding:8px 10px;font:inherit}
+.seg{display:inline-flex;flex-wrap:wrap;max-width:100%;border:1px solid var(--line-strong);border-radius:6px;overflow:hidden}
+.seg button{border:0;background:var(--surface);color:var(--ink);padding:7px 11px;font:500 13px var(--f-body);cursor:pointer;border-right:1px solid var(--line);white-space:nowrap}
+.seg button:last-child{border-right:0}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chips .cat-chip{white-space:normal;max-width:100%}
+.count{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+
+/* tables */
+.tbl-scroll{overflow-x:auto;border:1px solid var(--line-strong);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:1040px}
+th,td{text-align:left;vertical-align:top;padding:9px 10px;border-bottom:1px solid var(--line)}
+th{font:600 12px/1.3 var(--f-display);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--bg);position:sticky;top:0;z-index:1}
+tbody tr:hover td{background:color-mix(in srgb,var(--accent-soft) 45%,transparent)}
+td.m{white-space:nowrap}
+.mname{font-family:var(--f-display);font-weight:600;font-size:var(--s1)}
+.mtitle{display:block;color:var(--muted);font-size:12.5px;line-height:1.45;margin-top:2px}
+.venue{font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.venue b{color:var(--ink);font-weight:500}
+.wl{display:flex;flex-direction:column;gap:3px}
+.wl a{font-size:13px;word-break:break-word}
+.wl a::before{content:"↓ ";font-family:var(--f-mono);color:var(--faint)}
+.code a{font-family:var(--f-mono);font-size:12px;overflow-wrap:anywhere;word-break:normal}
+.note{color:var(--muted);font-size:12.5px}
+.fw{font-family:var(--f-mono);font-size:11.5px;color:var(--muted)}
+.cattag{font-size:12px;color:var(--muted)}
+.pill{display:inline-block;font:600 11px/1.5 var(--f-display);letter-spacing:.04em;border-radius:3px;padding:1px 6px;white-space:nowrap;border:1px solid transparent}
+.st-W{background:var(--accent);color:var(--accent-ink)}
+.st-R{border-color:var(--accent);color:var(--accent)}
+.st-C{background:var(--bg);border-color:var(--line-strong);color:var(--ink)}
+.st-S{background:var(--amber-soft);color:var(--amber)}
+.st-U{background:var(--blue-soft);color:var(--blue)}
+.st-N{color:var(--faint);border-color:var(--line)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);align-items:center}
+.legend span{display:inline-flex;gap:6px;align-items:center}
+.empty{padding:28px;text-align:center;color:var(--muted)}
+
+/* full list */
+.group{margin-top:26px}
+.group h3{display:flex;gap:10px;align-items:baseline;border-bottom:1px solid var(--ink);padding-bottom:6px}
+.group h3 .n{font-family:var(--f-mono);font-size:12px;color:var(--muted);font-weight:400}
+.group p.gdesc{color:var(--muted);font-size:13.5px;margin:8px 0 6px;max-width:80ch}
+.rows{display:flex;flex-direction:column}
+.row{display:grid;grid-template-columns:92px minmax(0,1.1fr) 120px minmax(0,2fr) minmax(0,1fr);gap:12px;padding:8px 0;border-bottom:1px solid var(--line);align-items:start}
+.row > *{min-width:0}
+.row .s{font-size:13px;color:var(--ink)}
+.row .code a{font-size:11.5px}
+
+/* datasets & project */
+.ds td:first-child{font-weight:600}
+.cols2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}
+.plist{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.plist li{padding:10px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:150px minmax(0,1fr);gap:12px}
+.plist li b{font-family:var(--f-display);font-weight:600}
+.plist li span{color:var(--muted);font-size:13.5px}
+.method{color:var(--muted);font-size:13.5px;max-width:80ch;display:flex;flex-direction:column;gap:8px}
+footer{margin-top:48px;padding-top:14px;border-top:1px solid var(--line);font-size:12px;color:var(--faint);display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+@media (max-width:860px){
+  header.sheet{grid-template-columns:1fr}
+  .spec{white-space:normal}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stat:nth-child(2){border-right:0}.stat:nth-child(3){padding-left:0}
+  .trends{grid-template-columns:1fr}
+  .trend,.trend:nth-child(3n+2),.trend:nth-child(3n){padding-left:0;border-left:0}
+  .cols2{grid-template-columns:1fr}
+  .row{grid-template-columns:84px minmax(0,1fr);gap:4px 10px}
+  .row .s,.row .code{grid-column:2}
+  .row .venue{grid-column:2}
+  h1{font-size:31px}
+  .plist li{grid-template-columns:1fr;gap:2px}
+}
+@media (prefers-reduced-motion:no-preference){ .cat-chip,.seg button{transition:background-color .15s,border-color .15s,color .15s} }
+
+.toplinks{display:flex;gap:14px;flex-wrap:wrap;font-size:var(--s-1);margin-top:12px}
+.toplinks a{font-weight:500}
+.tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px}
+.tools h3{font-size:var(--s1);margin:14px 0 4px}
+.tools ul{margin:0;padding:0;list-style:none;border-top:1px solid var(--line)}
+.tools li{padding:8px 0;border-bottom:1px solid var(--line);font-size:13.5px;color:var(--muted)}
+.tools li a{font-family:var(--f-display);font-weight:600;font-size:var(--s0);margin-right:6px}
+.tools li .fw{margin-left:6px}
+@media (max-width:860px){ .tools{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="sheet">
+  <div>
+    <div class="brand"><span class="cfa" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="label">RGGB · papers, code &amp; weights</span></div>
+    <h1 style="margin-top:10px">__TITLE__</h1>
+    <p class="lede">__TAGLINE__ Papers are grouped by the stage of the classical ISP they replace or serve; the weights table lists every model whose checkpoints can be downloaded, and where they are hosted.</p>
+    <nav class="toplinks" aria-label="Repository links"><a href="__REPO_URL__">GitHub repository</a><a href="__REPO_URL__/blob/main/README.md">README</a><a href="__REPO_URL__/blob/main/guide/isp-101.md">ISP 101</a><a href="__REPO_URL__/blob/main/CONTRIBUTING.md">Contribute</a></nav>
+  </div>
+  <div class="spec" aria-label="Scope">
+    <span>Links checked</span><b>__CHECKED__</b>
+    <span>Years</span><b>__Y0__ – __Y1__</b>
+    <span>Conferences</span><b>CVPR · ICCV · ECCV · WACV</b>
+    <span>Workshops</span><b>NTIRE · MAI · AIM · MIPI</b>
+    <span>Journals / preprints</span><b>TIP · TPAMI · arXiv</b>
+  </div>
+</header>
+<div class="stats">
+  <div class="stat"><div class="v">__NP__</div><div class="k">papers and reports</div></div>
+  <div class="stat"><div class="v">__NCODE__</div><div class="k">with public code (incl. unofficial)</div></div>
+  <div class="stat hl"><div class="v">__NW__</div><div class="k">with downloadable weights</div></div>
+  <div class="stat"><div class="v">__ND__</div><div class="k">datasets</div></div>
+</div>
+
+<section id="map">
+  <div class="sec-head"><h2>By ISP stage</h2><p>A classical camera ISP processes RAW from left to right. Each topic sits under the stage it replaces or serves; numbers are “with weights / total”. Click a topic to filter both tables below.</p></div>
+  <div class="pipe-scroll"><div class="pipe" id="pipe"></div></div>
+  <p class="pipe-note">End-to-end methods replace the whole pipeline; inverse ISPs run it backwards from sRGB to RAW; task-driven ISPs feed detectors and segmenters instead of human viewers.</p>
+</section>
+
+<section id="trends">
+  <div class="sec-head"><h2>Research threads</h2><p>Six lines of work, with representative papers.</p></div>
+  <div class="trends" id="trendList"></div>
+</section>
+
+<section id="weights">
+  <div class="sec-head"><h2>Pretrained weights</h2><p>Only papers whose checkpoints can be downloaded. Links are copied from each repository README (checked __CHECKED__); “in repo” means the checkpoint files are committed to the repository.</p></div>
+  <div class="controls">
+    <input type="search" id="qW" placeholder="Search method, title, dataset or host (e.g. Baidu, Hugging Face)" aria-label="Search pretrained weights">
+    <div class="seg" role="group" aria-label="Weight host">
+      <button type="button" data-host="all" aria-pressed="true">All</button>
+      <button type="button" data-host="repo">In repo</button>
+      <button type="button" data-host="gdrive">Google Drive</button>
+      <button type="button" data-host="hf">Hugging Face</button>
+      <button type="button" data-host="cn">Baidu / CN hosts</button>
+      <button type="button" data-host="rel">GitHub Release</button>
+    </div>
+    <span class="count" id="cW"></span>
+  </div>
+  <div class="chips" id="chipsW" aria-label="Filter by topic"></div>
+  <div class="tbl-scroll" style="margin-top:10px">
+    <table>
+      <colgroup><col style="width:21%"><col style="width:10%"><col style="width:10%"><col style="width:23%"><col style="width:14%"><col style="width:8%"><col style="width:14%"></colgroup>
+      <thead><tr><th>Method</th><th>Year · venue</th><th>Topic</th><th>Weights</th><th>Code</th><th>Framework</th><th>Notes</th></tr></thead>
+      <tbody id="tbW"></tbody>
+    </table>
+  </div>
+</section>
+
+<section id="all">
+  <div class="sec-head"><h2>All papers</h2><p>Including work without public code. Within each topic: papers with weights first, then code only, then unreleased; newest first within each group.</p></div>
+  <div class="legend" id="legend"></div>
+  <div class="controls">
+    <input type="search" id="qA" placeholder="Search all papers" aria-label="Search all papers">
+    <div class="seg" role="group" aria-label="Release status">
+      <button type="button" data-st="all" aria-pressed="true">All</button>
+      <button type="button" data-st="WR">With weights</button>
+      <button type="button" data-st="WRCU">With code</button>
+      <button type="button" data-st="SN">Not released</button>
+    </div>
+    <span class="count" id="cA"></span>
+  </div>
+  <div class="chips" id="chipsA" aria-label="Filter by topic"></div>
+  <div id="groups"></div>
+</section>
+
+<section id="datasets">
+  <div class="sec-head"><h2>Datasets</h2><p>Download links from each dataset's website or the paper repository.</p></div>
+  <div class="tbl-scroll">
+    <table class="ds">
+      <thead><tr><th>Dataset</th><th>Year</th><th>Source</th><th>Capture</th><th>Size</th><th>Used for</th><th>Download</th></tr></thead>
+      <tbody id="tbD"></tbody>
+    </table>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="sec-head"><h2>Tools &amp; open-source ISPs</h2><p>RAW readers, classical pipelines to compare against, and learned-ISP toolboxes.</p></div>
+  <div class="tools" id="toolList"></div>
+</section>
+
+<section id="method">
+  <div class="sec-head"><h2>How this list was built</h2></div>
+  <div class="method">
+    <p>Candidates came from keyword screening of CVPR, ICCV and WACV papers on CVF Open Access (2017–2026), the CVF workshops (NTIRE, Mobile AI, MIPI, AIM and others), ECCV 2018–2024 on ECVA, NeurIPS 2019–2024, reverse-chronological arXiv title searches, and related curated lists. GitHub repository search was used to find code for papers that do not link any.</p>
+    <p>For every repository the README (and, where needed, the file tree) was read on __CHECKED__, and the download links, extraction codes and hosts it gives were recorded. No checkpoint was downloaded or run; hosted files can disappear, and Google Drive enforces daily download quotas. Checkpoints remain under their authors' licenses.</p>
+    <p>Known gaps: ECCV 2026 and NeurIPS 2025 proceedings were not fully available; AAAI, ACM MM, TIP, TPAMI, IJCV and BMVC are covered through arXiv, so journal-only papers may be missing. Out of scope: general restoration backbones, sRGB-only enhancement or denoising, RAW-domain NeRF / 3DGS, and multispectral or polarization demosaicing. Found a gap? <a href="__REPO_URL__/blob/main/CONTRIBUTING.md">Contributions are welcome.</a></p>
+  </div>
+</section>
+
+<footer><span>__TITLE__ · generated from the YAML data in <a href="__REPO_URL__">the repository</a> · CC0-1.0</span><span class="mono">data: __NP__ papers · __ND__ datasets · checked __CHECKED__</span></footer>
+</div>
+
+<script>
+const P = __P__;
+const D = __D__;
+const CATS = __CATS__;
+const TRENDS = __TRENDS__;
+const TOOLS = __TOOLS__;
+const ST = {W:['Weights','README links to downloadable weights'],R:['Weights in repo','checkpoint files are committed to the repository'],C:['Code only','official code, no weights found'],U:['Unofficial','third-party implementation'],S:['Coming soon','placeholder repository or code announced'],N:['No code','no public code found']};
+const catName = Object.fromEntries(CATS.map(c=>[c.k,c.name]));
+const shortName = Object.fromEntries(CATS.map(c=>[c.k,c.short]));
+const esc = s => String(s ?? '').replace(/[&<>"]/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const pill = st => `<span class="pill st-${st}" title="${esc(ST[st][1])}">${esc(ST[st][0])}</span>`;
+const yv = p => `<b>${p.y || '—'}</b> · ${esc(p.v)}`;
+const repoLabel = g => { if(!g) return ''; const m = g.match(/github\.com\/([^/]+\/[^/#?]+)(.*)/); return m ? (m[1] + (m[2] && m[2].length>1 ? '/…' : '')) : g.replace(/^https?:\/\//,''); };
+const codeCell = p => p.g ? `<span class="code"><a href="${esc(p.g)}" target="_blank" rel="noopener">${esc(repoLabel(p.g))}</a></span>` : '<span class="note">—</span>';
+function hostOf(u){ if(/github\.com\/[^/]+\/[^/]+\/(tree|blob)\//.test(u) || /github\.com\/[^/]+\/[^/]+\/?$/.test(u)) return 'repo'; if(/releases/.test(u)) return 'rel'; if(/drive\.google|docs\.google/.test(u)) return 'gdrive'; if(/huggingface\.co/.test(u)) return 'hf'; if(/pan\.baidu|disk\.pku|terabox|aliyundrive|quark/.test(u)) return 'cn'; return 'other'; }
+const hasWeights = p => p.st==='W' || p.st==='R';
+
+let fW = {cat:'all', host:'all', q:''};
+let fA = {cat:'all', st:'all', q:''};
+
+function renderPipe(){
+  const counts = {}; CATS.forEach(c=>{ const ps=P.filter(p=>p.c===c.k); counts[c.k]=[ps.filter(hasWeights).length, ps.length]; });
+  const chip = k => counts[k] ? `<button type="button" class="cat-chip" data-cat="${k}" aria-pressed="false" title="${esc(catName[k])}">${esc(shortName[k])} <span class="n">${counts[k][0]}/${counts[k][1]}</span></button>` : '';
+  const stages = [
+    ['RAW input','sensor · 10–14 bit'],
+    ['Black level · denoise','BLC · NR'],
+    ['Demosaic · SR','CFA interpolation'],
+    ['White balance','AWB'],
+    ['Color correction','CCM · 3D LUT'],
+    ['Tone · gamma','tone curve · OETF'],
+    ['sRGB output','display / task'],
+  ];
+  let h = stages.map(s=>`<div class="stage"><div class="sn">${esc(s[0])}</div><div class="sx">${esc(s[1])}</div></div>`).join('');
+  const lanes = [[1,['burst','video']],[1,['denoise','lowlight']],[1,['demosaic']],[3,['color']],[1,['task','tuning']]];
+  h += lanes.map((l,i)=>`<div class="lane${i===lanes.length-1?' last':''}" style="grid-column:span ${l[0]}">${l[1].map(chip).join('')}</div>`).join('');
+  h += `<div class="span"><span class="arrow">RAW ━━━━▶ sRGB</span>${chip('e2e')}${chip('mobile')}</div>`;
+  h += `<div class="span"><span class="arrow">sRGB ━━━━▶ RAW</span>${chip('inverse')}<span class="arrow" style="margin-left:auto">Other</span>${chip('report')}</div>`;
+  document.getElementById('pipe').innerHTML = h;
+  document.querySelectorAll('#pipe .cat-chip').forEach(b=>b.addEventListener('click',()=>{
+    const k=b.dataset.cat; const on = fW.cat===k && fA.cat===k;
+    fW.cat = on?'all':k; fA.cat = on?'all':k; syncChips(); renderW(); renderA();
+    if(!on) document.getElementById('weights').scrollIntoView({behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto':'smooth', block:'start'});
+  }));
+}
+function chipRow(id, f, onChange, countFn){
+  const el=document.getElementById(id);
+  const all = `<button type="button" class="cat-chip" data-cat="all" aria-pressed="true">All topics</button>`;
+  el.innerHTML = all + CATS.map(c=>`<button type="button" class="cat-chip" data-cat="${c.k}" aria-pressed="false">${esc(c.name)} <span class="n">${countFn(c.k)}</span></button>`).join('');
+  el.querySelectorAll('.cat-chip').forEach(b=>b.addEventListener('click',()=>{ f.cat=b.dataset.cat; syncChips(); onChange(); }));
+}
+function syncChips(){
+  document.querySelectorAll('#chipsW .cat-chip').forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.cat===fW.cat)));
+  document.querySelectorAll('#chipsA .cat-chip').forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.cat===fA.cat)));
+  document.querySelectorAll('#pipe .cat-chip').forEach(b=>b.setAttribute('aria-pressed', String(b.dataset.cat===fW.cat && fW.cat===fA.cat)));
+}
+const match = (p,q) => !q || (p.n+' '+p.t+' '+p.v+' '+p.y+' '+p.s+' '+p.note+' '+p.fw+' '+p.g+' '+p.w.map(x=>x[0]+' '+x[1]).join(' ')+' '+(catName[p.c]||'')).toLowerCase().includes(q.toLowerCase());
+const order = Object.fromEntries(CATS.map((c,i)=>[c.k,i]));
+function renderW(){
+  let rows = P.filter(hasWeights).filter(p=>fW.cat==='all'||p.c===fW.cat).filter(p=>match(p,fW.q));
+  if(fW.host!=='all') rows = rows.filter(p=>p.w.some(w=>hostOf(w[1])===fW.host || (fW.host==='cn' && /Baidu|PKU/i.test(w[0]))));
+  rows.sort((a,b)=> order[a.c]-order[b.c] || b.y-a.y || a.n.localeCompare(b.n));
+  document.getElementById('cW').textContent = `${rows.length} ${rows.length===1?'model':'models'}`;
+  document.getElementById('tbW').innerHTML = rows.length ? rows.map(p=>`<tr>
+    <td><a class="mname" href="${esc(p.p)}" target="_blank" rel="noopener">${esc(p.n)}</a><span class="mtitle">${esc(p.t)}</span></td>
+    <td class="venue">${yv(p)}</td>
+    <td class="cattag">${esc(shortName[p.c])}</td>
+    <td><div class="wl">${p.w.map(w=>`<a href="${esc(w[1])}" target="_blank" rel="noopener">${esc(w[0])}</a>`).join('')}</div></td>
+    <td>${codeCell(p)}</td>
+    <td class="fw">${esc(p.fw||'—')}</td>
+    <td class="note">${pill(p.st)}${p.note?'<br>'+esc(p.note):''}</td></tr>`).join('') : `<tr><td colspan="7" class="empty">Nothing matches. Try another keyword or pick “All topics”.</td></tr>`;
+}
+function renderA(){
+  const q=fA.q; const cats = CATS.filter(c=>fA.cat==='all'||c.k===fA.cat);
+  let total=0;
+  const html = cats.map(c=>{
+    let ps = P.filter(p=>p.c===c.k).filter(p=>fA.st==='all'||fA.st.includes(p.st)).filter(p=>match(p,q));
+    const rank = s => 'WR'.includes(s)?0:('CU'.includes(s)?1:2);
+    ps.sort((a,b)=> rank(a.st)-rank(b.st) || b.y-a.y || a.n.localeCompare(b.n));
+    total += ps.length; if(!ps.length) return '';
+    return `<div class="group"><h3>${esc(c.name)} <span class="n">${ps.length}</span></h3><p class="gdesc">${esc(c.desc)}</p><div class="rows">${ps.map(p=>`<div class="row">
+      <div>${pill(p.st)}</div>
+      <div><a class="mname" href="${esc(p.p)}" target="_blank" rel="noopener">${esc(p.n)}</a><span class="mtitle">${esc(p.t)}</span></div>
+      <div class="venue">${yv(p)}</div>
+      <div class="s">${esc(p.s)}</div>
+      <div>${codeCell(p)}${p.w.length?`<div class="wl" style="margin-top:4px">${p.w.slice(0,2).map(w=>`<a href="${esc(w[1])}" target="_blank" rel="noopener">${esc(w[0])}</a>`).join('')}</div>`:''}</div>
+    </div>`).join('')}</div></div>`;
+  }).join('');
+  document.getElementById('cA').textContent = `${total} ${total===1?'paper':'papers'}`;
+  document.getElementById('groups').innerHTML = html || '<p class="empty">No papers match.</p>';
+}
+function renderStatic(){
+  document.getElementById('legend').innerHTML = Object.entries(ST).map(([k,v])=>`<span>${pill(k)} ${esc(v[1])}</span>`).join('');
+  document.getElementById('trendList').innerHTML = TRENDS.map(t=>`<div class="trend"><h3>${esc(t[0])}</h3><p>${esc(t[1])}</p><div class="ex">${esc(t[2])}</div></div>`).join('');
+  const short = u => { const s=u.replace(/^https?:\/\//,''); return s.length>38 ? s.slice(0,38)+'…' : s; };
+  document.getElementById('tbD').innerHTML = D.map(d=>`<tr><td>${esc(d[0])}</td><td class="venue">${d[1]}</td><td class="note">${esc(d[2])}</td><td>${esc(d[3])}</td><td class="note">${esc(d[4])}</td><td class="note">${esc(d[6])}</td><td class="code"><a href="${esc(d[5])}" target="_blank" rel="noopener">${esc(short(d[5]))}</a></td></tr>`).join('');
+  const kinds = [...new Set(TOOLS.map(t=>t[4]))];
+  document.getElementById('toolList').innerHTML = kinds.map(k=>`<div><h3>${esc(k)}</h3><ul>${TOOLS.filter(t=>t[4]===k).map(t=>`<li><a href="${esc(t[1])}" target="_blank" rel="noopener">${esc(t[0])}</a>${esc(t[2])}${t[3]?`<span class="fw">${esc(t[3])}</span>`:''}</li>`).join('')}</ul></div>`).join('');
+}
+renderStatic(); renderPipe();
+chipRow('chipsW', fW, renderW, k=>P.filter(p=>p.c===k&&hasWeights(p)).length);
+chipRow('chipsA', fA, renderA, k=>P.filter(p=>p.c===k).length);
+document.querySelectorAll('[data-host]').forEach(b=>b.addEventListener('click',()=>{ fW.host=b.dataset.host; document.querySelectorAll('[data-host]').forEach(x=>x.setAttribute('aria-pressed',String(x===b))); renderW(); }));
+document.querySelectorAll('[data-st]').forEach(b=>b.addEventListener('click',()=>{ fA.st=b.dataset.st; document.querySelectorAll('[data-st]').forEach(x=>x.setAttribute('aria-pressed',String(x===b))); renderA(); }));
+document.getElementById('qW').addEventListener('input',e=>{ fW.q=e.target.value.trim(); renderW(); });
+document.getElementById('qA').addEventListener('input',e=>{ fA.q=e.target.value.trim(); renderA(); });
+syncChips(); renderW(); renderA();
+</script>
+</body>
+</html>

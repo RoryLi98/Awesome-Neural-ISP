@@ -1,0 +1,201 @@
+# report: one entry per paper; see CONTRIBUTING.md for the schema
+- name: NTIRE 2026 Unpaired ISP
+  title: 'NTIRE 2026 Challenge on Learned Smartphone ISP with Unpaired Data: Methods and Results'
+  venue: CVPRW
+  year: 2026
+  paper: https://openaccess.thecvf.com/content/CVPR2026W/NTIRE/html/Perevozchikov_NTIRE_2026_Challenge_on_Learned_Smartphone_ISP_with_Unpaired_Data_CVPRW_2026_paper.html
+  status: no-code
+  tldr: Report of the first smartphone ISP challenge using unpaired data.
+- name: AIM 2025 LL RAW Video
+  title: 'AIM 2025 Low-light RAW Video Denoising Challenge: Dataset, Methods and Results'
+  venue: ICCVW
+  year: 2025
+  paper: https://arxiv.org/abs/2508.16830
+  status: no-code
+  tldr: Challenge report on low-light RAW video denoising.
+- name: AIM 2025 RAW Denoise
+  title: AIM 2025 Challenge on Real-World RAW Image Denoising
+  venue: ICCVW
+  year: 2025
+  paper: https://arxiv.org/abs/2510.06601
+  status: no-code
+  tldr: Challenge report on real-world RAW image denoising.
+- name: Low-light ISP Survey (2025)
+  title: A Comprehensive Survey on Image Signal Processing Approaches for Low-Illumination Image Enhancement
+  venue: arXiv
+  year: 2025
+  paper: https://arxiv.org/abs/2502.05995
+  status: no-code
+  tldr: Survey of low-light image enhancement methods from an ISP perspective.
+- name: MAI 2025 ISP
+  title: 'Learned Smartphone ISP on Mobile GPUs, Mobile AI 2025 Challenge: Report'
+  venue: CVPRW
+  year: 2025
+  paper: https://openaccess.thecvf.com/content/CVPR2025W/MAI/html/Ignatov_Learned_Smartphone_ISP_on_Mobile_GPUs_Mobile_AI_2025_Challenge_CVPRW_2025_paper.html
+  status: no-code
+  tldr: Report of the 2025 learned smartphone ISP challenge on mobile GPUs.
+- name: NTIRE 2025 Night
+  title: NTIRE 2025 Challenge on Night Photography Rendering
+  venue: CVPRW
+  year: 2025
+  paper: https://openaccess.thecvf.com/content/CVPR2025W/NTIRE/html/Ershov_NTIRE_2025_Challenge_on_Night_Photography_Rendering_CVPRW_2025_paper.html
+  status: no-code
+  tldr: Fourth edition of the night photography rendering challenge.
+- name: NTIRE 2025 RAW Restoration
+  title: NTIRE 2025 Challenge on RAW Image Restoration and Super-Resolution
+  venue: CVPRW
+  year: 2025
+  paper: https://arxiv.org/abs/2506.02197
+  status: no-code
+  tldr: Challenge report on RAW image restoration and super-resolution.
+- name: NTIRE 2025 RGB→RAW
+  title: RAW Image Reconstruction from RGB on Smartphones. NTIRE 2025 Challenge Report
+  venue: CVPRW
+  year: 2025
+  paper: https://arxiv.org/abs/2506.01947
+  status: no-code
+  tldr: Smartphone RGB→RAW reconstruction challenge; data is on Hugging Face at marcosv/rgb2raw.
+- name: MIPI 2024 Demosaic
+  title: 'MIPI 2024 Challenge on Demosaic for HybridEVS Camera: Methods and Results'
+  venue: CVPRW
+  year: 2024
+  paper: https://arxiv.org/abs/2405.04867
+  status: no-code
+  tldr: Challenge report on demosaicing for HybridEVS cameras.
+- name: MIPI 2024 Few-shot Denoise
+  title: 'MIPI 2024 Challenge on Few-shot RAW Image Denoising: Methods and Results'
+  venue: CVPRW
+  year: 2024
+  paper: https://arxiv.org/abs/2406.07006
+  status: no-code
+  tldr: Challenge report on few-shot RAW image denoising.
+- name: NTIRE 2024 Night
+  title: NTIRE 2024 Challenge on Night Photography Rendering
+  venue: CVPRW
+  year: 2024
+  paper: https://openaccess.thecvf.com/content/CVPR2024W/NTIRE/html/Ershov_NTIRE_2024_Challenge_on_Night_Photography_Rendering_CVPRW_2024_paper.html
+  status: no-code
+  tldr: Third edition of the night photography rendering challenge.
+- name: NTIRE 2024 RAW SR
+  title: Deep RAW Image Super-Resolution. A NTIRE 2024 Challenge Survey
+  venue: CVPRW
+  year: 2024
+  paper: https://arxiv.org/abs/2404.16223
+  status: no-code
+  tldr: Survey of the RAW image super-resolution challenge.
+- name: ISP Survey (2023)
+  title: 'ISP meets Deep Learning: A Survey on Deep Learning Methods for Image Signal Processing'
+  venue: ACM Computing Surveys
+  year: 2023
+  paper: https://arxiv.org/abs/2305.11994
+  status: no-code
+  tldr: Survey of deep-learning ISPs, organizing methods and datasets into module-level and end-to-end categories.
+- name: MIPI 2023 RGBW Remosaic
+  title: 'MIPI 2023 Challenge on RGBW Remosaic: Methods and Results'
+  venue: CVPRW (MIPI)
+  year: 2023
+  paper: https://arxiv.org/abs/2304.10551
+  status: no-code
+  tldr: The second RGBW re-mosaic challenge.
+- name: NTIRE 2023 Night
+  title: NTIRE 2023 Challenge on Night Photography Rendering
+  venue: CVPRW
+  year: 2023
+  paper: https://openaccess.thecvf.com/content/CVPR2023W/NTIRE/html/Shutova_NTIRE_2023_Challenge_on_Night_Photography_Rendering_CVPRW_2023_paper.html
+  status: no-code
+  tldr: Second edition of the night photography rendering challenge.
+- name: AIM 2022 Reverse ISP
+  title: Reversed Image Signal Processing and RAW Reconstruction. AIM 2022 Challenge Report
+  venue: ECCVW
+  year: 2022
+  paper: https://arxiv.org/abs/2210.11153
+  code: https://github.com/mv-lab/AISP/tree/main/aim22-reverseisp
+  status: code
+  tldr: RGB→RAW reconstruction challenge with two tracks (S7 / P20); the official baseline is in mv-lab/AISP.
+- name: MAI 2022 ISP
+  title: 'Learned Smartphone ISP on Mobile GPUs with Deep Learning, Mobile AI & AIM 2022 Challenge: Report'
+  venue: ECCVW
+  year: 2022
+  paper: https://arxiv.org/abs/2211.03885
+  code: https://github.com/mv-lab/AISP
+  status: weights-in-repo
+  weights:
+  - label: mai22-learnedisp/model.tflite + .h5 (baseline)
+    url: https://github.com/mv-lab/AISP/tree/main/mai22-learnedisp
+  framework: TensorFlow Lite
+  tldr: ISP challenge on mobile GPUs; the official baseline provides .h5 and .tflite models.
+- name: MIPI 2022 Quad Remosaic
+  title: 'MIPI 2022 Challenge on Quad-Bayer Re-mosaic: Dataset and Report'
+  venue: ECCVW (MIPI)
+  year: 2022
+  paper: https://arxiv.org/abs/2209.07060
+  code: https://github.com/mipi-challenge/MIPI2022
+  status: code
+  tldr: Quad-Bayer sensor re-mosaic challenge.
+- name: MIPI 2022 RGBW Remosaic
+  title: 'MIPI 2022 Challenge on RGBW Sensor Re-mosaic: Dataset and Report'
+  venue: ECCVW (MIPI)
+  year: 2022
+  paper: https://arxiv.org/abs/2209.08471
+  code: https://github.com/mipi-challenge/MIPI2022
+  status: code
+  tldr: Challenge on re-mosaicing RGBW sensor data to Bayer, including a dataset.
+  note: The repo lists data and winning-solution links for each track.
+- name: NTIRE 2022 Burst SR
+  title: NTIRE 2022 Burst Super-Resolution Challenge
+  venue: CVPRW
+  year: 2022
+  paper: https://openaccess.thecvf.com/content/CVPR2022W/NTIRE/html/Bhat_NTIRE_2022_Burst_Super-Resolution_Challenge_CVPRW_2022_paper.html
+  status: no-code
+  tldr: The second burst super-resolution challenge (won by BSRT).
+- name: NTIRE 2022 Night
+  title: NTIRE 2022 Challenge on Night Photography Rendering
+  venue: CVPRW
+  year: 2022
+  paper: https://openaccess.thecvf.com/content/CVPR2022W/NTIRE/html/Ershov_NTIRE_2022_Challenge_on_Night_Photography_Rendering_CVPRW_2022_paper.html
+  status: no-code
+  tldr: Night RAW rendering challenge, scored by subjective preference.
+- name: MAI 2021 ISP
+  title: 'Learned Smartphone ISP on Mobile NPUs with Deep Learning, Mobile AI 2021 Challenge: Report'
+  venue: CVPRW
+  year: 2021
+  paper: https://arxiv.org/abs/2105.07809
+  status: no-code
+  tldr: First ISP challenge with runtime measured on smartphone NPUs; Sony IMX586 RAW to Fujifilm GFX100.
+- name: NTIRE 2021 Burst SR
+  title: 'NTIRE 2021 Challenge on Burst Super-Resolution: Methods and Results'
+  venue: CVPRW
+  year: 2021
+  paper: https://openaccess.thecvf.com/content/CVPR2021W/NTIRE/html/Bhat_NTIRE_2021_Challenge_on_Burst_Super-Resolution_Methods_and_Results_CVPRW_2021_paper.html
+  code: https://github.com/goutamgmb/NTIRE21_BURSTSR
+  status: code
+  tldr: BurstSR challenge with synthetic and real tracks.
+  note: Official toolkit and test sets.
+- name: AIM 2020 ISP
+  title: AIM 2020 Challenge on Learned Image Signal Processing Pipeline
+  venue: ECCVW
+  year: 2020
+  paper: https://arxiv.org/abs/2011.04994
+  status: no-code
+  tldr: Report of the RAW-to-RGB challenge on ZRR data, with fidelity and perceptual tracks.
+- name: NTIRE 2020 Real Denoising
+  title: 'NTIRE 2020 Challenge on Real Image Denoising: Dataset, Methods and Results'
+  venue: CVPRW
+  year: 2020
+  paper: https://arxiv.org/abs/2005.04117
+  status: no-code
+  tldr: Real image denoising challenge on SIDD+ with RAW and sRGB tracks (MWRCANet ranked first in the RAW track).
+- name: AIM 2019 RAW→RGB
+  title: 'AIM 2019 Challenge on RAW to RGB Mapping: Methods and Results'
+  venue: ICCVW
+  year: 2019
+  paper: https://openaccess.thecvf.com/ICCV2019_workshops/ICCV2019_AIM
+  status: no-code
+  tldr: The first smartphone RAW→DSLR RGB mapping challenge (predecessor data of ZRR).
+- name: NTIRE 2019 Real Denoising
+  title: 'NTIRE 2019 Challenge on Real Image Denoising: Methods and Results'
+  venue: CVPRW
+  year: 2019
+  paper: https://openaccess.thecvf.com/CVPR2019_workshops/CVPR2019_NTIRE
+  status: no-code
+  tldr: Real image denoising challenge on SIDD with RAW and sRGB tracks.

@@ -1,0 +1,9 @@
+# Repository settings used by scripts/build.py.
+# Set `owner` to your GitHub user or organization before publishing, then run:
+#   python scripts/build.py
+owner: RoryLi98
+repo: Awesome-Neural-ISP
+title: Awesome Neural ISP
+tagline: Neural (learned) camera ISPs with released code and pretrained weights, plus a primer on the classical pipeline they build on.
+# Date the code / weight links were last checked by hand
+checked: '2026-09-29'

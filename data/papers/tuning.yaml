@@ -1,0 +1,124 @@
+# tuning: one entry per paper; see CONTRIBUTING.md for the schema
+- name: ChameleonTuner
+  title: 'ChameleonTuner: Automatic ISP Color Tuning in Subjective Scenarios'
+  venue: WACV
+  year: 2026
+  paper: https://openaccess.thecvf.com/content/WACV2026/html/Tan_ChameleonTuner_Automatic_ISP_Color_Tuning_in_Subjective_Scenarios_WACV_2026_paper.html
+  code: https://github.com/AISmartPerception/ChameleonTuner
+  status: coming-soon
+  tldr: Automatically tunes ISP color parameters in subjective scenarios.
+  note: “We will release the code soon”
+- name: POS-ISP
+  title: 'POS-ISP: Pipeline Optimization at the Sequence Level for Task-aware ISP'
+  venue: CVPR 2026 (Findings)
+  year: 2026
+  paper: https://arxiv.org/abs/2604.06938
+  code: https://github.com/w1jyun/POS-ISP
+  status: weights-in-repo
+  weights:
+  - label: 'weights/*.pth (in repo: LOD / LIS / KITTI)'
+    url: https://github.com/w1jyun/POS-ISP/tree/main/weights
+  framework: PyTorch
+  tldr: Predicts the entire ISP module sequence and all its parameters in a single forward pass, optimized with downstream task rewards.
+- name: Language Color ISP Tuning
+  title: Language-based Color ISP Tuning
+  venue: CIC
+  year: 2025
+  paper: https://arxiv.org/abs/2509.10765
+  status: no-code
+  tldr: Automatically tunes color ISP parameters from natural-language descriptions of the target look, using a vision-language model.
+- name: MLLM ISP Tuning
+  title: Multimodal Large Language Model-Guided ISP Hyperparameter Optimization with Dynamic Preference Learning
+  venue: ICCV
+  year: 2025
+  paper: https://openaccess.thecvf.com/content/ICCV2025/html/Sun_Multimodal_Large_Language_Model-Guided_ISP_Hyperparameter_Optimization_with_Dynamic_Preference_ICCV_2025_paper.html
+  status: no-code
+  tldr: Uses a multimodal large language model to assess images and dynamically learn preferences, guiding ISP hyperparameter search.
+- name: RL Photo-Finishing Tuning
+  title: Goal Conditioned Reinforcement Learning for Photo Finishing Tuning
+  venue: NeurIPS
+  year: 2024
+  paper: https://arxiv.org/abs/2503.07300
+  code: https://github.com/OpenImagingLab/RLPixTuner
+  status: weights-in-repo
+  weights:
+  - label: envs/checkpoints/best_model*.zip (in repo)
+    url: https://github.com/OpenImagingLab/RLPixTuner
+  framework: PyTorch
+  tldr: Goal-conditioned reinforcement learning that automatically tunes photo-finishing / back-end ISP parameters (same group as AdaptiveISP).
+- name: Sequence-Specific ISP Prior
+  title: Learning to Exploit the Sequence-Specific Prior Knowledge for Image Processing Pipelines Optimization
+  venue: CVPR
+  year: 2023
+  paper: https://openaccess.thecvf.com/content/CVPR2023/html/Qin_Learning_To_Exploit_the_Sequence-Specific_Prior_Knowledge_for_Image_Processing_CVPR_2023_paper.html
+  status: no-code
+  tldr: Predicts ISP parameters using prior knowledge of the ISP module order (same group as Attention-aware ISP Tuning).
+- name: Attention-aware ISP Tuning
+  title: Attention-Aware Learning for Hyperparameter Prediction in Image Processing Pipelines
+  venue: ECCV
+  year: 2022
+  paper: https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/4948_ECCV_2022_paper.php
+  status: no-code
+  tldr: Predicts ISP hyperparameters from image content, using attention to model relationships between parameters.
+- name: DRL-ISP
+  title: 'DRL-ISP: Multi-Objective Camera ISP with Deep Reinforcement Learning'
+  venue: IROS
+  year: 2022
+  paper: https://arxiv.org/abs/2207.03081
+  code: https://github.com/UkcheolShin/DRL-ISP
+  status: code
+  framework: PyTorch
+  tldr: Reinforcement learning selects ISP modules from a toolbox while balancing multiple objectives such as detection, segmentation and depth.
+  note: Includes scripts/4.copy_weights.sh and links to preprocessed data (SharePoint)
+- name: Neural Photo-Finishing
+  title: Neural Photo-Finishing
+  venue: SIGGRAPH Asia (TOG)
+  year: 2022
+  paper: https://scholar.google.com/scholar?q=%22Neural+Photo-Finishing%22+Tseng
+  status: no-code
+  tldr: Builds a differentiable proxy of a camera's photo-finishing pipeline, allowing parameters to be recovered from a target image.
+- name: HDR Pipeline Opt.
+  title: End-to-End High Dynamic Range Camera Pipeline Optimization
+  venue: CVPR
+  year: 2021
+  paper: https://openaccess.thecvf.com/content/CVPR2021/html/Robidoux_End-to-End_High_Dynamic_Range_Camera_Pipeline_Optimization_CVPR_2021_paper.html
+  status: no-code
+  tldr: End-to-end optimization of the camera pipeline for HDR scenes, covering both sensor exposure and ISP parameters.
+- name: ReconfigISP
+  title: 'ReconfigISP: Reconfigurable Camera Image Processing Pipeline'
+  venue: ICCV
+  year: 2021
+  paper: https://arxiv.org/abs/2109.04760
+  code: https://github.com/yuke93/ReconfigISP
+  status: code
+  framework: PyTorch
+  tldr: Uses differentiable proxies and NAS-style search to automatically select ISP module combinations and parameters; releases OnePlus data.
+  note: README provides the OnePlus dataset (Google Drive)
+- name: RL Self-Enhancing ISP
+  title: Reinforcement Learning of Self Enhancing Camera Image and Signal Processing
+  venue: arXiv
+  year: 2021
+  paper: https://arxiv.org/abs/2111.07499
+  status: no-code
+  tldr: Uses reinforcement learning to tune camera and ISP parameters.
+- name: HW-in-the-loop ISP
+  title: Hardware-in-the-loop End-to-end Optimization of Camera Image Processing Pipelines
+  venue: CVPR
+  year: 2020
+  paper: https://openaccess.thecvf.com/content_CVPR_2020/html/Mosleh_Hardware-in-the-Loop_End-to-End_Optimization_of_Camera_Image_Processing_Pipelines_CVPR_2020_paper.html
+  status: no-code
+  tldr: Puts a real hardware ISP in the optimization loop and tunes its parameters for downstream tasks with evolution strategies.
+- name: Differentiable Proxies
+  title: Hyperparameter Optimization in Black-box Image Processing using Differentiable Proxies
+  venue: SIGGRAPH (TOG)
+  year: 2019
+  paper: https://scholar.google.com/scholar?q=%22Hyperparameter+Optimization+in+Black-box+Image+Processing+using+Differentiable+Proxies%22
+  status: no-code
+  tldr: Trains a differentiable proxy network to mimic a black-box hardware ISP, then tunes its parameters by gradient descent.
+- name: ISP IQ Tuning
+  title: Automatic ISP Image Quality Tuning using Non-linear Optimization
+  venue: ICIP
+  year: 2018
+  paper: https://arxiv.org/abs/1902.09023
+  status: no-code
+  tldr: Automatically tunes ISP parameters via non-linear optimization with image quality metrics as the objective.

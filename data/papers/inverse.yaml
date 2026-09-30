@@ -1,0 +1,351 @@
+# inverse: one entry per paper; see CONTRIBUTING.md for the schema
+- name: Edit-aware RAW
+  title: Edit-aware RAW Reconstruction
+  venue: CVPR
+  year: 2026
+  paper: https://arxiv.org/abs/2512.05859
+  code: https://github.com/SamsungLabs/edit-aware-raw
+  status: code
+  framework: PyTorch
+  tldr: Reconstructed RAW should hold up under later edits (white balance, exposure, style), so training targets the error after editing.
+  note: The repo includes NILUT and tone-curve auxiliary models; the main model must be trained yourself (S24 data).
+- name: MambaRaw
+  title: 'MambaRaw: Selective State Space Modeling for Efficient 4K Raw Image Reconstruction'
+  venue: ECCV
+  year: 2026
+  paper: https://arxiv.org/abs/2606.24479
+  code: https://github.com/Peizeli1/MambaRaw
+  status: code
+  framework: PyTorch
+  tldr: JPEG-conditioned 4K RAW coding and reconstruction that uses selective state space modeling in the entropy model.
+  note: Must be trained separately for each λ.
+- name: MERIT
+  title: 'MERIT: Multi-domain Efficient RAW Image Translation'
+  venue: CVPR
+  year: 2026
+  paper: https://arxiv.org/abs/2603.20836
+  code: https://github.com/WJ-Huang/MERIT-Multi-domain-Efficient-RAW-Image-Translation
+  status: code
+  framework: PyTorch
+  tldr: A single model that translates efficiently between multiple camera RAW domains; releases the MDRAW dataset.
+- name: RAW-Flow
+  title: 'RAW-Flow: Advancing RGB-to-RAW Image Reconstruction with Deterministic Latent Flow Matching'
+  venue: AAAI (Oral)
+  year: 2026
+  paper: https://arxiv.org/abs/2601.20364
+  code: https://github.com/liuzhen03/RAW-Flow
+  status: weights
+  weights:
+  - label: nikon_d700 / canon_eos_5d weights (Google Drive)
+    url: https://drive.google.com/drive/folders/1pUWOdyogxZSumnRCv9HcffCR4sl4Ue60?usp=sharing
+  framework: PyTorch
+  tldr: RGB→RAW reconstruction via deterministic flow matching in latent space.
+- name: Raw-JPEG Adapter
+  title: 'Raw-JPEG Adapter: Efficient Raw Image Compression with JPEG'
+  venue: ECCV
+  year: 2026
+  paper: https://arxiv.org/abs/2509.19624
+  code: https://github.com/SamsungLabs/raw-jpeg-adapter
+  status: weights-in-repo
+  weights:
+  - label: models/raw_jpeg_adapter_q_*.pth (in repo)
+    url: https://github.com/SamsungLabs/raw-jpeg-adapter/tree/main/models
+  framework: PyTorch
+  tldr: About 37K-parameter invertible preprocessing (per-pixel gamma + 1D LUT + optional DCT) that lets RAW images be stored with standard JPEG.
+- name: RawGen
+  title: 'RawGen: Learning Camera Raw Image Generation'
+  venue: arXiv
+  year: 2026
+  paper: https://arxiv.org/abs/2604.00093
+  code: https://github.com/SamsungLabs/RawGen
+  status: weights
+  weights:
+  - label: kontext_lora.pt + vae_decoder_xyz.pt (Google Drive, author repo DY112/RawGen)
+    url: https://drive.google.com/drive/folders/1OkODPg1XDHLRX4-kVDphTtT-CY8CK9-3
+  framework: PyTorch (diffusers)
+  tldr: 'Samsung AI Center Toronto: generates camera-specific RAW images from text or sRGB using a FLUX Kontext LoRA and an XYZ-space VAE decoder.'
+  note: The official repo contains no weights and points to the author's repo DY112/RawGen.
+- name: RAWIC
+  title: 'RAWIC: Bit-Depth Adaptive Lossless Raw Image Compression'
+  venue: ICME
+  year: 2026
+  paper: https://arxiv.org/abs/2603.28105
+  code: https://github.com/chunbaobao/RAWIC
+  status: weights
+  weights:
+  - label: main + ablation models (PKU Disk)
+    url: https://disk.pku.edu.cn/link/AACF89B6C4E991420B9FF93197230EA21D
+  framework: PyTorch
+  tldr: Bit-depth-adaptive learned lossless compression of RAW images.
+  note: The README also lists a Baidu Netdisk mirror.
+- name: SpiralDiff
+  title: 'SpiralDiff: Spiral Diffusion with LoRA for RGB-to-RAW Conversion Across Cameras'
+  venue: CVPR
+  year: 2026
+  paper: https://arxiv.org/abs/2603.14885
+  code: https://github.com/Chuancy-TJU/SpiralDiff
+  status: weights
+  weights:
+  - label: model weights (Hugging Face)
+    url: https://huggingface.co/Chuancy/SpiralDiff
+  framework: PyTorch
+  tldr: Intensity-stratified "spiral" diffusion with per-camera LoRA for RGB→RAW conversion across multiple cameras.
+  note: Apache-2.0; the dataset is also on HF at Chuancy/SpiralDiff.
+- name: Illum–Sensor Mapping
+  title: Improved Mapping Between Illuminations and Sensors for RAW Images
+  venue: JOSA A
+  year: 2025
+  paper: https://arxiv.org/abs/2508.14730
+  code: https://github.com/SamsungLabs/illum-sensor-mapping
+  status: code
+  tldr: Maps RAW images across illuminations and sensors for data augmentation and cross-camera transfer.
+- name: Physically-Informed Raw2Raw
+  title: 'Beyond Calibration: Physically Informed Learning for Raw-to-Raw Mapping'
+  venue: arXiv
+  year: 2025
+  paper: https://arxiv.org/abs/2506.08650
+  status: no-code
+  tldr: Physics-constrained learning of RAW-to-RAW mappings between cameras.
+- name: RAW-Diffusion
+  title: 'RAW-Diffusion: RGB-Guided Diffusion Models for High-Fidelity RAW Image Generation'
+  venue: WACV
+  year: 2025
+  paper: https://arxiv.org/abs/2411.13150
+  code: https://github.com/SonyResearch/RAW-Diffusion
+  status: code
+  framework: PyTorch
+  tldr: RGB-guided diffusion model that generates high-fidelity RAW images to augment training data for RAW object detection.
+  note: The README does not provide weights.
+- name: ReRAW
+  title: 'ReRAW: RGB-to-RAW Image Reconstruction via Stratified Sampling for Efficient Object Detection on the Edge'
+  venue: CVPR
+  year: 2025
+  paper: https://arxiv.org/abs/2503.03782
+  code: https://github.com/SonyResearch/ReRAW
+  status: code
+  framework: PyTorch
+  tldr: RGB→RAW reconstruction trained with stratified sampling, generating data for RAW object detection on edge devices.
+- name: Learnable CCM RAW Recon
+  title: A Learnable Color Correction Matrix for RAW Reconstruction
+  venue: BMVC
+  year: 2024
+  paper: https://arxiv.org/abs/2409.02497
+  status: no-code
+  tldr: Lightweight sRGB→RAW reconstruction using a learnable CCM.
+- name: Prior Metadata RAW Recon
+  title: 'Prior Metadata-Driven RAW Reconstruction: Eliminating the Need for Per-Image Metadata'
+  venue: ACM MM
+  year: 2024
+  paper: https://scholar.google.com/scholar?q=%22Prior+Metadata-Driven+RAW+Reconstruction%22
+  status: no-code
+  tldr: RAW reconstruction using camera-level prior metadata instead of per-image metadata.
+- name: Rawformer
+  title: 'Rawformer: Unpaired Raw-to-Raw Translation for Learnable Camera ISPs'
+  venue: ECCV
+  year: 2024
+  paper: https://arxiv.org/abs/2404.10700
+  code: https://github.com/gosha20777/rawformer
+  status: code
+  framework: PyTorch
+  tldr: Unpaired cross-camera RAW→RAW translation that lets an already-trained neural ISP transfer to a new sensor.
+  note: The README TODO item "upload pretrained models" has not been completed.
+- name: SEL-CIE
+  title: 'SEL-CIE: Knowledge-Guided Self-Supervised Learning Framework for CIE-XYZ Reconstruction from Non-Linear sRGB Images'
+  venue: WSCG
+  year: 2024
+  paper: https://arxiv.org/abs/2405.12265
+  status: no-code
+  tldr: Self-supervised reconstruction of CIE XYZ images from non-linear sRGB images.
+- name: sRGB-to-RAW Video
+  title: Leveraging Frame Affinity for sRGB-to-RAW Video De-rendering
+  venue: CVPR
+  year: 2024
+  paper: https://openaccess.thecvf.com/content/CVPR2024/html/Zhang_Leveraging_Frame_Affinity_for_sRGB-to-RAW_Video_De-rendering_CVPR_2024_paper.html
+  status: no-code
+  tldr: Exploits inter-frame affinity in video for sRGB→RAW video de-rendering.
+- name: Unsupervised Raw2Raw ISP
+  title: Generalizing ISP Model by Unsupervised Raw-to-raw Mapping
+  venue: ACM MM
+  year: 2024
+  paper: https://scholar.google.com/scholar?q=%22Generalizing+ISP+Model+by+Unsupervised+Raw-to-raw+Mapping%22
+  status: no-code
+  tldr: Unsupervised cross-camera RAW-to-RAW mapping that lets a trained ISP model generalize to new sensors.
+- name: Beyond R2LCM
+  title: Beyond Learned Metadata-based Raw Image Reconstruction
+  venue: arXiv
+  year: 2023
+  paper: https://arxiv.org/abs/2306.12058
+  status: no-code
+  tldr: 'Extension of R2LCM: variable-bitrate RAW reconstruction from learned metadata (a comparison baseline for MambaRaw).'
+- name: Graphics2RAW
+  title: 'Graphics2RAW: Mapping Computer Graphics Images to Sensor RAW Images'
+  venue: ICCV
+  year: 2023
+  paper: https://openaccess.thecvf.com/content/ICCV2023/html/Seo_Graphics2RAW_Mapping_Computer_Graphics_Images_to_Sensor_RAW_Images_ICCV_2023_paper.html
+  code: https://github.com/SamsungLabs/graphics2raw
+  status: code
+  tldr: Maps computer-graphics renderings to realistic sensor RAW images for use as training data.
+- name: Metadata RAW (INF)
+  title: Metadata-Based RAW Reconstruction via Implicit Neural Functions
+  venue: CVPR
+  year: 2023
+  paper: https://openaccess.thecvf.com/content/CVPR2023/html/Li_Metadata-Based_RAW_Reconstruction_via_Implicit_Neural_Functions_CVPR_2023_paper.html
+  status: no-code
+  tldr: Metadata-guided RAW reconstruction using implicit neural functions.
+- name: R2LCM
+  title: Raw Image Reconstruction with Learned Compact Metadata
+  venue: CVPR
+  year: 2023
+  paper: https://openaccess.thecvf.com/content/CVPR2023/html/Wang_Raw_Image_Reconstruction_With_Learned_Compact_Metadata_CVPR_2023_paper.html
+  code: https://github.com/wyf0912/R2LCM
+  status: weights
+  weights:
+  - label: Sony models (Google Drive)
+    url: https://drive.google.com/file/d/19IFLxyreqNOWA573phNyvBUBwRwmXHtt/view?usp=sharing
+  - label: Samsung models (Google Drive)
+    url: https://drive.google.com/file/d/1xcEAgJztsI6QWaEpjqQzrYolKvHPzwZc/view?usp=sharing
+  framework: PyTorch
+  tldr: Learns very compact latent metadata end to end, stored alongside the JPEG, for RAW reconstruction with a controllable bit rate.
+- name: SRISP
+  title: Self-Supervised Reversed Image Signal Processing via Reference-Guided Dynamic Parameter Selection
+  venue: arXiv
+  year: 2023
+  paper: https://arxiv.org/abs/2303.13916
+  status: no-code
+  tldr: Self-supervised reverse ISP that dynamically selects parameters under the guidance of a reference image.
+- name: Content-Aware Metadata
+  title: Learning sRGB-to-Raw-RGB De-rendering with Content-Aware Metadata
+  venue: CVPR
+  year: 2022
+  paper: https://openaccess.thecvf.com/content/CVPR2022/html/Nam_Learning_sRGB-to-Raw-RGB_De-Rendering_With_Content-Aware_Metadata_CVPR_2022_paper.html
+  code: https://github.com/SamsungLabs/content-aware-metadata
+  status: code
+  tldr: Learns to select content-dependent sampling points as metadata to improve sRGB→RAW reconstruction quality.
+  note: The dataset link in the README is empty.
+- name: MBISPLD
+  title: Model-Based Image Signal Processors via Learnable Dictionaries
+  venue: AAAI
+  year: 2022
+  paper: https://arxiv.org/abs/2201.03210
+  status: no-code
+  tldr: Combines interpretable classical ISP modules with learnable dictionaries for invertible RAW↔RGB modeling.
+  note: The mv-lab/AISP/mbispld directory contains only the paper PDF and figures.
+- name: Overexposure Mask Fusion
+  title: 'Overexposure Mask Fusion: Generalizable Reverse ISP Multi-Step Refinement'
+  venue: ECCVW (AIM)
+  year: 2022
+  paper: https://arxiv.org/abs/2210.11511
+  code: https://github.com/SenseBrainTech/overexposure-mask-reverse-ISP
+  status: weights-in-repo
+  weights:
+  - label: trained_models/ (in repo, S7 data)
+    url: https://github.com/SenseBrainTech/overexposure-mask-reverse-ISP/tree/main/trained_models
+  framework: PyTorch
+  tldr: Handles overexposed regions separately in reverse ISP and applies multi-step refinement.
+- name: Reverse Style Transfer ISP
+  title: Reversing Image Signal Processors by Reverse Style Transferring
+  venue: ECCVW
+  year: 2022
+  paper: https://arxiv.org/abs/2210.09074
+  status: no-code
+  tldr: Treats inverting an image signal processor as a reverse style-transfer problem.
+- name: CIE XYZ Net
+  title: 'CIE XYZ Net: Unprocessing Images for Low-Level Computer Vision Tasks'
+  venue: IEEE TPAMI
+  year: 2021
+  paper: https://arxiv.org/abs/2006.12709
+  code: https://github.com/mahmoudnafifi/CIE_XYZ_NET
+  status: weights-in-repo
+  weights:
+  - label: PyTorch/models/model_sRGB-XYZ-sRGB.pth (in repo)
+    url: https://github.com/mahmoudnafifi/CIE_XYZ_NET/tree/master/PyTorch/models
+  framework: MATLAB / PyTorch
+  tldr: Learns an invertible sRGB↔CIE XYZ mapping to unprocess rendered images back to a scene-referred space for low-level vision tasks.
+  note: Paper results use the MATLAB version; the PyTorch weights are a convenience port.
+- name: InvISP
+  title: Invertible Image Signal Processing
+  venue: CVPR
+  year: 2021
+  paper: https://openaccess.thecvf.com/content/CVPR2021/html/Xing_Invertible_Image_Signal_Processing_CVPR_2021_paper.html
+  code: https://github.com/yzxing87/Invertible-ISP
+  status: weights-in-repo
+  weights:
+  - label: pretrained/canon.pth, nikon.pth (in repo)
+    url: https://github.com/yzxing87/Invertible-ISP/tree/main/pretrained
+  framework: PyTorch
+  tldr: Invertible network that performs both RAW→sRGB rendering and near-lossless sRGB→RAW recovery, while accounting for JPEG compression.
+- name: Raw Bayer Synthesis for CV-ISP
+  title: Raw Bayer Pattern Image Synthesis for Computer Vision-oriented Image Signal Processing Pipeline Design
+  venue: arXiv
+  year: 2021
+  paper: https://arxiv.org/abs/2110.12823
+  status: no-code
+  tldr: Synthesizes Bayer RAW from sRGB to design and evaluate ISPs oriented toward computer vision tasks.
+- name: Raw-to-Raw (Semi-Sup.)
+  title: Semi-Supervised Raw-to-Raw Mapping
+  venue: BMVC
+  year: 2021
+  paper: https://arxiv.org/abs/2106.13883
+  code: https://github.com/mahmoudnafifi/raw2raw
+  status: code
+  framework: PyTorch
+  tldr: Learns mappings between the RAW spaces of different cameras from a small paired set and a large unpaired set.
+  note: Provides DNG data and precomputed mappings.
+- name: Spatially Aware Metadata
+  title: Spatially Aware Metadata for Raw Reconstruction
+  venue: WACV
+  year: 2021
+  paper: https://openaccess.thecvf.com/content/WACV2021/html/Punnappurath_Spatially_Aware_Metadata_for_Raw_Reconstruction_WACV_2021_paper.html
+  status: no-code
+  tldr: Embeds a small, spatially sampled set of RAW values in the JPEG as metadata for high-quality RAW reconstruction.
+- name: CycleISP
+  title: 'CycleISP: Real Image Restoration via Improved Data Synthesis'
+  venue: CVPR
+  year: 2020
+  paper: https://arxiv.org/abs/2003.07761
+  code: https://github.com/swz30/CycleISP
+  status: weights
+  weights:
+  - label: all models (Google Drive)
+    url: https://drive.google.com/drive/folders/1cHRfWPjFpTPrvBm7B4iTMEVZ4ABfjmxW?usp=sharing
+  framework: PyTorch
+  tldr: Learns a bidirectional RGB-RAW ISP to synthesize realistic noisy data in both domains for training denoisers.
+- name: Lossless Mosaic Compression
+  title: Lossless Compression of Mosaic Images with Convolutional Neural Network Prediction
+  venue: arXiv
+  year: 2020
+  paper: https://arxiv.org/abs/2001.10484
+  status: no-code
+  tldr: Lossless compression of Bayer mosaic images using CNN-based prediction.
+- name: SingleHDR
+  title: Single-Image HDR Reconstruction by Learning to Reverse the Camera Pipeline
+  venue: CVPR
+  year: 2020
+  paper: https://arxiv.org/abs/2004.01179
+  code: https://github.com/alex04072000/SingleHDR
+  status: weights
+  weights:
+  - label: ckpt (Google Drive)
+    url: https://drive.google.com/file/d/1e9vP8YPEjGcvXCa0Bfqwxw7qks7dH-VE/view?usp=sharing
+  framework: TensorFlow
+  tldr: Models LDR formation as a three-step inverse ISP (dequantization, linearization, over-exposure recovery) and reverses it step by step to reconstruct HDR.
+- name: Camera Pipeline Simulation
+  title: Generating Training Data for Denoising Real RGB Images via Camera Pipeline Simulation
+  venue: arXiv
+  year: 2019
+  paper: https://arxiv.org/abs/1904.08825
+  status: no-code
+  tldr: Simulates the full camera pipeline, including RAW noise, to synthesize training data for sRGB denoising.
+- name: Unprocessing
+  title: Unprocessing Images for Learned Raw Denoising
+  venue: CVPR
+  year: 2019
+  paper: https://arxiv.org/abs/1811.11127
+  code: https://github.com/google-research/google-research/tree/master/unprocessing
+  status: weights
+  weights:
+  - label: trained models (Google Drive)
+    url: https://drive.google.com/file/d/1MTFr-uaIKv5aWe7nXlhTaHBestLUiDLZ/view?usp=sharing
+  framework: TensorFlow
+  tldr: Inverts the ISP on web sRGB images to produce realistic RAW with Poisson-Gaussian noise for training RAW denoisers.
+  note: Lives in a subdirectory of the google-research monorepo.

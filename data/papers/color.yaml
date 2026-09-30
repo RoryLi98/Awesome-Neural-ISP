@@ -1,0 +1,622 @@
+# color: one entry per paper; see CONTRIBUTING.md for the schema
+- name: C2LUT
+  title: Illuminant-Adaptive 3D Lookup Tables for Camera Color Correction
+  venue: arXiv
+  year: 2026
+  paper: https://arxiv.org/abs/2607.11681
+  code: https://github.com/claudiom4sir/C2LUT
+  status: coming-soon
+  tldr: Camera color correction with 3D LUTs that adapt to the scene illuminant.
+  note: “The code will be released upon acceptance”
+- name: Multispectral CC
+  title: Leveraging Multispectral Sensors for Color Correction in Mobile Cameras
+  venue: CVPR
+  year: 2026
+  paper: https://arxiv.org/abs/2512.08441
+  code: https://github.com/LucaCogo/Mobile-Spectral-CC
+  status: weights-in-repo
+  weights:
+  - label: pretrained/ (in repo, one folder per camera)
+    url: https://github.com/LucaCogo/Mobile-Spectral-CC/tree/main/pretrained
+  framework: PyTorch
+  tldr: Uses an auxiliary multispectral sensor on smartphones to perform camera color correction.
+  note: 'Dataset on HF: LucaCogo/MobileSpectralCCDataset'
+- name: RL-AWB
+  title: 'RL-AWB: Deep Reinforcement Learning for Auto White Balance Correction in Low-Light Night-time Scenes'
+  venue: ECCV
+  year: 2026
+  paper: https://arxiv.org/abs/2601.05249
+  code: https://github.com/BrianChen1120/RL-AWB
+  status: weights
+  weights:
+  - label: NCC model (Dropbox)
+    url: https://www.dropbox.com/scl/fi/b9sgxxeu481gr4znv5l63/NCC_model.zip?rlkey=664d2tqily9shzktn08npmqxh&st=9vt59fmj&dl=1
+  framework: PyTorch
+  tldr: Uses reinforcement learning to iteratively adjust white balance in low-light night-time scenes.
+  note: download.sh / download.bat are also provided for one-click download
+- name: SAFE
+  title: 'SAFE: Scene-Aware Feature Modulation for Color Constancy with Learned Color Space in Pure-Color Scenes'
+  venue: arXiv
+  year: 2026
+  paper: https://arxiv.org/abs/2608.13967
+  status: no-code
+  tldr: Scene-aware color constancy for scenes dominated by large pure-color regions (same group as RL-AWB).
+- name: VLM-CC
+  title: 'White-Balance First, Adjust Later: Cross-Camera Color Constancy via Vision-Language Evaluation'
+  venue: CVPR
+  year: 2026
+  paper: https://arxiv.org/abs/2605.19613
+  code: https://github.com/NothingIknow/VLM-CC
+  status: weights
+  weights:
+  - label: LoRA adapters (Hugging Face)
+    url: https://huggingface.co/PeanutBrain/vlm-cc
+  framework: PyTorch
+  tldr: Applies a coarse white balance first, then evaluates and adjusts it with a vision-language model; LoRA on Qwen2.5-VL / InternVL3.5.
+  note: Apache-2.0
+- name: WB Color Space
+  title: Perception-Inspired Color Space Design for Photo White Balance Editing
+  venue: WACV
+  year: 2026
+  paper: https://arxiv.org/abs/2512.09383
+  code: https://github.com/YangCheng58/WB_Color_Space
+  status: weights-in-repo
+  weights:
+  - label: models/best.pth (in repo)
+    url: https://github.com/YangCheng58/WB_Color_Space/tree/main/models
+  framework: PyTorch
+  tldr: Designs a perception-aligned color space to improve white balance editing.
+- name: ABC-Former
+  title: 'ABC-Former: Auxiliary Bimodal Cross-domain Transformer with Interactive Channel Attention for White Balance'
+  venue: CVPR
+  year: 2025
+  paper: https://openaccess.thecvf.com/content/CVPR2025/html/Chiu_ABC-Former_Auxiliary_Bimodal_Cross-domain_Transformer_with_Interactive_Channel_Attention_for_CVPR_2025_paper.html
+  code: https://github.com/ytpeng-aimlab/ABC-Former
+  status: weights
+  weights:
+  - label: pre-trained models (Google Drive)
+    url: https://drive.google.com/drive/folders/18hIjNPnQlaWZLpLVvg_T0nFuYbVl-yzk?usp=sharing
+  framework: PyTorch
+  tldr: Cross-domain Transformer for sRGB white balance aided by auxiliary modalities such as RAW and histograms.
+  note: The README also provides another model folder.
+- name: Camera-Agnostic WB Pref.
+  title: Learning Camera-Agnostic White-Balance Preferences
+  venue: ICCVW (MIPI)
+  year: 2025
+  paper: https://arxiv.org/abs/2507.01342
+  code: https://github.com/SamsungLabs/aesthetics-pref-awb
+  status: code
+  tldr: Learns camera-agnostic aesthetic white-balance preferences rather than neutral white balance.
+  note: Only the Gray World baseline part was released due to licensing.
+- name: CCMNet
+  title: 'CCMNet: Leveraging Calibrated Color Correction Matrices for Cross-Camera Color Constancy'
+  venue: ICCV
+  year: 2025
+  paper: https://arxiv.org/abs/2504.07959
+  code: https://github.com/DY112/CCMNet
+  status: weights-in-repo
+  weights:
+  - label: models/test_*.pth (in repo, leave-one-out)
+    url: https://github.com/DY112/CCMNet/tree/main/models
+  framework: PyTorch
+  tldr: Encodes sensor characteristics with the calibrated CCMs already present in camera ISPs for zero-shot cross-camera illuminant estimation.
+- name: GCC
+  title: 'GCC: Generative Color Constancy via Diffusing a Color Checker'
+  venue: CVPR
+  year: 2025
+  paper: https://arxiv.org/abs/2502.17435
+  code: https://github.com/chenwei891213/GCC-official
+  status: weights
+  weights:
+  - label: NUS-8 trained models (HF)
+    url: https://huggingface.co/StevenChangWei/gcc_train_on_nus8
+  - label: Demo (HF Spaces)
+    url: https://huggingface.co/spaces/StevenChangWei/GCC-Demo
+  framework: PyTorch
+  tldr: Uses a diffusion model to "paint" a color checker into the image, then reads the illuminant from it, generalizing across cameras.
+  note: The README also provides Gehler-trained models and preprocessed datasets (HF).
+- name: IFFCC
+  title: Integral Fast Fourier Color Constancy
+  venue: CVPR
+  year: 2025
+  paper: https://arxiv.org/abs/2502.03494
+  status: no-code
+  tldr: Integral-histogram version of FFCC that supports spatially varying (multi-illuminant) estimation.
+- name: Revisiting MIWB
+  title: Revisiting Image Fusion for Multi-Illuminant White-Balance Correction
+  venue: ICCV
+  year: 2025
+  paper: https://arxiv.org/abs/2503.14774
+  code: https://github.com/davidserra9/revisitingMIWB
+  status: weights-in-repo
+  weights:
+  - label: weights/ (in repo, about 38KB each)
+    url: https://github.com/davidserra9/revisitingMIWB/tree/main/weights
+  framework: PyTorch
+  tldr: A 7.9K-parameter Transformer that fuses five white-balance presets.
+- name: Time-Aware AWB
+  title: Time-Aware Auto White Balance in Mobile Photography
+  venue: ICCV
+  year: 2025
+  paper: https://arxiv.org/abs/2504.05623
+  code: https://github.com/mahmoudnafifi/time-aware-awb
+  status: weights-in-repo
+  weights:
+  - label: models/model-awb*.pt (in repo)
+    url: https://github.com/mahmoudnafifi/time-aware-awb/tree/main/models
+  framework: PyTorch
+  tldr: Uses capture time and geolocation as illuminant priors so a small model can handle mobile AWB; releases the S24 RAW-sRGB dataset.
+  note: The same content is also at SamsungLabs/time-aware-awb.
+- name: AID
+  title: Attentive Illumination Decomposition Model for Multi-Illuminant White Balancing
+  venue: CVPR
+  year: 2024
+  paper: https://arxiv.org/abs/2402.18277
+  code: https://github.com/DY112/AID
+  status: coming-soon
+  tldr: Attention-based illumination decomposition for multi-illuminant white balancing.
+  note: The README states that the code cannot be released for patent reasons; only a demo is available.
+- name: Dual-Exposure Illuminant
+  title: Optimizing Illuminant Estimation in Dual-Exposure HDR Imaging
+  venue: ECCV
+  year: 2024
+  paper: https://www.ecva.net/papers/eccv_2024/papers_ECCV/html/206_ECCV_2024_paper.php
+  status: no-code
+  tldr: Improves illuminant estimation by using the two frames captured in dual-exposure HDR imaging.
+- name: NightCC
+  title: 'NightCC: Nighttime Color Constancy via Adaptive Channel Masking'
+  venue: CVPR
+  year: 2024
+  paper: https://openaccess.thecvf.com/content/CVPR2024/html/Li_NightCC_Nighttime_Color_Constancy_via_Adaptive_Channel_Masking_CVPR_2024_paper.html
+  status: no-code
+  tldr: Nighttime color constancy for multi-illuminant scenes that adaptively masks unreliable channels.
+- name: NILUT
+  title: 'NILUT: Conditional Neural Implicit 3D Lookup Tables for Image Enhancement'
+  venue: AAAI
+  year: 2024
+  paper: https://arxiv.org/abs/2306.11920
+  code: https://github.com/mv-lab/nilut
+  status: weights-in-repo
+  weights:
+  - label: models/nilutx3style.pt etc. (in repo)
+    url: https://github.com/mv-lab/nilut/tree/main/models
+  framework: PyTorch
+  tldr: Uses a small MLP to implicitly represent and blend multiple 3D LUT styles; differentiable and pluggable.
+- name: WB LUTs
+  title: 'WB LUTs: Contrastive Learning for White Balancing Lookup Tables'
+  venue: arXiv
+  year: 2024
+  paper: https://arxiv.org/abs/2404.10133
+  code: https://github.com/skrmanne/3DLUT_sRGB_WB
+  status: code
+  tldr: Uses contrastive learning to train white-balance correction in the form of 3D LUTs.
+- name: DeNIM
+  title: Deterministic Neural Illumination Mapping for Efficient Auto-White Balance Correction
+  venue: ICCVW
+  year: 2023
+  paper: https://arxiv.org/abs/2308.03939
+  code: https://github.com/birdortyedi/DeNIM
+  status: weights
+  weights:
+  - label: weights.zip (Dropbox)
+    url: https://www.dropbox.com/scl/fi/1fw1xeibigiflar5kqki3/weights.zip?rlkey=wiw15xnxmxm9nn05ving1v4ls&dl=0
+  framework: PyTorch
+  tldr: Efficient AWB correction via deterministic neural illumination mapping.
+- name: LLF-LUT
+  title: 'Lookup Table meets Local Laplacian Filter: Pyramid Reconstruction Network for Tone Mapping'
+  venue: NeurIPS
+  year: 2023
+  paper: https://papers.nips.cc/paper_files/paper/2023/hash/b3a08d179347e33414badadf100e4e8d-Abstract-Conference.html
+  code: https://github.com/fengzhang427/LLF-LUT
+  status: weights
+  weights:
+  - label: TPAMI pretrained models (Google Drive)
+    url: https://drive.google.com/file/d/1fkMj0peUbkX2ETC4rCxy0FAL7Gyxgg26/view?usp=sharing
+  - label: Mirror (Baidu, code fegh)
+    url: https://pan.baidu.com/s/1zPkdl0MG6nYNR4ZNC8fqoA?pwd=fegh
+  framework: PyTorch
+  tldr: HDR tone mapping combining a Laplacian pyramid with 3D LUTs to handle both global tone and local detail (TPAMI extension).
+  note: The NeurIPS version is not released due to company policy; only the TPAMI version is released.
+- name: Style-AWB
+  title: Modeling the Lighting in Scenes as Style for Auto White-Balance Correction
+  venue: WACV
+  year: 2023
+  paper: https://arxiv.org/abs/2210.09090
+  status: no-code
+  tldr: Models scene lighting as "style" for auto white-balance correction.
+- name: AdaInt
+  title: 'AdaInt: Learning Adaptive Intervals for 3D Lookup Tables on Real-time Image Enhancement'
+  venue: CVPR
+  year: 2022
+  paper: https://arxiv.org/abs/2204.13983
+  code: https://github.com/ImCharlesY/AdaInt
+  status: weights-in-repo
+  weights:
+  - label: pretrained/AiLUT-*.pth (in repo)
+    url: https://github.com/ImCharlesY/AdaInt/tree/main/pretrained
+  framework: PyTorch
+  tldr: Learns non-uniform sampling intervals for 3D LUTs to improve the accuracy of real-time color enhancement.
+- name: Enriched Illuminants
+  title: Learning Enriched Illuminants for Cross and Single Sensor Color Constancy
+  venue: arXiv
+  year: 2022
+  paper: https://arxiv.org/abs/2203.11068
+  status: no-code
+  tldr: Enriches the illuminant distribution to improve cross-sensor color constancy.
+- name: MIMT
+  title: 'MIMT: Multi-Illuminant Color Constancy via Multi-Task Local Surface and Light Color Learning'
+  venue: arXiv
+  year: 2022
+  paper: https://arxiv.org/abs/2211.08772
+  status: no-code
+  tldr: Multi-illuminant color constancy through multi-task learning of local surface and light color.
+- name: Mixed-Illuminant AWB
+  title: Auto White-Balance Correction for Mixed-Illuminant Scenes
+  venue: WACV
+  year: 2022
+  paper: https://arxiv.org/abs/2109.08750
+  code: https://github.com/mahmoudnafifi/mixedillWB
+  status: weights-in-repo
+  weights:
+  - label: models/WB_model_*.pth (in repo)
+    url: https://github.com/mahmoudnafifi/mixedillWB/tree/main/models
+  framework: PyTorch
+  tldr: Renders the image with several preset white balances and learns per-pixel weights to fuse them.
+- name: SepLUT
+  title: 'SepLUT: Separable Image-adaptive Lookup Tables for Real-time Image Enhancement'
+  venue: ECCV
+  year: 2022
+  paper: https://arxiv.org/abs/2207.08351
+  code: https://github.com/ImCharlesY/SepLUT
+  status: weights-in-repo
+  weights:
+  - label: pretrained/SepLUT-*.pth (in repo)
+    url: https://github.com/ImCharlesY/SepLUT/tree/main/pretrained
+  framework: PyTorch
+  tldr: Decomposes the 3D LUT into a combination of 1D and 3D LUTs, making it smaller and faster.
+- name: C5
+  title: Cross-Camera Convolutional Color Constancy
+  venue: ICCV
+  year: 2021
+  paper: https://arxiv.org/abs/2011.11890
+  code: https://github.com/mahmoudnafifi/C5
+  status: weights-in-repo
+  weights:
+  - label: models/C5_m_7_h_64*.pth (in repo)
+    url: https://github.com/mahmoudnafifi/C5/tree/main/models
+  framework: PyTorch
+  tldr: Uses several unlabeled images from the same camera as extra input at test time for cross-camera illuminant estimation.
+- name: CLCC
+  title: 'CLCC: Contrastive Learning for Color Constancy'
+  venue: CVPR
+  year: 2021
+  paper: https://openaccess.thecvf.com/content/CVPR2021/html/Lo_CLCC_Contrastive_Learning_for_Color_Constancy_CVPR_2021_paper.html
+  status: no-code
+  tldr: Improves illuminant estimation with contrastive learning, using illuminant-aware construction of positive and negative samples.
+- name: INTEL-TAU
+  title: 'INTEL-TAU: A Color Constancy Dataset'
+  venue: IEEE Access
+  year: 2021
+  paper: https://arxiv.org/abs/1910.10404
+  status: no-code
+  tldr: Large-scale multi-camera color constancy dataset that supports cross-camera evaluation.
+- name: LSMI
+  title: Large Scale Multi-Illuminant (LSMI) Dataset for Developing White Balance Algorithm under Mixed Illumination
+  venue: ICCV
+  year: 2021
+  paper: https://openaccess.thecvf.com/content/ICCV2021/html/Kim_Large_Scale_Multi-Illuminant_LSMI_Dataset_for_Developing_White_Balance_Algorithm_ICCV_2021_paper.html
+  code: https://github.com/DY112/LSMI-dataset
+  status: weights
+  weights:
+  - label: U-Net pretrained parameters (OneDrive)
+    url: https://1drv.ms/f/s!AmcRzvPhtvytnVnNy7u31Unr46WD?e=zyQHua
+  framework: PyTorch
+  tldr: Large-scale mixed-illuminant white-balance dataset with a per-pixel illuminant U-Net baseline.
+  note: Access to the dataset requires submitting a request form.
+- name: Multi-color Balance
+  title: Multi-color balance for color constancy
+  venue: ICIP
+  year: 2021
+  paper: https://arxiv.org/abs/2105.10228
+  status: no-code
+  tldr: Color correction using multiple reference colors instead of a single white point, reducing residual color casts.
+- name: Two-Camera AWB
+  title: Leveraging the Availability of Two Cameras for Illuminant Estimation
+  venue: CVPR
+  year: 2021
+  paper: https://openaccess.thecvf.com/content/CVPR2021/html/Abdelhamed_Leveraging_the_Availability_of_Two_Cameras_for_Illuminant_Estimation_CVPR_2021_paper.html
+  status: no-code
+  tldr: Estimates the illuminant from spectral differences between the two RAW images captured by a smartphone's dual cameras.
+- name: 3D-LUT
+  title: Learning Image-adaptive 3D Lookup Tables for High Performance Photo Enhancement in Real-time
+  venue: IEEE TPAMI
+  year: 2020
+  paper: https://arxiv.org/abs/2009.14468
+  code: https://github.com/HuiZeng/Image-Adaptive-3DLUT
+  status: weights-in-repo
+  weights:
+  - label: pretrained_models/{sRGB,XYZ} (in repo)
+    url: https://github.com/HuiZeng/Image-Adaptive-3DLUT/tree/master/pretrained_models
+  framework: PyTorch
+  tldr: Learns several basis 3D LUTs and fuses them with image-content-dependent weights for real-time 4K color enhancement.
+- name: Bag of Color Features
+  title: Bag of Color Features For Color Constancy
+  venue: IEEE TIP
+  year: 2020
+  paper: https://arxiv.org/abs/1906.04445
+  status: no-code
+  tldr: Lightweight illuminant estimation combining a bag of color features with attention.
+- name: C4
+  title: Cascading Convolutional Color Constancy
+  venue: AAAI
+  year: 2020
+  paper: https://arxiv.org/abs/1912.11180
+  code: https://github.com/yhlscut/C4
+  status: weights
+  weights:
+  - label: pretrained models (OneDrive)
+    url: https://mailscuteducn-my.sharepoint.com/:u:/g/personal/eeyu_huanglin_mail_scut_edu_cn/EWC9feVv13NFpHZAUz1rj9wBHmYXvHZEILfVPaAOzKgDLg?e=6dUS8C
+  framework: PyTorch
+  tldr: Cascades multiple FC4-style subnetworks to progressively refine the illuminant estimate.
+- name: CSRNet
+  title: Conditional Sequential Modulation for Efficient Global Image Retouching
+  venue: ECCV
+  year: 2020
+  paper: https://arxiv.org/abs/2009.10390
+  code: https://github.com/hejingwenhejingwen/CSRNet
+  status: weights-in-repo
+  weights:
+  - label: experiments/pretrain_models/csrnet.pth (in repo)
+    url: https://github.com/hejingwenhejingwen/CSRNet/tree/master/experiments/pretrain_models
+  framework: PyTorch
+  tldr: Very lightweight (about 37K parameters) global retouching network built from a per-pixel MLP with conditional modulation.
+- name: CURL
+  title: 'CURL: Neural Curve Layers for Global Image Enhancement'
+  venue: ICPR
+  year: 2020
+  paper: https://arxiv.org/abs/1911.13175
+  code: https://github.com/sjmoran/CURL
+  status: weights-in-repo
+  weights:
+  - label: pretrained_models/adobe_dpe (in repo)
+    url: https://github.com/sjmoran/CURL
+  framework: PyTorch
+  tldr: Learns global adjustment curves in multiple color spaces, including RAW→RGB experiments.
+- name: Deep WB Editing
+  title: Deep White-Balance Editing
+  venue: CVPR
+  year: 2020
+  paper: https://arxiv.org/abs/2004.01354
+  code: https://github.com/mahmoudnafifi/Deep_White_Balance
+  status: weights-in-repo
+  weights:
+  - label: PyTorch/models/net*.pth (in repo)
+    url: https://github.com/mahmoudnafifi/Deep_White_Balance/tree/master/PyTorch/models
+  framework: PyTorch / MATLAB
+  tldr: Re-does white balance directly on sRGB images toward multiple targets (AWB, tungsten, cloudy, etc.), emulating camera re-rendering.
+- name: DeepLPF
+  title: 'DeepLPF: Deep Local Parametric Filters for Image Enhancement'
+  venue: CVPR
+  year: 2020
+  paper: https://arxiv.org/abs/2003.13985
+  code: https://github.com/sjmoran/DeepLPF
+  status: weights-in-repo
+  weights:
+  - label: pretrained_models/adobe_dpe (in repo)
+    url: https://github.com/sjmoran/DeepLPF
+  framework: PyTorch
+  tldr: Predicts three kinds of local parametric filters (graduated, elliptical, polynomial) for photo retouching.
+- name: Few-Shot CC (Multi-Domain)
+  title: Multi-Domain Learning for Accurate and Few-Shot Color Constancy
+  venue: CVPR
+  year: 2020
+  paper: https://openaccess.thecvf.com/content_CVPR_2020/html/Xiao_Multi-Domain_Learning_for_Accurate_and_Few-Shot_Color_Constancy_CVPR_2020_paper.html
+  status: no-code
+  tldr: Multi-camera, multi-domain learning for color constancy, so a new camera needs only a few samples.
+- name: Interactive WB
+  title: Interactive White Balancing for Camera-Rendered Images
+  venue: CIC
+  year: 2020
+  paper: https://arxiv.org/abs/2009.12632
+  code: https://github.com/mahmoudnafifi/Interactive_WB_correction
+  status: weights-in-repo
+  weights:
+  - label: models/model*.mat (in repo)
+    url: https://github.com/mahmoudnafifi/Interactive_WB_correction/tree/HEAD/models
+  framework: MATLAB
+  tldr: Interactive white balancing on rendered sRGB images, letting users click multiple reference points.
+  note: Non-deep-learning method; models are MATLAB .mat files.
+- name: Metric-Learning Illuminant
+  title: End-to-End Illuminant Estimation Based on Deep Metric Learning
+  venue: CVPR
+  year: 2020
+  paper: https://openaccess.thecvf.com/content_CVPR_2020/html/Xu_End-to-End_Illuminant_Estimation_Based_on_Deep_Metric_Learning_CVPR_2020_paper.html
+  status: no-code
+  tldr: End-to-end illuminant estimation within a deep metric learning framework.
+- name: Multi-Hypothesis CC
+  title: A Multi-Hypothesis Approach to Color Constancy
+  venue: CVPR
+  year: 2020
+  paper: https://arxiv.org/abs/2002.12896
+  code: https://github.com/huawei-noah/multi_hyp_cc
+  status: code
+  framework: PyTorch
+  tldr: Scores each candidate illuminant and combines them by weighting, which naturally supports cross-camera calibration.
+- name: Temporal CC Benchmark
+  title: A Benchmark for Temporal Color Constancy
+  venue: arXiv
+  year: 2020
+  paper: https://arxiv.org/abs/2003.03763
+  status: no-code
+  tldr: Benchmark dataset for temporal color constancy.
+- name: Convolutional Mean
+  title: 'Convolutional Mean: A Simple Convolutional Neural Network for Illuminant Estimation'
+  venue: BMVC
+  year: 2019
+  paper: https://arxiv.org/abs/2001.04911
+  status: no-code
+  tldr: A minimal convolutional neural network for illuminant estimation.
+- name: Patch-wise Bright Pixels CC
+  title: Fast Color Constancy with Patch-wise Bright Pixels
+  venue: arXiv
+  year: 2019
+  paper: https://arxiv.org/abs/1911.07177
+  status: no-code
+  tldr: Fast illuminant estimation based on local bright-pixel statistics.
+- name: Quasi-Unsupervised CC
+  title: Quasi-Unsupervised Color Constancy
+  venue: CVPR
+  year: 2019
+  paper: https://openaccess.thecvf.com/content_CVPR_2019/html/Bianco_Quasi-Unsupervised_Color_Constancy_CVPR_2019_paper.html
+  code: https://github.com/claudio-unipv/quasi-unsupervised-cc
+  status: code
+  tldr: Weakly supervised illuminant estimation trained on grayscale/color image pairs.
+- name: Separate Illuminants
+  title: Learning to Separate Multiple Illuminants in a Single Image
+  venue: CVPR
+  year: 2019
+  paper: https://arxiv.org/abs/1811.12481
+  status: no-code
+  tldr: Separates the multiple illuminant components within a single image for multi-illuminant white balance.
+- name: SIIE
+  title: Sensor-Independent Illumination Estimation for DNN Models
+  venue: BMVC
+  year: 2019
+  paper: https://arxiv.org/abs/1912.06888
+  code: https://github.com/mahmoudnafifi/SIIE
+  status: weights-in-repo
+  weights:
+  - label: models/*.mat (in repo, leave-one-dataset-out training)
+    url: https://github.com/mahmoudnafifi/SIIE/tree/master/models
+  framework: MATLAB
+  tldr: Maps RAW to a sensor-independent space before estimating the illuminant, enabling generalization across cameras.
+  note: For the PyTorch version, see the Colab in the README.
+- name: WB Augmenter
+  title: What Else Can Fool Deep Learning? Addressing Color Constancy Errors on Deep Neural Network Performance
+  venue: ICCV
+  year: 2019
+  paper: https://arxiv.org/abs/1912.06960
+  code: https://github.com/mahmoudnafifi/WB_color_augmenter
+  status: code
+  tldr: Shows that white-balance errors significantly hurt classification and segmentation, and proposes a data augmentation that simulates incorrect white balance.
+  note: Augmentation tool (MATLAB / Python / PyTorch); no weights needed.
+- name: WB_sRGB
+  title: 'When Color Constancy Goes Wrong: Correcting Improperly White-Balanced Images'
+  venue: CVPR
+  year: 2019
+  paper: https://openaccess.thecvf.com/content_CVPR_2019/html/Afifi_When_Color_Constancy_Goes_Wrong_Correcting_Improperly_White-Balanced_Images_CVPR_2019_paper.html
+  code: https://github.com/mahmoudnafifi/WB_sRGB
+  status: weights-in-repo
+  weights:
+  - label: WB_sRGB_Python/models/*.npy (in repo)
+    url: https://github.com/mahmoudnafifi/WB_sRGB/tree/master/WB_sRGB_Python/models
+  framework: MATLAB / Python
+  tldr: White-balance correction for already-rendered sRGB images via KNN-retrieved mappings; releases the Rendered WB dataset.
+- name: Exposure
+  title: 'Exposure: A White-Box Photo Post-Processing Framework'
+  venue: TOG
+  year: 2018
+  paper: https://arxiv.org/abs/1709.09602
+  code: https://github.com/yuanming-hu/exposure
+  status: weights
+  weights:
+  - label: exposure_models releases
+    url: https://github.com/yuanming-hu/exposure_models/releases
+  framework: TensorFlow
+  tldr: Combines reinforcement learning and a GAN to learn a sequence of interpretable retouching operations (exposure, white balance, curves, etc.).
+  note: Running evaluate.py as described in the README uses the pretrained models
+- name: Meta-Learning CC
+  title: Formulating Camera-Adaptive Color Constancy as a Few-shot Meta-Learning Problem
+  venue: arXiv
+  year: 2018
+  paper: https://arxiv.org/abs/1811.11788
+  status: no-code
+  tldr: Formulates cross-camera color constancy as a few-shot meta-learning problem.
+- name: Semantic WB
+  title: 'Semantic White Balance: Semantic Color Constancy Using Convolutional Neural Network'
+  venue: arXiv
+  year: 2018
+  paper: https://arxiv.org/abs/1802.00153
+  code: https://github.com/AchrafTahar/Semantic-Color-Constancy-Using-CNN
+  status: unofficial
+  framework: PyTorch
+  tldr: Feeds a semantic segmentation map together with the image into a CNN for illuminant estimation.
+  note: Third-party PyTorch reimplementation.
+- name: FC4
+  title: 'FC4: Fully Convolutional Color Constancy with Confidence-weighted Pooling'
+  venue: CVPR
+  year: 2017
+  paper: https://openaccess.thecvf.com/content_cvpr_2017/html/Hu_FC4_Fully_Convolutional_CVPR_2017_paper.html
+  code: https://github.com/yuanming-hu/fc4
+  status: weights
+  weights:
+  - label: ColorChecker pretrained (GitHub Release)
+    url: https://github.com/yuanming-hu/fc4/releases/download/pretrained/pretrained_colorchecker.zip
+  framework: TensorFlow
+  tldr: Estimates the illuminant with a fully convolutional network and confidence-weighted pooling.
+- name: FFCC
+  title: Fast Fourier Color Constancy
+  venue: CVPR
+  year: 2017
+  paper: https://arxiv.org/abs/1611.07596
+  code: https://github.com/google/ffcc
+  status: code
+  framework: MATLAB
+  tldr: Casts illuminant estimation as convolution on a log-chroma histogram and solves it in the frequency domain, making it very fast.
+  note: MATLAB training/tuning code.
+- name: HDRNet
+  title: Deep Bilateral Learning for Real-Time Image Enhancement
+  venue: SIGGRAPH (TOG)
+  year: 2017
+  paper: https://arxiv.org/abs/1707.02880
+  code: https://github.com/google/hdrnet
+  status: weights
+  weights:
+  - label: pretrained_models/download.py (script download)
+    url: https://github.com/google/hdrnet/tree/master/pretrained_models
+  framework: TensorFlow
+  tldr: Predicts local affine transforms in a bilateral grid to reproduce various tone operators in real time on phones; a classic approach for late-stage ISP tone.
+- name: Recurrent CC
+  title: Recurrent Color Constancy
+  venue: ICCV
+  year: 2017
+  paper: https://openaccess.thecvf.com/content_iccv_2017/html/Qian_Recurrent_Color_Constancy_ICCV_2017_paper.html
+  status: no-code
+  tldr: Uses a recurrent network to exploit temporal information in video for illuminant estimation.
+- name: Unsupervised CC
+  title: Unsupervised Learning for Color Constancy
+  venue: arXiv
+  year: 2017
+  paper: https://arxiv.org/abs/1712.00436
+  status: no-code
+  tldr: Color constancy learned without illuminant labels, released together with the Cube dataset.
+- name: Structured-Output CC
+  title: Deep Structured-Output Regression Learning for Computational Color Constancy
+  venue: ICPR
+  year: 2016
+  paper: https://arxiv.org/abs/1607.03856
+  status: no-code
+  tldr: Early deep method formulating illuminant estimation as structured-output regression.
+- name: CCC
+  title: Convolutional Color Constancy
+  venue: ICCV
+  year: 2015
+  paper: https://arxiv.org/abs/1507.00410
+  status: no-code
+  tldr: 'Predecessor of FFCC: formulates illuminant estimation as a convolutional discriminative problem on log-chroma histograms.'
+- name: Chroma from Luminance CC
+  title: Color Constancy by Learning to Predict Chromaticity from Luminance
+  venue: NeurIPS
+  year: 2015
+  paper: https://arxiv.org/abs/1506.02167
+  status: no-code
+  tldr: Estimates the illuminant by predicting chromaticity distributions from pixel luminance, using very few parameters.
+- name: CNN CC (Bianco)
+  title: Color Constancy Using CNNs
+  venue: CVPRW
+  year: 2015
+  paper: https://arxiv.org/abs/1504.04548
+  code: https://github.com/WhuEven/CNN_model_ColorConstancy
+  status: unofficial
+  tldr: One of the earliest works to use CNNs for illuminant estimation.
+  note: Third-party reimplementation.

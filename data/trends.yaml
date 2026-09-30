@@ -1,0 +1,32 @@
+# Research threads shown in the README and on the interactive page.
+- title: From CNNs to generative ISPs
+  text: >-
+    CNNs dominated until 2023. Transformers and Mamba then entered low-light enhancement and demosaicing, and from
+    2025 diffusion and flow matching are used both for the forward ISP and for RGB-to-RAW.
+  examples: PyNET → LiteISPNet → ISPDiffuser · LDM-ISP · RAW-Flow · SpiralDiff
+- title: Training data is the bottleneck
+  text: >-
+    Phone RAW and DSLR sRGB are never perfectly aligned and differ in color. Responses moved from alignment-aware
+    losses to synthetic data and cross-camera RAW mapping; the 2025-2026 challenges switched to fully unpaired
+    training.
+  examples: LiteISPNet · Unprocessing · Day-to-Night · Rawformer · NTIRE 2026 Unpaired ISP
+- title: Feeding camera metadata to the network
+  text: >-
+    EXIF, ISO, color matrices and capture time are encoded explicitly for cross-camera generalization and
+    controllable rendering.
+  examples: ParamISP · MetaISP · CCMNet · Time-Aware AWB · PMRID k-Sigma
+- title: 'Deployment: from challenges to low-bit networks'
+  text: >-
+    The MAI challenges time submissions on phone NPUs, which produced compact designs such as MicroISP and PyNET-V2.
+    Explicit quantization and binarization work concentrates on RAW video and demosaicing.
+  examples: MAI 2021/2022/2025 · MicroISP · BRVE · BinRVR · BMTNet · RAWDet-7
+- title: ISPs that serve machines
+  text: >-
+    RAW detection datasets and methods grew quickly after 2023: jointly trained ISPs, reinforcement-learned ISP
+    sequences, and adapters that consume RAW directly.
+  examples: Dirty Pixels · AdaptiveISP · RAW-Adapter · TA-ISP · POS-ISP · RAWild
+- title: Controllable and modular again
+  text: >-
+    After black-box end-to-end models, work is splitting the ISP back into interpretable, replaceable modules, with
+    attention to user editing and style control.
+  examples: Modular Neural ISP · CtrlISP · Edit-aware RAW · DualDn · NILUT

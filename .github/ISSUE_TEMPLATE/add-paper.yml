@@ -1,0 +1,56 @@
+name: Add a paper
+description: Suggest a paper, code release or pretrained weights that the list is missing.
+title: '[Paper] '
+labels: [new-paper]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Paper title
+    validations:
+      required: true
+  - type: input
+    id: paper
+    attributes:
+      label: Paper link
+      description: CVF / ECVA / publisher page, or the arXiv abstract page.
+    validations:
+      required: true
+  - type: input
+    id: venue
+    attributes:
+      label: Venue and year
+      placeholder: CVPR 2026
+  - type: dropdown
+    id: section
+    attributes:
+      label: Section
+      options:
+        - End-to-end RAW-to-sRGB
+        - Mobile & lightweight ISP
+        - RAW denoising & noise modeling
+        - Low-light RAW enhancement
+        - Demosaicing, joint restoration & RAW super-resolution
+        - Burst & HDR
+        - RAW video
+        - White balance, color & tone
+        - Inverse ISP, RAW reconstruction & compression
+        - ISP for machine vision
+        - ISP parameter tuning
+        - Challenges & surveys
+        - Dataset / tool / learning resource
+    validations:
+      required: true
+  - type: input
+    id: code
+    attributes:
+      label: Official code
+  - type: textarea
+    id: weights
+    attributes:
+      label: Pretrained weights
+      description: Download links exactly as given in the README, with any extraction codes.
+  - type: textarea
+    id: tldr
+    attributes:
+      label: One-sentence summary (optional)

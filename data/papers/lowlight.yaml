@@ -1,0 +1,318 @@
+# lowlight: one entry per paper; see CONTRIBUTING.md for the schema
+- name: CtrlISP
+  title: 'CtrlISP: Rescuing Low-Light RAW Images via Controllable Neural ISP'
+  venue: CVPR 2026 (Findings)
+  year: 2026
+  paper: https://openaccess.thecvf.com/content/CVPR2026F/html/Zhang_CtrlISP_Rescuing_Low-Light_RAW_Images_via_Controllable_Neural_ISP_CVPRF_2026_paper.html
+  status: no-code
+  tldr: Controllable neural ISP that lets users adjust the brightness and style of low-light RAW.
+- name: MeanFlow RAW
+  title: 'When Extreme Darkness Meets Motion Blur: MeanFlow for Unified RAW Restoration'
+  venue: arXiv
+  year: 2026
+  paper: https://arxiv.org/abs/2608.01720
+  status: no-code
+  tldr: RAW restoration that handles extreme darkness and motion blur jointly.
+- name: NEC-Diff
+  title: 'NEC-Diff: Noise-Robust Event-RAW Complementary Diffusion for Seeing Motion in Extreme Darkness'
+  venue: CVPR
+  year: 2026
+  paper: https://arxiv.org/abs/2603.20005
+  code: https://github.com/jinghan-xu/NEC-Diff
+  status: code
+  tldr: Diffusion model that combines complementary event-camera and RAW data for motion in extremely dark scenes.
+  note: Dataset is being uploaded in batches; no weights yet
+- name: RawMetaDiff
+  title: 'RawMetaDiff: Unlocking Extreme Darkness from Dual-Exposure RAW with Meta-Guided Diffusion'
+  venue: CVPR
+  year: 2026
+  paper: https://openaccess.thecvf.com/content/CVPR2026/html/Liu_RawMetaDiff_Unlocking_Extreme_Darkness_from_Dual-Exposure_RAW_with_Meta-Guided_Diffusion_CVPR_2026_paper.html
+  status: no-code
+  tldr: Metadata-guided diffusion on dual-exposure RAW for extremely dark scenes.
+- name: DarkDiff
+  title: 'DarkDiff: Advancing Low-Light Raw Enhancement by Retasking Diffusion Models for Camera ISP'
+  venue: arXiv
+  year: 2025
+  paper: https://arxiv.org/abs/2505.23743
+  status: no-code
+  tldr: Repurposes a pretrained image diffusion model as a camera ISP for low-light RAW.
+- name: ERIENet
+  title: 'ERIENet: An Efficient RAW Image Enhancement Network under Low-Light Environment'
+  venue: ICVISP
+  year: 2025
+  paper: https://arxiv.org/abs/2512.15186
+  code: https://github.com/whiteknight-WJN/An-Efficient-RAW-Image-Enhancement-Network-under-Low-Light-Environment
+  status: code
+  framework: PyTorch
+  tldr: Efficient low-light RAW→sRGB enhancement network emphasizing low parameter count and fast inference (ICVISP 2025 Best Paper).
+  note: The repo has training/testing code; no weights found.
+- name: HiMA
+  title: Hierarchical Mixing Architecture for Low-light RAW Image Enhancement
+  venue: arXiv
+  year: 2025
+  paper: https://arxiv.org/abs/2510.15497
+  code: https://github.com/Cynicarlos/HiMA
+  status: weights
+  weights:
+  - label: pretrained (Google Drive)
+    url: https://drive.google.com/drive/folders/196hPm0aLqpgsxLryKqKpE0UKgvXE_0ap?usp=drive_link
+  - label: pretrained (Baidu, code 8fem)
+    url: https://pan.baidu.com/s/146zs6nfFdNcTmA3ytsd7vQ?pwd=8fem
+  framework: PyTorch
+  tldr: Low-light RAW enhancement network with hierarchical mixing of Transformer and Mamba (same authors as Retinex-RAWMamba).
+- name: ISP-driven LLIE Data
+  title: Towards Realistic Low-Light Image Enhancement via ISP Driven Data Modeling
+  venue: arXiv
+  year: 2025
+  paper: https://arxiv.org/abs/2504.12204
+  status: no-code
+  tldr: Models the ISP pipeline to synthesize more realistic low-light training data.
+- name: LDM-ISP
+  title: 'LDM-ISP: Enhancing Neural ISP for Low Light with Latent Diffusion Models'
+  venue: ICRA
+  year: 2025
+  paper: https://arxiv.org/abs/2312.01027
+  code: https://github.com/csqiangwen/LDM-ISP
+  status: weights
+  weights:
+  - label: pretrained_models (OneDrive/SharePoint)
+    url: https://hkustconnect-my.sharepoint.com/:f:/g/personal/qwenab_connect_ust_hk/EglycxTmf0RNqWc5C3uvRRcBGISUNq2rsOiOqx_fT23Scg?e=kb1BNY
+  framework: PyTorch
+  tldr: Introduces latent diffusion priors into a neural ISP to recover detail and color in extremely low-light RAW.
+  note: Authors state the released model is a retrained version that scores slightly higher than the paper
+- name: Reconstruction & Denoising in the Dark
+  title: 'Rethinking Reconstruction and Denoising in the Dark: New Perspective, General Architecture and Beyond'
+  venue: CVPR
+  year: 2025
+  paper: https://openaccess.thecvf.com/content/CVPR2025/html/Ma_Rethinking_Reconstruction_and_Denoising_in_the_Dark_New_Perspective_General_CVPR_2025_paper.html
+  status: no-code
+  tldr: Revisits low-light RAW reconstruction and denoising by unifying them within a general architecture.
+- name: Rectified-Flow LL RAW
+  title: Physics-Guided Rectified Flow for Low-light RAW Image Enhancement
+  venue: arXiv
+  year: 2025
+  paper: https://arxiv.org/abs/2509.08330
+  status: no-code
+  tldr: Low-light RAW enhancement using rectified flow guided by a physics-based noise model.
+- name: SIED
+  title: Learning to See in the Extremely Dark
+  venue: ICCV
+  year: 2025
+  paper: https://arxiv.org/abs/2506.21132
+  code: https://github.com/JianghaiSCU/SIED
+  status: weights
+  weights:
+  - label: pre-trained model (OneDrive)
+    url: https://1drv.ms/f/c/e379fe7c770e3033/Ekg7dQ-J7PxCuJ3_-FQ_uNsB0ZWvwL2HUK3dSFcogki0jA?e=XWToVn
+  - label: Mirror (Baidu, code m9zp)
+    url: https://pan.baidu.com/s/1m3pP50qopY8TRoGwt6wrjA
+  framework: PyTorch
+  tldr: Pushes low-light RAW enhancement to scenes darker than SID, releasing the SIED dataset and a corresponding enhancement method.
+- name: TS-Diff
+  title: 'TS-Diff: Two-Stage Diffusion Model for Low-Light RAW Image Enhancement'
+  venue: IJCNN
+  year: 2025
+  paper: https://arxiv.org/abs/2505.04281
+  code: https://github.com/CircccleK/TS-Diff
+  status: code
+  framework: PyTorch
+  tldr: 'Two-stage diffusion: pretrains on multiple cameras, then quickly fine-tunes on the target camera.'
+  note: The pretrained_models/ directory contains only placeholder files
+- name: Retinex-RAWMamba
+  title: 'Retinex-RAWMamba: Bridging Demosaicing and Denoising for Low-Light RAW Image Enhancement'
+  venue: IEEE TCSVT
+  year: 2024
+  paper: https://arxiv.org/abs/2409.07040
+  code: https://github.com/Cynicarlos/RetinexRawMamba
+  status: weights
+  weights:
+  - label: Sony (Google Drive)
+    url: https://drive.google.com/file/d/1eAgm5HHDH0CBUsl-czZ7Kdues3tAPy7W/view?usp=drive_link
+  - label: Fuji (Google Drive)
+    url: https://drive.google.com/file/d/1C9x-VcHdkFt-7MQONSkZAWtttu3Gtp12/view?usp=drive_link
+  - label: MCR (Google Drive)
+    url: https://drive.google.com/file/d/1OOuyC7PcODPrcNm1uXx2CZwIS8mchtj7/view?usp=drive_link
+  framework: PyTorch
+  tldr: Mamba architecture with Retinex decomposition that handles demosaicing and denoising together.
+  note: Each checkpoint also has a Baidu mirror
+- name: DiffuseRAW
+  title: 'DiffuseRAW: End-to-End Generative RAW Image Processing for Low-Light Images'
+  venue: arXiv
+  year: 2023
+  paper: https://arxiv.org/abs/2402.18575
+  status: no-code
+  tldr: Diffusion model that generates sRGB directly from low-light RAW.
+- name: DNF
+  title: 'DNF: Decouple and Feedback Network for Seeing in the Dark'
+  venue: CVPR
+  year: 2023
+  paper: https://openaccess.thecvf.com/content/CVPR2023/html/Jin_DNF_Decouple_and_Feedback_Network_for_Seeing_in_the_Dark_CVPR_2023_paper.html
+  code: https://github.com/Srameo/DNF
+  status: weights
+  weights:
+  - label: SID Sony (Google Drive)
+    url: https://drive.google.com/file/d/1FHreF_UHFutkiQ0LMdWjX2fahznka0Cb/view?usp=share_link
+  - label: SID Fuji (Google Drive)
+    url: https://drive.google.com/file/d/1WfwZLBbj0EUf_QTYS8Qq5Rzk2iV8QKQ7/view?usp=share_link
+  - label: MCR (Google Drive)
+    url: https://drive.google.com/file/d/1kFYnqJTYfYkRWcojGxgV9DpVup4uFFBR/view?usp=share_link
+  - label: SID Sony (Baidu, code eoiz)
+    url: https://pan.baidu.com/s/1-r29zUvCS-Wa2wEYovX89g?pwd=eoiz
+  framework: PyTorch
+  tldr: Decouples RAW-domain denoising from sRGB-domain color restoration, then links the two stages with feedback connections.
+- name: ExposureDiffusion
+  title: 'ExposureDiffusion: Learning to Expose for Low-light Image Enhancement'
+  venue: ICCV
+  year: 2023
+  paper: https://arxiv.org/abs/2307.07710
+  code: https://github.com/wyf0912/ExposureDiffusion
+  status: weights
+  weights:
+  - label: SID_Pg / SID_PGru / SID_real etc. (Google Drive)
+    url: https://drive.google.com/drive/folders/1qdxZBg-GsYxHaDj3Zd_NikYiweqDOFzo?usp=drive_link
+  framework: PyTorch
+  tldr: Embeds the physical exposure process into a diffusion model to progressively “expose” low-light RAW to normal light.
+  note: Same author as R2LCM
+- name: FDA Low-Light
+  title: Learning to See Low-Light Images via Feature Domain Adaptation
+  venue: arXiv
+  year: 2023
+  paper: https://arxiv.org/abs/2312.06723
+  status: no-code
+  tldr: Single-stage low-light RAW→sRGB network that decouples denoising and color mapping via feature domain adaptation, avoiding the computation of two-stage networks.
+- name: MCR
+  title: Abandoning the Bayer-Filter to See in the Dark
+  venue: CVPR
+  year: 2022
+  paper: https://openaccess.thecvf.com/content/CVPR2022/html/Dong_Abandoning_the_Bayer-Filter_To_See_in_the_Dark_CVPR_2022_paper.html
+  code: https://github.com/TCL-AILab/Abandon_Bayer-Filter_See_in_the_Dark
+  status: weights
+  weights:
+  - label: MCR_pretrained_model (Google Drive)
+    url: https://drive.google.com/file/d/1GDQxKobmIxw1hn9EToghcBNmKcnT_eJo/view?usp=sharing
+  - label: SID_pretrained_model (Google Drive)
+    url: https://drive.google.com/file/d/1m4Os_EpOQpBbaFXcHbEQA048prMrE8Rl/view?usp=sharing
+  framework: PyTorch
+  tldr: Paired data (MCR) from a Bayer-filter-free monochrome sensor and a color sensor; the image is decoded first and then colorized.
+  note: MCR dataset also available via Baidu (code 22cv)
+- name: Progressive LL RAW
+  title: Progressive Joint Low-light Enhancement and Noise Removal for Raw Images
+  venue: IEEE TIP
+  year: 2022
+  paper: https://arxiv.org/abs/2106.14844
+  status: no-code
+  tldr: Progressive joint low-light enhancement and noise removal for RAW images.
+- name: RAW LLE (TIP)
+  title: Towards Low Light Enhancement with RAW Images
+  venue: IEEE TIP
+  year: 2022
+  paper: https://arxiv.org/abs/2112.14022
+  status: no-code
+  tldr: Systematically compares RAW and sRGB inputs for low-light enhancement and proposes a RAW-domain method.
+- name: Burst Dark Enhancement
+  title: Burst Photography for Learning to Enhance Extremely Dark Images
+  venue: IEEE TIP
+  year: 2021
+  paper: https://arxiv.org/abs/2006.09845
+  status: no-code
+  tldr: Coarse-to-fine enhancement network for bursts of extremely dark RAW frames.
+- name: Few-Shot LL RAW
+  title: Few-Shot Domain Adaptation for Low Light RAW Image Enhancement
+  venue: BMVC
+  year: 2021
+  paper: https://arxiv.org/abs/2303.15528
+  status: no-code
+  tldr: Low-light RAW enhancement with few-shot cross-camera domain adaptation (BMVC Best Student Paper nominee).
+- name: RED
+  title: Restoring Extremely Dark Images in Real Time
+  venue: CVPR
+  year: 2021
+  paper: https://openaccess.thecvf.com/content/CVPR2021/html/Lamba_Restoring_Extremely_Dark_Images_in_Real_Time_CVPR_2021_paper.html
+  code: https://github.com/MohitLamba94/Restoring-Extremely-Dark-Images-In-Real-Time
+  status: weights-in-repo
+  weights:
+  - label: demo_imgs/weights (in repo, loaded directly by demo.py)
+    url: https://github.com/MohitLamba94/Restoring-Extremely-Dark-Images-In-Real-Time/tree/main/demo_imgs
+  framework: PyTorch
+  tldr: Lightweight low-light RAW restoration network that does most computation at very low resolution; about 1.8 s per 8MP image on CPU, about 0.78M parameters.
+  note: The repo also includes comparison training scripts for SID / SGN / DID
+- name: Adaptive Low-Light RAW
+  title: Learning an Adaptive Model for Extreme Low-light Raw Image Processing
+  venue: IET Image Processing
+  year: 2020
+  paper: https://arxiv.org/abs/2004.10447
+  status: no-code
+  tldr: Extreme low-light RAW processing model that adaptively estimates exposure.
+- name: EEMEFN
+  title: 'EEMEFN: Low-Light Image Enhancement via Edge-Enhanced Multi-Exposure Fusion Network'
+  venue: AAAI
+  year: 2020
+  paper: https://github.com/MinfengZhu/EEMEFN
+  code: https://github.com/MinfengZhu/EEMEFN
+  status: weights
+  weights:
+  - label: Sony / Fuji models (MEGA)
+    url: https://mega.nz/file/uBUhDCaS#sl_3X-ceBsConxcytAH-FUmBfbaO2Zh6e4X3GIVf24w
+  framework: PyTorch
+  tldr: Generates multiple exposures from a single extremely dark RAW, fuses them, and refines details with an edge branch (SID data).
+  note: Published at AAAI 2020 (no arXiv version)
+- name: LLPackNet
+  title: Towards Fast and Light-Weight Restoration of Dark Images
+  venue: BMVC
+  year: 2020
+  paper: https://www.bmvc2020-conference.com/assets/papers/0145.pdf
+  code: https://github.com/MohitLamba94/LLPackNet
+  status: code
+  framework: PyTorch
+  tldr: Pack/unpack operations let the network work at very low resolution and self-estimate the amplification factor, running much faster than SID.
+- name: Short/Long Raw Pairs
+  title: Low-light Image Restoration with Short- and Long-exposure Raw Pairs
+  venue: arXiv
+  year: 2020
+  paper: https://arxiv.org/abs/2007.00199
+  status: no-code
+  tldr: Restores low-light images using both a short-exposure (noisy) and a long-exposure (blurry) RAW frame.
+- name: Low-Light Camera Pipeline
+  title: Learning Digital Camera Pipeline for Extreme Low-Light Imaging
+  venue: arXiv
+  year: 2019
+  paper: https://arxiv.org/abs/1904.05939
+  status: no-code
+  tldr: Learns the full digital camera pipeline for extreme low-light scenes.
+- name: Moving Objects in the Dark
+  title: Learning to See Moving Objects in the Dark
+  venue: ICCV
+  year: 2019
+  paper: https://openaccess.thecvf.com/content_ICCV_2019/html/Jiang_Learning_to_See_Moving_Objects_in_the_Dark_ICCV_2019_paper.html
+  code: https://github.com/MichaelHYJiang/Learning-to-See-Moving-Objects-in-the-Dark
+  status: weights
+  weights:
+  - label: python download_model.py (script download)
+    url: https://github.com/MichaelHYJiang/Learning-to-See-Moving-Objects-in-the-Dark
+  framework: TensorFlow
+  tldr: Captures paired low-light / normal-light RAW videos with a beam-splitter coaxial camera to train low-light RAW video enhancement.
+- name: Seeing Motion in the Dark
+  title: Seeing Motion in the Dark
+  venue: ICCV
+  year: 2019
+  paper: https://openaccess.thecvf.com/content_ICCV_2019/html/Chen_Seeing_Motion_in_the_Dark_ICCV_2019_paper.html
+  code: https://github.com/cchen156/Seeing-Motion-in-the-Dark
+  status: weights
+  weights:
+  - label: pre-trained model (Google Drive)
+    url: https://drive.google.com/drive/folders/1OO97dDJp9GlqijGfcvKpas2PZB0q9o8n?usp=sharing
+  framework: TensorFlow
+  tldr: Extends SID to low-light RAW video (DRV dataset), training on static videos and suppressing temporal flicker.
+- name: SID
+  title: Learning to See in the Dark
+  venue: CVPR
+  year: 2018
+  paper: https://arxiv.org/abs/1805.01934
+  code: https://github.com/cchen156/Learning-to-See-in-the-Dark
+  status: weights
+  weights:
+  - label: python download_models.py (script download)
+    url: https://github.com/cchen156/Learning-to-See-in-the-Dark#testing
+  framework: TensorFlow
+  tldr: U-Net mapping short-exposure extremely dark RAW to long-exposure sRGB; releases the SID (Sony/Fuji) dataset and started low-light RAW research.
+  note: In 2025-09 the authors removed the dataset download script due to storage costs, so data must be downloaded manually; models are still fetched via script

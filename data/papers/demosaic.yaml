@@ -1,0 +1,503 @@
+# demosaic: one entry per paper; see CONTRIBUTING.md for the schema
+- name: JD3Net
+  title: Efficient Deep Demosaicing with Spatially Downsampled Isotropic Networks
+  venue: WACVW
+  year: 2026
+  paper: https://arxiv.org/abs/2601.00703
+  code: https://github.com/cory-fan/jd3net
+  status: code
+  framework: PyTorch
+  tldr: Spatially downsamples first and then applies an isotropic network to reduce the compute cost of demosaicing.
+- name: Pixel-bin Unified Demosaic
+  title: An Extensible and Lightweight Unified Architecture for Demosaicing Pixel-bin Image Sensors
+  venue: arXiv
+  year: 2026
+  paper: https://arxiv.org/abs/2606.13136
+  status: no-code
+  tldr: A single lightweight network that handles demosaicing for pixel-bin sensors such as Quad and Nona.
+- name: R3 Bayer Deraining
+  title: 'R3: Reconstruction, Raw, and Rain: Deraining Directly in the Bayer Domain'
+  venue: WACV
+  year: 2026
+  paper: https://arxiv.org/abs/2509.24022
+  status: no-code
+  tldr: Performs deraining and reconstruction directly in the Bayer domain.
+- name: SegDem
+  title: 'SegDem: Segmentation helps Demosaicing'
+  venue: arXiv
+  year: 2026
+  paper: https://arxiv.org/abs/2608.07916
+  status: no-code
+  tldr: Brings segmentation information into demosaicing to aid reconstruction of edge and texture regions.
+- name: Smartphone RAW Degradation
+  title: RAW-Domain Degradation Models for Realistic Smartphone Super-Resolution
+  venue: CVPR
+  year: 2026
+  paper: https://openaccess.thecvf.com/content/CVPR2026/html/Mosleh_RAW-Domain_Degradation_Models_for_Realistic_Smartphone_Super-Resolution_CVPR_2026_paper.html
+  status: no-code
+  tldr: Builds RAW-domain degradation models for smartphone super-resolution.
+- name: Structural Guidance JDD
+  title: Structural Guidance for Unified Joint Demosaicing and Denoising
+  venue: arXiv
+  year: 2026
+  paper: https://arxiv.org/abs/2608.09995
+  status: no-code
+  tldr: Unified joint demosaicing and denoising framework guided by structural priors.
+- name: ASRD
+  title: Learning Arbitrary-Scale RAW Image Downscaling with Wavelet-based Recurrent Reconstruction
+  venue: ACM MM
+  year: 2025
+  paper: https://arxiv.org/abs/2507.23219
+  code: https://github.com/RenYangSCU/ASRD
+  status: coming-soon
+  tldr: Arbitrary-scale RAW image downscaling that preserves RAW statistics; same group as ISPDiffuser.
+  note: '"Code is coming soon".'
+- name: BMTNet
+  title: Binarized Mamba-Transformer for Lightweight Quad Bayer HybridEVS Demosaicing
+  venue: CVPR
+  year: 2025
+  paper: https://arxiv.org/abs/2503.16134
+  code: https://github.com/Clausy9/BMTNet
+  status: weights
+  weights:
+  - label: pretrained models (Google Drive)
+    url: https://drive.google.com/file/d/1bn7Pxt05H2bJd3MFVB600_UXbkECq9pg/view?usp=sharing
+  framework: PyTorch
+  tldr: Binarized Mamba-Transformer for lightweight Quad Bayer demosaicing; directly relevant to low-bit deployment.
+- name: Camera-Specific RAW SR Sim
+  title: Camera-Specific Imaging Simulation for Raw Domain Image Super Resolution
+  venue: ACM MM
+  year: 2025
+  paper: https://scholar.google.com/scholar?q=%22Camera-Specific+Imaging+Simulation+for+Raw+Domain+Image+Super+Resolution%22
+  status: no-code
+  tldr: Simulates imaging according to camera-specific characteristics to generate training data for RAW-domain super-resolution.
+- name: DSDNet
+  title: 'DSDNet: Raw Domain Demoiréing via Dual Color-Space Synergy'
+  venue: ACM MM
+  year: 2025
+  paper: https://arxiv.org/abs/2504.15756
+  code: https://github.com/xxxxxxxxDSDNet/DSDNet-official
+  status: weights
+  weights:
+  - label: pre-train models (Google Drive)
+    url: https://drive.google.com/drive/folders/1hjJLFLX4pvBUxhPIvk6XCvCBLZNQIZ7N?usp=drive_link
+  - label: Mirror (Baidu, code ewnv)
+    url: https://pan.baidu.com/s/14_hywe6NE320qwFjwMJ31A
+  framework: PyTorch
+  tldr: RAW-domain demoiréing through the synergy of two color spaces.
+- name: FrENet
+  title: Efficient RAW Image Deblurring with Adaptive Frequency Modulation
+  venue: arXiv
+  year: 2025
+  paper: https://arxiv.org/abs/2505.24407
+  code: https://github.com/WenlongJiao/FrENet
+  status: code
+  framework: PyTorch
+  tldr: Efficient RAW image deblurring with adaptive frequency modulation.
+  note: The README asks for pretrained models to be placed in checkpoints but gives no download link
+- name: QB HybridEVS SSM
+  title: Lightweight Quad Bayer HybridEVS Demosaicing via State Space Augmented Cross-Attention
+  venue: arXiv
+  year: 2025
+  paper: https://arxiv.org/abs/2508.06058
+  status: no-code
+  tldr: State-space-model-augmented cross-attention for Quad Bayer HybridEVS (interleaved event pixels) demosaicing; a follow-up to BMTNet from the same group.
+- name: QRNet
+  title: Modeling Dual-Exposure Quad-Bayer Patterns for Joint Denoising and Deblurring
+  venue: IEEE TIP
+  year: 2025
+  paper: https://arxiv.org/abs/2412.07256
+  code: https://github.com/zhaoyuzhi/QRNet
+  status: weights
+  weights:
+  - label: QRNet pretrained models (Baidu, code l5nw)
+    url: https://pan.baidu.com/s/1H6aJr4uRnsrjm96T0XrSXQ?pwd=l5nw
+  framework: PyTorch
+  tldr: Joint denoising and deblurring for dual-exposure Quad-Bayer sensors, with the released D2 dataset.
+  note: D2-Dataset is about 43.5GB, Baidu code 0fbf.
+- name: Quad/Nona JDD
+  title: Examining Joint Demosaicing and Denoising for Single-, Quad-, and Nona-Bayer Patterns
+  venue: ICCP
+  year: 2025
+  paper: https://arxiv.org/abs/2504.07145
+  code: https://github.com/SamsungLabs/unified-demosaicing
+  status: weights-in-repo
+  weights:
+  - label: PyTorch/models/iso{400..3200}.pth (in repo)
+    url: https://github.com/SamsungLabs/unified-demosaicing/tree/main/PyTorch/models
+  framework: PyTorch
+  tldr: Systematically compares joint demosaicing and denoising under single-, quad-, and nona-Bayer patterns.
+- name: RAW Reflection Removal
+  title: Removing Reflections from RAW Photos
+  venue: CVPR
+  year: 2025
+  paper: https://openaccess.thecvf.com/content/CVPR2025/html/Kee_Removing_Reflections_from_RAW_Photos_CVPR_2025_paper.html
+  status: no-code
+  tldr: Exploits the linearity and high bit depth of RAW to remove reflections from glass.
+- name: RawNIND
+  title: Learning Joint Denoising, Demosaicing, and Compression from the Raw Natural Image Noise Dataset
+  venue: arXiv
+  year: 2025
+  paper: https://arxiv.org/abs/2501.08924
+  code: https://github.com/trougnouf/rawnind_jddc
+  status: weights
+  weights:
+  - label: pre-trained models (Google Drive)
+    url: https://drive.google.com/drive/folders/12Uc5sT4OWx02sviUS_boDk1zDSDRVorw?usp=sharing
+  framework: PyTorch
+  tldr: Releases the RawNIND dataset and jointly learns denoising, demosaicing, and compression.
+  note: Weights are dual-licensed under GPL3 and CC-BY-4.0.
+- name: RDDM
+  title: 'RDDM: Practicing RAW Domain Diffusion Model for Real-world Image Restoration'
+  venue: arXiv
+  year: 2025
+  paper: https://arxiv.org/abs/2508.19154
+  code: https://github.com/YanCHEN-fr/RDDM
+  status: coming-soon
+  tldr: Diffusion-based real-world image restoration performed directly on sensor RAW, in place of sRGB-domain diffusion.
+  note: The repo currently contains only a README and images
+- name: Train on RAW & HDR
+  title: Training Neural Networks on RAW and HDR Images for Restoration Tasks
+  venue: CVPRW (NTIRE)
+  year: 2025
+  paper: https://arxiv.org/abs/2312.03640
+  status: no-code
+  tldr: Discusses normalization and loss design for training restoration networks on linear RAW / HDR data.
+- name: BSRAW
+  title: 'BSRAW: Improving Blind RAW Image Super-Resolution'
+  venue: WACV
+  year: 2024
+  paper: https://arxiv.org/abs/2312.15487
+  code: https://github.com/mv-lab/AISP
+  status: code
+  tldr: Designs a RAW-domain degradation pipeline for blind RAW image super-resolution.
+  note: Code and degradation tools are in mv-lab/AISP (imresutils).
+- name: Combine DM & DN
+  title: How to Best Combine Demosaicing and Denoising?
+  venue: Inverse Probl. Imaging
+  year: 2024
+  paper: https://arxiv.org/abs/2408.06684
+  status: no-code
+  tldr: Systematically compares the ordering and combination strategies of demosaicing and denoising.
+- name: DemosaicFormer
+  title: 'DemosaicFormer: Coarse-to-Fine Demosaicing Network for HybridEVS Camera'
+  venue: CVPRW (MIPI)
+  year: 2024
+  paper: https://arxiv.org/abs/2406.07951
+  code: https://github.com/QUEAHREN/DemosaicFormer
+  status: weights
+  weights:
+  - label: model (Google Drive)
+    url: https://drive.google.com/file/d/1Fc9LA5KRoprYMlQ8gZmsddKHdDQW0Z8z/view?usp=drive_link
+  framework: PyTorch
+  tldr: Coarse-to-fine Transformer that won the MIPI 2024 HybridEVS demosaicing track.
+- name: DREUDC
+  title: Panel-Specific Degradation Representation for Raw Under-Display Camera Image Restoration
+  venue: ECCV
+  year: 2024
+  paper: https://www.ecva.net/papers/eccv_2024/papers_ECCV/html/6479_ECCV_2024_paper.php
+  code: https://github.com/OBAKSA/DREUDC
+  status: weights
+  weights:
+  - label: Dataset + pretrained models (Google Drive)
+    url: https://drive.google.com/drive/folders/1k4RQQJhNNKa3J_XC0lI2XGojL8xWCUA9?usp=sharing
+  framework: PyTorch
+  tldr: Learns panel-specific degradation representations to restore under-display camera RAW images, and releases accompanying data.
+- name: Efficient Blind RAW Restoration
+  title: Toward Efficient Deep Blind Raw Image Restoration
+  venue: ICIP
+  year: 2024
+  paper: https://arxiv.org/abs/2409.18204
+  code: https://github.com/mv-lab/AISP
+  status: code
+  tldr: Efficient baseline for blind RAW image restoration (denoising + deblurring).
+- name: RBSFormer
+  title: 'RBSFormer: Enhanced Transformer Network for Raw Image Super-Resolution'
+  venue: CVPRW (NTIRE)
+  year: 2024
+  paper: https://openaccess.thecvf.com/content/CVPR2024W/NTIRE/html/Jiang_RBSFormer_Enhanced_Transformer_Network_for_Raw_Image_Super-Resolution_CVPRW_2024_paper.html
+  status: no-code
+  tldr: A solution for the NTIRE 2024 RAW image super-resolution challenge.
+- name: RRID
+  title: Image Demoireing in RAW and sRGB Domains
+  venue: ECCV
+  year: 2024
+  paper: https://arxiv.org/abs/2312.09063
+  code: https://github.com/rebeccaeexu/RRID
+  status: weights
+  weights:
+  - label: pre-trained model (Dropbox)
+    url: https://www.dropbox.com/scl/fo/wxhxlj6y064fbx4lrotcd/APoEwRwRT82LnW8wzDqvW24?rlkey=ghf505sfpkr8y9z5psourzpk6&st=enbcm5va&dl=0
+  framework: PyTorch
+  tldr: Removes moiré from screen recaptures using both the RAW and sRGB domains.
+- name: Inheriting Bayer's Legacy
+  title: 'Inheriting Bayer''s Legacy: Joint Remosaicing and Denoising for Quad Bayer Image Sensor'
+  venue: arXiv
+  year: 2023
+  paper: https://arxiv.org/abs/2303.13571
+  status: no-code
+  tldr: Joint remosaicing and denoising for Quad Bayer sensors, outputting standard Bayer so existing ISPs can be reused.
+- name: JDD Double DIP
+  title: Joint Demosaicing and Denoising with Double Deep Image Priors
+  venue: arXiv
+  year: 2023
+  paper: https://arxiv.org/abs/2309.09426
+  status: no-code
+  tldr: Joint demosaicing and denoising without training data, using two Deep Image Priors.
+- name: JDD Two-stage
+  title: Joint Demosaicking and Denoising Benefits from a Two-stage Training Strategy
+  venue: J. Comput. Appl. Math.
+  year: 2023
+  paper: https://arxiv.org/abs/2009.06205
+  code: https://github.com/Yuguo-math/JDMDN-TwoStage
+  status: weights-in-repo
+  weights:
+  - label: Demosaic/{lightweight,normal}.pkl + Denoise/ (in repo)
+    url: https://github.com/Yuguo-math/JDMDN-TwoStage
+  framework: PyTorch
+  tldr: Two-stage training strategy that first learns demosaicing, then joint denoising.
+- name: Moiré-Free Demosaick
+  title: Toward Moiré-Free and Detail-Preserving Demosaicking
+  venue: arXiv
+  year: 2023
+  paper: https://arxiv.org/abs/2305.08585
+  status: no-code
+  tldr: Demosaicking network targeting moiré artifacts and detail loss in high-frequency regions.
+- name: RAW Rain Removal
+  title: End-to-end Rain Streak Removal with RAW Images
+  venue: arXiv
+  year: 2023
+  paper: https://arxiv.org/abs/2312.13304
+  status: no-code
+  tldr: End-to-end rain streak removal performed on RAW images.
+- name: SDAT
+  title: 'SDAT: Sub-Dataset Alternation Training for Improved Image Demosaicing'
+  venue: IEEE OJSP
+  year: 2023
+  paper: https://arxiv.org/abs/2303.15792
+  status: no-code
+  tldr: Alternates training across different sub-datasets to improve demosaicing generalization.
+- name: Unified Demosaicing (KD)
+  title: Efficient Unified Demosaicing for Bayer and Non-Bayer Patterned Image Sensors
+  venue: ICCV
+  year: 2023
+  paper: https://openaccess.thecvf.com/content/ICCV2023/html/Lee_Efficient_Unified_Demosaicing_for_Bayer_and_Non-Bayer_Patterned_Image_Sensors_ICCV_2023_paper.html
+  status: no-code
+  tldr: A single model that handles multiple CFA patterns, including Bayer, Quad, and Nona.
+- name: VD_raw
+  title: Recaptured Raw Screen Image and Video Demoiréing via Channel and Spatial Modulations
+  venue: NeurIPS
+  year: 2023
+  paper: https://arxiv.org/abs/2310.20332
+  code: https://github.com/tju-chengyijia/VD_raw
+  status: weights
+  weights:
+  - label: full models (Baidu, code f5g4)
+    url: https://pan.baidu.com/s/1ThF7LZ20RkjBUbb-w3Hwqw
+  - label: baseline checkpoint (in repo)
+    url: https://github.com/tju-chengyijia/VD_raw/blob/main/model_dir_cwb/nets/checkpoint_000040.tar
+  framework: PyTorch
+  tldr: Demoiréing of recaptured screen RAW images and videos via channel and spatial modulation.
+- name: CDLNet
+  title: 'CDLNet: Noise-Adaptive Convolutional Dictionary Learning Network for Blind Denoising and Demosaicing'
+  venue: IEEE OJSP
+  year: 2022
+  paper: https://arxiv.org/abs/2112.00913
+  code: https://github.com/nikopj/CDLNet-OJSP
+  status: weights-in-repo
+  weights:
+  - label: trained_nets/{CDLNet-s2030, JDD_CDLNet-s0120} (in repo)
+    url: https://github.com/nikopj/CDLNet-OJSP/tree/HEAD/trained_nets
+  framework: PyTorch
+  tldr: Unrolled convolutional dictionary learning network with few parameters, interpretability and noise adaptivity, handling both blind denoising and demosaicing.
+- name: RSTCANet
+  title: Residual Swin Transformer Channel Attention Network for Image Demosaicing
+  venue: EUVIP
+  year: 2022
+  paper: https://arxiv.org/abs/2204.07098
+  code: https://github.com/xingwz/RSTCANet
+  status: weights-in-repo
+  weights:
+  - label: dm_model_zoo/RSTCANet_{B,S,L}.pth (in repo)
+    url: https://github.com/xingwz/RSTCANet/tree/main/dm_model_zoo
+  framework: PyTorch
+  tldr: Demosaicing network combining Swin Transformer with channel attention, provided in three sizes (B/S/L).
+- name: TENet
+  title: Rethinking Learning-based Demosaicing, Denoising, and Super-Resolution Pipeline
+  venue: ICCP
+  year: 2022
+  paper: https://arxiv.org/abs/1905.02538
+  code: https://github.com/guochengqian/TENet
+  status: code
+  framework: PyTorch
+  tldr: Studies the optimal order of DN/DM/SR (denoise, then super-resolve, then demosaic) and releases the PixelShift200 dataset.
+  note: The README links to the PixelShift200 and DIV2K data.
+- name: BJDD / PIPNet
+  title: 'Beyond Joint Demosaicking and Denoising: An Image Processing Pipeline for a Pixel-bin Image Sensor'
+  venue: CVPRW (NTIRE)
+  year: 2021
+  paper: https://arxiv.org/abs/2104.09398
+  code: https://github.com/sharif-apu/BJDD_CVPR21
+  status: weights
+  weights:
+  - label: Quad-Bayer weights (Google Drive)
+    url: https://drive.google.com/drive/folders/1_ziIMjK9vGg-P_7Wxit96bnfHiO4_wQw?usp=sharinge
+  - label: Bayer weights (Google Drive)
+    url: https://drive.google.com/drive/folders/125hFTHR5qpJy4AKhtjxFhZJ5aPxQI4TE?usp=sharing
+  framework: PyTorch
+  tldr: Joint demosaicking and denoising pipeline for Quad-Bayer (pixel-bin) image sensors.
+- name: ISP-Agnostic UDC
+  title: ISP-Agnostic Image Reconstruction for Under-Display Cameras
+  venue: arXiv
+  year: 2021
+  paper: https://arxiv.org/abs/2111.01511
+  status: no-code
+  tldr: Restores under-display camera images in the RAW domain, decoupling restoration from the downstream ISP.
+- name: JDD in the Wild
+  title: 'Joint Demosaicking and Denoising in the Wild: The Case of Training Under Ground Truth Uncertainty'
+  venue: AAAI
+  year: 2021
+  paper: https://arxiv.org/abs/2101.04442
+  status: no-code
+  tldr: Studies how to train joint demosaicking and denoising when the ground truth itself contains errors.
+- name: JDNDMSR
+  title: End-to-End Learning for Joint Image Demosaicing, Denoising and Super-Resolution
+  venue: CVPR
+  year: 2021
+  paper: https://openaccess.thecvf.com/content/CVPR2021/html/Xing_End-to-End_Learning_for_Joint_Image_Demosaicing_Denoising_and_Super-Resolution_CVPR_2021_paper.html
+  code: https://github.com/xingwz/End-to-End-JDNDMSR
+  status: weights-in-repo
+  weights:
+  - label: models/jdndmsr+_model.h5 etc. (in repo)
+    url: https://github.com/xingwz/End-to-End-JDNDMSR/tree/main/models
+  framework: Keras
+  tldr: A single network that performs demosaicing, denoising, and super-resolution jointly.
+- name: Joint DM + HDR
+  title: Deep Joint Demosaicing and High Dynamic Range Imaging within a Single Shot
+  venue: arXiv
+  year: 2021
+  paper: https://arxiv.org/abs/2111.07281
+  status: no-code
+  tldr: Performs demosaicing and HDR reconstruction simultaneously from a single spatially varying exposure RAW frame.
+- name: Jointly Deblur-Demosaick-Denoise
+  title: Learning to Jointly Deblur, Demosaick and Denoise Raw Images
+  venue: arXiv
+  year: 2021
+  paper: https://arxiv.org/abs/2104.06459
+  status: no-code
+  tldr: Handles blur, mosaicking and noise simultaneously on RAW images.
+- name: SAGAN (Nona-Bayer)
+  title: 'SAGAN: Adversarial Spatial-asymmetric Attention for Noisy Nona-Bayer Reconstruction'
+  venue: BMVC
+  year: 2021
+  paper: https://arxiv.org/abs/2110.08619
+  code: https://github.com/sharif-apu/SAGAN_BMVC21
+  status: code
+  framework: PyTorch
+  tldr: Joint denoising and reconstruction for noisy Nona-Bayer (3×3 same-color pixel) sensors.
+- name: DM-or-DN First
+  title: 'A Review of an Old Dilemma: Demosaicking First, or Denoising First?'
+  venue: CVPRW (NTIRE)
+  year: 2020
+  paper: https://openaccess.thecvf.com/content_CVPRW_2020/html/w31/Jin_A_Review_of_an_Old_Dilemma_Demosaicking_First_or_Denoising_CVPRW_2020_paper.html
+  status: no-code
+  tldr: Systematically compares demosaicking first versus denoising first and gives experiment-based recommendations on the order.
+- name: JDSR
+  title: 'Joint Demosaicing and Super-Resolution (JDSR): Network Design and Perceptual Optimization'
+  venue: IEEE TCI
+  year: 2020
+  paper: https://arxiv.org/abs/1911.03558
+  status: no-code
+  tldr: Network design for joint demosaicing and super-resolution, optimized with perceptual losses.
+- name: Raw Image Deblurring
+  title: Raw Image Deblurring
+  venue: IEEE TMM
+  year: 2020
+  paper: https://arxiv.org/abs/2012.04264
+  status: no-code
+  tldr: First RAW-domain deblurring dataset and method (Deblur-RAW).
+- name: SGNet (JDD)
+  title: Joint Demosaicing and Denoising with Self Guidance
+  venue: CVPR
+  year: 2020
+  paper: https://openaccess.thecvf.com/content_CVPR_2020/html/Liu_Joint_Demosaicing_and_Denoising_With_Self_Guidance_CVPR_2020_paper.html
+  code: https://github.com/laulampaul/sgnet
+  status: coming-soon
+  tldr: Recovers the most densely sampled green channel first, then uses it as guidance to recover the full image.
+  note: The repo README contains only a TODO; code not released
+- name: Deep Demosaicing for Edge
+  title: Deep Demosaicing for Edge Implementation
+  venue: ICIAR
+  year: 2019
+  paper: https://arxiv.org/abs/1904.00775
+  status: no-code
+  tldr: Lightweight demosaicing network for edge devices, studying the trade-off between accuracy and computation.
+- name: JDD Burst Fine-tune
+  title: Joint Demosaicking and Denoising by Fine-Tuning of Bursts of Raw Images
+  venue: ICCV
+  year: 2019
+  paper: https://arxiv.org/abs/1905.05092
+  status: no-code
+  tldr: 'Requires no ground truth: self-supervised fine-tuning of a joint demosaicking and denoising network on multiple RAW frames of the same burst.'
+- name: Real Scene SR with Raw
+  title: Towards Real Scene Super-Resolution with Raw Images
+  venue: CVPR
+  year: 2019
+  paper: https://arxiv.org/abs/1905.12156
+  code: https://github.com/xuxy09/RawSR
+  status: weights
+  weights:
+  - label: ×2 model (Google Drive)
+    url: https://drive.google.com/drive/folders/1l91w51ou-p_2cVVbUCWDLGRUv_twnWcd?usp=sharing
+  - label: ×4 model (Google Drive)
+    url: https://drive.google.com/drive/folders/1ZCp22cjZrKrQEoLC70YGnf8JbOGyw53P?usp=sharing
+  framework: TensorFlow
+  tldr: 'Simulates camera imaging to generate RAW training pairs and uses RAW for real-scene super-resolution (extended version: Exploiting Raw Images for Real-Scene SR, arXiv 2102.01579).'
+  note: The repo contains code for the TPAMI 2021 extended version
+- name: Zoom to Learn
+  title: Zoom to Learn, Learn to Zoom
+  venue: CVPR
+  year: 2019
+  paper: https://arxiv.org/abs/1905.05169
+  code: https://github.com/ceciliavision/zoom-learn-zoom
+  status: code
+  framework: TensorFlow
+  tldr: Captures the SR-RAW dataset with optical zoom, performs real-world super-resolution directly on RAW, and proposes the CoBi loss to handle misalignment.
+  note: The README provides the SR-RAW dataset (Google Drive / Baidu, code wi02) and quick inference instructions.
+- name: DMCNN
+  title: Learning Deep Convolutional Networks for Demosaicing
+  venue: arXiv
+  year: 2018
+  paper: https://arxiv.org/abs/1802.03769
+  status: no-code
+  tldr: Early CNN demosaicing baselines DMCNN / DMCNN-VD.
+- name: Kokkinos Demosaick
+  title: Deep Image Demosaicking using a Cascade of Convolutional Residual Denoising Networks
+  venue: ECCV
+  year: 2018
+  paper: https://arxiv.org/abs/1803.05215
+  status: no-code
+  tldr: Formulates demosaicking as iterative optimization, using a residual denoising network as the prior at each step.
+- name: Residual JDSR
+  title: Deep Residual Network for Joint Demosaicing and Super-Resolution
+  venue: CIC
+  year: 2018
+  paper: https://arxiv.org/abs/1802.06573
+  code: https://github.com/Linwei-Chen/Deep-Residual-Network-for-JointDemosaicing-and-Super-Resolution
+  status: unofficial
+  weights:
+  - label: Third-party reimplementation weights (Baidu)
+    url: https://pan.baidu.com/s/1QtwMmSbTNTfosQ3eEDW2Pg
+  framework: PyTorch
+  tldr: Early residual network that super-resolves Bayer RAW directly into high-resolution RGB.
+  note: Third-party PyTorch reimplementation.
+- name: DemosaicNet
+  title: Deep Joint Demosaicking and Denoising
+  venue: SIGGRAPH Asia (TOG)
+  year: 2016
+  paper: https://groups.csail.mit.edu/graphics/demosaicnet/
+  code: https://github.com/mgharbi/demosaicnet
+  status: code
+  framework: PyTorch
+  tldr: Trains a joint demosaicking and denoising network by mining hard examples at scale; supports both Bayer and X-Trans.
+  note: The PyTorch version does not implement the noise-aware model; see the older Caffe repo mgharbi/demosaicnet_caffe.

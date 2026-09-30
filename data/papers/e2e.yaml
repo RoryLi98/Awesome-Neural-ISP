@@ -1,0 +1,419 @@
+# e2e: one entry per paper; see CONTRIBUTING.md for the schema
+- name: DRIFT
+  title: 'DRIFT: Deep Restoration, ISP Fusion, and Tone-mapping'
+  venue: CVPRW (NTIRE)
+  year: 2026
+  paper: https://openaccess.thecvf.com/content/CVPR2026W/NTIRE/html/Majee_DRIFT_Deep_Restoration_ISP_Fusion_and_Tone-mapping_CVPRW_2026_paper.html
+  status: no-code
+  tldr: Combines restoration, ISP fusion and tone mapping into a single unified framework.
+- name: NPR Color Bias
+  title: 'Beyond Pixel Fidelity: Minimizing Perceptual Distortion and Color Bias in Night Photography Rendering'
+  venue: ICIP
+  year: 2026
+  paper: https://arxiv.org/abs/2604.28136
+  status: no-code
+  tldr: Night photography rendering that jointly constrains perceptual distortion and color bias.
+- name: RAW vs RGB Restoration Benchmark
+  title: Benchmarking RAW and RGB Restoration in Image Signal Processors
+  venue: BMVC
+  year: 2026
+  paper: https://arxiv.org/abs/2609.02831
+  code: https://github.com/mv-lab/AISP
+  status: code
+  tldr: Systematically compares restoration in the RAW versus RGB domain, giving empirical evidence on where to place restoration modules in an ISP.
+  note: Code merged into the mv-lab/AISP repo
+- name: Reference-free ISP Evaluation
+  title: A Reference-Free Framework for Evaluating Single-Frame ISP Pipelines
+  venue: arXiv
+  year: 2026
+  paper: https://arxiv.org/abs/2607.23321
+  status: no-code
+  tldr: A framework for evaluating the output quality of single-frame ISP pipelines without reference images.
+- name: RPBA-Net
+  title: 'RPBA-Net: An Interpretable Residual Pyramid Bilateral Affine Network for RAW-Domain ISP Enhancement'
+  venue: arXiv
+  year: 2026
+  paper: https://arxiv.org/abs/2605.03626
+  status: no-code
+  tldr: Interpretable RAW-domain ISP enhancement built on a residual pyramid and bilateral affine grids.
+- name: Small-Pixel Neural ISP
+  title: The Need for Neural ISP in the Small-Pixel Era
+  venue: arXiv
+  year: 2026
+  paper: https://arxiv.org/abs/2606.07675
+  status: no-code
+  tldr: 'Position paper: as pixels shrink and optics approach their limits, neural ISPs are needed to compensate through restoration.'
+- name: VAR-ISP
+  title: Visual Autoregressive Priors for RAW-to-sRGB Image Signal Processing
+  venue: ECCVW (LoViF)
+  year: 2026
+  paper: https://arxiv.org/abs/2609.18302
+  status: no-code
+  tldr: Introduces visual autoregressive (VAR) generative priors into RAW-to-sRGB processing.
+- name: EGUOT-ISP
+  title: Experts-Guided Unbalanced Optimal Transport for ISP Learning from Unpaired and/or Paired Data
+  venue: arXiv
+  year: 2025
+  paper: https://arxiv.org/abs/2512.05635
+  code: https://github.com/gosha20777/EGUOT-ISP
+  status: coming-soon
+  tldr: Unifies paired and unpaired ISP learning with expert-guided unbalanced optimal transport.
+  note: Repo currently contains only a README
+- name: EvRAW
+  title: 'EvRAW: Event-guided Structural and Color Modeling for RAW-to-sRGB Image Reconstruction'
+  venue: ACM MM
+  year: 2025
+  paper: https://scholar.google.com/scholar?q=%22EvRAW%22+RAW-to-sRGB
+  status: no-code
+  tldr: Event-camera-guided structural and color modeling for RAW→sRGB reconstruction.
+- name: ISPDiffuser
+  title: 'ISPDiffuser: Learning RAW-to-sRGB Mappings with Texture-Aware Diffusion Models and Histogram-Guided Color Consistency'
+  venue: AAAI
+  year: 2025
+  paper: https://arxiv.org/abs/2503.19283
+  code: https://github.com/RenYangSCU/ISPDiffuser
+  status: weights
+  weights:
+  - label: ZRR / MAI weights (Google Drive)
+    url: https://drive.google.com/drive/folders/1smqKEttfKNEZfS8OT-g9yoMOCoRs90Gy?usp=sharing
+  - label: Mirror (Baidu, code f1gv)
+    url: https://pan.baidu.com/s/1eAAZf0TbHakxrqwyl2AZVA?pwd=f1gv
+  framework: PyTorch
+  tldr: Diffusion model for RAW-to-sRGB with a texture-aware loss and histogram-guided color consistency.
+- name: Modular Neural ISP
+  title: Modular Neural Image Signal Processing
+  venue: arXiv
+  year: 2025
+  paper: https://arxiv.org/abs/2512.08564
+  code: https://github.com/mahmoudnafifi/modular_neural_isp
+  status: weights-in-repo
+  weights:
+  - label: denoising/models/*.pth (lite/base/large)
+    url: https://github.com/mahmoudnafifi/modular_neural_isp/tree/main/denoising/models
+  - label: photofinishing/models/*.pth (multiple styles)
+    url: https://github.com/mahmoudnafifi/modular_neural_isp/tree/main/photofinishing/models
+  framework: PyTorch
+  tldr: Splits a neural ISP into swappable modules for denoising, AWB/CCM, photofinishing and upsampling, with an interactive photo-editing GUI.
+  note: Afifi / Brown group; a standalone executable GUI is also available
+- name: RGB-Event ISP
+  title: 'RGB-Event ISP: The Dataset and Benchmark'
+  venue: ICLR
+  year: 2025
+  paper: https://arxiv.org/abs/2501.19129
+  code: https://github.com/yunfanLu/RGB-Event-ISP
+  status: code
+  tldr: First ISP dataset and benchmark for hybrid RGB-event sensors, studying how event data helps demosaicing, denoising and color.
+  note: Dataset on HF yunfanlu/RGB-Event-ISP-Dataset and Baidu; non-commercial research use only
+- name: SemiISP
+  title: 'SemiISP/SemiIE: Semi-Supervised Image Signal Processor and Image Enhancement Leveraging One-to-Many Mapping sRGB-to-RAW'
+  venue: arXiv
+  year: 2025
+  paper: https://arxiv.org/abs/2504.02345
+  status: no-code
+  tldr: Expands training pairs through one-to-many sRGB-to-RAW synthesis to train the ISP in a semi-supervised manner.
+- name: DiR
+  title: Learning Degradation-Independent Representations for Camera ISP Pipelines
+  venue: CVPR
+  year: 2024
+  paper: https://openaccess.thecvf.com/content/CVPR2024/html/Guo_Learning_Degradation-Independent_Representations_for_Camera_ISP_Pipelines_CVPR_2024_paper.html
+  status: no-code
+  tldr: Learns degradation-independent representations so the ISP is more robust to unknown degradations such as noise and blur.
+- name: FourierISP
+  title: Enhancing RAW-to-sRGB with Decoupled Style Structure in Fourier Domain
+  venue: AAAI
+  year: 2024
+  paper: https://arxiv.org/abs/2401.02161
+  code: https://github.com/alexhe101/FourierISP
+  status: code
+  framework: PyTorch
+  tldr: Decouples style (color/brightness) from structure in the Fourier domain and learns each separately.
+  note: README explicitly states checkpoints will not be released; you need to train it yourself
+- name: ParamISP
+  title: 'ParamISP: Learned Forward and Inverse ISPs using Camera Parameters'
+  venue: CVPR
+  year: 2024
+  paper: https://arxiv.org/abs/2312.13313
+  code: https://github.com/woo525/ParamISP
+  status: weights
+  weights:
+  - label: Official weights (Google Drive, inverse and forward)
+    url: https://drive.google.com/drive/folders/1L7ZSikYt5eaCOEINpjjwmPX0CoZLbBG6
+  framework: PyTorch
+  tldr: Encodes EXIF parameters such as exposure, ISO and focal length into the network to learn both forward and inverse ISPs, trained per camera model.
+- name: Real-World Camera Pipeline
+  title: An End-to-End Real-World Camera Imaging Pipeline
+  venue: ACM MM
+  year: 2024
+  paper: https://arxiv.org/abs/2411.10773
+  status: no-code
+  tldr: End-to-end ISP for real smartphone imaging pipelines, covering denoising, color and tone.
+- name: RMFA-Net
+  title: 'RMFA-Net: A Neural ISP for Real RAW to RGB Image Reconstruction'
+  venue: arXiv
+  year: 2024
+  paper: https://arxiv.org/abs/2406.11469
+  status: no-code
+  tldr: ISP network for real smartphone RAW images using multi-frequency attention fusion.
+- name: Simple ISP
+  title: Simple Image Signal Processing using Global Context Guidance
+  venue: ICIP
+  year: 2024
+  paper: https://arxiv.org/abs/2404.11569
+  status: no-code
+  tldr: Adds a global context guidance module to a lightweight ISP backbone to improve tonal consistency across the whole image.
+- name: Uni-ISP
+  title: 'Uni-ISP: Toward Unifying the Learning of ISPs from Multiple Mobile Cameras'
+  venue: IEEE TIP
+  year: 2024
+  paper: https://arxiv.org/abs/2406.01003
+  status: no-code
+  tldr: A single model that learns the ISPs of multiple smartphones and supports style transfer between cameras.
+- name: Back to the Future ISP
+  title: 'Back to the Future: A Night Photography Rendering ISP Without Deep Learning'
+  venue: CVPRW (NTIRE)
+  year: 2023
+  paper: https://openaccess.thecvf.com/content/CVPR2023W/NTIRE/html/Zini_Back_to_the_Future_A_Night_Photography_Rendering_ISP_Without_CVPRW_2023_paper.html
+  status: no-code
+  tldr: A night photography rendering ISP without deep learning, serving as a reference point for learned methods.
+- name: Contrastive Subspace ISP
+  title: Deep Contrastive Patch-Based Subspace Learning for Camera Image Signal Processing
+  venue: IEEE AIC
+  year: 2023
+  paper: https://arxiv.org/abs/2104.00253
+  status: no-code
+  tldr: Learns ISP modules using patch-based subspaces and contrastive learning.
+- name: MetaISP
+  title: MetaISP – Exploiting Global Scene Structure for Accurate Multi-Device Color Rendition
+  venue: VMV
+  year: 2023
+  paper: https://arxiv.org/abs/2401.03220
+  code: https://github.com/vccimaging/MetaISP
+  status: weights
+  weights:
+  - label: MetaISPNet weights (Google Drive)
+    url: https://drive.google.com/drive/folders/1tLWlx0LDUjQ9niZje0cfLKt98dx1VEIR?usp=sharing
+  framework: PyTorch
+  tldr: Uses global scene features and device metadata so that one network renders the distinct color styles of multiple smartphones.
+- name: Single-Frame HDR ISP
+  title: End-to-End Single-Frame Image Signal Processing for High Dynamic Range Scenes
+  venue: WACV
+  year: 2023
+  paper: https://openaccess.thecvf.com/content/WACV2023/html/Dinh_End-to-End_Single-Frame_Image_Signal_Processing_for_High_Dynamic_Range_Scenes_WACV_2023_paper.html
+  status: no-code
+  tldr: End-to-end ISP operating on a single RAW frame in high dynamic range scenes.
+- name: CBUnet
+  title: Rendering Nighttime Image Via Cascaded Color and Brightness Compensation
+  venue: CVPRW (NTIRE)
+  year: 2022
+  paper: https://arxiv.org/abs/2204.08970
+  code: https://github.com/njuvision/CBUnet
+  status: weights
+  weights:
+  - label: stage-1 cube++.pth (Google Drive)
+    url: https://drive.google.com/file/d/1K8CgwXp0Pk7yPNUWXOF6zbK9iHgpiVDS/view?usp=sharing
+  framework: PyTorch
+  tldr: Cascaded color-compensation and brightness-compensation networks for night RAW rendering.
+  note: Stage-2 and other weights are listed in the README
+- name: CRISPnet
+  title: 'CRISPnet: Color Rendition ISP Net'
+  venue: arXiv
+  year: 2022
+  paper: https://arxiv.org/abs/2203.10562
+  status: no-code
+  tldr: ISP network aimed at accurate color rendition, incorporating global scene semantics and metadata.
+- name: Day-to-Night
+  title: Day-to-Night Image Synthesis for Training Nighttime Neural ISPs
+  venue: CVPR
+  year: 2022
+  paper: https://openaccess.thecvf.com/content/CVPR2022/html/Punnappurath_Day-to-Night_Image_Synthesis_for_Training_Nighttime_Neural_ISPs_CVPR_2022_paper.html
+  code: https://github.com/SamsungLabs/day-to-night
+  status: code
+  framework: PyTorch
+  tldr: Synthesizes nighttime RAW (with noise and multiple illuminants) from daytime RAW to train nighttime neural ISPs.
+  note: README references pretrained_* directories, but no weight files were found in the repo and the dataset link is empty
+- name: Deep-FlexISP
+  title: 'Deep-FlexISP: A Three-Stage Framework for Night Photography Rendering'
+  venue: CVPRW (NTIRE)
+  year: 2022
+  paper: https://openaccess.thecvf.com/content/CVPR2022W/NTIRE/html/Liu_Deep-FlexISP_A_Three-Stage_Framework_for_Night_Photography_Rendering_CVPRW_2022_paper.html
+  code: https://github.com/q935970314/Deep-FlexISP
+  status: weights
+  weights:
+  - label: Docker image (includes models, Google Drive)
+    url: https://drive.google.com/file/d/1f6EhX3kZvgE6FIj0dRnGuCVryT3BIYOz/view?usp=sharing
+  tldr: 'NTIRE 2022 night rendering winner with three stages: denoising, white balance and tone mapping.'
+  note: Released as a Docker container
+- name: ISPW / LiteISP-in-the-wild
+  title: 'Transform your Smartphone into a DSLR Camera: Learning the ISP in the Wild'
+  venue: ECCV
+  year: 2022
+  paper: https://arxiv.org/abs/2203.10636
+  code: https://github.com/4rdhendu/TransformPhone2DSLR
+  status: coming-soon
+  tldr: Learns an ISP from weakly paired smartphone-DSLR data captured in the wild (ISPW), handling alignment and color differences.
+  note: Repo currently only offers the ISPW dataset download; README says "Code will be released soon"
+- name: RAWtoBit
+  title: 'RAWtoBit: A Fully End-to-end Camera ISP Network'
+  venue: ECCV
+  year: 2022
+  paper: https://arxiv.org/abs/2208.07639
+  status: no-code
+  tldr: Merges the ISP and image compression into a single end-to-end network that outputs a bitstream directly from RAW.
+- name: Shallow Night Pipeline
+  title: Shallow Camera Pipeline for Night Photography Rendering
+  venue: arXiv
+  year: 2022
+  paper: https://arxiv.org/abs/2204.08972
+  status: no-code
+  tldr: 'NTIRE 2022 night photography rendering: a shallow camera pipeline built from a few learnable modules.'
+  note: The paper states code will be released upon acceptance; no repo found.
+- name: StereoISP
+  title: 'StereoISP: Rethinking Image Signal Processing for Dual Camera Systems'
+  venue: arXiv
+  year: 2022
+  paper: https://arxiv.org/abs/2211.07390
+  status: no-code
+  tldr: Performs ISP jointly on the two RAW streams captured by a dual-camera system.
+- name: LiteISPNet
+  title: Learning RAW-to-sRGB Mappings with Inaccurately Aligned Supervision
+  venue: ICCV
+  year: 2021
+  paper: https://openaccess.thecvf.com/content/ICCV2021/html/Zhang_Learning_RAW-to-sRGB_Mappings_With_Inaccurately_Aligned_Supervision_ICCV_2021_paper.html
+  code: https://github.com/cszhilu1998/RAW-to-sRGB
+  status: weights
+  weights:
+  - label: ZRR / SR-RAW pretrained models (Google Drive)
+    url: https://drive.google.com/drive/folders/12eMNZh-A9E4bVup-Kcy_F0_c0IToUyw7?usp=sharing
+  framework: PyTorch
+  tldr: Joint alignment and global color mapping to handle spatial misalignment and color differences in RAW/sRGB training pairs; includes the lightweight LiteISPNet.
+  note: The README also provides ZRR via Baidu (code 8sq1) and a preprocessed SR-RAW.
+- name: AWNet
+  title: 'AWNet: Attentive Wavelet Network for Image ISP'
+  venue: ECCVW (AIM)
+  year: 2020
+  paper: https://arxiv.org/abs/2008.09228
+  code: https://github.com/Charlie0215/AWNet-Attentive-Wavelet-Network-for-Image-ISP
+  status: weights
+  weights:
+  - label: demosaiced_model (Google Drive)
+    url: https://drive.google.com/file/d/1uhohG6cYkM_-W4dGLl8yGlo85UMF6KEK/view?usp=sharing
+  - label: Raw_model (Google Drive)
+    url: https://drive.google.com/file/d/1jBwEm7_zbU55qOlGAVuOAQ8BIwx2g7Fw/view?usp=sharing
+  framework: PyTorch
+  tldr: Wavelet-transform and attention ISP network with dual inputs (RAW / demosaiced image); a top-ranked AIM 2020 entry.
+- name: MW-ISPNet
+  title: MW-ISPNet (AIM 2020 Learned ISP winning solution; see the challenge report)
+  venue: ECCVW (AIM)
+  year: 2020
+  paper: https://arxiv.org/abs/2011.04994
+  code: https://github.com/cszhilu1998/MW-ISPNet
+  status: weights
+  weights:
+  - label: Track1 models (Google Drive)
+    url: https://drive.google.com/drive/folders/1lt5eXn49LgLzdj3z7k7lPK0B7obiLIHd?usp=sharing
+  - label: Track2 models (Google Drive)
+    url: https://drive.google.com/drive/folders/1uyU1huZnh8Wf7BYFkXVfrTl64EuFNcO7?usp=sharing
+  framework: PyTorch
+  tldr: U-Net with multi-level wavelets and residual channel attention; ranked first in both AIM 2020 tracks.
+- name: PyNET
+  title: Replacing Mobile Camera ISP with a Single Deep Learning Model
+  venue: CVPRW
+  year: 2020
+  paper: https://arxiv.org/abs/2002.05509
+  code: https://github.com/aiff22/PyNET
+  status: weights
+  weights:
+  - label: PyNET_pretrained.zip (TF)
+    url: https://download.ai-benchmark.com/s/C4a3C5WxB8p2my8/download/PyNET_pretrained.zip
+  - label: pynet_level_0.pth (PyTorch version)
+    url: https://download.ai-benchmark.com/s/A5wkJNztkpex8T4/download/pynet_level_0.pth
+  framework: TensorFlow / PyTorch
+  tldr: Inverted-pyramid multi-scale network trained level by level on Huawei P20 RAW to Canon 5D Mark IV photos (ZRR dataset).
+  note: PyTorch version at aiff22/PyNET-PyTorch; training also requires VGG-19
+- name: PyNET-CA
+  title: 'PyNET-CA: Enhanced PyNET with Channel Attention for End-to-End Mobile ISP'
+  venue: ECCVW (AIM)
+  year: 2020
+  paper: https://arxiv.org/abs/2104.02895
+  code: https://github.com/egyptdj/skyb-aim2020-public
+  status: weights
+  weights:
+  - label: pretrained_model.zip (Dropbox)
+    url: https://www.dropbox.com/s/psoz0auaynu3e5x/pretrained_model.zip?dl=0
+  framework: PyTorch
+  tldr: Adds channel attention and sub-pixel upsampling to PyNET; a solution for the AIM 2020 ISP track.
+  note: Authors warn that results may not be reproducible with PyTorch > 1.4
+- name: Sky Optimization
+  title: 'Sky Optimization: Semantically Aware Image Processing of Skies in Low-Light Photography'
+  venue: CVPRW
+  year: 2020
+  paper: https://openaccess.thecvf.com/content_CVPRW_2020/html/w31/Liba_Sky_Optimization_Semantically_Aware_Image_Processing_of_Skies_in_Low-Light_CVPRW_2020_paper.html
+  status: no-code
+  tldr: Processes sky regions separately in a mobile night-mode ISP using a lightweight segmentation network (related to Google Night Sight).
+- name: CameraNet
+  title: 'CameraNet: A Two-Stage Framework for Effective Camera ISP Learning'
+  venue: IEEE TIP
+  year: 2019
+  paper: https://arxiv.org/abs/1908.01481
+  code: https://github.com/zhetongliang/CameraNet_official
+  status: code
+  framework: TensorFlow
+  tldr: Splits the ISP into separately supervised restoration and enhancement subnetworks, easing the conflict of one network learning both denoising and color adjustment.
+  note: Official TF1.15 code; README only provides HDR+/SID processed data, no weight link found
+- name: Deep Camera
+  title: 'Deep Camera: A Fully Convolutional Neural Network for Image Signal Processing'
+  venue: ICCVW
+  year: 2019
+  paper: https://arxiv.org/abs/1908.09191
+  status: no-code
+  tldr: An early attempt to replace the entire camera ISP with a single fully convolutional network.
+- name: HERN
+  title: HighEr-Resolution Network for Image Demosaicing and Enhancing
+  venue: ICCVW (AIM)
+  year: 2019
+  paper: https://arxiv.org/abs/1911.08098
+  code: https://github.com/MKFMIKU/RAW2RGBNet
+  status: weights
+  weights:
+  - label: 114.pth / 115.pth (OneDrive)
+    url: https://cuhko365-my.sharepoint.com/:u:/g/personal/219019003_link_cuhk_edu_cn/EZrS367uMMlPjVEQ41j1N30B-4d6fcfNESWNi0JPH2Pyfg?e=IlRYiU
+  framework: PyTorch
+  tldr: 'Winning AIM 2019 RAW-to-RGB solution with a dual-branch design: a high-resolution detail branch and a low-resolution global branch.'
+  note: README provides weights from two epochs
+- name: W-Net
+  title: 'W-Net: Two-stage U-Net with misaligned data for raw-to-RGB mapping'
+  venue: ICCVW (AIM)
+  year: 2019
+  paper: https://arxiv.org/abs/1911.08656
+  code: https://github.com/khuhm/W-Net
+  status: weights
+  weights:
+  - label: pretrained models (Google Drive)
+    url: https://drive.google.com/drive/folders/1eH_prE7EWEUqxJes5IfHTdsFyqP64o7w?usp=sharing
+  tldr: AIM 2019 RAW-to-RGB challenge entry; a two-stage U-Net that handles misaligned supervision between smartphone RAW and DSLR RGB.
+- name: DeepISP
+  title: 'DeepISP: Towards Learning an End-to-End Image Processing Pipeline'
+  venue: IEEE TIP
+  year: 2018
+  paper: https://arxiv.org/abs/1801.06724
+  status: no-code
+  tldr: 'One of the earliest end-to-end learned ISPs, with two stages: local denoising/demosaicing and global tone/color adjustment; comes with a Samsung S7 dataset.'
+- name: DPED
+  title: DSLR-Quality Photos on Mobile Devices with Deep Convolutional Networks
+  venue: ICCV
+  year: 2017
+  paper: https://arxiv.org/abs/1704.02470
+  code: https://github.com/aiff22/DPED
+  status: weights-in-repo
+  weights:
+  - label: models_orig/{iphone,sony,blackberry}_orig (in repo)
+    url: https://github.com/aiff22/DPED/tree/master/models_orig
+  framework: TensorFlow
+  tldr: sRGB→sRGB enhancement of phone photos to DSLR quality (DPED dataset); the precursor of the PyNET family of learned ISPs.
+- name: Scene-Dependent Imaging
+  title: Modelling the Scene Dependent Imaging in Cameras with a Deep Neural Network
+  venue: ICCV
+  year: 2017
+  paper: https://arxiv.org/abs/1707.08350
+  status: no-code
+  tldr: Models a camera's scene-dependent RAW→sRGB rendering with a DNN; one of the early attempts at a learned ISP.

@@ -1,0 +1,154 @@
+# video: one entry per paper; see CONTRIBUTING.md for the schema
+- name: BinRVR
+  title: Binarized High-Efficiency RAW Video Restoration and Beyond
+  venue: IEEE TPAMI
+  year: 2026
+  paper: https://arxiv.org/abs/2608.16756
+  code: https://github.com/Tony1882880/BinRVR
+  status: coming-soon
+  tldr: 'Extension of BRVE: binarized and multi-bit RAW video restoration covering low-light enhancement, denoising, deblurring, and super-resolution.'
+  note: The repo currently contains only a README.
+- name: RawHDRV
+  title: High Dynamic Range Video Reconstruction from Single-Exposure Raw Sequences
+  venue: arXiv
+  year: 2026
+  paper: https://arxiv.org/abs/2609.27274
+  code: https://github.com/supeixian/RawHDRV
+  status: code
+  framework: PyTorch
+  tldr: Reconstructs HDR video from single-exposure RAW video sequences.
+- name: Real-Time Raw2Raw Mobile Denoise
+  title: Efficient Real-Time Raw-to-Raw Denoising for Extreme Low-Light Ultra HD Video on Mobile Devices
+  venue: CVPR
+  year: 2026
+  paper: https://openaccess.thecvf.com/content/CVPR2026/html/Pochimireddy_Efficient_Real-Time_Raw-to-Raw_Denoising_for_Extreme_Low-Light_Ultra_HD_Video_CVPR_2026_paper.html
+  status: no-code
+  tldr: Real-time RAW-to-RAW denoising of extreme low-light 4K RAW video on mobile phones.
+- name: DarkVRAI
+  title: 'DarkVRAI: Capture-Condition Conditioning and Burst-Order Selective Scan for Low-light RAW Video Denoising'
+  venue: ICASSP
+  year: 2025
+  paper: https://arxiv.org/abs/2509.00917
+  status: no-code
+  tldr: Low-light RAW video denoising with capture-condition modulation and burst-order selective scan (an AIM 2025 solution).
+- name: RViDeformer
+  title: 'RViDeformer: Efficient Raw Video Denoising Transformer with a Larger Benchmark Dataset'
+  venue: IEEE TCSVT
+  year: 2025
+  paper: https://arxiv.org/abs/2305.00767
+  code: https://github.com/cao-cong/RViDeformer
+  status: weights
+  weights:
+  - label: RViDeformer + ISP weights (Google Drive)
+    url: https://drive.google.com/drive/folders/1HJuJfofg3hsoPB3yHJCkfeel2Uf53ejF?usp=sharing
+  - label: Mirror (Baidu, code 4g5b)
+    url: https://pan.baidu.com/s/14srTNWoeEgyn7gL2WUpoFQ
+  framework: PyTorch
+  tldr: Larger RAW video denoising dataset (captured by re-photographing screens) and an efficient Transformer.
+- name: Alignment-free Raw Video Demoire
+  title: Alignment-free Raw Video Demoireing
+  venue: arXiv
+  year: 2024
+  paper: https://arxiv.org/abs/2408.10679
+  status: no-code
+  tldr: RAW video demoiréing without explicit frame alignment.
+- name: BRVE
+  title: Binarized Low-light Raw Video Enhancement
+  venue: CVPR
+  year: 2024
+  paper: https://arxiv.org/abs/2403.19944
+  code: https://github.com/zhanggengchen/BRVE
+  status: weights
+  weights:
+  - label: LLRVD models (Google Drive)
+    url: https://drive.google.com/file/d/1D0ehgOPrCzH_DxdGciihBoEvcZ-8G5lu/view?usp=sharing
+  - label: Mirror (Baidu, code 4v88)
+    url: https://pan.baidu.com/s/1HH1aH-wGJJ3LJOOc-WSBTg?pwd=4v88
+  framework: PyTorch
+  tldr: 1-bit binarized low-light RAW video enhancement network with distribution-aware binary convolutions.
+  note: The README also provides a second set of models (Google Drive / Baidu, code wq1u).
+- name: Pre/Post-Demosaic Video Denoise
+  title: Combining Pre- and Post-Demosaicking Noise Removal for RAW Video
+  venue: IEEE TIP
+  year: 2024
+  paper: https://arxiv.org/abs/2410.02572
+  status: no-code
+  tldr: RAW video pipeline that applies denoising both before and after demosaicking.
+- name: VJDD
+  title: Toward Accurate and Temporally Consistent Video Restoration from Raw Data
+  venue: arXiv
+  year: 2023
+  paper: https://arxiv.org/abs/2312.16247
+  code: https://github.com/GuoShi28/VJDD
+  status: coming-soon
+  tldr: Joint denoising and demosaicing for RAW video, with an emphasis on temporal consistency.
+  note: The repo contains only a README.
+- name: FloRNN
+  title: Unidirectional Video Denoising by Mimicking Backward Recurrent Modules with Look-ahead Forward Ones
+  venue: ECCV
+  year: 2022
+  paper: https://arxiv.org/abs/2204.05532
+  code: https://github.com/nagejacob/FloRNN
+  status: weights
+  weights:
+  - label: pretrained (Google Drive)
+    url: https://drive.google.com/drive/folders/1A854tOA6_qB14ax3JZ7bb7tLo0UovkyI?usp=sharing
+  - label: pretrained (Baidu, code ogua)
+    url: https://pan.baidu.com/s/1YomcegvdtoxVPr96odCo8w?pwd=ogua
+  framework: PyTorch
+  tldr: Unidirectional recurrence with look-ahead modules that mimic bidirectional behavior; supports RAW video such as CRVD.
+- name: Real-RawVSR
+  title: 'Real-RawVSR: Real-World Raw Video Super-Resolution with a Benchmark Dataset'
+  venue: ECCV
+  year: 2022
+  paper: https://arxiv.org/abs/2209.12475
+  code: https://github.com/zmzhang1998/Real-RawVSR
+  status: weights
+  weights:
+  - label: trained models (Google Drive)
+    url: https://drive.google.com/drive/folders/1zBMWiRq352HvurnVDxG0t-_OPVXAwtcQ?usp=sharing
+  framework: PyTorch
+  tldr: Real-world RAW video super-resolution dataset and method.
+  note: Dataset on Baidu Netdisk, key hxyl.
+- name: Starlight Denoising
+  title: 'Dancing under the Stars: Video Denoising in Starlight'
+  venue: CVPR
+  year: 2022
+  paper: https://openaccess.thecvf.com/content/CVPR2022/html/Monakhova_Dancing_Under_the_Stars_Video_Denoising_in_Starlight_CVPR_2022_paper.html
+  code: https://github.com/monakhova/starlight_denoising
+  status: weights
+  weights:
+  - label: Noise model + denoiser (Google Drive)
+    url: https://drive.google.com/drive/folders/1Tf3R6MqSlzfPXExkbDP7FjPhU1Ak4p43?usp=sharing
+  framework: PyTorch
+  tldr: Learns a physics-plus-GAN RAW noise model at sub-millilux light levels for starlight-level video denoising.
+- name: EMVD
+  title: Efficient Multi-Stage Video Denoising with Recurrent Spatio-Temporal Fusion
+  venue: CVPR
+  year: 2021
+  paper: https://arxiv.org/abs/2103.05407
+  code: https://github.com/Baymax-chen/EMVD
+  status: unofficial
+  tldr: Recurrent spatio-temporal fusion in a learnable invertible linear transform domain for real-time RAW video denoising on phone SoCs.
+  note: Unofficial PyTorch reimplementation; the official code has not been open-sourced.
+- name: RViDeNet
+  title: Supervised Raw Video Denoising with a Benchmark Dataset on Dynamic Scenes
+  venue: CVPR
+  year: 2020
+  paper: https://arxiv.org/abs/2003.14013
+  code: https://github.com/cao-cong/RViDeNet
+  status: weights
+  weights:
+  - label: trained model (Google Drive)
+    url: https://drive.google.com/open?id=1UdP2Pnn6lHeLC6TUN21sq81XyqL3ujNg
+  - label: trained model (Baidu, code xssc)
+    url: https://pan.baidu.com/s/16nVuu1fGMS0LJqU4z4LAUQ
+  framework: PyTorch
+  tldr: First RAW video denoising dataset of dynamic scenes (CRVD), accompanied by a RAW→sRGB ISP module.
+- name: High-Sensitivity Noise Video
+  title: Enhancing Low Light Videos by Exploring High Sensitivity Camera Noise
+  venue: ICCV
+  year: 2019
+  paper: https://openaccess.thecvf.com/content_ICCV_2019/html/Wang_Enhancing_Low_Light_Videos_by_Exploring_High_Sensitivity_Camera_Noise_ICCV_2019_paper.html
+  status: no-code
+  tldr: Models high-sensitivity camera noise to enhance low-light videos.

@@ -1,0 +1,116 @@
+# Learning material for the classical pipeline and related lists.
+tutorials:
+  - name: Understanding the In-Camera Rendering Pipeline and the Role of AI/Deep Learning
+    by: Michael S. Brown (ICCV 2023 tutorial)
+    url: http://www.eecs.yorku.ca/~mbrown/ICCV2023_Brown.html
+    description: Color science, the conventional ISP stages, and where deep learning is changing them; slides are online.
+  - name: 'Mobile Computational Photography: A Tour'
+    by: Delbracio, Kelly, Brown, Milanfar (Annual Review of Vision Science 2021)
+    url: https://doi.org/10.1146/annurev-vision-093019-115521
+    description: Survey of the phone camera pipeline, from burst merging to learned processing.
+  - name: Processing RAW Images in MATLAB
+    by: Rob Sumner
+    url: https://rcsumner.net/raw_guide/RAWguide.pdf
+    description: Step-by-step guide from a RAW file to a displayable image, with code.
+  - name: Color Image Processing Pipeline
+    by: Ramanath, Snyder, Yoo, Drew (IEEE Signal Processing Magazine 2005)
+    url: https://doi.org/10.1109/MSP.2005.1407713
+    description: Classic overview of the stages of a digital still camera pipeline.
+  - name: A Software Platform for Manipulating the Camera Imaging Pipeline
+    by: Karaimer and Brown (ECCV 2016)
+    url: https://doi.org/10.1007/978-3-319-46448-0_26
+    description: Exposes every stage of a camera pipeline so intermediate results can be inspected and modified.
+
+books:
+  - name: 'Computer Vision: Algorithms and Applications, 2nd ed.'
+    by: Richard Szeliski (2022)
+    url: https://szeliski.org/Book/
+    description: Free online; chapter 2.3 covers the digital camera and image formation.
+  - name: Image Sensors and Signal Processing for Digital Still Cameras
+    by: Junichi Nakamura (ed.), CRC Press
+    url: https://doi.org/10.1201/9781420026856
+    description: Sensor physics, noise and the processing chain of digital still cameras.
+
+# Classical (non-learned) papers behind each ISP stage.
+classic:
+  - stage: Noise
+    items:
+      - name: Radiometric CCD Camera Calibration and Noise Estimation
+        by: Healey and Kondepudy, TPAMI 1994
+        url: https://doi.org/10.1109/34.276126
+      - name: Practical Poissonian-Gaussian Noise Modeling and Fitting for Single-Image Raw-Data
+        by: Foi et al., TIP 2008
+        url: https://doi.org/10.1109/TIP.2008.2001399
+      - name: Image Denoising by Sparse 3-D Transform-Domain Collaborative Filtering (BM3D)
+        by: Dabov et al., TIP 2007
+        url: https://doi.org/10.1109/TIP.2007.901238
+      - name: Optimal Inversion of the Generalized Anscombe Transformation for Poisson-Gaussian Noise
+        by: Mäkitalo and Foi, TIP 2013
+        url: https://doi.org/10.1109/TIP.2012.2202675
+  - stage: Demosaicing
+    items:
+      - name: High-Quality Linear Interpolation for Demosaicing of Bayer-Patterned Color Images
+        by: Malvar, He and Cutler, ICASSP 2004
+        url: https://doi.org/10.1109/ICASSP.2004.1326587
+      - name: Adaptive Homogeneity-Directed Demosaicing Algorithm
+        by: Hirakawa and Parks, TIP 2005
+        url: https://doi.org/10.1109/TIP.2004.838691
+      - name: 'Demosaicking: Color Filter Array Interpolation'
+        by: Gunturk et al., IEEE Signal Processing Magazine 2005
+        url: https://doi.org/10.1109/MSP.2005.1407714
+  - stage: White balance
+    items:
+      - name: A Spatial Processor Model for Object Colour Perception (gray world)
+        by: Buchsbaum, Journal of the Franklin Institute 1980
+        url: https://doi.org/10.1016/0016-0032(80)90058-7
+      - name: Edge-Based Color Constancy (gray edge)
+        by: van de Weijer, Gevers and Gijsenij, TIP 2007
+        url: https://doi.org/10.1109/TIP.2007.901808
+      - name: 'Computational Color Constancy: Survey and Experiments'
+        by: Gijsenij, Gevers and van de Weijer, TIP 2011
+        url: https://doi.org/10.1109/TIP.2011.2118224
+  - stage: Tone mapping and HDR
+    items:
+      - name: Recovering High Dynamic Range Radiance Maps from Photographs
+        by: Debevec and Malik, SIGGRAPH 1997
+        url: https://doi.org/10.1145/258734.258884
+      - name: Photographic Tone Reproduction for Digital Images
+        by: Reinhard et al., SIGGRAPH 2002
+        url: https://doi.org/10.1145/566654.566575
+      - name: Exposure Fusion
+        by: Mertens, Kautz and Van Reeth, Pacific Graphics 2007
+        url: https://doi.org/10.1109/PG.2007.17
+  - stage: Burst photography
+    items:
+      - name: Burst Photography for High Dynamic Range and Low-Light Imaging on Mobile Cameras (HDR+)
+        by: Hasinoff et al., SIGGRAPH Asia 2016
+        url: https://doi.org/10.1145/2980179.2980254
+      - name: Handheld Multi-Frame Super-Resolution
+        by: Wronski et al., SIGGRAPH 2019
+        url: https://doi.org/10.1145/3306346.3323024
+
+related_lists:
+  - name: mv-lab/AISP
+    url: https://github.com/mv-lab/AISP
+    description: AI image signal processing and computational photography toolbox and paper collection.
+  - name: starkfan007/awesome-ISP
+    url: https://github.com/starkfan007/awesome-ISP
+    description: ISP frameworks, papers, libraries and resources.
+  - name: SintonZZ/Awesome-AI-ISP
+    url: https://github.com/SintonZZ/Awesome-AI-ISP
+    description: AI-ISP works.
+  - name: mikeroyal/ISP-Guide
+    url: https://github.com/mikeroyal/ISP-Guide
+    description: Broad guide to image signal processing hardware and software.
+  - name: Hedlen/awesome-sRGB2RAW-InvISP
+    url: https://github.com/Hedlen/awesome-sRGB2RAW-InvISP
+    description: Papers on inverse ISP (sRGB-to-RAW).
+  - name: Kobaayyy/Awesome-CVPR2025-CVPR2024-CVPR2021-CVPR2020-Low-Level-Vision
+    url: https://github.com/Kobaayyy/Awesome-CVPR2025-CVPR2024-CVPR2021-CVPR2020-Low-Level-Vision
+    description: Low-level vision papers by CVPR year.
+  - name: DarrenPan/Awesome-CVPR2024-Low-Level-Vision
+    url: https://github.com/DarrenPan/Awesome-CVPR2024-Low-Level-Vision
+    description: Low-level vision papers at CVPR 2024 (the same author keeps lists for other venues).
+  - name: lcybuzz/Low-Level-Vision-Paper-Record
+    url: https://github.com/lcybuzz/Low-Level-Vision-Paper-Record
+    description: Long-running record of low-level vision papers by topic.

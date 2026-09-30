@@ -1,0 +1,12 @@
+# Settings for the weekly link check (.github/workflows/links.yml).
+max_concurrency = 8
+max_retries = 2
+timeout = 30
+# Many publishers and file hosts answer bots with 403 / 429; treat those as reachable.
+accept = ["200..=299", "403", "429"]
+exclude = [
+  "^https?://pan\\.baidu\\.com",       # needs a browser session
+  "^https?://disk\\.pku\\.edu\\.cn",
+  "^https://img\\.shields\\.io",
+  "YOUR-GITHUB-USERNAME",
+]

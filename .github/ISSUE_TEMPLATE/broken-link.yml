@@ -1,0 +1,22 @@
+name: Report a broken or outdated link
+description: A paper, code or weight link no longer works, or a "coming soon" repository has been released.
+title: '[Link] '
+labels: [broken-link]
+body:
+  - type: input
+    id: entry
+    attributes:
+      label: Entry name
+      placeholder: LiteISPNet
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What is wrong?
+    validations:
+      required: true
+  - type: textarea
+    id: fix
+    attributes:
+      label: Correct link (if known)

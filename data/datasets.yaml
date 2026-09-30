@@ -1,0 +1,225 @@
+# Commonly used datasets. `task` should match a category id in categories.yaml.
+- name: ZRR (Zurich RAW to RGB)
+  year: 2020
+  source: PyNET
+  task: e2e
+  capture: Huawei P20 (Sony IMX380) RAW paired with Canon 5D Mark IV sRGB
+  size: ~10k full-resolution pairs, cropped to 448×448 training patches
+  url: http://data.vision.ee.ethz.ch/ihnatova/public/zr2d/Zurich-RAW-to-DSLR-Dataset.zip
+  use: Main end-to-end RAW-to-sRGB benchmark (LiteISPNet, PyNET, AWNet, ...)
+- name: MAI21 Learned ISP
+  year: 2021
+  source: MAI 2021 challenge
+  task: mobile
+  capture: Sony IMX586 phone RAW paired with Fujifilm GFX100 sRGB
+  size: Registration on CodaLab required
+  url: https://competitions.codalab.org/competitions/28054
+  use: Training and timing ISPs on phone NPUs
+- name: Fujifilm UltraISP
+  year: 2022
+  source: MicroISP / MAI 2022
+  task: mobile
+  capture: Phone sensor RAW paired with Fujifilm GFX100 (102 MP)
+  size: High-resolution pairs
+  url: https://github.com/gosha20777/mai-25/releases/tag/1.0.0
+  use: Mobile ISP and unpaired ISP training
+- name: ISPW
+  year: 2022
+  source: Transform your Smartphone into a DSLR
+  task: e2e
+  capture: Phone and DSLR, weakly paired in the wild
+  size: '—'
+  url: https://data.vision.ee.ethz.ch/ardhenut/ISPW-dataset/Tar/
+  use: Learning an ISP under weak alignment
+- name: SR-RAW
+  year: 2019
+  source: Zoom to Learn
+  task: demosaic
+  capture: Sony FE 24-240 optical-zoom RAW at multiple focal lengths
+  size: 500 sequences
+  url: https://drive.google.com/drive/folders/1FHhcrZjYvFm-zliziQIRVzYjlZUCikai?usp=sharing
+  use: RAW super-resolution; also used by LiteISPNet for RAW-to-sRGB
+- name: MIT-Adobe FiveK
+  year: 2011
+  source: Bychkovsky et al.
+  task: color
+  capture: 5,000 multi-camera RAW images, each retouched by 5 experts
+  size: '5,000'
+  url: https://data.csail.mit.edu/graphics/fivek/
+  use: InvISP, RAW-Flow, color / LUT methods, inverse ISP
+- name: S24 RAW-sRGB
+  year: 2025
+  source: Time-Aware AWB
+  task: color
+  capture: Samsung Galaxy S24 Ultra RAW + in-camera sRGB + expert Lightroom renderings
+  size: '—'
+  url: https://github.com/SamsungLabs/time-aware-awb/tree/main/s24-raw-srgb-dataset
+  use: AWB, neural ISP, edit-aware RAW reconstruction
+- name: NTIRE 2025 RGB2RAW
+  year: 2025
+  source: NTIRE 2025 challenge
+  task: inverse
+  capture: RGB and RAW from several smartphones
+  size: '—'
+  url: https://huggingface.co/datasets/marcosv/rgb2raw
+  use: RGB-to-RAW reconstruction
+- name: SID
+  year: 2018
+  source: Learning to See in the Dark
+  task: lowlight
+  capture: Sony α7S II (Bayer) and Fujifilm X-T2 (X-Trans), short and long exposures
+  size: 5,094 short-exposure RAW images
+  url: https://github.com/cchen156/Learning-to-See-in-the-Dark
+  use: Low-light RAW-to-sRGB; manual download since 2025-09 (Sony 25 GB / Fuji 52 GB)
+- name: MCR
+  year: 2022
+  source: Abandoning the Bayer-Filter to See in the Dark
+  task: lowlight
+  capture: Paired monochrome and color sensors
+  size: '—'
+  url: https://drive.google.com/file/d/1Q3NYGyByNnEKt_mREzD2qw9L2TuxCV_r/view?usp=share_link
+  use: Low-light RAW enhancement
+- name: ELD
+  year: 2020
+  source: ELD
+  task: denoise
+  capture: Extreme low-light RAW from several cameras
+  size: '—'
+  url: https://drive.google.com/drive/folders/1QoEhB1P-hNzAc4cRb7RdzyEKktexPVgy?usp=sharing
+  use: Physics-based noise modeling and low-light RAW denoising evaluation
+- name: LRID
+  year: 2026
+  source: PNNP
+  task: denoise
+  capture: Multi-ISO low-light RAW (Sony, IMX686, ...)
+  size: ~523 GB in total
+  url: https://huggingface.co/datasets/hansen97/LRID
+  use: Low-light RAW denoising and noise modeling
+- name: SIDD
+  year: 2018
+  source: Abdelhamed et al.
+  task: denoise
+  capture: RAW + sRGB noisy/clean pairs from 5 smartphones
+  size: ~30k noisy images
+  url: https://www.eecs.yorku.ca/~kamel/sidd/dataset.php
+  use: Real noise modeling and denoising (Noise Flow, ...)
+- name: DND
+  year: 2017
+  source: Plötz & Roth
+  task: denoise
+  capture: Real noise from 4 consumer cameras
+  size: 50 pairs (online evaluation)
+  url: https://noise.visinf.tu-darmstadt.de/
+  use: Online RAW / sRGB denoising benchmark
+- name: CRVD
+  year: 2020
+  source: RViDeNet
+  task: video
+  capture: Surveillance-camera RAW video of dynamic scenes
+  size: Multi-ISO video pairs
+  url: https://drive.google.com/drive/folders/1TZhNrsJ4tmKaU7b9b_9hkJIhwMi9Tfk3?usp=sharing
+  use: RAW video denoising
+- name: HDR+ Burst
+  year: 2016
+  source: Hasinoff et al.
+  task: burst
+  capture: Google phone RAW bursts and HDR+ outputs
+  size: 3,640 bursts
+  url: https://hdrplusdata.org/
+  use: Burst fusion; ISP training (CameraNet, ...)
+- name: BurstSR
+  year: 2021
+  source: DBSR
+  task: burst
+  capture: Samsung Galaxy S8 bursts paired with Canon 5D Mark IV
+  size: Real and synthetic tracks
+  url: https://github.com/goutamgmb/NTIRE21_BURSTSR
+  use: Burst super-resolution
+- name: PixelShift200
+  year: 2022
+  source: TENet
+  task: demosaic
+  capture: Sony pixel-shift full-color sampling
+  size: 210 images at 4K
+  url: http://guochengqian.github.io/project/pixelshift200
+  use: Real ground truth for demosaicing / joint DN-DM-SR
+- name: NUS 8-Camera
+  year: 2014
+  source: Cheng et al.
+  task: color
+  capture: RAW illuminant estimation data from 8 cameras
+  size: ~1,700 images
+  url: https://yorkucvil.github.io/projects/public_html/illuminant/illuminant.html
+  use: Color constancy (C5, CCMNet, GCC, ...)
+- name: Cube+
+  year: 2019
+  source: Banić et al.
+  task: color
+  capture: Canon 550D RAW with color-checker illuminants
+  size: 2,070 images
+  url: https://ipg.fer.hr/ipg/resources/color_constancy
+  use: Color constancy
+- name: Rendered WB (Set1/Set2)
+  year: 2019
+  source: WB_sRGB
+  task: color
+  capture: sRGB rendered with many cameras and white-balance presets
+  size: ~65k images
+  url: https://yorkucvil.github.io/projects/public_html/sRGB_WB_correction/dataset.html
+  use: sRGB white-balance correction and editing
+- name: LSMI
+  year: 2021
+  source: LSMI
+  task: color
+  capture: Mixed-illuminant RAW with per-pixel illuminant maps
+  size: 7,486 images
+  url: https://github.com/DY112/LSMI-dataset
+  use: Multi-illuminant white balance
+- name: LOD
+  year: 2021
+  source: Crafting Object Detection in Very Low Light
+  task: task
+  capture: Paired low-light / normal-light RAW with detection labels
+  size: 2,230 pairs
+  url: https://pan.baidu.com/s/1J0tLRr4IcxPxogcoKKs3Hw?pwd=nips
+  use: Low-light RAW detection (AdaptiveISP, RAW-Adapter, Dark-ISP)
+- name: RAW-NOD
+  year: 2022
+  source: GenISP
+  task: task
+  capture: Nikon / Sony night-time RAW with detection labels
+  size: 7k+ images
+  url: https://github.com/igor-morawski/RAW-NOD
+  use: Low-light RAW detection
+- name: PASCALRAW
+  year: 2014
+  source: Omid-Zohoor et al.
+  task: task
+  capture: Nikon D3200 RAW with VOC-style labels
+  size: 4,259 images
+  url: https://purl.stanford.edu/hq050zr7488
+  use: RAW object detection
+- name: ROD
+  year: 2023
+  source: RAOD
+  task: task
+  capture: 24-bit HDR RAW driving scenes
+  size: ~25k images
+  url: https://pan.baidu.com/s/1aBroLAj_0XeyQSzJdKrJ7g?pwd=udqg
+  use: RAW detection (TA-ISP, SimROD)
+- name: AODRaw
+  year: 2025
+  source: AODRaw
+  task: task
+  capture: RAW across weather and lighting conditions
+  size: 7,785 images at 6000×4000
+  url: https://github.com/lzyhha/AODRaw
+  use: RAW detection and RAW pre-training
+- name: LIS
+  year: 2023
+  source: Instance Segmentation in the Dark
+  task: task
+  capture: Low-light RAW instance segmentation
+  size: '—'
+  url: https://github.com/Linwei-Chen/LIS
+  use: Low-light RAW segmentation

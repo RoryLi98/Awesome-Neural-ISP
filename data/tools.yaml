@@ -1,0 +1,79 @@
+# Tools and open-source ISPs. kind: raw (RAW I/O), isp (pipelines and algorithms), learned (learned-ISP toolboxes), editor (RAW developers)
+- name: rawpy
+  title: 'rawpy: Python wrapper for LibRaw'
+  url: https://github.com/letmaik/rawpy
+  language: Python
+  description: Reads nearly all camera RAW / DNG files and performs basic post-processing; the de facto standard for preprocessing RAW datasets.
+  kind: raw
+- name: fast-openISP
+  title: 'fast-openISP: vectorized Python reimplementation of openISP'
+  url: https://github.com/QiuJueqin/fast-openISP
+  language: Python / NumPy
+  description: Complete traditional ISP pipeline (BLC, DPC, demosaicing, AWB, CCM, gamma, denoising, sharpening); a convenient classical reference next to learned models.
+  kind: isp
+- name: openISP
+  title: 'openISP: open-source traditional ISP'
+  url: https://github.com/cruxopen/openISP
+  language: Python
+  description: An early open-source reference implementation of a traditional ISP.
+  kind: isp
+- name: Infinite-ISP
+  title: 'Infinite-ISP: full ISP pipeline aimed at hardware porting'
+  url: https://github.com/10x-Engineers/Infinite-ISP
+  language: Python
+  description: Traditional ISP algorithms organized by hardware ISP module, with learned modules planned.
+  kind: isp
+- name: simple-camera-pipeline
+  title: Simple Camera Pipeline (by the SIDD authors)
+  url: https://github.com/AbdoKamel/simple-camera-pipeline
+  language: MATLAB / Python
+  description: Lightweight RAW→sRGB camera pipeline (MATLAB / Python), commonly used to render SIDD and similar data.
+  kind: isp
+- name: mv-lab/AISP
+  title: AI Image Signal Processing and Computational Photography
+  url: https://github.com/mv-lab/AISP
+  language: PyTorch / TF
+  description: 'Learned-ISP toolbox by Marcos Conde et al.: RAW degradation generation, challenge baselines, LPIENet, NILUT and more.'
+  kind: learned
+- name: ISP-pipeline-hdrplus
+  title: ISP-pipeline-hdrplus (traditional ISP + HDR+, documented in Chinese)
+  url: https://github.com/jhfmat/ISP-pipeline-hdrplus
+  language: Python
+  description: Traditional ISP implementation with HDR+ multi-frame fusion and calibration tools; test images and tools are on Baidu (code aaaa).
+  kind: isp
+- name: LibRaw
+  title: 'LibRaw: library for reading and processing RAW images'
+  url: https://github.com/LibRaw/LibRaw
+  language: C++
+  kind: raw
+  description: Successor of dcraw; extracts RAW pixels, CFA pattern, black level, white balance and other metadata from almost every camera format.
+- name: colour-demosaicing
+  title: Colour - Demosaicing
+  url: https://github.com/colour-science/colour-demosaicing
+  language: Python
+  kind: isp
+  description: Classical CFA demosaicing algorithms (bilinear, Malvar 2004, Menon 2007 DDFAPD) for Bayer mosaics.
+- name: colour
+  title: Colour
+  url: https://github.com/colour-science/colour
+  language: Python
+  kind: isp
+  description: 'Color science toolbox: color spaces, chromatic adaptation, color-checker data and color-difference metrics such as CIEDE2000.'
+- name: hdr-plus
+  title: HDR+ implementation in Halide
+  url: https://github.com/timothybrooks/hdr-plus
+  language: C++ / Halide
+  kind: isp
+  description: Open implementation of the HDR+ burst align-and-merge pipeline.
+- name: darktable
+  title: darktable
+  url: https://github.com/darktable-org/darktable
+  language: C
+  kind: editor
+  description: Open-source RAW developer with a modular, scene-referred processing pipeline.
+- name: RawTherapee
+  title: RawTherapee
+  url: https://github.com/Beep6581/RawTherapee
+  language: C++
+  kind: editor
+  description: Open-source RAW developer with many demosaicing, denoising and tone-mapping options.

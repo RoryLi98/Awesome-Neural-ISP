@@ -1,0 +1,309 @@
+# denoise: one entry per paper; see CONTRIBUTING.md for the schema
+- name: 2-Shots in the Dark
+  title: '2-Shots in the Dark: Low-Light Denoising with Minimal Data Acquisition'
+  venue: CVPR
+  year: 2026
+  paper: https://arxiv.org/abs/2512.03245
+  code: https://github.com/IVRL/2-Shots-in-the-Dark
+  status: weights
+  weights:
+  - label: SID/ELD and LRID models + dark-frame resources (Google Drive)
+    url: https://drive.google.com/drive/folders/1Hz4rzV8578lHCTzQkwCHE2nrphQy1QYG?usp=sharing
+  framework: PyTorch
+  tldr: Prepares low-light denoising data for a new camera with only two captures.
+- name: Color-Blind LL Cameras
+  title: 'Why Low-Light Cameras Go Color Blind: Removing Color Bias in Raw Denoising'
+  venue: ICCP
+  year: 2026
+  paper: https://arxiv.org/abs/2607.11090
+  status: no-code
+  tldr: Analyzes the color shift introduced by low-light RAW denoising and proposes a method to remove this color bias.
+- name: GALOSH
+  title: 'GALOSH: Blind, Training-Free Denoising of Raw Bayer and sRGB Images by Parallel-Friendly Local Shrinkage'
+  venue: arXiv
+  year: 2026
+  paper: https://arxiv.org/abs/2607.03768
+  code: https://github.com/luxgrain/GALOSH
+  status: code
+  framework: C++ / Python
+  tldr: Training-free local-shrinkage denoiser that estimates Poisson-Gaussian parameters from the input, designed for parallel hardware and applicable to both Bayer RAW and sRGB.
+  note: Training-free method with no network weights; Releases provide a Windows executable.
+- name: Nonlocal MatchFilter
+  title: Learned Nonlocal Feature Matching and Filtering for RAW Image Denoising
+  venue: arXiv
+  year: 2026
+  paper: https://arxiv.org/abs/2604.17453
+  code: https://github.com/MIA-UIB/nonlocal-matchfilter
+  status: weights
+  weights:
+  - label: GitHub Releases (with weights)
+    url: https://github.com/MIA-UIB/nonlocal-matchfilter/releases
+  framework: PyTorch
+  tldr: RAW image denoising with learned nonlocal feature matching combined with filtering.
+- name: PNNP
+  title: Learning Physics-Informed Noise Models from Dark Frames for Low-Light Raw Image Denoising
+  venue: IEEE TPAMI
+  year: 2026
+  paper: https://arxiv.org/abs/2310.09126
+  code: https://github.com/fenghansen/PNNP
+  status: weights
+  weights:
+  - label: Checkpoints & Resources (Baidu, code vmcl)
+    url: https://pan.baidu.com/s/1WMv2x7yqg0kMTBCddqkCLQ?pwd=vmcl
+  - label: LRID dataset (Hugging Face)
+    url: https://huggingface.co/datasets/hansen97/LRID
+  framework: PyTorch
+  tldr: Learns a physics-informed noise model (PNNP) from dark frames; releases the LRID dataset.
+  note: Provides PNNP weights for Sony A7S2 and IMX686; the training code for PNNP itself is not open-sourced
+- name: RPG-VST
+  title: 'RPG-VST: Robust Poisson-Gaussian Variance Stabilization for Blind RAW Denoising'
+  venue: IEEE SPL
+  year: 2026
+  paper: https://arxiv.org/abs/2607.24291
+  status: no-code
+  tldr: Robust variance-stabilizing transform that turns Poisson-Gaussian RAW noise with unknown parameters into near-constant variance before a Gaussian denoiser.
+- name: Noise Modeling in One Hour
+  title: 'Noise Modeling in One Hour: Minimizing Preparation Efforts for Self-supervised Low-Light RAW Image Denoising'
+  venue: CVPR
+  year: 2025
+  paper: https://arxiv.org/abs/2505.00045
+  code: https://github.com/SonyResearch/raw_image_denoising
+  status: weights
+  weights:
+  - label: pretrained checkpoints (Google Drive)
+    url: https://drive.google.com/drive/folders/1KyR9f6SIciXWv29owm0xYPCOnaMd9YWh?usp=sharing
+  framework: PyTorch
+  tldr: Reduces noise-modeling preparation to under one hour and uses dark shading for self-supervised low-light RAW image denoising.
+- name: YOND
+  title: 'YOND: Practical Blind Raw Image Denoising Free from Camera-Specific Data Dependency'
+  venue: IEEE TPAMI
+  year: 2025
+  paper: https://arxiv.org/abs/2506.03645
+  code: https://github.com/fenghansen/YOND_public
+  status: weights
+  weights:
+  - label: SNR-Net weights + training data (Baidu, code nn4v)
+    url: https://pan.baidu.com/s/1tAJW_57v2jWJ605MWKMKVg?pwd=nn4v
+  - label: Online demo (HF Spaces)
+    url: https://huggingface.co/spaces/hansen97/YOND
+  framework: PyTorch
+  tldr: 'Blind RAW denoising without camera-specific data: estimate the noise first, apply variance stabilization, then run a generic denoiser.'
+- name: DualDn
+  title: 'DualDn: Dual-domain Denoising via Differentiable ISP'
+  venue: ECCV
+  year: 2024
+  paper: https://arxiv.org/abs/2409.18783
+  code: https://github.com/OpenImagingLab/DualDn
+  status: weights
+  weights:
+  - label: FiveK-trained model (OneDrive)
+    url: https://mycuhk-my.sharepoint.com/:u:/g/personal/1155231343_link_cuhk_edu_hk/EUWR-KgxXD5OsH85ylom4H4BPv2hjYSMAyp4MkopiVnqoQ?e=mfcZBX
+  framework: PyTorch
+  tldr: Denoises once in the RAW domain and once in the sRGB domain, linked by a differentiable ISP, generalizing to different camera ISPs.
+  note: The README table also lists weights and visual results for other training sets
+- name: Non-parametric Noise
+  title: Non-parametric Sensor Noise Modeling and Synthesis
+  venue: ECCV
+  year: 2024
+  paper: https://www.ecva.net/papers/eccv_2024/papers_ECCV/html/3438_ECCV_2024_paper.php
+  status: no-code
+  tldr: Models and synthesizes sensor noise directly from calibration data without assuming a parametric distribution.
+- name: SeNM-VAE
+  title: 'SeNM-VAE: Semi-Supervised Noise Modeling with Hierarchical Variational Autoencoder'
+  venue: CVPR
+  year: 2024
+  paper: https://openaccess.thecvf.com/content/CVPR2024/html/Zheng_SeNM-VAE_Semi-Supervised_Noise_Modeling_with_Hierarchical_Variational_Autoencoder_CVPR_2024_paper.html
+  code: https://github.com/zhengdihan/SeNM-VAE
+  status: code
+  framework: PyTorch
+  tldr: Semi-supervised noise modeling with a hierarchical VAE, using a small amount of paired data and a large amount of unpaired data.
+- name: Contrastive LL Denoise
+  title: Contrastive Learning for Low-light Raw Denoising
+  venue: AAAI
+  year: 2023
+  paper: https://arxiv.org/abs/2305.03352
+  status: no-code
+  tldr: Uses contrastive learning to constrain features for low-light RAW denoising.
+- name: LED
+  title: 'Lighting Every Darkness in Two Pairs: A Calibration-Free Pipeline for RAW Denoising'
+  venue: ICCV
+  year: 2023
+  paper: https://arxiv.org/abs/2308.03448
+  code: https://github.com/Srameo/LED
+  status: weights
+  weights:
+  - label: Models Zoo (Google Drive)
+    url: https://drive.google.com/drive/folders/11MYkjzbPIZ7mJbu9vrgaVC-OwGcOFKsM?usp=sharing
+  - label: related files (Baidu, code iay5)
+    url: https://pan.baidu.com/s/17rA_8GvfNPZJY5Zl9dyILw?pwd=iay5
+  - label: weight table by camera/method
+    url: https://github.com/Srameo/LED/blob/main/docs/pretrained-models.md
+  framework: PyTorch
+  tldr: 'Calibration-free pipeline: pretrains on virtual cameras, then fine-tunes with only 2 real pairs to adapt to a new sensor.'
+  note: Since 2025-12 also includes UltraLED code and data
+- name: LLD (Physics-Guided ISO Noise)
+  title: Physics-Guided ISO-Dependent Sensor Noise Modeling for Extreme Low-Light Photography
+  venue: CVPR
+  year: 2023
+  paper: https://openaccess.thecvf.com/content/CVPR2023/html/Cao_Physics-Guided_ISO-Dependent_Sensor_Noise_Modeling_for_Extreme_Low-Light_Photography_CVPR_2023_paper.html
+  code: https://github.com/happycaoyue/LLD
+  status: code
+  tldr: Physics-guided ISO-dependent noise model; releases the LLD dataset, including dark frames and flat-field frames.
+  note: Repo is mainly for the dataset
+- name: LRD
+  title: Towards General Low-Light Raw Noise Synthesis and Modeling
+  venue: ICCV
+  year: 2023
+  paper: https://arxiv.org/abs/2307.16508
+  code: https://github.com/fengzhang427/LRD
+  status: weights
+  weights:
+  - label: RAW denoising models (Google Drive)
+    url: https://drive.google.com/file/d/1VkgHyEU6hNsXLL1vRfFWWLZCmGYGyi_h/view?usp=sharing
+  - label: Mirror (Baidu, code ujzm)
+    url: https://pan.baidu.com/s/1iMNrQh5P4g2prhhk2Tcu_g
+  framework: PyTorch
+  tldr: Uses a physical model for the signal-dependent part and a generative model for the signal-independent part; releases the LRD dataset.
+  note: Noise synthesis model not released due to commercial licensing
+- name: ELMformer
+  title: 'ELMformer: Efficient Raw Image Restoration with a Locally Multiplicative Transformer'
+  venue: ACM MM
+  year: 2022
+  paper: https://arxiv.org/abs/2208.14704
+  code: https://github.com/leonmakise/ELMformer
+  status: coming-soon
+  tldr: Locally multiplicative Transformer for RAW denoising and deblurring.
+  note: Repo contains only a README
+- name: Noise2NoiseFlow
+  title: 'Noise2NoiseFlow: Realistic Camera Noise Modeling without Clean Images'
+  venue: CVPR
+  year: 2022
+  paper: https://openaccess.thecvf.com/content/CVPR2022/html/Maleky_Noise2NoiseFlow_Realistic_Camera_Noise_Modeling_Without_Clean_Images_CVPR_2022_paper.html
+  code: https://github.com/SamsungLabs/Noise2NoiseFlow
+  status: code
+  framework: PyTorch
+  tldr: Trains a normalizing-flow noise model using only pairs of noisy images, without clean images; the same repo includes sRGB noise modeling (CVPR 2022).
+- name: PMN
+  title: 'Learnability Enhancement for Low-light Raw Denoising: Where Paired Real Data Meets Noise Modeling'
+  venue: ACM MM
+  year: 2022
+  paper: https://arxiv.org/abs/2207.06103
+  code: https://github.com/megvii-research/PMN
+  status: code
+  framework: PyTorch
+  tldr: Shot-noise augmentation and dark-shading correction make small amounts of real paired data more learnable.
+  note: README provides ISO noise parameters and data; pretrained weights are in the later PNNP / LRID release
+- name: Pseudo-ISP
+  title: 'Pseudo-ISP: Learning Pseudo In-camera Signal Processing Pipeline from A Color Image Denoiser'
+  venue: arXiv
+  year: 2021
+  paper: https://arxiv.org/abs/2103.10234
+  code: https://github.com/happycaoyue/Pseudo-ISP
+  status: weights
+  weights:
+  - label: pretrained denoising models (Baidu, code 6aj4)
+    url: https://pan.baidu.com/s/1W8_Uemrm8coX3wFZ_Jlw1g
+  framework: PyTorch
+  tldr: Derives a pseudo ISP from an sRGB denoiser to adapt to the real noise of new sensors.
+- name: Rethinking Noise Synthesis
+  title: Rethinking Noise Synthesis and Modeling in Raw Denoising
+  venue: ICCV
+  year: 2021
+  paper: https://openaccess.thecvf.com/content/ICCV2021/html/Zhang_Rethinking_Noise_Synthesis_and_Modeling_in_Raw_Denoising_ICCV_2021_paper.html
+  code: https://github.com/zhangyi-3/noise-synthesis
+  status: weights
+  weights:
+  - label: pretrained (Baidu, code v4dh)
+    url: https://pan.baidu.com/s/1RMYgubpdKZFO8JUkdTC7vg?pwd=v4dh
+  framework: PyTorch
+  tldr: Samples signal-independent noise from real dark frames and combines it with a signal-dependent component, replacing parametric noise models.
+- name: CA-NoiseGAN
+  title: Learning Camera-Aware Noise Models
+  venue: ECCV
+  year: 2020
+  paper: https://arxiv.org/abs/2008.09370
+  code: https://github.com/arcchang1236/CA-NoiseGAN
+  status: weights
+  weights:
+  - label: checkpoints.zip (Google Drive)
+    url: https://drive.google.com/drive/folders/1jnv9rKEv1uTO7uyAf5fQCBHPL_4PCrhj?usp=sharing
+  framework: PyTorch
+  tldr: Camera-aware GAN noise model that generates realistic RAW noise per camera and ISO.
+- name: ELD
+  title: A Physics-based Noise Formation Model for Extreme Low-light Raw Denoising
+  venue: CVPR
+  year: 2020
+  paper: https://arxiv.org/abs/2003.12751
+  code: https://github.com/Vandermode/ELD
+  status: weights
+  weights:
+  - label: ELD data + pretrained models (Google Drive)
+    url: https://drive.google.com/drive/folders/1QoEhB1P-hNzAc4cRb7RdzyEKktexPVgy?usp=sharing
+  - label: Mirror (Baidu, code 0lby)
+    url: https://pan.baidu.com/s/11ksugpPH5uyDL-Z6S71Q5g
+  framework: PyTorch
+  tldr: Models shot, read (including long-tailed), row and quantization noise from CMOS imaging physics; releases the ELD dataset.
+  note: TPAMI 2021 extended version (arXiv 2108.02158); also accessible under the repo name Vandermode/NoiseModel
+- name: MWRCANet
+  title: NTIRE 2020 RAW denoising winning solution (see the NTIRE 2020 Real Image Denoising report)
+  venue: CVPRW (NTIRE)
+  year: 2020
+  paper: https://arxiv.org/abs/2005.04117
+  code: https://github.com/happycaoyue/NTIRE20_raw_image_denoising_winner_MWRCANet
+  status: weights
+  weights:
+  - label: RAW model dn_mwrcanet_raw_c1.pth (Google Drive)
+    url: https://drive.google.com/drive/folders/1T23SqUEE1_oGGBK-gaRJ3L1jfVctRQtX?usp=sharing
+  - label: Mirror (Baidu, code 0odp)
+    url: https://pan.baidu.com/s/1Hbo86y3NYYf-WtLONRH3Sg
+  framework: PyTorch
+  tldr: Multi-level wavelet residual channel attention network, first in the NTIRE 2020 RAW denoising track; night-scene solutions such as CBUnet reuse its weights directly.
+- name: PMRID
+  title: Practical Deep Raw Image Denoising on Mobile Devices
+  venue: ECCV
+  year: 2020
+  paper: https://arxiv.org/abs/2010.06935
+  code: https://github.com/MegEngine/PMRID
+  status: weights-in-repo
+  weights:
+  - label: models/torch_pretrained.ckp + mge_pretrained.ckp (in repo)
+    url: https://github.com/MegEngine/PMRID/tree/main/models
+  - label: benchmark data (OneDrive)
+    url: https://megvii-my.sharepoint.cn/:f:/g/personal/wangyuzhi_megvii_com/Et4v2Z7CkRxHnbcFUq6RXZMBfXUrlm_Se5OVDvcdujVsMA?e=vcfJWs
+  framework: PyTorch / MegEngine
+  tldr: Calibrated sensor noise and a k-Sigma transform unify ISO levels; a small network runs at about 70 ms/MP on a Snapdragon 855.
+- name: Bayer Unify Aug
+  title: Learning Raw Image Denoising with Bayer Pattern Unification and Bayer Preserving Augmentation
+  venue: CVPRW (NTIRE)
+  year: 2019
+  paper: https://arxiv.org/abs/1904.12945
+  code: https://github.com/Jiaming-Liu/BayerUnifyAug
+  status: code
+  tldr: Bayer pattern unification and Bayer-preserving data augmentation; winner of NTIRE 2019 RAW denoising.
+  note: Repo contains only the BayerUnify/Aug utility functions
+- name: NODE
+  title: 'NODE: Extreme Low Light Raw Image Denoising using a Noise Decomposition Network'
+  venue: arXiv
+  year: 2019
+  paper: https://arxiv.org/abs/1909.05249
+  status: no-code
+  tldr: Decomposes noise into signal-dependent and signal-independent parts and estimates each separately.
+- name: Noise Flow
+  title: 'Noise Flow: Noise Modeling with Conditional Normalizing Flows'
+  venue: ICCV
+  year: 2019
+  paper: https://arxiv.org/abs/1908.08453
+  code: https://github.com/BorealisAI/noise_flow
+  status: code
+  framework: TensorFlow
+  tldr: Conditional normalizing flow that learns real camera noise distributions and generates noise conditioned on ISO/gain.
+  note: Automatically downloads SIDD_Medium_Raw; no separate weight link found
+- name: SIDD
+  title: A High-Quality Denoising Dataset for Smartphone Cameras
+  venue: CVPR
+  year: 2018
+  paper: https://openaccess.thecvf.com/content_cvpr_2018/html/Abdelhamed_A_High-Quality_Denoising_CVPR_2018_paper.html
+  code: https://github.com/AbdoKamel/sidd-ground-truth-image-estimation
+  status: code
+  tldr: About 30,000 noisy RAW / sRGB images from 5 smartphones with estimated clean ground truth; a foundational dataset for real noise modeling.
+  note: The repo contains the ground-truth estimation code; the dataset is on the SIDD website

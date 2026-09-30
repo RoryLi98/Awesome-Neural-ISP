@@ -1,0 +1,116 @@
+# mobile: one entry per paper; see CONTRIBUTING.md for the schema
+- name: Fourier Unpaired ISP
+  title: 'Freeze the Structure, Free the Color: Fourier-Domain Training for Unpaired Smartphone ISP'
+  venue: CVPRW (NTIRE)
+  year: 2026
+  paper: https://openaccess.thecvf.com/content/CVPR2026W/NTIRE/html/Kim_Freeze_the_Structure_Free_the_Color_Fourier-Domain_Training_for_Unpaired_CVPRW_2026_paper.html
+  status: no-code
+  tldr: Freezes structure during unpaired training and learns color only on the Fourier amplitude; an NTIRE 2026 unpaired ISP solution.
+- name: Unpaired ISP Transfer
+  title: Lightweight Unpaired Smartphone ISP Transfer with Semantic Pseudo-Pairing
+  venue: CVPRW (NTIRE)
+  year: 2026
+  paper: https://arxiv.org/abs/2605.07495
+  code: https://github.com/nuniniyujin/Unpaired-ISP
+  status: weights
+  weights:
+  - label: checkpoint (Google Drive, see checkpoints/weight_url.txt)
+    url: https://drive.google.com/drive/folders/1kwby-1qOq67RGABkmkLD3OXLC5eYK3OM?usp=sharing
+  framework: PyTorch
+  tldr: Builds training pairs through semantic pseudo-pairing for unpaired smartphone ISP transfer; an NTIRE 2026 unpaired ISP track entry.
+- name: Unpaired Lightweight ISP
+  title: Learned Lightweight Smartphone ISP with Unpaired Data
+  venue: CVPRW (MAI)
+  year: 2025
+  paper: https://arxiv.org/abs/2505.10420
+  code: https://github.com/AndreiiArhire/Learned-Lightweight-Smartphone-ISP-with-Unpaired-Data
+  status: weights-in-repo
+  weights:
+  - label: pretrained/models/{ZRR,Fujifilm} (in repo)
+    url: https://github.com/AndreiiArhire/Learned-Lightweight-Smartphone-ISP-with-Unpaired-Data/tree/main/pretrained
+  framework: PyTorch
+  tldr: Trains a lightweight ISP without paired data using multiple losses and adversarial training; evaluated on ZRR / UltraISP.
+- name: CoDISP
+  title: 'CoDISP: Exploring Compressed Domain Camera ISP with RGB-guided Encoder'
+  venue: CVPRW (MAI)
+  year: 2024
+  paper: https://openaccess.thecvf.com/content/CVPR2024W/MAI/html/Zhang_CoDISP_Exploring_Compressed_Domain_Camera_ISP_with_RGB-guided_Encoder_CVPRW_2024_paper.html
+  status: no-code
+  tldr: Performs the camera ISP in the compressed domain to reduce bandwidth on mobile devices.
+- name: PyNET-QxQ
+  title: 'PyNET-QxQ: An Efficient PyNET Variant for QxQ Bayer Pattern Demosaicing in CMOS Image Sensors'
+  venue: IEEE Access
+  year: 2023
+  paper: https://arxiv.org/abs/2203.04314
+  code: https://github.com/Minhyeok01/PyNET-QxQ
+  status: code
+  tldr: Lightweight PyNET variant for Quad/QxQ Bayer pattern sensors.
+  note: README says to place best_acc_model.pth but gives no download link
+- name: SYENet
+  title: 'SYENet: A Simple Yet Effective Network for Multiple Low-Level Vision Tasks with Real-time Performance on Mobile Device'
+  venue: ICCV
+  year: 2023
+  paper: https://openaccess.thecvf.com/content/ICCV2023/html/Gou_SYENet_A_Simple_Yet_Effective_Network_for_Multiple_Low-Level_Vision_ICCV_2023_paper.html
+  code: https://github.com/sanechips-multimedia/syenet
+  status: code
+  framework: PyTorch
+  tldr: Small reparameterized network handling ISP, low-light enhancement and super-resolution; top score in the MAI 2022 mobile ISP track.
+  note: README describes the arguments for loading pretrained models, but no weight download link was found; includes an ONNX export script
+- name: LAN
+  title: 'LAN: Lightweight Attention-Based Network for RAW-to-RGB Smartphone Image Processing'
+  venue: CVPRW (NTIRE)
+  year: 2022
+  paper: https://openaccess.thecvf.com/content/CVPR2022W/NTIRE/html/Raimundo_LAN_Lightweight_Attention-Based_Network_for_RAW-to-RGB_Smartphone_Image_Processing_CVPRW_2022_paper.html
+  code: https://github.com/draimundo/LAN
+  status: weights-in-repo
+  weights:
+  - label: models/LAN_iteration_200000.ckpt (in repo)
+    url: https://github.com/draimundo/LAN/tree/main/models
+  framework: TensorFlow
+  tldr: Lightweight attention network targeting the MAI 2021 mobile ISP data (Sony IMX586 RAW to Fujifilm GFX100).
+- name: LW-ISP
+  title: 'LW-ISP: A Lightweight Model with ISP and Deep Learning'
+  venue: BMVC
+  year: 2022
+  paper: https://arxiv.org/abs/2210.03904
+  status: no-code
+  tldr: Lightweight learned ISP for mobile devices, replacing large PyNET-style models with fewer parameters.
+- name: MicroISP
+  title: 'MicroISP: Processing 32MP Photos on Mobile Devices with Deep Learning'
+  venue: ECCVW
+  year: 2022
+  paper: https://arxiv.org/abs/2211.06770
+  code: https://github.com/aiff22/MicroISP
+  status: weights-in-repo
+  weights:
+  - label: pretrained_weights/MicroISP.ckpt (in repo)
+    url: https://github.com/aiff22/MicroISP/tree/master/pretrained_weights
+  framework: TensorFlow
+  tldr: Very small ISP with per-channel branches that processes 32MP photos in under 1 s on smartphones; comes with the Fujifilm UltraISP dataset.
+  note: Academic use only
+- name: PyNET-V2 Mobile
+  title: 'PyNet-V2 Mobile: Efficient On-Device Photo Processing With Neural Networks'
+  venue: ICPR
+  year: 2022
+  paper: https://arxiv.org/abs/2211.06263
+  code: https://github.com/gmalivenko/PyNET-v2
+  status: weights
+  weights:
+  - label: PyNET-V2 pretrained models (Google Drive)
+    url: https://drive.google.com/file/d/1txsJaCbeC-Tk53TPlvVk3IPpRw1Ro3BS/view?usp=sharing
+  framework: TensorFlow / Keras
+  tldr: Mobile version of PyNET redesigned around NPU operator constraints, able to process full-resolution photos on smartphones.
+- name: CSANet
+  title: 'CSAnet: High Speed Channel Spatial Attention Network for Mobile ISP'
+  venue: CVPRW (MAI)
+  year: 2021
+  paper: https://openaccess.thecvf.com/content/CVPR2021W/MAI/html/Hsyu_CSAnet_High_Speed_Channel_Spatial_Attention_Network_for_Mobile_ISP_CVPRW_2021_paper.html
+  status: no-code
+  tldr: MAI 2021 mobile ISP solution using channel and spatial attention, with an emphasis on NPU inference speed.
+- name: Del-Net
+  title: 'Del-Net: A Single-Stage Network for Mobile Camera ISP'
+  venue: arXiv
+  year: 2021
+  paper: https://arxiv.org/abs/2108.01623
+  status: no-code
+  tldr: Single-stage ISP network designed for smartphones; an MAI 2021 challenge entry.

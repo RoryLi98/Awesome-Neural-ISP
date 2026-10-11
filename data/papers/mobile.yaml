@@ -65,7 +65,7 @@
   status: weights-in-repo
   weights:
   - label: models/LAN_iteration_200000.ckpt (in repo)
-    url: https://github.com/draimundo/LAN/tree/main/models
+    url: https://github.com/draimundo/LAN/tree/master/models
   framework: TensorFlow
   tldr: Lightweight attention network targeting the MAI 2021 mobile ISP data (Sony IMX586 RAW to Fujifilm GFX100).
 - name: LW-ISP
@@ -94,12 +94,10 @@
   year: 2022
   paper: https://arxiv.org/abs/2211.06263
   code: https://github.com/gmalivenko/PyNET-v2
-  status: weights
-  weights:
-  - label: PyNET-V2 pretrained models (Google Drive)
-    url: https://drive.google.com/file/d/1txsJaCbeC-Tk53TPlvVk3IPpRw1Ro3BS/view?usp=sharing
+  status: code
   framework: TensorFlow / Keras
   tldr: Mobile version of PyNET redesigned around NPU operator constraints, able to process full-resolution photos on smartphones.
+  note: The pretrained model (Google Drive) linked in the README returns 404 (checked 2026-10-11).
 - name: CSANet
   title: 'CSAnet: High Speed Channel Spatial Attention Network for Mobile ISP'
   venue: CVPRW (MAI)

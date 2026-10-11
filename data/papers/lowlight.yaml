@@ -260,7 +260,7 @@
   title: Towards Fast and Light-Weight Restoration of Dark Images
   venue: BMVC
   year: 2020
-  paper: https://www.bmvc2020-conference.com/assets/papers/0145.pdf
+  paper: https://www.bmva-archive.org.uk/bmvc/2020/assets/papers/0145.pdf
   code: https://github.com/MohitLamba94/LLPackNet
   status: code
   framework: PyTorch

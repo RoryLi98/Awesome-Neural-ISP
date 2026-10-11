@@ -621,10 +621,11 @@
   code: https://github.com/google/hdrnet
   status: weights
   weights:
-  - label: pretrained_models/download.py (script download)
-    url: https://github.com/google/hdrnet/tree/master/pretrained_models
+  - label: pretrained_models/download.py in the original TF repo (script download from MIT CSAIL)
+    url: https://github.com/mgharbi/hdrnet/tree/master/pretrained_models
   framework: TensorFlow
   tldr: Predicts local affine transforms in a bilateral grid to reproduce various tone operators in real time on phones; a classic approach for late-stage ISP tone.
+  note: The google/hdrnet README still points to a pretrained_models folder that is no longer in that repository; the download script is in mgharbi/hdrnet.
 - name: Recurrent CC
   title: Recurrent Color Constancy
   venue: ICCV

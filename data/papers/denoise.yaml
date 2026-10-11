@@ -96,11 +96,13 @@
   code: https://github.com/OpenImagingLab/DualDn
   status: weights
   weights:
-  - label: FiveK-trained model (OneDrive)
-    url: https://mycuhk-my.sharepoint.com/:u:/g/personal/1155231343_link_cuhk_edu_hk/EUWR-KgxXD5OsH85ylom4H4BPv2hjYSMAyp4MkopiVnqoQ?e=mfcZBX
+  - label: pretrained_model.zip, synthetic test (OneDrive)
+    url: https://mycuhk-my.sharepoint.com/:u:/g/personal/1155231343_link_cuhk_edu_hk/Eb2uUHfx8pRBimlrVRbR0dUB5arCuP6Vx5g3LKxImOUv3w?e=XLXLKC
+  - label: DualDn_Big.pth, real captures / DND (OneDrive)
+    url: https://mycuhk-my.sharepoint.com/:u:/g/personal/1155231343_link_cuhk_edu_hk/EeSssinwPSRLvC2zOTdmAd8BLLtF3MaKfFw2kYv25WthkQ?e=bbO0Ql
   framework: PyTorch
   tldr: Denoises once in the RAW domain and once in the sRGB domain, linked by a differentiable ISP, generalizing to different camera ISPs.
-  note: The README table also lists weights and visual results for other training sets
+  note: Both models are trained on MIT-Adobe FiveK with a Restormer backbone; the README table also links test sets and visual results.
 - name: Non-parametric Noise
   title: Non-parametric Sensor Noise Modeling and Synthesis
   venue: ECCV
@@ -223,12 +225,10 @@
   year: 2020
   paper: https://arxiv.org/abs/2008.09370
   code: https://github.com/arcchang1236/CA-NoiseGAN
-  status: weights
-  weights:
-  - label: checkpoints.zip (Google Drive)
-    url: https://drive.google.com/drive/folders/1jnv9rKEv1uTO7uyAf5fQCBHPL_4PCrhj?usp=sharing
+  status: code
   framework: PyTorch
   tldr: Camera-aware GAN noise model that generates realistic RAW noise per camera and ISO.
+  note: The checkpoint folder (Google Drive) linked in the README returns 404 (checked 2026-10-11).
 - name: ELD
   title: A Physics-based Noise Formation Model for Extreme Low-light Raw Denoising
   venue: CVPR
@@ -268,8 +268,8 @@
   weights:
   - label: models/torch_pretrained.ckp + mge_pretrained.ckp (in repo)
     url: https://github.com/MegEngine/PMRID/tree/main/models
-  - label: benchmark data (OneDrive)
-    url: https://megvii-my.sharepoint.cn/:f:/g/personal/wangyuzhi_megvii_com/Et4v2Z7CkRxHnbcFUq6RXZMBfXUrlm_Se5OVDvcdujVsMA?e=vcfJWs
+  - label: benchmark data (Kaggle mirror; the README also lists OneDrive)
+    url: https://www.kaggle.com/datasets/1bdc5cd707cfbb3ee842eb3cbfe93495dbba88017d29f295f8edbcb8f8790556
   framework: PyTorch / MegEngine
   tldr: Calibrated sensor noise and a k-Sigma transform unify ISO levels; a small network runs at about 70 ms/MP on a Snapdragon 855.
 - name: Bayer Unify Aug

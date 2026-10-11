@@ -237,12 +237,9 @@
   year: 2022
   paper: https://openaccess.thecvf.com/content/CVPR2022W/NTIRE/html/Liu_Deep-FlexISP_A_Three-Stage_Framework_for_Night_Photography_Rendering_CVPRW_2022_paper.html
   code: https://github.com/q935970314/Deep-FlexISP
-  status: weights
-  weights:
-  - label: Docker image (includes models, Google Drive)
-    url: https://drive.google.com/file/d/1f6EhX3kZvgE6FIj0dRnGuCVryT3BIYOz/view?usp=sharing
+  status: code
   tldr: 'NTIRE 2022 night rendering winner with three stages: denoising, white balance and tone mapping.'
-  note: Released as a Docker container
+  note: The Docker image with the 2022 models (Google Drive) returns 404 (checked 2026-10-11); the repo's Night_Photography_2023 folder ships checkpoints for the team's 2023 challenge entry instead.
 - name: ISPW / LiteISP-in-the-wild
   title: 'Transform your Smartphone into a DSLR Camera: Learning the ISP in the Wild'
   venue: ECCV
@@ -373,13 +370,10 @@
   year: 2019
   paper: https://arxiv.org/abs/1911.08098
   code: https://github.com/MKFMIKU/RAW2RGBNet
-  status: weights
-  weights:
-  - label: 114.pth / 115.pth (OneDrive)
-    url: https://cuhko365-my.sharepoint.com/:u:/g/personal/219019003_link_cuhk_edu_cn/EZrS367uMMlPjVEQ41j1N30B-4d6fcfNESWNi0JPH2Pyfg?e=IlRYiU
+  status: code
   framework: PyTorch
   tldr: 'Winning AIM 2019 RAW-to-RGB solution with a dual-branch design: a high-resolution detail branch and a low-resolution global branch.'
-  note: README provides weights from two epochs
+  note: Both OneDrive links for the challenge weights (114.pth / 115.pth) in the README return 404 (checked 2026-10-11).
 - name: W-Net
   title: 'W-Net: Two-stage U-Net with misaligned data for raw-to-RGB mapping'
   venue: ICCVW (AIM)

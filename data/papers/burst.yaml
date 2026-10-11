@@ -84,7 +84,7 @@
   code: https://github.com/akshaydudhane16/Burstormer
   status: weights
   weights:
-  - label: BurstSR trained models (OneDrive)
+  - label: synthetic burst SR checkpoint (OneDrive)
     url: https://mbzuaiac-my.sharepoint.com/:u:/g/personal/akshay_dudhane_mbzuai_ac_ae/ER8mPnjoSIZAnaKA8YyCeE8BA_uQr_73b5qRZx9sh9Rzvw?e=Sc4HFJ
   framework: PyTorch
   tldr: Transformer version of BIPNet with multi-scale local and non-local alignment.
@@ -104,10 +104,11 @@
   code: https://github.com/yjsunnn/FBANet
   status: weights
   weights:
-  - label: RealBSR checkpoint (Google Drive)
-    url: https://drive.google.com/file/d/1Gc-xp_MAi6_rLTfEAT9N50ERgbfz3b4A/view?usp=drive_link
+  - label: RealBSR checkpoint model_best.pth (Baidu, code f9ew)
+    url: https://pan.baidu.com/s/1y0OSXD9ExMj4mQ8Sj0VpoA?pwd=f9ew
   framework: PyTorch
   tldr: Introduces the real-world burst super-resolution dataset RealBSR and a federated affine fusion network.
+  note: The Google Drive copy of the checkpoint returns 404 (checked 2026-10-11).
 - name: GMTNet
   title: Gated Multi-Resolution Transfer Network for Burst Restoration and Enhancement
   venue: CVPR
@@ -182,7 +183,7 @@
   code: https://github.com/akshaydudhane16/BIPNet
   status: weights
   weights:
-  - label: BurstSR trained models (OneDrive)
+  - label: synthetic burst SR model BIPNet.ckpt (OneDrive)
     url: https://mbzuaiac-my.sharepoint.com/:u:/g/personal/akshay_dudhane_mbzuai_ac_ae/EYlxq0X49fRGiFD3kMxnM6IB7VNtwhd3atNr4oc1b1psbA?e=pLN14I
   framework: PyTorch
   tldr: Pseudo-burst feature fusion that handles burst super-resolution, denoising, and low-light enhancement in one framework.
@@ -284,12 +285,10 @@
   year: 2020
   paper: https://openaccess.thecvf.com/content_CVPR_2020/html/Xia_Basis_Prediction_Networks_for_Effective_Burst_Denoising_With_Large_Kernels_CVPR_2020_paper.html
   code: https://github.com/likesum/bpn
-  status: weights
-  weights:
-  - label: Grayscale / color burst denoising models (Google Drive)
-    url: https://drive.google.com/file/d/1_-AFCj3G5ISJovdprVHvyeGt59hH2iKb/view?usp=sharing
+  status: code
   framework: TensorFlow
   tldr: Predicts a set of shared basis kernels plus coefficients for efficient large-kernel burst denoising.
+  note: The model file (Google Drive) linked in the README and in scripts/download_models.sh returns 404 (checked 2026-10-11).
 - name: Decoupled Burst Denoising
   title: A Decoupled Learning Scheme for Real-world Burst Denoising from Raw Images
   venue: ECCV

@@ -319,7 +319,7 @@
   status: weights-in-repo
   weights:
   - label: dm_model_zoo/RSTCANet_{B,S,L}.pth (in repo)
-    url: https://github.com/xingwz/RSTCANet/tree/main/dm_model_zoo
+    url: https://github.com/xingwz/RSTCANet/tree/master/dm_model_zoo
   framework: PyTorch
   tldr: Demosaicing network combining Swin Transformer with channel attention, provided in three sizes (B/S/L).
 - name: TENet
@@ -445,15 +445,10 @@
   year: 2019
   paper: https://arxiv.org/abs/1905.12156
   code: https://github.com/xuxy09/RawSR
-  status: weights
-  weights:
-  - label: ×2 model (Google Drive)
-    url: https://drive.google.com/drive/folders/1l91w51ou-p_2cVVbUCWDLGRUv_twnWcd?usp=sharing
-  - label: ×4 model (Google Drive)
-    url: https://drive.google.com/drive/folders/1ZCp22cjZrKrQEoLC70YGnf8JbOGyw53P?usp=sharing
+  status: code
   framework: TensorFlow
   tldr: 'Simulates camera imaging to generate RAW training pairs and uses RAW for real-scene super-resolution (extended version: Exploiting Raw Images for Real-Scene SR, arXiv 2102.01579).'
-  note: The repo contains code for the TPAMI 2021 extended version
+  note: The repo contains code for the TPAMI 2021 extended version. The ×2 / ×4 model folders (Google Drive) linked in the README return 404 (checked 2026-10-11).
 - name: Zoom to Learn
   title: Zoom to Learn, Learn to Zoom
   venue: CVPR

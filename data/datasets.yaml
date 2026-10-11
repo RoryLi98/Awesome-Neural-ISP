@@ -5,7 +5,7 @@
   task: e2e
   capture: Huawei P20 (Sony IMX380) RAW paired with Canon 5D Mark IV sRGB
   size: ~10k full-resolution pairs, cropped to 448×448 training patches
-  url: http://data.vision.ee.ethz.ch/ihnatova/public/zr2d/Zurich-RAW-to-DSLR-Dataset.zip
+  url: https://download.ai-benchmark.com/s/GsfikXymMKHxCwr
   use: Main end-to-end RAW-to-sRGB benchmark (LiteISPNet, PyNET, AWNet, ...)
 - name: MAI21 Learned ISP
   year: 2021
@@ -29,8 +29,8 @@
   task: e2e
   capture: Phone and DSLR, weakly paired in the wild
   size: '—'
-  url: https://data.vision.ee.ethz.ch/ardhenut/ISPW-dataset/Tar/
-  use: Learning an ISP under weak alignment
+  url: https://github.com/4rdhendu/TransformPhone2DSLR
+  use: Learning an ISP under weak alignment; the ETH download link in the repo README returns 404 (checked 2026-10-11)
 - name: SR-RAW
   year: 2019
   source: Zoom to Learn
@@ -101,7 +101,7 @@
   task: denoise
   capture: RAW + sRGB noisy/clean pairs from 5 smartphones
   size: ~30k noisy images
-  url: https://www.eecs.yorku.ca/~kamel/sidd/dataset.php
+  url: https://abdokamel.github.io/sidd/
   use: Real noise modeling and denoising (Noise Flow, ...)
 - name: DND
   year: 2017

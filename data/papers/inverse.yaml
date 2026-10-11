@@ -86,11 +86,11 @@
   code: https://github.com/Chuancy-TJU/SpiralDiff
   status: weights
   weights:
-  - label: model weights (Hugging Face)
-    url: https://huggingface.co/Chuancy/SpiralDiff
+  - label: checkpoints.zip (Hugging Face dataset repo)
+    url: https://huggingface.co/datasets/Chuancy/SpiralDiff/blob/main/checkpoints.zip
   framework: PyTorch
   tldr: Intensity-stratified "spiral" diffusion with per-camera LoRA for RGB→RAW conversion across multiple cameras.
-  note: Apache-2.0; the dataset is also on HF at Chuancy/SpiralDiff.
+  note: Apache-2.0. The README's model link (huggingface.co/Chuancy/SpiralDiff) returns 404; the checkpoints sit in the dataset repo next to the FiveK DNG data.
 - name: Illum–Sensor Mapping
   title: Improved Mapping Between Illuminations and Sensors for RAW Images
   venue: JOSA A
@@ -239,7 +239,7 @@
   status: weights-in-repo
   weights:
   - label: trained_models/ (in repo, S7 data)
-    url: https://github.com/SenseBrainTech/overexposure-mask-reverse-ISP/tree/main/trained_models
+    url: https://github.com/SenseBrainTech/overexposure-mask-reverse-ISP/tree/master/trained_models
   framework: PyTorch
   tldr: Handles overexposed regions separately in reverse ISP and applies multi-step refinement.
 - name: Reverse Style Transfer ISP

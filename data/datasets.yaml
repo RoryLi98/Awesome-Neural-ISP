@@ -223,3 +223,11 @@
   size: '—'
   url: https://github.com/Linwei-Chen/LIS
   use: Low-light RAW segmentation
+- name: Camera-Native VR180
+  year: 2026
+  source: Lu 2026
+  task: video
+  capture: Two Blackmagic URSA Cine Immersive stereo fisheye cameras; every sample as Blackmagic RAW plus fisheye and half-equirectangular HEVC, with factory lens calibration
+  size: 1,211 samples (636 stereo clips, mostly 90 fps; 575 stereo stills)
+  url: https://huggingface.co/datasets/lulinxuan/VR180
+  use: Camera-native RAW source for stereo / immersive video processing and coding (CC BY-NC 4.0)

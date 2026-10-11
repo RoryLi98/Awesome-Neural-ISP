@@ -111,9 +111,9 @@ Out of scope:
 
 ## For maintainers
 
-- Suggested GitHub repository settings (the **About** box): description `A curated list of neural (learned) camera ISP papers with code and pretrained weights: RAW denoising, demosaicing, AWB, RAW-to-sRGB, inverse ISP, plus a classical ISP primer.`; topics `neural-isp`, `learned-isp`, `camera-isp`, `ai-isp`, `image-signal-processing`, `raw-image`, `computational-photography`, `low-level-vision`, `awesome-list`; website: the GitHub Pages URL.
-- `config.yaml` holds the GitHub owner and repository name used in badges and in the link to the interactive page.
-  After changing it, run `python scripts/build.py`.
+- Suggested GitHub repository settings (the **About** box): description `Neural camera ISPs with code and pretrained weights: RAW denoising, demosaicing, white balance, RAW-to-sRGB, inverse ISP and ISP tuning, plus a classical ISP primer.`; topics `awesome-list`, `neural-isp`, `learned-isp`, `camera-isp`, `image-signal-processing`, `raw-image`, `computational-photography`, `low-level-vision`; website `https://ruilin.li/Awesome-Neural-ISP/`.
+- `config.yaml` holds the GitHub owner and repository name used in badges, and `site`, the public URL of the
+  interactive page. After changing it, run `python scripts/build.py`.
 - The interactive page is `docs/index.html`. Enable it once under **Settings → Pages → Build and deployment →
   Deploy from a branch → `main` / `docs`**.
 - `.github/workflows/ci.yml` validates every push and pull request. `.github/workflows/links.yml` runs

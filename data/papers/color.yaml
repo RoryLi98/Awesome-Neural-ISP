@@ -1,4 +1,47 @@
 # color: one entry per paper; see CONTRIBUTING.md for the schema
+- name: Adaptive Color Grading
+  title: Adaptive Color Grading
+  venue: CIC
+  year: 2026
+  paper: https://arxiv.org/abs/2609.21169
+  code: https://github.com/SamsungLabs/adaptive-color-grading
+  status: code
+  framework: Python (scikit-learn)
+  tldr: Open-source grading tool that splits an image into four tonescale regions with per-region CIELAB offsets composed into one 3D LUT; a K-nearest-neighbor model predicts the region thresholds for each new image from annotated video frames.
+  note: Example training data ships with the repository; the RAW HDR video dataset is to be hosted on the HDRVS page.
+- name: PrefLUT
+  title: 'PrefLUT: Reusable and Refinable Personalized Color Editing from Pairwise Preferences'
+  venue: arXiv
+  year: 2026
+  paper: https://arxiv.org/abs/2609.34133
+  code: https://github.com/LouckXu/PrefLUT
+  status: weights-in-repo
+  weights:
+  - label: weights/preflut.pt (in repo)
+    url: https://github.com/LouckXu/PrefLUT/tree/main/weights
+  framework: PyTorch
+  tldr: Encodes a user's preferred / non-preferred image pairs into a 260-byte reusable profile that conditions the prediction of an exportable 3D LUT and edit strength, without per-user optimization.
+- name: LoopLUT
+  title: 'LoopLUT: 3D Lookup Tables with Progressive Region Refinement for Real-Time 4K Image Enhancement'
+  venue: arXiv
+  year: 2026
+  paper: https://arxiv.org/abs/2609.33593
+  status: no-code
+  tldr: A global 3D LUT followed by residual LUTs, each built from the color statistics of a region chosen by a low-resolution gate; the gates form a partition of unity, so a 4K image costs only K lookups.
+- name: FlowTool
+  title: 'FlowTool: Controlling Tool Parameter in Image Retouching via Flow Matching'
+  venue: arXiv
+  year: 2026
+  paper: https://arxiv.org/abs/2609.35673
+  status: no-code
+  tldr: Generates retouching-tool parameters with conditional rectified flow (a VLM backbone plus a Diffusion Transformer) instead of autoregressive MLLM reasoning; evaluated on MIT-Adobe FiveK among others.
+- name: Synthetic Dense Illuminant
+  title: A General Pipeline for Dense Illuminant Estimation via Physically Based Synthetic Data
+  venue: CIC
+  year: 2026
+  paper: https://arxiv.org/abs/2610.06508
+  status: no-code
+  tldr: Derives per-pixel illuminant chromaticity maps from physically based 3D-rendered scenes and renders 74,321 images for pre-training single- and multi-illuminant estimators, with gains of up to 28% and 57% respectively.
 - name: C2LUT
   title: Illuminant-Adaptive 3D Lookup Tables for Camera Color Correction
   venue: arXiv
@@ -222,8 +265,14 @@
   venue: WACV
   year: 2023
   paper: https://arxiv.org/abs/2210.09090
-  status: no-code
-  tldr: Models scene lighting as "style" for auto white-balance correction.
+  code: https://github.com/birdortyedi/lighting-as-style-awb-correction
+  status: weights
+  weights:
+  - label: models/download.py (script download, patch 64 / 128)
+    url: https://github.com/birdortyedi/lighting-as-style-awb-correction/blob/master/models/download.py
+  framework: PyTorch
+  tldr: Treats scene lighting as a "style"; a multi-head style extractor drives a network that predicts per-pixel weighting maps for blending images rendered with several WB presets, with no illuminant estimation.
+  note: Built on the mixedillWB framework; evaluated on the synthetic mixed-illuminant set of Afifi et al.
 - name: AdaInt
   title: 'AdaInt: Learning Adaptive Intervals for 3D Lookup Tables on Real-time Image Enhancement'
   venue: CVPR

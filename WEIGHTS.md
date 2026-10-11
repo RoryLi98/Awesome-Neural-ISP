@@ -2,7 +2,7 @@
 
 # Pretrained Weights Index
 
-All 136 papers in [Awesome Neural ISP](README.md) that release pretrained weights, grouped by topic. Links are copied from each repository README (checked 2026-09-29); "in repo" means the checkpoint is committed to the repository.
+All 138 papers in [Awesome Neural ISP](README.md) that release pretrained weights, grouped by topic. Links are copied from each repository README (checked 2026-10-11); "in repo" means the checkpoint is committed to the repository.
 
 ## End-to-End RAW-to-sRGB
 
@@ -124,6 +124,7 @@ All 136 papers in [Awesome Neural ISP](README.md) that release pretrained weight
 | Model | Venue | Weights | Code | Framework |
 |:--|:--|:--|:--|:--|
 | **[Multispectral CC](https://arxiv.org/abs/2512.08441)**<br><sub>Dataset on HF: LucaCogo/MobileSpectralCCDataset</sub> | CVPR 2026 | [pretrained/ (in repo, one folder per camera)](https://github.com/LucaCogo/Mobile-Spectral-CC/tree/main/pretrained) | [GitHub](https://github.com/LucaCogo/Mobile-Spectral-CC) | PyTorch |
+| **[PrefLUT](https://arxiv.org/abs/2609.34133)** | arXiv 2026 | [weights/preflut.pt (in repo)](https://github.com/LouckXu/PrefLUT/tree/main/weights) | [GitHub](https://github.com/LouckXu/PrefLUT) | PyTorch |
 | **[RL-AWB](https://arxiv.org/abs/2601.05249)**<br><sub>download.sh / download.bat are also provided for one-click download</sub> | ECCV 2026 | [NCC model (Dropbox)](https://www.dropbox.com/scl/fi/b9sgxxeu481gr4znv5l63/NCC_model.zip?rlkey=664d2tqily9shzktn08npmqxh&st=9vt59fmj&dl=1) | [GitHub](https://github.com/BrianChen1120/RL-AWB) | PyTorch |
 | **[VLM-CC](https://arxiv.org/abs/2605.19613)**<br><sub>Apache-2.0</sub> | CVPR 2026 | [LoRA adapters (Hugging Face)](https://huggingface.co/PeanutBrain/vlm-cc) | [GitHub](https://github.com/NothingIknow/VLM-CC) | PyTorch |
 | **[WB Color Space](https://arxiv.org/abs/2512.09383)** | WACV 2026 | [models/best.pth (in repo)](https://github.com/YangCheng58/WB_Color_Space/tree/main/models) | [GitHub](https://github.com/YangCheng58/WB_Color_Space) | PyTorch |
@@ -135,6 +136,7 @@ All 136 papers in [Awesome Neural ISP](README.md) that release pretrained weight
 | **[NILUT](https://arxiv.org/abs/2306.11920)** | AAAI 2024 | [models/nilutx3style.pt etc. (in repo)](https://github.com/mv-lab/nilut/tree/main/models) | [GitHub](https://github.com/mv-lab/nilut) | PyTorch |
 | **[DeNIM](https://arxiv.org/abs/2308.03939)** | ICCVW 2023 | [weights.zip (Dropbox)](https://www.dropbox.com/scl/fi/1fw1xeibigiflar5kqki3/weights.zip?rlkey=wiw15xnxmxm9nn05ving1v4ls&dl=0) | [GitHub](https://github.com/birdortyedi/DeNIM) | PyTorch |
 | **[LLF-LUT](https://papers.nips.cc/paper_files/paper/2023/hash/b3a08d179347e33414badadf100e4e8d-Abstract-Conference.html)**<br><sub>The NeurIPS version is not released due to company policy; only the TPAMI version is released.</sub> | NeurIPS 2023 | [TPAMI pretrained models (Google Drive)](https://drive.google.com/file/d/1fkMj0peUbkX2ETC4rCxy0FAL7Gyxgg26/view?usp=sharing)<br>[Mirror (Baidu, code fegh)](https://pan.baidu.com/s/1zPkdl0MG6nYNR4ZNC8fqoA?pwd=fegh) | [GitHub](https://github.com/fengzhang427/LLF-LUT) | PyTorch |
+| **[Style-AWB](https://arxiv.org/abs/2210.09090)**<br><sub>Built on the mixedillWB framework; evaluated on the synthetic mixed-illuminant set of Afifi et al.</sub> | WACV 2023 | [models/download.py (script download, patch 64 / 128)](https://github.com/birdortyedi/lighting-as-style-awb-correction/blob/master/models/download.py) | [GitHub](https://github.com/birdortyedi/lighting-as-style-awb-correction) | PyTorch |
 | **[AdaInt](https://arxiv.org/abs/2204.13983)** | CVPR 2022 | [pretrained/AiLUT-\*.pth (in repo)](https://github.com/ImCharlesY/AdaInt/tree/main/pretrained) | [GitHub](https://github.com/ImCharlesY/AdaInt) | PyTorch |
 | **[Mixed-Illuminant AWB](https://arxiv.org/abs/2109.08750)** | WACV 2022 | [models/WB_model_\*.pth (in repo)](https://github.com/mahmoudnafifi/mixedillWB/tree/main/models) | [GitHub](https://github.com/mahmoudnafifi/mixedillWB) | PyTorch |
 | **[SepLUT](https://arxiv.org/abs/2207.08351)** | ECCV 2022 | [pretrained/SepLUT-\*.pth (in repo)](https://github.com/ImCharlesY/SepLUT/tree/main/pretrained) | [GitHub](https://github.com/ImCharlesY/SepLUT) | PyTorch |

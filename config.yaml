@@ -3,7 +3,9 @@
 #   python scripts/build.py
 owner: RoryLi98
 repo: Awesome-Neural-ISP
+# Public URL of the interactive page (docs/ served by GitHub Pages under the custom domain)
+site: https://ruilin.li/Awesome-Neural-ISP/
 title: Awesome Neural ISP
 tagline: Neural (learned) camera ISPs with released code and pretrained weights, plus a primer on the classical pipeline they build on.
 # Date the code / weight links were last checked by hand
-checked: '2026-09-29'
+checked: '2026-10-11'

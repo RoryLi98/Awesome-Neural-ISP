@@ -13,22 +13,6 @@
   paper: https://arxiv.org/abs/2604.28136
   status: no-code
   tldr: Night photography rendering that jointly constrains perceptual distortion and color bias.
-- name: RAW vs RGB Restoration Benchmark
-  title: Benchmarking RAW and RGB Restoration in Image Signal Processors
-  venue: BMVC
-  year: 2026
-  paper: https://arxiv.org/abs/2609.02831
-  code: https://github.com/mv-lab/AISP
-  status: code
-  tldr: Systematically compares restoration in the RAW versus RGB domain, giving empirical evidence on where to place restoration modules in an ISP.
-  note: Code merged into the mv-lab/AISP repo
-- name: Reference-free ISP Evaluation
-  title: A Reference-Free Framework for Evaluating Single-Frame ISP Pipelines
-  venue: arXiv
-  year: 2026
-  paper: https://arxiv.org/abs/2607.23321
-  status: no-code
-  tldr: A framework for evaluating the output quality of single-frame ISP pipelines without reference images.
 - name: RPBA-Net
   title: 'RPBA-Net: An Interpretable Residual Pyramid Bilateral Affine Network for RAW-Domain ISP Enhancement'
   venue: arXiv
@@ -36,13 +20,6 @@
   paper: https://arxiv.org/abs/2605.03626
   status: no-code
   tldr: Interpretable RAW-domain ISP enhancement built on a residual pyramid and bilateral affine grids.
-- name: Small-Pixel Neural ISP
-  title: The Need for Neural ISP in the Small-Pixel Era
-  venue: arXiv
-  year: 2026
-  paper: https://arxiv.org/abs/2606.07675
-  status: no-code
-  tldr: 'Position paper: as pixels shrink and optics approach their limits, neural ISPs are needed to compensate through restoration.'
 - name: VAR-ISP
   title: Visual Autoregressive Priors for RAW-to-sRGB Image Signal Processing
   venue: ECCVW (LoViF)
@@ -80,21 +57,6 @@
     url: https://pan.baidu.com/s/1eAAZf0TbHakxrqwyl2AZVA?pwd=f1gv
   framework: PyTorch
   tldr: Diffusion model for RAW-to-sRGB with a texture-aware loss and histogram-guided color consistency.
-- name: Modular Neural ISP
-  title: Modular Neural Image Signal Processing
-  venue: arXiv
-  year: 2025
-  paper: https://arxiv.org/abs/2512.08564
-  code: https://github.com/mahmoudnafifi/modular_neural_isp
-  status: weights-in-repo
-  weights:
-  - label: denoising/models/*.pth (lite/base/large)
-    url: https://github.com/mahmoudnafifi/modular_neural_isp/tree/main/denoising/models
-  - label: photofinishing/models/*.pth (multiple styles)
-    url: https://github.com/mahmoudnafifi/modular_neural_isp/tree/main/photofinishing/models
-  framework: PyTorch
-  tldr: Splits a neural ISP into swappable modules for denoising, AWB/CCM, photofinishing and upsampling, with an interactive photo-editing GUI.
-  note: Afifi / Brown group; a standalone executable GUI is also available
 - name: RGB-Event ISP
   title: 'RGB-Event ISP: The Dataset and Benchmark'
   venue: ICLR
@@ -128,18 +90,6 @@
   framework: PyTorch
   tldr: Decouples style (color/brightness) from structure in the Fourier domain and learns each separately.
   note: README explicitly states checkpoints will not be released; you need to train it yourself
-- name: ParamISP
-  title: 'ParamISP: Learned Forward and Inverse ISPs using Camera Parameters'
-  venue: CVPR
-  year: 2024
-  paper: https://arxiv.org/abs/2312.13313
-  code: https://github.com/woo525/ParamISP
-  status: weights
-  weights:
-  - label: Official weights (Google Drive, inverse and forward)
-    url: https://drive.google.com/drive/folders/1L7ZSikYt5eaCOEINpjjwmPX0CoZLbBG6
-  framework: PyTorch
-  tldr: Encodes EXIF parameters such as exposure, ISO and focal length into the network to learn both forward and inverse ISPs, trained per camera model.
 - name: Real-World Camera Pipeline
   title: An End-to-End Real-World Camera Imaging Pipeline
   venue: ACM MM
@@ -161,13 +111,6 @@
   paper: https://arxiv.org/abs/2404.11569
   status: no-code
   tldr: Adds a global context guidance module to a lightweight ISP backbone to improve tonal consistency across the whole image.
-- name: Uni-ISP
-  title: 'Uni-ISP: Toward Unifying the Learning of ISPs from Multiple Mobile Cameras'
-  venue: IEEE TIP
-  year: 2024
-  paper: https://arxiv.org/abs/2406.01003
-  status: no-code
-  tldr: A single model that learns the ISPs of multiple smartphones and supports style transfer between cameras.
 - name: Back to the Future ISP
   title: 'Back to the Future: A Night Photography Rendering ISP Without Deep Learning'
   venue: CVPRW (NTIRE)
@@ -182,18 +125,6 @@
   paper: https://arxiv.org/abs/2104.00253
   status: no-code
   tldr: Learns ISP modules using patch-based subspaces and contrastive learning.
-- name: MetaISP
-  title: MetaISP – Exploiting Global Scene Structure for Accurate Multi-Device Color Rendition
-  venue: VMV
-  year: 2023
-  paper: https://arxiv.org/abs/2401.03220
-  code: https://github.com/vccimaging/MetaISP
-  status: weights
-  weights:
-  - label: MetaISPNet weights (Google Drive)
-    url: https://drive.google.com/drive/folders/1tLWlx0LDUjQ9niZje0cfLKt98dx1VEIR?usp=sharing
-  framework: PyTorch
-  tldr: Uses global scene features and device metadata so that one network renders the distinct color styles of multiple smartphones.
 - name: Single-Frame HDR ISP
   title: End-to-End Single-Frame Image Signal Processing for High Dynamic Range Scenes
   venue: WACV

@@ -27,6 +27,7 @@
   examples: Dirty Pixels · AdaptiveISP · RAW-Adapter · TA-ISP · POS-ISP · RAWild
 - title: Controllable and modular again
   text: >-
-    After black-box end-to-end models, work is splitting the ISP back into interpretable, replaceable modules, with
-    attention to user editing and style control.
-  examples: Modular Neural ISP · CtrlISP · Edit-aware RAW · DualDn · NILUT
+    The Controllable Neural ISP category separates user editing and replaceable processing stages from
+    camera/style conditioning. Automatic parameter tuning and task-driven optimization remain distinct topics;
+    NILUT and edit-aware RAW reconstruction connect the category to color modules and inverse imaging.
+  examples: CtrlISP · Modular Neural ISP (SIGGRAPH Asia 2026) · ParamISP · MetaISP · Uni-ISP

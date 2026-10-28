@@ -341,3 +341,12 @@
   framework: TensorFlow
   tldr: Predicts per-pixel convolution kernels to align and denoise multi-frame RAW, taking a noise-level input.
   note: Training code and synthetic data pipeline only
+- name: Neural Block-wise Auto-exposure
+  title: Neural Block-wise Auto-exposure for Single-Shot High Dynamic Range Imaging
+  venue: arXiv
+  year: 2026
+  paper: https://arxiv.org/abs/2610.18733
+  status: no-code
+  tldr: Predicts exposure times for non-overlapping 16 x 16 sensor blocks from a preview and its exposure time; compares RAW and sRGB previews for single-shot HDR
+    capture.
+  note: Posted 2026-10-09 and revised 2026-10-16. No implementation or pretrained checkpoint link was found in the paper or repository search on 2026-10-28.

@@ -1,5 +1,7 @@
 # Contributing
 
+[English](CONTRIBUTING.md) · [简体中文](CONTRIBUTING.zh-CN.md)
+
 Thanks for helping keep this list complete and its links alive. Every entry lives in a YAML file under
 [`data/`](data/); `README.md`, `WEIGHTS.md` and the interactive page in `docs/` are generated from those files, so
 please **do not edit the generated files by hand**.
@@ -15,7 +17,8 @@ please **do not edit the generated files by hand**.
    python scripts/build.py
    ```
 
-4. Commit the YAML change together with the regenerated `README.md`, `WEIGHTS.md` and `docs/index.html`, and open a
+4. Add or update the corresponding Chinese content in `data/i18n/` (see **Bilingual content** below).
+   Commit the YAML change together with both READMEs, both weight indexes and both HTML pages, and open a
    pull request. CI runs `python scripts/build.py --check` and fails if the data is invalid or the generated files are
    out of date.
 
@@ -27,6 +30,7 @@ Not comfortable with a PR? Open an issue with the [Add a paper](https://github.c
 | File | Section |
 |:--|:--|
 | `data/papers/e2e.yaml` | End-to-end RAW-to-sRGB |
+| `data/papers/controllable.yaml` | Controllable Neural ISP |
 | `data/papers/mobile.yaml` | Mobile & lightweight ISP |
 | `data/papers/denoise.yaml` | RAW denoising & noise modeling |
 | `data/papers/lowlight.yaml` | Low-light RAW enhancement |
@@ -44,6 +48,12 @@ Not comfortable with a PR? Open an issue with the [Add a paper](https://github.c
 
 If a paper fits several sections, put it where its main contribution is. Entry order inside a file does not matter;
 the build sorts them.
+
+**Controllable Neural ISP** covers explicit user controls, replaceable learned rendering stages and camera/style
+conditioning. These are different control interfaces: a metadata-conditioned model is not necessarily an interactive
+editor. Automatic content-dependent parameter prediction belongs in `tuning`; methods optimized for downstream
+task rewards belong in `task`. Color-only modules and edit-aware inverse methods stay in `color` and `inverse`,
+with cross-references in the category descriptions. Move entries instead of duplicating them.
 
 ## Paper entry format
 
@@ -105,9 +115,23 @@ Out of scope:
 
 ## Style
 
-- English only, neutral tone: no "novel", "state-of-the-art" or "outperforms". Describe what the method does.
+- Maintain English source records and complete Chinese overlays, in a neutral tone: no "novel", "state-of-the-art" or "outperforms". Describe what the method does.
 - Use the paper's own capitalization for titles and method names.
 - One entry per paper; challenge-winning solutions that have their own repository may be listed next to the report.
+
+## Bilingual content
+
+- `data/i18n/papers.zh-CN.yaml` maps the exact paper `name` to translated `title`, `tldr`, and `note` (when present),
+  plus `weight_labels` in the same order as the source weights. Keep official method names; translate descriptive text.
+- `data/i18n/resources.zh-CN.yaml` covers categories, datasets, tools, trends and learning resources. Identity keys,
+  bibliographic values and links come from the English source. Resource lists retain the source ordering.
+- `scripts/localization.py` rejects missing translations and mismatched counts. `python scripts/build.py --check`
+  checks all six generated outputs: `README.md`, `README.zh-CN.md`, `WEIGHTS.md`, `WEIGHTS.zh-CN.md`,
+  `docs/index.html` and `docs/zh-CN.html`.
+- Website sources are `scripts/site_template.html`, `scripts/site_style.css`, `scripts/site_script.js` and
+  `scripts/site_build.py`. Generated pages embed all data, styles and scripts and work without a server or CDN.
+- Keep `config.yaml`'s `checked` date for a full code/weight audit; use `literature_updated` for literature refreshes.
+  Record sources and per-entry checks in an update note, instead of implying all links were rechecked.
 
 ## For maintainers
 

@@ -2,6 +2,8 @@
 
 # Pretrained Weights Index
 
+[English](WEIGHTS.md) · [简体中文](WEIGHTS.zh-CN.md)
+
 All 132 papers in [Awesome Neural ISP](README.md) that release pretrained weights, grouped by topic. Links are copied from each repository README (checked 2026-10-11); "in repo" means the checkpoint is committed to the repository.
 
 ## End-to-End RAW-to-sRGB
@@ -9,9 +11,6 @@ All 132 papers in [Awesome Neural ISP](README.md) that release pretrained weight
 | Model | Venue | Weights | Code | Framework |
 |:--|:--|:--|:--|:--|
 | **[ISPDiffuser](https://arxiv.org/abs/2503.19283)** | AAAI 2025 | [ZRR / MAI weights (Google Drive)](https://drive.google.com/drive/folders/1smqKEttfKNEZfS8OT-g9yoMOCoRs90Gy?usp=sharing)<br>[Mirror (Baidu, code f1gv)](https://pan.baidu.com/s/1eAAZf0TbHakxrqwyl2AZVA?pwd=f1gv) | [GitHub](https://github.com/RenYangSCU/ISPDiffuser) | PyTorch |
-| **[Modular Neural ISP](https://arxiv.org/abs/2512.08564)**<br><sub>Afifi / Brown group; a standalone executable GUI is also available</sub> | arXiv 2025 | [denoising/models/\*.pth (lite/base/large)](https://github.com/mahmoudnafifi/modular_neural_isp/tree/main/denoising/models)<br>[photofinishing/models/\*.pth (multiple styles)](https://github.com/mahmoudnafifi/modular_neural_isp/tree/main/photofinishing/models) | [GitHub](https://github.com/mahmoudnafifi/modular_neural_isp) | PyTorch |
-| **[ParamISP](https://arxiv.org/abs/2312.13313)** | CVPR 2024 | [Official weights (Google Drive, inverse and forward)](https://drive.google.com/drive/folders/1L7ZSikYt5eaCOEINpjjwmPX0CoZLbBG6) | [GitHub](https://github.com/woo525/ParamISP) | PyTorch |
-| **[MetaISP](https://arxiv.org/abs/2401.03220)** | VMV 2023 | [MetaISPNet weights (Google Drive)](https://drive.google.com/drive/folders/1tLWlx0LDUjQ9niZje0cfLKt98dx1VEIR?usp=sharing) | [GitHub](https://github.com/vccimaging/MetaISP) | PyTorch |
 | **[CBUnet](https://arxiv.org/abs/2204.08970)**<br><sub>Stage-2 and other weights are listed in the README</sub> | CVPRW (NTIRE) 2022 | [stage-1 cube++.pth (Google Drive)](https://drive.google.com/file/d/1K8CgwXp0Pk7yPNUWXOF6zbK9iHgpiVDS/view?usp=sharing) | [GitHub](https://github.com/njuvision/CBUnet) | PyTorch |
 | **[LiteISPNet](https://openaccess.thecvf.com/content/ICCV2021/html/Zhang_Learning_RAW-to-sRGB_Mappings_With_Inaccurately_Aligned_Supervision_ICCV_2021_paper.html)**<br><sub>The README also provides ZRR via Baidu (code 8sq1) and a preprocessed SR-RAW.</sub> | ICCV 2021 | [ZRR / SR-RAW pretrained models (Google Drive)](https://drive.google.com/drive/folders/12eMNZh-A9E4bVup-Kcy_F0_c0IToUyw7?usp=sharing) | [GitHub](https://github.com/cszhilu1998/RAW-to-sRGB) | PyTorch |
 | **[AWNet](https://arxiv.org/abs/2008.09228)** | ECCVW (AIM) 2020 | [demosaiced_model (Google Drive)](https://drive.google.com/file/d/1uhohG6cYkM_-W4dGLl8yGlo85UMF6KEK/view?usp=sharing)<br>[Raw_model (Google Drive)](https://drive.google.com/file/d/1jBwEm7_zbU55qOlGAVuOAQ8BIwx2g7Fw/view?usp=sharing) | [GitHub](https://github.com/Charlie0215/AWNet-Attentive-Wavelet-Network-for-Image-ISP) | PyTorch |
@@ -20,6 +19,14 @@ All 132 papers in [Awesome Neural ISP](README.md) that release pretrained weight
 | **[PyNET-CA](https://arxiv.org/abs/2104.02895)**<br><sub>Authors warn that results may not be reproducible with PyTorch &gt; 1.4</sub> | ECCVW (AIM) 2020 | [pretrained_model.zip (Dropbox)](https://www.dropbox.com/s/psoz0auaynu3e5x/pretrained_model.zip?dl=0) | [GitHub](https://github.com/egyptdj/skyb-aim2020-public) | PyTorch |
 | **[W-Net](https://arxiv.org/abs/1911.08656)** | ICCVW (AIM) 2019 | [pretrained models (Google Drive)](https://drive.google.com/drive/folders/1eH_prE7EWEUqxJes5IfHTdsFyqP64o7w?usp=sharing) | [GitHub](https://github.com/khuhm/W-Net) | — |
 | **[DPED](https://arxiv.org/abs/1704.02470)** | ICCV 2017 | [models_orig/{iphone,sony,blackberry}_orig (in repo)](https://github.com/aiff22/DPED/tree/master/models_orig) | [GitHub](https://github.com/aiff22/DPED) | TensorFlow |
+
+## Controllable Neural ISP
+
+| Model | Venue | Weights | Code | Framework |
+|:--|:--|:--|:--|:--|
+| **[Modular Neural ISP](https://arxiv.org/abs/2512.08564)**<br><sub>Official repository announces acceptance at SIGGRAPH Asia 2026 (checked 2026-10-28); a standalone editing GUI is available.</sub> | SIGGRAPH Asia 2026 | [denoising/models/\*.pth (lite/base/large)](https://github.com/mahmoudnafifi/modular_neural_isp/tree/main/denoising/models)<br>[photofinishing/models/\*.pth (multiple styles)](https://github.com/mahmoudnafifi/modular_neural_isp/tree/main/photofinishing/models) | [GitHub](https://github.com/mahmoudnafifi/modular_neural_isp) | PyTorch |
+| **[ParamISP](https://arxiv.org/abs/2312.13313)** | CVPR 2024 | [Official weights (Google Drive, inverse and forward)](https://drive.google.com/drive/folders/1L7ZSikYt5eaCOEINpjjwmPX0CoZLbBG6) | [GitHub](https://github.com/woo525/ParamISP) | PyTorch |
+| **[MetaISP](https://arxiv.org/abs/2401.03220)** | VMV 2023 | [MetaISPNet weights (Google Drive)](https://drive.google.com/drive/folders/1tLWlx0LDUjQ9niZje0cfLKt98dx1VEIR?usp=sharing) | [GitHub](https://github.com/vccimaging/MetaISP) | PyTorch |
 
 ## Mobile & Lightweight ISP
 
@@ -170,6 +177,7 @@ All 132 papers in [Awesome Neural ISP](README.md) that release pretrained weight
 
 | Model | Venue | Weights | Code | Framework |
 |:--|:--|:--|:--|:--|
+| **[POS-ISP](https://arxiv.org/abs/2604.06938)** | CVPR Findings 2026 | [weights/\*.pth (in repo: LOD / LIS / KITTI)](https://github.com/w1jyun/POS-ISP/tree/main/weights) | [GitHub](https://github.com/w1jyun/POS-ISP) | PyTorch |
 | **[RAWild](https://arxiv.org/abs/2605.05941)** | NeurIPS 2026 | [Checkpoints Det/Seg (Google Drive)](https://drive.google.com/drive/folders/1gJlPLMO7Ty0XszLQTJkoZUIxeqbOwKqd?usp=sharing) | [GitHub](https://github.com/I2WM/RAWild) | PyTorch |
 | **[SimROD](https://arxiv.org/abs/2503.07101)** | AAAI 2026 | [all weights (Baidu, code 2025)](https://pan.baidu.com/s/17zEp6-Zz49M7q1O6e5cUfw)<br>[all weights (Google Drive)](https://drive.google.com/file/d/1zoT8VOwrtebnmDEtXfdQQeRvkVNoXOIx/view?usp=sharing) | [GitHub](https://github.com/ocean146/SimROD) | PyTorch |
 | **[TA-ISP](https://arxiv.org/abs/2509.13762)** | CVPR 2026 | [pretrained models (GitHub Release v0.0)](https://github.com/CVL-UESTC/TA-ISP/releases/tag/v0.0) | [GitHub](https://github.com/CVL-UESTC/TA-ISP) | PyTorch (mmdet/mmseg) |
@@ -187,7 +195,6 @@ All 132 papers in [Awesome Neural ISP](README.md) that release pretrained weight
 
 | Model | Venue | Weights | Code | Framework |
 |:--|:--|:--|:--|:--|
-| **[POS-ISP](https://arxiv.org/abs/2604.06938)** | CVPR 2026 (Findings) 2026 | [weights/\*.pth (in repo: LOD / LIS / KITTI)](https://github.com/w1jyun/POS-ISP/tree/main/weights) | [GitHub](https://github.com/w1jyun/POS-ISP) | PyTorch |
 | **[RL Photo-Finishing Tuning](https://arxiv.org/abs/2503.07300)** | NeurIPS 2024 | [envs/checkpoints/best_model\*.zip (in repo)](https://github.com/OpenImagingLab/RLPixTuner) | [GitHub](https://github.com/OpenImagingLab/RLPixTuner) | PyTorch |
 
 ## Challenges & Surveys

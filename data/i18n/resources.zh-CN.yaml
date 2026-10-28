@@ -1,0 +1,376 @@
+# 中文内容覆盖；条目身份、链接与数值以英文源数据为准。
+config:
+  title: Awesome Neural ISP · 神经图像信号处理论文集
+  tagline: 汇集神经相机 ISP 的论文、公开代码与预训练权重，并提供其所基于的经典成像流水线入门指南。
+categories:
+  e2e:
+    title: 端到端 RAW-to-sRGB
+    short: 端到端 ISP
+    description: 用一个网络替代完整 ISP。早期方法主要基于 CNN（DeepISP、PyNET、LiteISPNet），近期引入扩散与自回归先验。RAW/sRGB 训练对的不精确对齐是持续难题。显式渲染控制、相机条件化与模块化编辑见“可控神经 ISP”。
+  controllable:
+    title: 可控神经 ISP
+    short: 可控 ISP
+    description: 通过显式控制信号或可替换阶段调节学习式成像。用户可编辑管线包括 CtrlISP 与 Modular Neural ISP；相机／风格条件化包括 ParamISP、MetaISP 与 Uni-ISP，但元数据条件化不必然提供用户编辑界面。NILUT 和白平衡编辑等局部模块仍归入“白平衡、颜色与色调”，编辑感知
+      RAW 重建仍归入“逆向 ISP”。自动参数预测与传统 ISP 控制归入“ISP 参数调优”，面向下游任务奖励的优化归入“面向机器视觉的 ISP”。
+  mobile:
+    title: 移动端与轻量化 ISP
+    short: 移动端 ISP
+    description: 为手机 NPU 和 GPU 实时运行设计的 ISP，主要来自 Mobile AI（MAI）和 NTIRE 挑战赛。自 2025 年起，研究重心转向无需配对数据的训练。
+  denoise:
+    title: RAW 去噪与噪声建模
+    short: RAW 去噪
+    description: 位于成像流水线前端。主要研究脉络从泊松–高斯模型发展到基于物理成因的噪声建模（ELD）、暗帧采样、生成式噪声模型，以及免标定和盲去噪。
+  lowlight:
+    title: 弱光 RAW 增强
+    short: 弱光 RAW
+    description: 由 SID 开启的极弱光 RAW-to-sRGB 研究。方法从 U-Net 发展到解耦的两阶段结构（DNF）、Mamba 与扩散模型，近期也研究欠曝光与过曝光的联合校正。用户可调节的弱光成像（CtrlISP）见“可控神经 ISP”。
+  demosaic:
+    title: 去马赛克、联合复原与 RAW 超分辨率
+    short: 去马赛克 / 超分
+    description: 将 CFA 颜色插值与去噪、超分辨率联合建模，近年来扩展到 Quad、Nona、HybridEVS 等非标准 Bayer 传感器。
+  burst:
+    title: 连拍与 HDR
+    short: 连拍 / HDR
+    description: 对齐并融合多帧 RAW 图像，实现超分辨率、去噪和高动态范围成像。BurstSR 与 NTIRE 挑战赛是主要评测基准。
+  video:
+    title: RAW 视频
+    short: RAW 视频
+    description: RAW 视频的去噪、超分辨率与弱光增强，也包括 BRVE 和 BinRVR 两种二值化网络。
+  color:
+    title: 白平衡、颜色与色调
+    short: 白平衡 / 颜色 / 色调
+    description: 覆盖流水线中后段：光源估计（颜色恒常性）、sRGB 白平衡校正、颜色校正与三维查找表（3D LUT）、色调映射和图像润饰。跨相机泛化与元数据利用是近期重点。
+  inverse:
+    title: 逆向 ISP、RAW 重建与压缩
+    short: 逆向 ISP
+    description: 从 sRGB 恢复 RAW，用于合成训练数据、节省 RAW 存储空间或进行跨相机迁移；涵盖 Unprocessing、CycleISP、InvISP，以及 2025–2026 年的扩散与流匹配方法。
+  task:
+    title: 面向机器视觉的 ISP
+    short: 机器视觉 ISP
+    description: ISP 输出服务于检测器或分割器：包括联合训练的 ISP、直接在 RAW 上进行感知的方法、适配器，以及 RAW 目标检测数据集。
+  tuning:
+    title: ISP 参数调优
+    short: ISP 调参
+    description: 不替换 ISP，而是通过可微代理、演化策略、强化学习，以及自 2025 年起出现的多模态大模型评判器，自动调整硬件或可微 ISP 的参数。也保留 EMOVIS 等传统用户控制基线。学习式可编辑渲染归入“可控神经 ISP”，由检测奖励驱动的序列优化（POS-ISP）归入“面向机器视觉的
+      ISP”。
+  report:
+    title: 挑战赛与综述
+    short: 挑战赛 / 综述
+    description: 汇集 AIM、Mobile AI、NTIRE、MIPI 挑战赛报告、综述、评测框架与观点论文，帮助快速了解各研究方向的方法、数据和开放问题。
+datasets:
+  ZRR (Zurich RAW to RGB):
+    source: PyNET
+    capture: 华为 P20（Sony IMX380）RAW 与佳能 5D Mark IV sRGB 配对
+    size: 约 1 万对全分辨率图像，裁剪为 448×448 训练图块
+    use: 主要的端到端 RAW-to-sRGB 基准（LiteISPNet、PyNET、AWNet 等）
+  MAI21 Learned ISP:
+    source: MAI 2021 挑战赛
+    capture: Sony IMX586 手机 RAW 与富士 GFX100 sRGB 配对
+    size: 需要在 CodaLab 注册
+    use: 手机 NPU 上的 ISP 训练与运行时间评测
+  Fujifilm UltraISP:
+    source: MicroISP / MAI 2022
+    capture: 手机传感器 RAW 与富士 GFX100（1.02 亿像素）图像配对
+    size: 高分辨率图像对
+    use: 移动端 ISP 与非配对 ISP 训练
+  ISPW:
+    source: 将智能手机变成单反相机
+    capture: 真实场景中的手机与单反弱配对图像
+    size: —
+    use: 弱对齐条件下的 ISP 学习；仓库 README 中的 ETH 下载链接返回 404（2026-10-11 检查）
+  SR-RAW:
+    source: Zoom to Learn
+    capture: Sony FE 24-240 镜头在多个焦距下拍摄的光学变焦 RAW
+    size: 500 个序列
+    use: RAW 超分辨率；LiteISPNet 也用其评估 RAW-to-sRGB
+  MIT-Adobe FiveK:
+    source: Bychkovsky 等
+    capture: 来自多款相机的 5,000 张 RAW，每张均由 5 位专家润饰
+    size: 5,000 张
+    use: InvISP、RAW-Flow、颜色 / LUT 方法与逆向 ISP
+  S24 RAW-sRGB:
+    source: Time-Aware AWB
+    capture: 三星 Galaxy S24 Ultra RAW、相机内 sRGB 与专家 Lightroom 渲染图像
+    size: —
+    use: 自动白平衡、神经 ISP、编辑感知 RAW 重建
+  NTIRE 2025 RGB2RAW:
+    source: NTIRE 2025 挑战赛
+    capture: 多款智能手机的 RGB 与 RAW 图像
+    size: —
+    use: RGB-to-RAW 重建
+  SID:
+    source: Learning to See in the Dark
+    capture: Sony α7S II（Bayer）与富士 X-T2（X-Trans）的短曝光和长曝光图像
+    size: 5,094 张短曝光 RAW 图像
+    use: 弱光 RAW-to-sRGB；自 2025-09 起需手动下载（Sony 25 GB / Fuji 52 GB）
+  MCR:
+    source: Abandoning the Bayer-Filter to See in the Dark
+    capture: 配对的单色传感器与彩色传感器图像
+    size: —
+    use: 弱光 RAW 增强
+  ELD:
+    source: ELD
+    capture: 多款相机拍摄的极弱光 RAW
+    size: —
+    use: 基于物理成因的噪声建模与弱光 RAW 去噪评测
+  LRID:
+    source: PNNP
+    capture: 多个 ISO 下的弱光 RAW（Sony、IMX686 等）
+    size: 总计约 523 GB
+    use: 弱光 RAW 去噪与噪声建模
+  SIDD:
+    source: Abdelhamed 等
+    capture: 5 款智能手机的 RAW 与 sRGB 噪声 / 干净图像对
+    size: 约 3 万张噪声图像
+    use: 真实噪声建模与去噪（Noise Flow 等）
+  DND:
+    source: Plötz 与 Roth
+    capture: 4 款消费级相机拍摄的真实噪声图像
+    size: 50 对图像，在线评测
+    use: 在线 RAW / sRGB 去噪基准
+  CRVD:
+    source: RViDeNet
+    capture: 监控相机拍摄的动态场景 RAW 视频
+    size: 多个 ISO 下的视频对
+    use: RAW 视频去噪
+  HDR+ Burst:
+    source: Hasinoff 等
+    capture: Google 手机 RAW 连拍及 HDR+ 输出
+    size: 3,640 组连拍
+    use: 连拍融合与 ISP 训练（CameraNet 等）
+  BurstSR:
+    source: DBSR
+    capture: 三星 Galaxy S8 连拍与佳能 5D Mark IV 图像配对
+    size: 包含真实与合成赛道
+    use: 连拍超分辨率
+  PixelShift200:
+    source: TENet
+    capture: Sony 像素位移技术的全彩采样
+    size: 210 张 4K 图像
+    use: 为去马赛克及联合去噪、去马赛克、超分辨率提供真实参考图像
+  NUS 8-Camera:
+    source: Cheng 等
+    capture: 来自 8 款相机的 RAW 光源估计数据
+    size: 约 1,700 张图像
+    use: 颜色恒常性（C5、CCMNet、GCC 等）
+  Cube+:
+    source: Banić 等
+    capture: 佳能 550D RAW，利用色卡标注光源
+    size: 2,070 张图像
+    use: 颜色恒常性
+  Rendered WB (Set1/Set2):
+    source: WB_sRGB
+    capture: 使用多款相机及白平衡预设渲染的 sRGB
+    size: 约 6.5 万张图像
+    use: sRGB 白平衡校正与编辑
+  LSMI:
+    source: LSMI
+    capture: 混合光源 RAW，附逐像素光源图
+    size: 7,486 张图像
+    use: 多光源白平衡
+  LOD:
+    source: Crafting Object Detection in Very Low Light
+    capture: 弱光 / 正常光照 RAW 图像对，附检测标注
+    size: 2,230 对图像
+    use: 弱光 RAW 检测（AdaptiveISP、RAW-Adapter、Dark-ISP）
+  RAW-NOD:
+    source: GenISP
+    capture: Nikon / Sony 夜间 RAW，附检测标注
+    size: 7,000 余张图像
+    use: 弱光 RAW 检测
+  PASCALRAW:
+    source: Omid-Zohoor 等
+    capture: Nikon D3200 RAW，附 VOC 格式标注
+    size: 4,259 张图像
+    use: RAW 目标检测
+  ROD:
+    source: RAOD
+    capture: 驾驶场景中的 24 位 HDR RAW
+    size: 约 2.5 万张图像
+    use: RAW 检测（TA-ISP、SimROD）
+  AODRaw:
+    source: AODRaw
+    capture: 覆盖不同天气和光照条件的 RAW
+    size: 7,785 张 6000×4000 图像
+    use: RAW 检测与 RAW 预训练
+  LIS:
+    source: Instance Segmentation in the Dark
+    capture: 弱光 RAW 实例分割数据
+    size: —
+    use: 弱光 RAW 分割
+  Camera-Native VR180:
+    source: Lu 2026
+    capture: 两台 Blackmagic URSA Cine Immersive 立体鱼眼相机；每个样本同时提供 Blackmagic RAW、鱼眼及半等距柱状投影 HEVC，并附出厂镜头标定
+    size: 1,211 个样本（636 段立体视频，多数为 90 fps；575 组立体静态图像）
+    use: 用于立体 / 沉浸式视频处理与编码的相机原生 RAW 数据（CC BY-NC 4.0）
+tools:
+  rawpy:
+    title: rawpy：LibRaw 的 Python 封装
+    description: 读取几乎所有相机 RAW / DNG 文件，并执行基本后处理；是 RAW 数据集预处理的常用工具。
+  fast-openISP:
+    title: fast-openISP：openISP 的向量化 Python 重实现
+    description: 完整传统 ISP 流水线，包括黑电平校正、坏点校正、去马赛克、自动白平衡、颜色校正矩阵、伽马、去噪与锐化，便于与学习式模型比较。
+  openISP:
+    title: openISP：开源传统 ISP
+    description: 传统 ISP 的早期开源参考实现。
+  Infinite-ISP:
+    title: Infinite-ISP：面向硬件移植的完整 ISP 流水线
+    description: 按硬件 ISP 模块组织传统算法，并计划加入学习式模块。
+  simple-camera-pipeline:
+    title: Simple Camera Pipeline（由 SIDD 作者提供）
+    description: 轻量 RAW→sRGB 相机流水线，提供 MATLAB / Python 版本，常用于渲染 SIDD 及类似数据。
+  mv-lab/AISP:
+    title: AI 图像信号处理与计算摄影
+    description: Marcos Conde 等开发的学习式 ISP 工具箱，包含 RAW 退化生成、挑战赛基线、LPIENet、NILUT 等。
+  ISP-pipeline-hdrplus:
+    title: ISP-pipeline-hdrplus（传统 ISP + HDR+，附中文文档）
+    description: 传统 ISP 实现，包含 HDR+ 多帧融合和标定工具；测试图像与工具托管在百度网盘，提取码 aaaa。
+  LibRaw:
+    title: LibRaw：RAW 图像读取与处理库
+    description: dcraw 的后继项目，可从几乎所有相机格式中提取 RAW 像素、CFA 排列、黑电平、白平衡和其他元数据。
+  colour-demosaicing:
+    title: Colour — 去马赛克
+    description: 面向 Bayer 马赛克的经典 CFA 去马赛克算法，包括双线性插值、Malvar 2004 与 Menon 2007 DDFAPD。
+  colour:
+    title: Colour 色彩科学工具箱
+    description: 色彩科学工具箱，包含颜色空间、色适应、色卡数据，以及 CIEDE2000 等色差指标。
+  hdr-plus:
+    title: 以 Halide 实现 HDR+
+    description: HDR+ 连拍对齐与融合流水线的开放实现。
+  darktable:
+    title: darktable
+    description: 开源 RAW 显影工具，采用模块化、基于场景亮度的处理流水线。
+  RawTherapee:
+    title: RawTherapee
+    description: 开源 RAW 显影工具，提供多种去马赛克、去噪与色调映射选项。
+resources:
+  tutorials:
+  - name: 理解相机内渲染流水线及 AI / 深度学习的作用
+    by: Michael S. Brown (ICCV 2023 tutorial)
+    url: http://www.eecs.yorku.ca/~mbrown/ICCV2023_Brown.html
+    description: 介绍色彩科学、传统 ISP 阶段以及深度学习带来的变化；课件可在线获取。
+  - name: 移动计算摄影导览
+    by: Delbracio, Kelly, Brown, Milanfar (Annual Review of Vision Science 2021)
+    url: https://doi.org/10.1146/annurev-vision-093019-115521
+    description: 综述手机相机流水线，涵盖连拍融合到学习式处理。
+  - name: 使用 MATLAB 处理 RAW 图像
+    by: Rob Sumner
+    url: https://rcsumner.net/raw_guide/RAWguide.pdf
+    description: 附代码的逐步教程，从 RAW 文件生成可显示的图像。
+  - name: 彩色图像处理流水线
+    by: Ramanath, Snyder, Yoo, Drew (IEEE Signal Processing Magazine 2005)
+    url: https://doi.org/10.1109/MSP.2005.1407713
+    description: 数字静态相机成像流水线各阶段的经典综述。
+  - name: 用于操控相机成像流水线的软件平台
+    by: Karaimer and Brown (ECCV 2016)
+    url: https://doi.org/10.1007/978-3-319-46448-0_26
+    description: 开放相机流水线的每个阶段，可检查并修改中间结果。
+  books:
+  - name: 计算机视觉：算法与应用（第 2 版）
+    by: Richard Szeliski (2022)
+    url: https://szeliski.org/Book/
+    description: 可免费在线阅读；第 2.3 节介绍数字相机与图像形成。
+  - name: 数字静态相机的图像传感器与信号处理
+    by: Junichi Nakamura (ed.), CRC Press
+    url: https://doi.org/10.1201/9781420026856
+    description: 介绍数字静态相机的传感器物理、噪声与处理链路。
+  classic:
+  - stage: 噪声
+    items:
+    - name: CCD 相机辐射定标与噪声估计
+      by: Healey and Kondepudy, TPAMI 1994
+      url: https://doi.org/10.1109/34.276126
+    - name: 单幅 RAW 数据的实用泊松–高斯噪声建模与拟合
+      by: Foi et al., TIP 2008
+      url: https://doi.org/10.1109/TIP.2008.2001399
+    - name: 基于稀疏三维变换域协同滤波的图像去噪（BM3D）
+      by: Dabov et al., TIP 2007
+      url: https://doi.org/10.1109/TIP.2007.901238
+    - name: 泊松–高斯噪声广义 Anscombe 变换的最优逆变换
+      by: Mäkitalo and Foi, TIP 2013
+      url: https://doi.org/10.1109/TIP.2012.2202675
+  - stage: 去马赛克
+    items:
+    - name: Bayer 排列彩色图像去马赛克的高质量线性插值
+      by: Malvar, He and Cutler, ICASSP 2004
+      url: https://doi.org/10.1109/ICASSP.2004.1326587
+    - name: 自适应同质性引导去马赛克算法
+      by: Hirakawa and Parks, TIP 2005
+      url: https://doi.org/10.1109/TIP.2004.838691
+    - name: 去马赛克：颜色滤波阵列插值
+      by: Gunturk et al., IEEE Signal Processing Magazine 2005
+      url: https://doi.org/10.1109/MSP.2005.1407714
+  - stage: 白平衡
+    items:
+    - name: 物体颜色感知的空间处理模型（灰度世界）
+      by: Buchsbaum, Journal of the Franklin Institute 1980
+      url: https://doi.org/10.1016/0016-0032(80)90058-7
+    - name: 基于边缘的颜色恒常性（灰度边缘）
+      by: van de Weijer, Gevers and Gijsenij, TIP 2007
+      url: https://doi.org/10.1109/TIP.2007.901808
+    - name: 计算颜色恒常性：综述与实验
+      by: Gijsenij, Gevers and van de Weijer, TIP 2011
+      url: https://doi.org/10.1109/TIP.2011.2118224
+  - stage: 色调映射与 HDR
+    items:
+    - name: 从照片恢复高动态范围辐亮度图
+      by: Debevec and Malik, SIGGRAPH 1997
+      url: https://doi.org/10.1145/258734.258884
+    - name: 数字图像的摄影色调再现
+      by: Reinhard et al., SIGGRAPH 2002
+      url: https://doi.org/10.1145/566654.566575
+    - name: 曝光融合
+      by: Mertens, Kautz and Van Reeth, Pacific Graphics 2007
+      url: https://doi.org/10.1109/PG.2007.17
+  - stage: 连拍摄影
+    items:
+    - name: 移动相机高动态范围与弱光成像的连拍摄影（HDR+）
+      by: Hasinoff et al., SIGGRAPH Asia 2016
+      url: https://doi.org/10.1145/2980179.2980254
+    - name: 手持多帧超分辨率
+      by: Wronski et al., SIGGRAPH 2019
+      url: https://doi.org/10.1145/3306346.3323024
+  related_lists:
+  - name: mv-lab/AISP
+    url: https://github.com/mv-lab/AISP
+    description: AI 图像信号处理与计算摄影工具箱和论文集。
+  - name: starkfan007/awesome-ISP
+    url: https://github.com/starkfan007/awesome-ISP
+    description: ISP 框架、论文、库与学习资源。
+  - name: SintonZZ/Awesome-AI-ISP
+    url: https://github.com/SintonZZ/Awesome-AI-ISP
+    description: AI-ISP 相关研究。
+  - name: mikeroyal/ISP-Guide
+    url: https://github.com/mikeroyal/ISP-Guide
+    description: 图像信号处理硬件与软件的综合指南。
+  - name: Hedlen/awesome-sRGB2RAW-InvISP
+    url: https://github.com/Hedlen/awesome-sRGB2RAW-InvISP
+    description: 逆向 ISP（sRGB-to-RAW）论文。
+  - name: Kobaayyy/Awesome-CVPR2025-CVPR2024-CVPR2021-CVPR2020-Low-Level-Vision
+    url: https://github.com/Kobaayyy/Awesome-CVPR2025-CVPR2024-CVPR2021-CVPR2020-Low-Level-Vision
+    description: 按 CVPR 年份整理的底层视觉论文。
+  - name: DarrenPan/Awesome-CVPR2024-Low-Level-Vision
+    url: https://github.com/DarrenPan/Awesome-CVPR2024-Low-Level-Vision
+    description: CVPR 2024 底层视觉论文；同一作者还维护其他会议的目录。
+  - name: lcybuzz/Low-Level-Vision-Paper-Record
+    url: https://github.com/lcybuzz/Low-Level-Vision-Paper-Record
+    description: 按主题长期更新的底层视觉论文记录。
+trends:
+- title: 从 CNN 到生成式 ISP
+  text: CNN 曾是截至 2023 年的主流。随后 Transformer 和 Mamba 进入弱光增强与去马赛克；从 2025 年起，扩散与流匹配同时用于正向 ISP 和 RGB-to-RAW。
+  examples: PyNET → LiteISPNet → ISPDiffuser · LDM-ISP · RAW-Flow · SpiralDiff
+- title: 训练数据仍是瓶颈
+  text: 手机 RAW 与单反 sRGB 通常无法精确对齐，也存在颜色差异。应对方法从对齐感知损失发展到合成数据与跨相机 RAW 映射；2025–2026 年的挑战赛进一步转向完全非配对训练。
+  examples: LiteISPNet · Unprocessing · Day-to-Night · Rawformer · NTIRE 2026 非配对 ISP
+- title: 将相机元数据输入网络
+  text: 显式编码 EXIF、ISO、颜色矩阵与拍摄时间，以支持跨相机泛化和可控渲染。
+  examples: ParamISP · MetaISP · CCMNet · Time-Aware AWB · PMRID k-Sigma
+- title: 部署：从挑战赛走向低比特网络
+  text: MAI 挑战赛在手机 NPU 上测量提交方案的运行时间，催生了 MicroISP、PyNET-V2 等紧凑设计。显式量化与二值化研究主要集中在 RAW 视频和去马赛克。
+  examples: MAI 2021/2022/2025 · MicroISP · BRVE · BinRVR · BMTNet · RAWDet-7
+- title: 服务于机器感知的 ISP
+  text: 自 2023 年起，RAW 检测数据集与方法快速增长，包括联合训练的 ISP、通过强化学习选择的 ISP 模块序列，以及直接接收 RAW 的适配器。
+  examples: Dirty Pixels · AdaptiveISP · RAW-Adapter · TA-ISP · POS-ISP · RAWild
+- title: 重新走向可控与模块化
+  text: “可控神经 ISP”专题区分用户编辑与可替换处理阶段，以及相机／风格条件化。自动参数调优和任务驱动优化仍独立归类；NILUT 与编辑感知 RAW 重建则串联颜色模块和逆向成像。
+  examples: CtrlISP · Modular Neural ISP（SIGGRAPH Asia 2026）· ParamISP · MetaISP · Uni-ISP

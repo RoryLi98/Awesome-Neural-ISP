@@ -8,18 +8,6 @@
   status: coming-soon
   tldr: Automatically tunes ISP color parameters in subjective scenarios.
   note: “We will release the code soon”
-- name: POS-ISP
-  title: 'POS-ISP: Pipeline Optimization at the Sequence Level for Task-aware ISP'
-  venue: CVPR 2026 (Findings)
-  year: 2026
-  paper: https://arxiv.org/abs/2604.06938
-  code: https://github.com/w1jyun/POS-ISP
-  status: weights-in-repo
-  weights:
-  - label: 'weights/*.pth (in repo: LOD / LIS / KITTI)'
-    url: https://github.com/w1jyun/POS-ISP/tree/main/weights
-  framework: PyTorch
-  tldr: Predicts the entire ISP module sequence and all its parameters in a single forward pass, optimized with downstream task rewards.
 - name: Language Color ISP Tuning
   title: Language-based Color ISP Tuning
   venue: CIC
@@ -122,3 +110,22 @@
   paper: https://arxiv.org/abs/1902.09023
   status: no-code
   tldr: Automatically tunes ISP parameters via non-linear optimization with image quality metrics as the objective.
+- name: EMOVIS
+  title: 'EMOVIS: Emotion-Optimized Image Processing'
+  venue: ICIP
+  year: 2026
+  paper: https://arxiv.org/abs/2605.03131
+  code: https://github.com/dorbarber79/EMOVIS
+  status: code
+  framework: Python / NumPy / OpenCV
+  tldr: Maps target emotions to saturation, brightness, contrast and color controls in a conventional 16-bit RAW ISP, calibrated through a user study.
+  note: A conventional, training-free ISP control baseline rather than a neural ISP; official processing code is released, with no learned checkpoints required (checked
+    2026-10-28).
+- name: PQDynamicISP
+  title: 'PQDynamicISP: Dynamically Controlled Image Signal Processor for Any Image Sensors Pursuing Perceptual Quality'
+  venue: arXiv
+  year: 2024
+  paper: https://arxiv.org/abs/2403.10091
+  status: no-code
+  tldr: Dynamically predicts global and local parameters of lightweight conventional ISP functions for perceptual quality across different sensors.
+  note: Automatic content-dependent control, not an exposed user-editing interface; grouped with ISP parameter tuning. No official implementation was found on 2026-10-28.

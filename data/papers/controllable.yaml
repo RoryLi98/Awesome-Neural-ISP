@@ -1,0 +1,54 @@
+# controllable: one primary category per paper; see CONTRIBUTING.md.
+- name: Modular Neural ISP
+  title: Modular Neural Image Signal Processing
+  venue: SIGGRAPH Asia
+  year: 2026
+  paper: https://arxiv.org/abs/2512.08564
+  code: https://github.com/mahmoudnafifi/modular_neural_isp
+  status: weights-in-repo
+  weights:
+  - label: denoising/models/*.pth (lite/base/large)
+    url: https://github.com/mahmoudnafifi/modular_neural_isp/tree/main/denoising/models
+  - label: photofinishing/models/*.pth (multiple styles)
+    url: https://github.com/mahmoudnafifi/modular_neural_isp/tree/main/photofinishing/models
+  framework: PyTorch
+  tldr: Splits a neural ISP into swappable modules for denoising, AWB/CCM, photofinishing and upsampling, with an interactive photo-editing GUI.
+  note: Official repository announces acceptance at SIGGRAPH Asia 2026 (checked 2026-10-28); a standalone editing GUI is available.
+- name: ParamISP
+  title: 'ParamISP: Learned Forward and Inverse ISPs using Camera Parameters'
+  venue: CVPR
+  year: 2024
+  paper: https://arxiv.org/abs/2312.13313
+  code: https://github.com/woo525/ParamISP
+  status: weights
+  weights:
+  - label: Official weights (Google Drive, inverse and forward)
+    url: https://drive.google.com/drive/folders/1L7ZSikYt5eaCOEINpjjwmPX0CoZLbBG6
+  framework: PyTorch
+  tldr: Encodes EXIF parameters such as exposure, ISO and focal length into the network to learn both forward and inverse ISPs, trained per camera model.
+- name: Uni-ISP
+  title: 'Uni-ISP: Toward Unifying the Learning of ISPs from Multiple Mobile Cameras'
+  venue: IEEE TIP
+  year: 2025
+  paper: https://arxiv.org/abs/2406.01003
+  status: no-code
+  tldr: A single model that learns the ISPs of multiple smartphones and supports style transfer between cameras.
+- name: MetaISP
+  title: MetaISP – Exploiting Global Scene Structure for Accurate Multi-Device Color Rendition
+  venue: VMV
+  year: 2023
+  paper: https://arxiv.org/abs/2401.03220
+  code: https://github.com/vccimaging/MetaISP
+  status: weights
+  weights:
+  - label: MetaISPNet weights (Google Drive)
+    url: https://drive.google.com/drive/folders/1tLWlx0LDUjQ9niZje0cfLKt98dx1VEIR?usp=sharing
+  framework: PyTorch
+  tldr: Uses global scene features and device metadata so that one network renders the distinct color styles of multiple smartphones.
+- name: CtrlISP
+  title: 'CtrlISP: Rescuing Low-Light RAW Images via Controllable Neural ISP'
+  venue: CVPR Findings
+  year: 2026
+  paper: https://openaccess.thecvf.com/content/CVPR2026F/html/Zhang_CtrlISP_Rescuing_Low-Light_RAW_Images_via_Controllable_Neural_ISP_CVPRF_2026_paper.html
+  status: no-code
+  tldr: Controllable neural ISP that lets users adjust the brightness and style of low-light RAW.

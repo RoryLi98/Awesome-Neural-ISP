@@ -406,3 +406,15 @@
   paper: https://arxiv.org/abs/1705.04352
   status: no-code
   tldr: Analyzes which ISP stages are necessary for vision tasks and proposes a simplified low-power pipeline.
+- name: POS-ISP
+  title: 'POS-ISP: Pipeline Optimization at the Sequence Level for Task-aware ISP'
+  venue: CVPR Findings
+  year: 2026
+  paper: https://arxiv.org/abs/2604.06938
+  code: https://github.com/w1jyun/POS-ISP
+  status: weights-in-repo
+  weights:
+  - label: 'weights/*.pth (in repo: LOD / LIS / KITTI)'
+    url: https://github.com/w1jyun/POS-ISP/tree/main/weights
+  framework: PyTorch
+  tldr: Predicts the entire ISP module sequence and all its parameters in a single forward pass, optimized with downstream task rewards.

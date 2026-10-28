@@ -1,11 +1,4 @@
 # lowlight: one entry per paper; see CONTRIBUTING.md for the schema
-- name: CtrlISP
-  title: 'CtrlISP: Rescuing Low-Light RAW Images via Controllable Neural ISP'
-  venue: CVPR 2026 (Findings)
-  year: 2026
-  paper: https://openaccess.thecvf.com/content/CVPR2026F/html/Zhang_CtrlISP_Rescuing_Low-Light_RAW_Images_via_Controllable_Neural_ISP_CVPRF_2026_paper.html
-  status: no-code
-  tldr: Controllable neural ISP that lets users adjust the brightness and style of low-light RAW.
 - name: MeanFlow RAW
   title: 'When Extreme Darkness Meets Motion Blur: MeanFlow for Unified RAW Restoration'
   venue: arXiv
@@ -316,3 +309,13 @@
   framework: TensorFlow
   tldr: U-Net mapping short-exposure extremely dark RAW to long-exposure sRGB; releases the SID (Sony/Fuji) dataset and started low-light RAW research.
   note: In 2025-09 the authors removed the dataset download script due to storage costs, so data must be downloaded manually; models are still fetched via script
+- name: RIECR
+  title: Unified RAW Image Exposure Correction and Restoration via Linear Illumination and Frequency-Adaptive Enhancement
+  venue: arXiv
+  year: 2026
+  paper: https://arxiv.org/abs/2610.28191
+  code: https://github.com/yingkai-zhang/RIECR
+  status: coming-soon
+  tldr: Jointly corrects under- and over-exposed RAW images using channel-aware linear illumination gains and frequency-adaptive restoration; introduces 1,784 paired
+    captures across 223 scenes.
+  note: Posted 2026-10-20. The author repository labels the work ACAIT 2026 but contains only a README; implementation and weights were not available on 2026-10-28.

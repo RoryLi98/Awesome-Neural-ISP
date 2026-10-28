@@ -1,0 +1,1690 @@
+# Chinese translations keyed by the exact canonical paper name.
+BRACE:
+  title: 从 Bricker 到 BRACE：针对闪烁条纹的包围曝光 RAW 数据集与复原模型
+  tldr: 针对拍摄屏幕时滚动快门与屏幕调光导致的闪烁条纹，提供包围曝光 RAW 数据集与复原模型。
+  note: README 中模型与数据下载仍列为待办事项。
+BurstGP:
+  title: BurstGP：利用生成先验增强 RAW 连拍图像超分辨率
+  tldr: 在 RAW 连拍超分辨率中引入生成先验。
+DEBIR:
+  title: 动态曝光连拍图像复原
+  tldr: 在动态曝光条件下复原连拍图像，与 ParamISP 出自同一团队。
+  weight_labels:
+  - 官方权重（Google Drive）
+GenMFSR:
+  title: GenMFSR：生成式多帧图像复原与超分辨率
+  tldr: 进行生成式多帧图像复原与超分辨率。
+Keyframe SSM Burst SR:
+  title: 以关键帧为中心的连拍图像超分辨率状态空间建模
+  tldr: 以关键帧为中心建立状态空间模型，进行多帧 RAW 超分辨率，降低长序列计算量。
+LatentBurst:
+  title: LatentBurst：面向十六合一 Bayer 图案 CMOS 图像传感器图像的快速高效多帧超分辨率
+  tldr: 面向十六合一 Hexadeca-Bayer 图像传感器的高效多帧超分辨率。
+QMambaBSR:
+  title: QMambaBSR：利用查询状态空间模型进行连拍图像超分辨率
+  tldr: 采用基于查询的状态空间模型实现连拍超分辨率。
+Bracket Restoration:
+  title: 利用光流引导配准与增强特征聚合改进包围曝光图像复原与增强
+  tldr: 基于光流引导配准的 NTIRE 2024 包围曝光图像复原方案。
+BurstM:
+  title: BurstM：结合光流与傅里叶空间的深度连拍多尺度超分辨率
+  tldr: 将傅里叶空间处理与光流结合，进行多尺度连拍超分辨率。
+  weight_labels:
+  - SyntheticBurst 模型（Google Drive）
+  - BurstSR 模型（Google Drive）
+Burstormer:
+  title: Burstormer：用于连拍图像复原与增强的 Transformer
+  tldr: BIPNet 的 Transformer 版本，采用多尺度局部与非局部配准。
+  note: 其他任务的权重列在相应子目录的 README 中。
+  weight_labels:
+  - 合成连拍超分辨率检查点（OneDrive）
+Efficient Raw HDR:
+  title: 从真实世界 RAW 图像高效重建 HDR
+  tldr: 从真实智能手机 RAW 图像高效重建 HDR。
+FBANet:
+  title: 迈向真实世界连拍图像超分辨率：基准与方法
+  tldr: 提出真实世界连拍超分辨率数据集 RealBSR 与联合仿射融合网络。
+  note: 模型检查点的 Google Drive 副本返回 404（核验日期：2026-10-11）。
+  weight_labels:
+  - RealBSR 检查点 model_best.pth（百度网盘，提取码 f9ew）
+GMTNet:
+  title: 用于连拍复原与增强的门控多分辨率迁移网络
+  tldr: 通过门控多分辨率特征迁移进行连拍复原与增强。
+KBNet:
+  title: 核感知的连拍盲超分辨率
+  tldr: 通过估计模糊核进行连拍盲超分辨率。
+Raw/sRGB HDR Video:
+  title: 结合 RAW 与 sRGB 域大规模动态数据集的 HDR 视频重建
+  tldr: 提供涵盖 RAW 与 sRGB 两个域的大规模 HDR 视频重建数据集及方法。
+RawHDR:
+  title: RawHDR：从单张 RAW 图像重建高动态范围图像
+  tldr: 利用 RAW 的高位深，从单张 RAW 分别恢复高光与暗部，重建 HDR 图像。
+  weight_labels:
+  - 预训练模型（OneDrive）
+Self-Supervised Burst SR:
+  title: 自监督连拍超分辨率
+  tldr: 仅使用多帧 RAW 以自监督方式训练连拍超分辨率，无需高分辨率真值。
+Single-Shot HDR Demosaic:
+  title: 针对时变曝光联合去马赛克与去鬼影，实现单次拍摄 HDR 成像
+  tldr: 面向空间变化曝光的传感器，联合执行去马赛克与去鬼影。
+  weight_labels:
+  - 预训练模型 best_psnr_mu.pt（Google Drive）
+2StageAlign:
+  title: 面向大位移连拍图像重建的可微两阶段配准方案
+  tldr: 在较大位移下利用可微两阶段配准，联合进行连拍去噪与去马赛克。
+  weight_labels:
+  - experiments/.../models（仓库内）
+BIPNet:
+  title: 连拍图像复原与增强
+  tldr: 通过伪连拍特征融合，在统一框架内处理连拍超分辨率、去噪与低光增强。
+  note: 各子任务权重列在 Burst_Super_Resolution／Burst De-noising 子目录的 README 中。
+  weight_labels:
+  - 合成连拍超分辨率模型 BIPNet.ckpt（OneDrive）
+BSRT:
+  title: BSRT：结合 Swin Transformer 与光流引导可变形配准改进连拍超分辨率
+  tldr: NTIRE 2022 连拍超分辨率冠军，采用 Swin Transformer 与光流引导的可变形配准。
+  weight_labels:
+  - 全部预训练权重（Google Drive）
+HDR+SR Bursts:
+  title: 从 RAW 连拍图像同时获得高动态范围与超分辨率
+  tldr: 单次处理具有不同曝光的 RAW 连拍序列，同时输出 HDR 与超分辨率图像。
+DBSR:
+  title: 深度连拍超分辨率
+  tldr: 利用光流配准与注意力融合实现多帧 RAW 超分辨率，发布真实世界 BurstSR 数据集并组织 NTIRE 2021 赛道。
+  note: 挑战赛工具包：goutamgmb/NTIRE21_BURSTSR。
+  weight_labels:
+  - 模型库（由安装脚本自动下载）
+Deep-Rep:
+  title: 多帧超分辨率与去噪的深度重参数化
+  tldr: 在学习得到的深度重参数化空间中进行多帧最大后验优化，统一连拍超分辨率与去噪，入选 ICCV 2021 口头报告。
+  weight_labels:
+  - 模型库（由安装脚本自动下载）
+EBSR:
+  title: EBSR：利用可变形配准进行特征增强连拍超分辨率
+  tldr: NTIRE 2021 连拍超分辨率获胜方案，采用可变形配准与特征增强。
+  weight_labels:
+  - 合成赛道模型（Google Drive）
+  - 真实赛道模型（Google Drive）
+GCP-Net:
+  title: 利用绿色通道先验对真实世界连拍图像联合去噪与去马赛克
+  tldr: 借助绿色通道先验，对真实世界连拍图像进行联合去噪与去马赛克。
+  weight_labels:
+  - experiments/gcpnet_model/600000_G.pth（仓库内）
+Lucas-Kanade Reloaded:
+  title: Lucas-Kanade 重装上阵：从 RAW 连拍图像进行端到端超分辨率
+  tldr: 将 Lucas-Kanade 配准展开为可学习的多帧 RAW 超分辨率管线。
+Merging-ISP:
+  title: Merging-ISP：多曝光高动态范围图像信号处理
+  tldr: 在单个网络中结合多曝光 HDR 合并与 ISP，直接从多帧 RAW 输出渲染后的 HDR 图像。
+Tri-Exposure Quad-Bayer HDR:
+  title: 利用三曝光 Quad-Bayer 传感器重建 HDR 视频
+  tldr: 利用交错三曝光 Quad-Bayer 传感器，在单帧内重建 HDR 视频。
+BPN:
+  title: 利用基预测网络实现高效大核连拍去噪
+  tldr: 预测一组共享基核及其系数，实现高效的大卷积核连拍去噪。
+  note: README 和 scripts/download_models.sh 中的 Google Drive 模型文件链接返回 404（核验日期：2026-10-11）。
+Decoupled Burst Denoising:
+  title: 面向真实世界 RAW 连拍去噪的解耦学习方案
+  tldr: 将真实世界 RAW 连拍去噪拆分成可分别学习的子问题。
+Deep Snapshot HDR:
+  title: 利用多曝光滤色阵列实现深度单次拍摄 HDR 成像
+  tldr: 对多曝光滤色阵列联合进行去马赛克与融合，实现单次拍摄 HDR 成像。
+TSWT Burst:
+  title: 通过时间移位小波变换进行连拍去噪
+  tldr: 利用时间移位小波变换进行连拍去噪。
+Iterative Residual Burst:
+  title: 面向连拍摄影应用的迭代残差卷积网络
+  tldr: 利用迭代残差网络进行连拍去噪与去马赛克。
+Night Sight:
+  title: 极低光下的手持移动摄影
+  tldr: Google Night Sight 手机成像管线，通过多帧融合与学习型自动白平衡实现手持极低光摄影。
+Deep Burst Denoising:
+  title: 深度连拍去噪
+  tldr: 使用循环网络逐帧融合连拍图像，实现多帧去噪。
+KPN:
+  title: 利用核预测网络进行连拍去噪
+  tldr: 接收噪声水平输入，预测逐像素卷积核，对多帧 RAW 进行配准与去噪。
+  note: 仅提供训练代码与合成数据管线。
+Neural Block-wise Auto-exposure:
+  title: 用于单次拍摄高动态范围成像的神经分块自动曝光
+  tldr: 根据预览图及其曝光时间，预测不重叠 16×16 传感器块的曝光时间；比较 RAW 与 sRGB 预览输入对单次拍摄 HDR 的影响。
+  note: 2026-10-09 发布，2026-10-16 修订。2026-10-28 核验时，论文与仓库检索均未发现实现代码或预训练检查点链接。
+Adaptive Color Grading:
+  title: 自适应色彩分级
+  tldr: 开源调色工具，将图像分为四个色调区域，为每区设置 CIELAB 偏移并合成为单个 3D LUT；K 近邻模型根据标注视频帧，为新图像预测区域阈值。
+  note: 仓库包含示例训练数据；RAW HDR 视频数据集计划托管于 HDRVS 页面。
+PrefLUT:
+  title: PrefLUT：从成对偏好获得可复用、可细化的个性化色彩编辑
+  tldr: 将用户偏好／非偏好图像对编码为可复用的 260 字节配置，以此为条件预测可导出的 3D LUT 与编辑强度，无需逐用户优化。
+  weight_labels:
+  - weights/preflut.pt（仓库内）
+LoopLUT:
+  title: LoopLUT：通过渐进区域细化的 3D 查找表实现实时 4K 图像增强
+  tldr: 先应用全局 3D LUT，再应用由低分辨率门控选定区域色彩统计生成的残差 LUT；门控权重构成单位分解，因此每个 4K 图像像素只需 K 次查表。
+FlowTool:
+  title: FlowTool：通过流匹配控制图像精修工具参数
+  tldr: 采用条件整流流（视觉语言模型主干与扩散 Transformer）生成精修工具参数，替代自回归多模态大模型推理，并在 MIT-Adobe FiveK 等数据集上评估。
+Synthetic Dense Illuminant:
+  title: 通过基于物理的合成数据进行稠密光源估计的通用管线
+  tldr: 从基于物理的三维渲染场景提取逐像素光源色度图，渲染 74,321 张图像预训练单光源和多光源估计器，分别获得最高 28% 和 57% 的提升。
+C2LUT:
+  title: 用于相机色彩校正的光源自适应 3D 查找表
+  tldr: 使用随场景光源调整的 3D LUT 进行相机色彩校正。
+  note: 代码将在论文录用后发布。
+Multispectral CC:
+  title: 利用多光谱传感器进行移动相机色彩校正
+  tldr: 借助智能手机上的辅助多光谱传感器进行相机色彩校正。
+  note: 数据集位于 Hugging Face：LucaCogo/MobileSpectralCCDataset。
+  weight_labels:
+  - pretrained/（仓库内，每款相机一个文件夹）
+RL-AWB:
+  title: RL-AWB：面向低光夜间场景自动白平衡校正的深度强化学习
+  tldr: 采用强化学习迭代调整低光夜间场景的白平衡。
+  note: 另提供 download.sh／download.bat 一键下载脚本。
+  weight_labels:
+  - NCC 模型（Dropbox）
+SAFE:
+  title: SAFE：利用可学习色彩空间与场景感知特征调制，实现纯色场景色彩恒常性
+  tldr: 针对大面积纯色区域主导的场景，进行场景感知的色彩恒常性估计，与 RL-AWB 出自同一团队。
+VLM-CC:
+  title: 先白平衡、后调整：通过视觉语言评估实现跨相机色彩恒常性
+  tldr: 先进行粗略白平衡，再用视觉语言模型评估和调整；在 Qwen2.5-VL／InternVL3.5 上使用 LoRA。
+  note: 采用 Apache-2.0 许可证。
+  weight_labels:
+  - LoRA 适配器（Hugging Face）
+WB Color Space:
+  title: 面向照片白平衡编辑的感知启发色彩空间设计
+  tldr: 设计符合感知特性的色彩空间，以改进白平衡编辑。
+  weight_labels:
+  - models/best.pth（仓库内）
+ABC-Former:
+  title: ABC-Former：结合交互式通道注意力的辅助双模态跨域白平衡 Transformer
+  tldr: 利用 RAW、直方图等辅助模态，构建用于 sRGB 白平衡的跨域 Transformer。
+  note: README 还提供另一个模型文件夹。
+  weight_labels:
+  - 预训练模型（Google Drive）
+Camera-Agnostic WB Pref.:
+  title: 学习与相机无关的白平衡偏好
+  tldr: 学习相机无关的审美白平衡偏好，而非仅追求中性白平衡。
+  note: 受许可限制，仅发布灰世界基线部分。
+CCMNet:
+  title: CCMNet：利用已标定色彩校正矩阵实现跨相机色彩恒常性
+  tldr: 使用相机 ISP 中已有的标定色彩校正矩阵编码传感器特性，实现零样本跨相机光源估计。
+  weight_labels:
+  - models/test_*.pth（仓库内，留一法）
+GCC:
+  title: GCC：通过扩散生成色卡实现生成式色彩恒常性
+  tldr: 使用扩散模型在图像中生成色卡，再从色卡读取光源信息，实现跨相机泛化。
+  note: README 还提供 Gehler 训练模型和预处理数据集（Hugging Face）。
+  weight_labels:
+  - NUS-8 训练模型（Hugging Face）
+  - 演示（Hugging Face Spaces）
+IFFCC:
+  title: 积分式快速傅里叶色彩恒常性
+  tldr: 基于积分直方图的 FFCC 版本，支持空间变化的多光源估计。
+Revisiting MIWB:
+  title: 重新审视用于多光源白平衡校正的图像融合
+  tldr: 采用仅 7900 个参数的 Transformer 融合五种白平衡预设。
+  weight_labels:
+  - weights/（仓库内，每个约 38 KB）
+Time-Aware AWB:
+  title: 移动摄影中的时间感知自动白平衡
+  tldr: 将拍摄时间与地理位置作为光源先验，使小型模型完成移动自动白平衡，并发布 S24 RAW-sRGB 数据集。
+  note: 相同内容也位于 SamsungLabs/time-aware-awb。
+  weight_labels:
+  - models/model-awb*.pt（仓库内）
+AID:
+  title: 用于多光源白平衡的注意力光照分解模型
+  tldr: 利用基于注意力的光照分解进行多光源白平衡。
+  note: README 表示因专利原因无法发布代码，仅提供演示。
+Dual-Exposure Illuminant:
+  title: 优化双曝光 HDR 成像中的光源估计
+  tldr: 利用双曝光 HDR 成像采集的两帧图像改善光源估计。
+NightCC:
+  title: NightCC：通过自适应通道掩蔽实现夜间色彩恒常性
+  tldr: 对不可靠通道进行自适应掩蔽，处理多光源夜间场景的色彩恒常性。
+NILUT:
+  title: NILUT：用于图像增强的条件神经隐式 3D 查找表
+  tldr: 利用小型 MLP 隐式表示并混合多种 3D LUT 风格，具有可微与可插拔特性。
+  weight_labels:
+  - models/nilutx3style.pt 等（仓库内）
+WB LUTs:
+  title: WB LUTs：用于白平衡查找表的对比学习
+  tldr: 通过对比学习训练以 3D LUT 表示的白平衡校正。
+DeNIM:
+  title: 通过确定性神经光照映射实现高效自动白平衡校正
+  tldr: 利用确定性神经光照映射高效校正自动白平衡。
+  weight_labels:
+  - weights.zip（Dropbox）
+LLF-LUT:
+  title: 当查找表遇见局部拉普拉斯滤波：用于色调映射的金字塔重建网络
+  tldr: 结合拉普拉斯金字塔与 3D LUT，在 HDR 色调映射中兼顾全局色调与局部细节，是 TPAMI 扩展版。
+  note: 由于公司政策，NeurIPS 版本未发布，仅发布 TPAMI 版本。
+  weight_labels:
+  - TPAMI 预训练模型（Google Drive）
+  - 镜像（百度网盘，提取码 fegh）
+Style-AWB:
+  title: 将场景光照建模为风格以校正自动白平衡
+  tldr: 将场景光照视为风格，使用多头风格提取器驱动网络预测逐像素权重，混合多种白平衡预设渲染图，无需估计光源。
+  note: 基于 mixedillWB 框架，在 Afifi 等人的合成混合光源数据集上评估。
+  weight_labels:
+  - models/download.py（脚本下载，图像块大小 64／128）
+AdaInt:
+  title: AdaInt：为实时图像增强的 3D 查找表学习自适应间隔
+  tldr: 学习 3D LUT 的非均匀采样间隔，提高实时色彩增强的精度。
+  weight_labels:
+  - pretrained/AiLUT-*.pth（仓库内）
+Enriched Illuminants:
+  title: 学习丰富光源分布以实现跨传感器与单传感器色彩恒常性
+  tldr: 丰富光源分布以提高跨传感器色彩恒常性。
+MIMT:
+  title: MIMT：通过局部表面与光源色彩的多任务学习实现多光源色彩恒常性
+  tldr: 联合学习局部表面色彩与光源色彩，处理多光源色彩恒常性。
+Mixed-Illuminant AWB:
+  title: 混合光源场景的自动白平衡校正
+  tldr: 以多种预设白平衡渲染图像，并学习逐像素权重进行融合。
+  weight_labels:
+  - models/WB_model_*.pth（仓库内）
+SepLUT:
+  title: SepLUT：用于实时图像增强的可分离图像自适应查找表
+  tldr: 将 3D LUT 分解为 1D 与 3D LUT 的组合，减小体积并提高速度。
+  weight_labels:
+  - pretrained/SepLUT-*.pth（仓库内）
+C5:
+  title: 跨相机卷积色彩恒常性
+  tldr: 测试时额外输入同一相机的多张无标签图像，用于跨相机光源估计。
+  weight_labels:
+  - models/C5_m_7_h_64*.pth（仓库内）
+CLCC:
+  title: CLCC：用于色彩恒常性的对比学习
+  tldr: 通过光源感知的正负样本构造进行对比学习，改善光源估计。
+INTEL-TAU:
+  title: INTEL-TAU：色彩恒常性数据集
+  tldr: 支持跨相机评估的大规模多相机色彩恒常性数据集。
+LSMI:
+  title: 用于混合光照白平衡算法开发的大规模多光源数据集 LSMI
+  tldr: 提供大规模混合光源白平衡数据集，以及逐像素光源估计的 U-Net 基线。
+  note: 获取数据集需要提交申请表。
+  weight_labels:
+  - U-Net 预训练参数（OneDrive）
+Multi-color Balance:
+  title: 用于色彩恒常性的多色平衡
+  tldr: 采用多个参考颜色代替单一白点进行色彩校正，减少残留色偏。
+Two-Camera AWB:
+  title: 利用双相机信息进行光源估计
+  tldr: 通过手机双相机采集的两张 RAW 图像之间的光谱差异估计光源。
+3D-LUT:
+  title: 学习图像自适应 3D 查找表，实现高性能实时照片增强
+  tldr: 学习多组基础 3D LUT，并以依赖图像内容的权重融合，实现实时 4K 色彩增强。
+  weight_labels:
+  - pretrained_models/{sRGB,XYZ}（仓库内）
+Bag of Color Features:
+  title: 用于色彩恒常性的色彩特征袋
+  tldr: 将色彩特征袋与注意力结合，进行轻量光源估计。
+C4:
+  title: 级联卷积色彩恒常性
+  tldr: 级联多个类似 FC4 的子网络，逐步细化光源估计。
+  weight_labels:
+  - 预训练模型（OneDrive）
+CSRNet:
+  title: 用于高效全局图像精修的条件序列调制
+  tldr: 由逐像素 MLP 与条件调制构成的极轻量全局精修网络，参数量约 3.7 万。
+  weight_labels:
+  - experiments/pretrain_models/csrnet.pth（仓库内）
+CURL:
+  title: CURL：用于全局图像增强的神经曲线层
+  tldr: 在多个色彩空间中学习全局调整曲线，实验包含 RAW 到 RGB 任务。
+  weight_labels:
+  - pretrained_models/adobe_dpe（仓库内）
+Deep WB Editing:
+  title: 深度白平衡编辑
+  tldr: 直接在 sRGB 图像上重新调整为自动白平衡、钨丝灯、阴天等多种目标，模拟相机重新渲染。
+  weight_labels:
+  - PyTorch/models/net*.pth（仓库内）
+DeepLPF:
+  title: DeepLPF：用于图像增强的深度局部参数化滤镜
+  tldr: 预测渐变、椭圆、多项式三类局部参数化滤镜，用于照片精修。
+  weight_labels:
+  - pretrained_models/adobe_dpe（仓库内）
+Few-Shot CC (Multi-Domain):
+  title: 用于准确、小样本色彩恒常性的多域学习
+  tldr: 通过多相机、多域学习实现色彩恒常性，使新相机只需少量样本。
+Interactive WB:
+  title: 相机渲染图像的交互式白平衡
+  tldr: 在已渲染 sRGB 图像上交互调整白平衡，允许用户点击多个参考点。
+  note: 非深度学习方法；模型为 MATLAB .mat 文件。
+  weight_labels:
+  - models/model*.mat（仓库内）
+Metric-Learning Illuminant:
+  title: 基于深度度量学习的端到端光源估计
+  tldr: 在深度度量学习框架中进行端到端光源估计。
+Multi-Hypothesis CC:
+  title: 色彩恒常性的多假设方法
+  tldr: 对各候选光源评分并加权组合，自然支持跨相机标定。
+Temporal CC Benchmark:
+  title: 时序色彩恒常性基准
+  tldr: 提供用于时序色彩恒常性的基准数据集。
+Convolutional Mean:
+  title: 卷积均值：用于光源估计的简单卷积神经网络
+  tldr: 用于光源估计的极简卷积神经网络。
+Patch-wise Bright Pixels CC:
+  title: 利用图像块级亮像素实现快速色彩恒常性
+  tldr: 基于局部亮像素统计进行快速光源估计。
+Quasi-Unsupervised CC:
+  title: 准无监督色彩恒常性
+  tldr: 利用灰度／彩色图像对训练弱监督光源估计模型。
+Separate Illuminants:
+  title: 学习分离单张图像中的多个光源
+  tldr: 分离单张图像中的多个光源成分，以进行多光源白平衡。
+SIIE:
+  title: 面向深度神经网络模型的传感器无关光照估计
+  tldr: 先将 RAW 映射到传感器无关空间，再估计光源，从而实现跨相机泛化。
+  note: PyTorch 版本请参阅 README 中的 Colab。
+  weight_labels:
+  - models/*.mat（仓库内，留一数据集训练）
+WB Augmenter:
+  title: 还有什么能欺骗深度学习？应对色彩恒常性误差对深度神经网络性能的影响
+  tldr: 表明白平衡误差显著损害分类和分割性能，并提出模拟错误白平衡的数据增强方法。
+  note: 数据增强工具支持 MATLAB／Python／PyTorch；不需要权重。
+WB_sRGB:
+  title: 当色彩恒常性出错：校正白平衡不当的图像
+  tldr: 通过 K 近邻检索映射校正已渲染 sRGB 的白平衡，并发布 Rendered WB 数据集。
+  weight_labels:
+  - WB_sRGB_Python/models/*.npy（仓库内）
+Exposure:
+  title: Exposure：白盒照片后处理框架
+  tldr: 结合强化学习与 GAN，学习曝光、白平衡、曲线等可解释精修操作序列。
+  note: 按 README 说明运行 evaluate.py 即会使用预训练模型。
+  weight_labels:
+  - exposure_models 发布版本
+Meta-Learning CC:
+  title: 将相机自适应色彩恒常性建模为小样本元学习问题
+  tldr: 将跨相机色彩恒常性表述为小样本元学习问题。
+Semantic WB:
+  title: 语义白平衡：利用卷积神经网络实现语义色彩恒常性
+  tldr: 将语义分割图与原图一起输入 CNN，进行光源估计。
+  note: 第三方 PyTorch 复现。
+FC4:
+  title: FC4：具有置信度加权池化的全卷积色彩恒常性
+  tldr: 通过全卷积网络与置信度加权池化估计光源。
+  weight_labels:
+  - ColorChecker 预训练模型（GitHub Release）
+FFCC:
+  title: 快速傅里叶色彩恒常性
+  tldr: 将光源估计转化为对数色度直方图上的卷积问题，在频域求解以获得很高速度。
+  note: 提供 MATLAB 训练／调参代码。
+HDRNet:
+  title: 用于实时图像增强的深度双边学习
+  tldr: 在双边网格中预测局部仿射变换，在手机上实时复现不同色调算子，是后端 ISP 色调处理的经典方法。
+  note: google/hdrnet 的 README 仍指向已不在该仓库中的 pretrained_models 文件夹；下载脚本位于 mgharbi/hdrnet。
+  weight_labels:
+  - 原 TensorFlow 仓库的 pretrained_models/download.py（脚本从 MIT CSAIL 下载）
+Recurrent CC:
+  title: 循环色彩恒常性
+  tldr: 利用循环网络提取视频时序信息，进行光源估计。
+Unsupervised CC:
+  title: 用于色彩恒常性的无监督学习
+  tldr: 无需光源标签学习色彩恒常性，并同时发布 Cube 数据集。
+Structured-Output CC:
+  title: 用于计算色彩恒常性的深度结构化输出回归学习
+  tldr: 将光源估计表述为结构化输出回归的早期深度学习方法。
+CCC:
+  title: 卷积色彩恒常性
+  tldr: FFCC 的前身，将光源估计表述为对数色度直方图上的卷积判别问题。
+Chroma from Luminance CC:
+  title: 通过学习从亮度预测色度实现色彩恒常性
+  tldr: 从像素亮度预测色度分布来估计光源，所需参数极少。
+CNN CC (Bianco):
+  title: 利用卷积神经网络实现色彩恒常性
+  tldr: 最早将 CNN 用于光源估计的工作之一。
+  note: 第三方复现。
+Modular Neural ISP:
+  title: 模块化神经图像信号处理
+  tldr: 将神经 ISP 拆分为可替换的去噪、自动白平衡／色彩校正矩阵、照片精修和上采样模块，并提供交互式照片编辑界面。
+  note: 官方仓库宣布论文已被 SIGGRAPH Asia 2026 录用（核验日期：2026-10-28）；提供独立编辑图形界面。
+  weight_labels:
+  - denoising/models/*.pth（lite/base/large）
+  - photofinishing/models/*.pth（多种风格）
+ParamISP:
+  title: ParamISP：利用相机参数学习正向与逆向 ISP
+  tldr: 将曝光、ISO、焦距等 EXIF 参数编码进网络，同时学习正向和逆向 ISP，并针对各相机型号分别训练。
+  weight_labels:
+  - 官方权重（Google Drive，逆向与正向）
+Uni-ISP:
+  title: Uni-ISP：迈向多移动相机 ISP 的统一学习
+  tldr: 以单个模型学习多款智能手机的 ISP，并支持相机之间的风格迁移。
+MetaISP:
+  title: MetaISP：利用全局场景结构实现准确的多设备色彩渲染
+  tldr: 利用全局场景特征与设备元数据，使单个网络能够渲染多款智能手机各自的色彩风格。
+  weight_labels:
+  - MetaISPNet 权重（Google Drive）
+CtrlISP:
+  title: CtrlISP：通过可控神经 ISP 挽救低光 RAW 图像
+  tldr: 提供可控神经 ISP，让用户调整低光 RAW 图像的亮度与风格。
+JD3Net:
+  title: 利用空间下采样各向同性网络实现高效深度去马赛克
+  tldr: 先进行空间下采样，再应用各向同性网络，降低去马赛克计算成本。
+Pixel-bin Unified Demosaic:
+  title: 面向像素合并图像传感器去马赛克的可扩展轻量统一架构
+  tldr: 以单个轻量网络处理 Quad、Nona 等像素合并传感器的去马赛克。
+R3 Bayer Deraining:
+  title: R3：重建、RAW 与雨——直接在 Bayer 域去雨
+  tldr: 直接在 Bayer 域进行去雨与图像重建。
+SegDem:
+  title: SegDem：让分割帮助去马赛克
+  tldr: 将分割信息引入去马赛克，帮助重建边缘与纹理区域。
+Smartphone RAW Degradation:
+  title: 面向真实智能手机超分辨率的 RAW 域退化模型
+  tldr: 为智能手机超分辨率建立 RAW 域退化模型。
+Structural Guidance JDD:
+  title: 结构引导的统一联合去马赛克与去噪
+  tldr: 利用结构先验引导统一的联合去马赛克与去噪框架。
+ASRD:
+  title: 通过基于小波的循环重建学习任意尺度 RAW 图像下采样
+  tldr: 在保持 RAW 统计特性的同时进行任意尺度下采样，与 ISPDiffuser 出自同一团队。
+  note: 代码即将发布。
+BMTNet:
+  title: 用于轻量 Quad Bayer HybridEVS 去马赛克的二值化 Mamba-Transformer
+  tldr: 采用二值化 Mamba-Transformer 实现轻量 Quad Bayer 去马赛克，与低比特部署直接相关。
+  weight_labels:
+  - 预训练模型（Google Drive）
+Camera-Specific RAW SR Sim:
+  title: 面向 RAW 域图像超分辨率的相机特定成像模拟
+  tldr: 根据相机特性模拟成像，生成 RAW 域超分辨率训练数据。
+DSDNet:
+  title: DSDNet：通过双色彩空间协同进行 RAW 域去摩尔纹
+  tldr: 利用两个色彩空间的协同作用去除 RAW 域摩尔纹。
+  weight_labels:
+  - 预训练模型（Google Drive）
+  - 镜像（百度网盘，提取码 ewnv）
+FrENet:
+  title: 利用自适应频率调制高效去除 RAW 图像模糊
+  tldr: 通过自适应频率调制高效进行 RAW 图像去模糊。
+  note: README 要求将预训练模型放入 checkpoints，但未提供下载链接。
+QB HybridEVS SSM:
+  title: 通过状态空间增强交叉注意力实现轻量 Quad Bayer HybridEVS 去马赛克
+  tldr: 利用状态空间模型增强交叉注意力，对交错事件像素的 Quad Bayer HybridEVS 去马赛克，是同团队 BMTNet 的后续工作。
+QRNet:
+  title: 对双曝光 Quad-Bayer 图案建模以联合去噪与去模糊
+  tldr: 面向双曝光 Quad-Bayer 传感器联合去噪和去模糊，并发布 D2 数据集。
+  note: D2 数据集约 43.5 GB，百度网盘提取码 0fbf。
+  weight_labels:
+  - QRNet 预训练模型（百度网盘，提取码 l5nw）
+Quad/Nona JDD:
+  title: 考察单 Bayer、Quad-Bayer 与 Nona-Bayer 图案的联合去马赛克与去噪
+  tldr: 系统比较单 Bayer、Quad-Bayer 和 Nona-Bayer 图案下的联合去马赛克与去噪。
+  weight_labels:
+  - PyTorch/models/iso{400..3200}.pth（仓库内）
+RAW Reflection Removal:
+  title: 从 RAW 照片中去除反射
+  tldr: 利用 RAW 的线性与高位深特性去除玻璃反射。
+RawNIND:
+  title: 从 RAW 自然图像噪声数据集学习联合去噪、去马赛克与压缩
+  tldr: 发布 RawNIND 数据集，并联合学习去噪、去马赛克和压缩。
+  note: 权重采用 GPL3 与 CC-BY-4.0 双重许可。
+  weight_labels:
+  - 预训练模型（Google Drive）
+RDDM:
+  title: RDDM：将 RAW 域扩散模型用于真实世界图像复原
+  tldr: 直接在传感器 RAW 上进行基于扩散的真实图像复原，替代 sRGB 域扩散。
+  note: 仓库目前仅包含 README 与图片。
+Train on RAW & HDR:
+  title: 在 RAW 与 HDR 图像上训练复原神经网络
+  tldr: 讨论在线性 RAW／HDR 数据上训练复原网络时的归一化与损失设计。
+BSRAW:
+  title: BSRAW：改进盲 RAW 图像超分辨率
+  tldr: 设计 RAW 域退化管线，用于盲 RAW 图像超分辨率。
+  note: 代码与退化工具位于 mv-lab/AISP 的 imresutils 中。
+Combine DM & DN:
+  title: 如何最佳结合去马赛克与去噪？
+  tldr: 系统比较去马赛克与去噪的执行顺序和组合策略。
+DemosaicFormer:
+  title: DemosaicFormer：面向 HybridEVS 相机的由粗到细去马赛克网络
+  tldr: 采用由粗到细 Transformer，赢得 MIPI 2024 HybridEVS 去马赛克赛道。
+  weight_labels:
+  - 模型（Google Drive）
+DREUDC:
+  title: 用于屏下相机 RAW 图像复原的面板特定退化表征
+  tldr: 学习显示面板特定的退化表征，恢复屏下相机 RAW 图像，并发布配套数据。
+  weight_labels:
+  - 数据集与预训练模型（Google Drive）
+Efficient Blind RAW Restoration:
+  title: 迈向高效深度盲 RAW 图像复原
+  tldr: 面向盲 RAW 图像复原（去噪与去模糊）的高效基线。
+RBSFormer:
+  title: RBSFormer：用于 RAW 图像超分辨率的增强 Transformer 网络
+  tldr: NTIRE 2024 RAW 图像超分辨率挑战赛方案。
+RRID:
+  title: RAW 与 sRGB 域的图像去摩尔纹
+  tldr: 同时利用 RAW 和 sRGB 两个域，去除屏幕重拍图像中的摩尔纹。
+  weight_labels:
+  - 预训练模型（Dropbox）
+Inheriting Bayer's Legacy:
+  title: 继承 Bayer 的传统：Quad Bayer 图像传感器的联合重马赛克与去噪
+  tldr: 对 Quad Bayer 传感器联合重马赛克和去噪，输出标准 Bayer 数据以复用现有 ISP。
+JDD Double DIP:
+  title: 利用双深度图像先验联合去马赛克与去噪
+  tldr: 使用两个深度图像先验，无需训练数据即可联合去马赛克与去噪。
+JDD Two-stage:
+  title: 联合去马赛克与去噪受益于两阶段训练策略
+  tldr: 先学习去马赛克，再学习联合去噪的两阶段训练策略。
+  weight_labels:
+  - Demosaic/{lightweight,normal}.pkl 与 Denoise/（仓库内）
+Moiré-Free Demosaick:
+  title: 迈向无摩尔纹且保留细节的去马赛克
+  tldr: 针对高频区域摩尔纹伪影与细节损失设计去马赛克网络。
+RAW Rain Removal:
+  title: 利用 RAW 图像端到端去除雨纹
+  tldr: 直接对 RAW 图像进行端到端雨纹去除。
+SDAT:
+  title: SDAT：通过子数据集交替训练改进图像去马赛克
+  tldr: 在不同子数据集间交替训练，提高去马赛克泛化能力。
+Unified Demosaicing (KD):
+  title: 面向 Bayer 与非 Bayer 图案传感器的高效统一去马赛克
+  tldr: 以单个模型处理 Bayer、Quad、Nona 等多种滤色阵列图案。
+VD_raw:
+  title: 通过通道与空间调制去除重拍屏幕 RAW 图像和视频中的摩尔纹
+  tldr: 利用通道及空间调制，对重拍屏幕 RAW 图像与视频去摩尔纹。
+  weight_labels:
+  - 完整模型（百度网盘，提取码 f5g4）
+  - 基线模型检查点（仓库内）
+CDLNet:
+  title: CDLNet：用于盲去噪与去马赛克的噪声自适应卷积字典学习网络
+  tldr: 展开卷积字典学习形成网络，具有少参数、可解释与噪声自适应特性，同时处理盲去噪和去马赛克。
+  weight_labels:
+  - trained_nets/{CDLNet-s2030, JDD_CDLNet-s0120}（仓库内）
+RSTCANet:
+  title: 用于图像去马赛克的残差 Swin Transformer 通道注意力网络
+  tldr: 将 Swin Transformer 与通道注意力结合，提供 B／S／L 三种规模的去马赛克网络。
+  weight_labels:
+  - dm_model_zoo/RSTCANet_{B,S,L}.pth（仓库内）
+TENet:
+  title: 重新思考基于学习的去马赛克、去噪与超分辨率管线
+  tldr: 研究去噪、超分辨率、去马赛克的最优执行顺序（先去噪，再超分辨率，最后去马赛克），并发布 PixelShift200 数据集。
+  note: README 提供 PixelShift200 与 DIV2K 数据链接。
+BJDD / PIPNet:
+  title: 超越联合去马赛克与去噪：面向像素合并图像传感器的处理管线
+  tldr: 面向 Quad-Bayer 像素合并传感器的联合去马赛克与去噪管线。
+  weight_labels:
+  - Quad-Bayer 权重（Google Drive）
+  - Bayer 权重（Google Drive）
+ISP-Agnostic UDC:
+  title: 面向屏下相机的 ISP 无关图像重建
+  tldr: 在 RAW 域复原屏下相机图像，将复原与下游 ISP 解耦。
+JDD in the Wild:
+  title: 真实环境中的联合去马赛克与去噪：在真值不确定时训练
+  tldr: 研究当真值本身包含误差时，如何训练联合去马赛克与去噪模型。
+JDNDMSR:
+  title: 用于联合图像去马赛克、去噪与超分辨率的端到端学习
+  tldr: 通过单个网络联合执行去马赛克、去噪和超分辨率。
+  weight_labels:
+  - models/jdndmsr+_model.h5 等（仓库内）
+Joint DM + HDR:
+  title: 单次拍摄中的深度联合去马赛克与高动态范围成像
+  tldr: 从单帧空间变化曝光 RAW 中同时进行去马赛克与 HDR 重建。
+Jointly Deblur-Demosaick-Denoise:
+  title: 学习联合去除 RAW 图像模糊、马赛克与噪声
+  tldr: 同时处理 RAW 图像中的模糊、马赛克与噪声。
+SAGAN (Nona-Bayer):
+  title: SAGAN：用于带噪 Nona-Bayer 重建的对抗空间非对称注意力
+  tldr: 面向带噪 Nona-Bayer（3×3 同色像素）传感器联合去噪与重建。
+DM-or-DN First:
+  title: 重访一个老难题：先去马赛克还是先去噪？
+  tldr: 系统比较先去马赛克与先去噪，并根据实验给出顺序建议。
+JDSR:
+  title: 联合去马赛克与超分辨率：网络设计与感知优化
+  tldr: 为联合去马赛克与超分辨率设计网络，并使用感知损失优化。
+Raw Image Deblurring:
+  title: RAW 图像去模糊
+  tldr: 提出首个 RAW 域去模糊数据集 Deblur-RAW 及对应方法。
+SGNet (JDD):
+  title: 利用自引导进行联合去马赛克与去噪
+  tldr: 先恢复采样最密集的绿色通道，再将其作为引导恢复完整图像。
+  note: 仓库 README 仅有待办事项，代码尚未发布。
+Deep Demosaicing for Edge:
+  title: 面向边缘部署的深度去马赛克
+  tldr: 为边缘设备设计轻量去马赛克网络，研究准确率与计算量之间的权衡。
+JDD Burst Fine-tune:
+  title: 通过微调 RAW 连拍图像联合去马赛克与去噪
+  tldr: 无需真值，直接在同一连拍序列的多帧 RAW 上自监督微调联合去马赛克与去噪网络。
+Real Scene SR with Raw:
+  title: 迈向利用 RAW 图像的真实场景超分辨率
+  tldr: 模拟相机成像以生成 RAW 训练对，并利用 RAW 进行真实场景超分辨率；扩展版为利用 RAW 图像实现真实场景超分辨率，arXiv 2102.01579。
+  note: 仓库包含 TPAMI 2021 扩展版代码。README 中 ×2／×4 模型文件夹的 Google Drive 链接返回 404（核验日期：2026-10-11）。
+Zoom to Learn:
+  title: 通过变焦学习，学习如何变焦
+  tldr: 通过光学变焦采集 SR-RAW 数据集，直接在 RAW 上进行真实世界超分辨率，并提出 CoBi 损失处理配准误差。
+  note: README 提供 SR-RAW 数据集（Google Drive／百度网盘，提取码 wi02）和快速推理说明。
+DMCNN:
+  title: 学习用于去马赛克的深度卷积网络
+  tldr: 早期 CNN 去马赛克基线 DMCNN 与 DMCNN-VD。
+Kokkinos Demosaick:
+  title: 利用级联卷积残差去噪网络进行深度图像去马赛克
+  tldr: 将去马赛克表述为迭代优化，在每一步使用残差去噪网络作为先验。
+Residual JDSR:
+  title: 用于联合去马赛克与超分辨率的深度残差网络
+  tldr: 早期残差网络，直接将 Bayer RAW 超分辨率重建为高分辨率 RGB。
+  note: 第三方 PyTorch 复现。
+  weight_labels:
+  - 第三方复现权重（百度网盘）
+DemosaicNet:
+  title: 深度联合去马赛克与去噪
+  tldr: 通过大规模挖掘困难样本训练联合去马赛克与去噪网络，支持 Bayer 和 X-Trans。
+  note: PyTorch 版本未实现噪声感知模型；请参考较早的 Caffe 仓库 mgharbi/demosaicnet_caffe。
+2-Shots in the Dark:
+  title: 2-Shots in the Dark：以最少数据采集实现低光去噪
+  tldr: 仅需拍摄两次，即可为新相机准备低光去噪数据。
+  weight_labels:
+  - SID/ELD、LRID 模型与暗场资源（Google Drive）
+Color-Blind LL Cameras:
+  title: 为什么低光相机会色盲：消除 RAW 去噪中的色彩偏差
+  tldr: 分析低光 RAW 去噪引入的色偏，并提出消除该偏差的方法。
+GALOSH:
+  title: GALOSH：通过适合并行计算的局部收缩，对 RAW Bayer 与 sRGB 图像进行免训练盲去噪
+  tldr: 从输入估计泊松-高斯参数的免训练局部收缩去噪器，适合并行硬件，同时适用于 Bayer RAW 与 sRGB。
+  note: 无需训练，也没有网络权重；Releases 提供 Windows 可执行程序。
+Nonlocal MatchFilter:
+  title: 用于 RAW 图像去噪的可学习非局部特征匹配与滤波
+  tldr: 结合可学习的非局部特征匹配与滤波进行 RAW 图像去噪。
+  weight_labels:
+  - GitHub Releases（含权重）
+PNNP:
+  title: 从暗场帧学习物理知识引导的噪声模型，用于低光 RAW 图像去噪
+  tldr: 从暗场帧学习物理知识引导的 PNNP 噪声模型，并发布 LRID 数据集。
+  note: 提供索尼 A7S2 与 IMX686 的 PNNP 权重；PNNP 本身的训练代码未开源。
+  weight_labels:
+  - 模型检查点与资源（百度网盘，提取码 vmcl）
+  - LRID 数据集（Hugging Face）
+RPG-VST:
+  title: RPG-VST：用于盲 RAW 去噪的鲁棒泊松-高斯方差稳定化
+  tldr: 在高斯去噪器之前进行鲁棒方差稳定变换，将未知参数的泊松-高斯 RAW 噪声转为近似恒定方差。
+Noise Modeling in One Hour:
+  title: 一小时噪声建模：最小化自监督低光 RAW 去噪的准备工作
+  tldr: 将噪声建模准备时间缩短至一小时内，并利用暗场阴影进行自监督低光 RAW 去噪。
+  weight_labels:
+  - 预训练模型检查点（Google Drive）
+YOND:
+  title: YOND：摆脱相机专属数据依赖的实用盲 RAW 图像去噪
+  tldr: 无需相机专属数据：先估计噪声，再做方差稳定变换，最后使用通用去噪器。
+  weight_labels:
+  - SNR-Net 权重与训练数据（百度网盘，提取码 nn4v）
+  - 在线演示（Hugging Face Spaces）
+DualDn:
+  title: DualDn：通过可微 ISP 实现双域去噪
+  tldr: 在 RAW 域与 sRGB 域各去噪一次，用可微 ISP 连接两者，以泛化到不同相机 ISP。
+  note: 两个模型都采用 Restormer 主干，在 MIT-Adobe FiveK 上训练；README 表格还提供测试集和可视化结果。
+  weight_labels:
+  - pretrained_model.zip，合成数据测试（OneDrive）
+  - DualDn_Big.pth，真实拍摄数据／DND（OneDrive）
+Non-parametric Noise:
+  title: 非参数传感器噪声建模与合成
+  tldr: 不预设参数化分布，直接从标定数据建模并合成传感器噪声。
+SeNM-VAE:
+  title: SeNM-VAE：利用层次化变分自编码器进行半监督噪声建模
+  tldr: 通过层次化 VAE，结合少量配对数据与大量非配对数据进行半监督噪声建模。
+Contrastive LL Denoise:
+  title: 用于低光 RAW 去噪的对比学习
+  tldr: 通过对比学习约束特征，实现低光 RAW 去噪。
+LED:
+  title: 两对数据照亮黑暗：免标定 RAW 去噪管线
+  tldr: 先在虚拟相机上预训练，再仅用两对真实数据微调，以适应新传感器，无需标定。
+  note: 自 2025 年 12 月起还包含 UltraLED 代码与数据。
+  weight_labels:
+  - 模型库（Google Drive）
+  - 相关文件（百度网盘，提取码 iay5）
+  - 按相机／方法整理的权重表
+LLD (Physics-Guided ISO Noise):
+  title: 面向极低光摄影的物理引导、ISO 相关传感器噪声建模
+  tldr: 建立物理引导的 ISO 相关噪声模型，发布含暗场帧与平场帧的 LLD 数据集。
+  note: 仓库主要用于发布数据集。
+LRD:
+  title: 迈向通用低光 RAW 噪声合成与建模
+  tldr: 采用物理模型描述信号相关噪声、生成模型描述信号无关噪声，并发布 LRD 数据集。
+  note: 噪声合成模型因商业许可限制未发布。
+  weight_labels:
+  - RAW 去噪模型（Google Drive）
+  - 镜像（百度网盘，提取码 ujzm）
+ELMformer:
+  title: ELMformer：利用局部乘性 Transformer 高效复原 RAW 图像
+  tldr: 采用局部乘性 Transformer 进行 RAW 去噪和去模糊。
+  note: 仓库仅包含 README。
+Noise2NoiseFlow:
+  title: Noise2NoiseFlow：无需干净图像的真实相机噪声建模
+  tldr: 仅用噪声图像对训练归一化流噪声模型，无需干净图像；同一仓库还包含 CVPR 2022 的 sRGB 噪声建模方法。
+PMN:
+  title: 增强低光 RAW 去噪的可学习性：真实配对数据与噪声建模的结合
+  tldr: 通过散粒噪声增强和暗场阴影校正，提高少量真实配对数据的可学习性。
+  note: README 提供 ISO 噪声参数与数据；预训练权重在后续 PNNP／LRID 版本中发布。
+Pseudo-ISP:
+  title: Pseudo-ISP：从彩色图像去噪器学习伪相机内信号处理管线
+  tldr: 从 sRGB 去噪器推导伪 ISP，以适应新传感器的真实噪声。
+  weight_labels:
+  - 预训练去噪模型（百度网盘，提取码 6aj4）
+Rethinking Noise Synthesis:
+  title: 重新思考 RAW 去噪中的噪声合成与建模
+  tldr: 从真实暗场帧采样信号无关噪声，再与信号相关噪声组合，替代参数化噪声模型。
+  weight_labels:
+  - 预训练模型（百度网盘，提取码 v4dh）
+CA-NoiseGAN:
+  title: 学习相机感知的噪声模型
+  tldr: 根据相机与 ISO 生成真实感 RAW 噪声的相机感知 GAN 模型。
+  note: README 中模型检查点文件夹的 Google Drive 链接返回 404（核验日期：2026-10-11）。
+ELD:
+  title: 用于极低光 RAW 去噪的基于物理的噪声形成模型
+  tldr: 依据 CMOS 成像物理建模散粒噪声、含长尾分布的读出噪声、行噪声与量化噪声，并发布 ELD 数据集。
+  note: TPAMI 2021 扩展版的 arXiv 编号为 2108.02158；亦可通过 Vandermode/NoiseModel 仓库访问。
+  weight_labels:
+  - ELD 数据与预训练模型（Google Drive）
+  - 镜像（百度网盘，提取码 0lby）
+MWRCANet:
+  title: NTIRE 2020 RAW 去噪获胜方案（见 NTIRE 2020 真实图像去噪报告）
+  tldr: 多级小波残差通道注意力网络，在 NTIRE 2020 RAW 去噪赛道排名第一；CBUnet 等夜景方案直接复用其权重。
+  weight_labels:
+  - RAW 模型 dn_mwrcanet_raw_c1.pth（Google Drive）
+  - 镜像（百度网盘，提取码 0odp）
+PMRID:
+  title: 移动设备上的实用深度 RAW 图像去噪
+  tldr: 利用标定的传感器噪声和 k-Sigma 变换统一不同 ISO，小型网络在骁龙 855 上约以 70 毫秒／百万像素运行。
+  weight_labels:
+  - models/torch_pretrained.ckp + mge_pretrained.ckp（仓库内）
+  - 基准数据（Kaggle 镜像；README 还列有 OneDrive）
+Bayer Unify Aug:
+  title: 通过 Bayer 图案统一化与 Bayer 保持增强学习 RAW 图像去噪
+  tldr: 利用 Bayer 图案统一化与保持 Bayer 结构的数据增强，赢得 NTIRE 2019 RAW 去噪赛道。
+  note: 仓库仅包含 BayerUnify/Aug 工具函数。
+NODE:
+  title: NODE：利用噪声分解网络进行极低光 RAW 图像去噪
+  tldr: 将噪声分解为信号相关与信号无关部分，并分别估计。
+Noise Flow:
+  title: Noise Flow：利用条件归一化流进行噪声建模
+  tldr: 利用条件归一化流学习真实相机噪声分布，并根据 ISO／增益条件生成噪声。
+  note: 自动下载 SIDD_Medium_Raw；未找到单独的权重链接。
+SIDD:
+  title: 面向智能手机相机的高质量去噪数据集
+  tldr: 包含来自 5 款手机约 3 万张带噪 RAW／sRGB 图像及估计的干净真值，是真实噪声建模的基础数据集。
+  note: 仓库包含真值估计代码；数据集位于 SIDD 网站。
+DRIFT:
+  title: DRIFT：深度复原、ISP 融合与色调映射
+  tldr: 将图像复原、ISP 融合与色调映射整合到统一框架中。
+NPR Color Bias:
+  title: 超越像素保真度：最小化夜间摄影渲染中的感知失真与色彩偏差
+  tldr: 在夜间摄影渲染中联合约束感知失真与色彩偏差。
+RPBA-Net:
+  title: RPBA-Net：用于 RAW 域 ISP 增强的可解释残差金字塔双边仿射网络
+  tldr: 利用残差金字塔与双边仿射网格实现可解释的 RAW 域 ISP 增强。
+VAR-ISP:
+  title: 用于 RAW 到 sRGB 图像信号处理的视觉自回归先验
+  tldr: 将视觉自回归（VAR）生成先验引入 RAW 到 sRGB 处理。
+EGUOT-ISP:
+  title: 专家引导的非平衡最优传输：利用非配对及配对数据学习 ISP
+  tldr: 通过专家引导的非平衡最优传输统一配对与非配对 ISP 学习。
+  note: 仓库目前仅包含 README。
+EvRAW:
+  title: EvRAW：事件引导的结构与色彩建模，用于 RAW 到 sRGB 图像重建
+  tldr: 借助事件相机信息进行结构与色彩建模，实现 RAW 到 sRGB 重建。
+ISPDiffuser:
+  title: ISPDiffuser：利用纹理感知扩散模型与直方图引导的色彩一致性学习 RAW 到 sRGB 映射
+  tldr: 采用纹理感知损失与直方图引导的色彩一致性约束，构建 RAW 到 sRGB 扩散模型。
+  weight_labels:
+  - ZRR / MAI 权重（Google Drive）
+  - 镜像（百度网盘，提取码 f1gv）
+RGB-Event ISP:
+  title: RGB-Event ISP：数据集与基准
+  tldr: 面向混合 RGB-事件传感器的首个 ISP 数据集与基准，研究事件数据对去马赛克、去噪和色彩处理的帮助。
+  note: 数据集位于 Hugging Face 的 yunfanlu/RGB-Event-ISP-Dataset 及百度网盘；仅限非商业研究用途。
+SemiISP:
+  title: SemiISP/SemiIE：利用一对多 sRGB 到 RAW 映射实现半监督 ISP 与图像增强
+  tldr: 通过一对多的 sRGB 到 RAW 合成扩充训练对，以半监督方式训练 ISP。
+DiR:
+  title: 面向相机 ISP 管线的退化无关表征学习
+  tldr: 学习与退化无关的表征，提高 ISP 对未知噪声、模糊等退化的鲁棒性。
+FourierISP:
+  title: 在傅里叶域解耦风格与结构以增强 RAW 到 sRGB 映射
+  tldr: 在傅里叶域中将风格（色彩／亮度）与结构解耦并分别学习。
+  note: README 明确说明不会发布模型检查点，需要自行训练。
+Real-World Camera Pipeline:
+  title: 端到端真实世界相机成像管线
+  tldr: 面向真实智能手机成像管线的端到端 ISP，覆盖去噪、色彩与色调处理。
+RMFA-Net:
+  title: RMFA-Net：面向真实 RAW 到 RGB 图像重建的神经 ISP
+  tldr: 采用多频率注意力融合，处理真实智能手机 RAW 图像的 ISP 网络。
+Simple ISP:
+  title: 利用全局上下文引导的简洁图像信号处理
+  tldr: 为轻量 ISP 主干加入全局上下文引导模块，提高整幅图像的色调一致性。
+Back to the Future ISP:
+  title: 回到未来：不依赖深度学习的夜间摄影渲染 ISP
+  tldr: 构建不使用深度学习的夜间摄影渲染 ISP，为学习型方法提供参考基线。
+Contrastive Subspace ISP:
+  title: 面向相机图像信号处理的深度对比图像块子空间学习
+  tldr: 利用图像块子空间与对比学习来学习 ISP 模块。
+Single-Frame HDR ISP:
+  title: 面向高动态范围场景的端到端单帧图像信号处理
+  tldr: 在高动态范围场景中对单帧 RAW 图像执行端到端 ISP。
+CBUnet:
+  title: 通过级联色彩与亮度补偿渲染夜间图像
+  tldr: 级联色彩补偿和亮度补偿网络，用于夜间 RAW 图像渲染。
+  note: README 列出了第二阶段及其他权重。
+  weight_labels:
+  - 第一阶段 cube++.pth（Google Drive）
+CRISPnet:
+  title: CRISPnet：色彩渲染 ISP 网络
+  tldr: 融合全局场景语义与元数据，以实现准确的色彩渲染。
+Day-to-Night:
+  title: 用于训练夜间神经 ISP 的日转夜图像合成
+  tldr: 从日间 RAW 合成带噪声和多光源的夜间 RAW，以训练夜间神经 ISP。
+  note: README 提及 pretrained_* 目录，但仓库中未找到权重文件，且数据集链接为空。
+Deep-FlexISP:
+  title: Deep-FlexISP：夜间摄影渲染的三阶段框架
+  tldr: NTIRE 2022 夜间渲染获胜方案，包含去噪、白平衡与色调映射三个阶段。
+  note: 包含 2022 年模型的 Docker 镜像链接（Google Drive）返回 404（核验日期：2026-10-11）；仓库 Night_Photography_2023 目录提供的是团队 2023 年参赛模型检查点。
+ISPW / LiteISP-in-the-wild:
+  title: 将智能手机变成单反相机：在真实环境中学习 ISP
+  tldr: 利用真实环境采集的弱配对手机与单反数据（ISPW）学习 ISP，处理配准与色彩差异。
+  note: 仓库目前仅提供 ISPW 数据集下载；README 表示代码即将发布。
+RAWtoBit:
+  title: RAWtoBit：完全端到端的相机 ISP 网络
+  tldr: 将 ISP 与图像压缩合并为单个端到端网络，直接从 RAW 输出比特流。
+Shallow Night Pipeline:
+  title: 用于夜间摄影渲染的浅层相机管线
+  tldr: NTIRE 2022 夜间摄影渲染方案，由少量可学习模块构成浅层相机管线。
+  note: 论文称录用后发布代码；尚未找到仓库。
+StereoISP:
+  title: StereoISP：重新思考双相机系统的图像信号处理
+  tldr: 对双相机系统采集的两路 RAW 数据联合执行 ISP。
+LiteISPNet:
+  title: 在不精确配准监督下学习 RAW 到 sRGB 映射
+  tldr: 联合配准与全局色彩映射，处理 RAW／sRGB 训练对的空间错位与色彩差异；包含轻量 LiteISPNet。
+  note: README 还通过百度网盘提供 ZRR（提取码 8sq1）及预处理后的 SR-RAW。
+  weight_labels:
+  - ZRR / SR-RAW 预训练模型（Google Drive）
+AWNet:
+  title: AWNet：用于图像 ISP 的注意力小波网络
+  tldr: 结合小波变换与注意力，使用 RAW／去马赛克图像双输入，是 AIM 2020 排名前列的方案。
+  weight_labels:
+  - demosaiced_model（Google Drive）
+  - Raw_model（Google Drive）
+MW-ISPNet:
+  title: MW-ISPNet：AIM 2020 学习型 ISP 获胜方案（见挑战报告）
+  tldr: 采用多级小波与残差通道注意力的 U-Net，在 AIM 2020 两个赛道均排名第一。
+  weight_labels:
+  - 赛道 1 模型（Google Drive）
+  - 赛道 2 模型（Google Drive）
+PyNET:
+  title: 以单个深度学习模型替代移动相机 ISP
+  tldr: 在华为 P20 RAW 与佳能 5D Mark IV 照片构成的 ZRR 数据集上，逐层训练倒金字塔多尺度网络。
+  note: PyTorch 版本位于 aiff22/PyNET-PyTorch；训练还需要 VGG-19。
+  weight_labels:
+  - PyNET_pretrained.zip（TensorFlow）
+  - pynet_level_0.pth（PyTorch 版本）
+PyNET-CA:
+  title: PyNET-CA：加入通道注意力的增强 PyNET，用于端到端移动 ISP
+  tldr: 为 PyNET 加入通道注意力和子像素上采样，是 AIM 2020 ISP 赛道方案。
+  note: 作者提醒，在 PyTorch > 1.4 时可能无法复现实验结果。
+  weight_labels:
+  - pretrained_model.zip（Dropbox）
+Sky Optimization:
+  title: 天空优化：低光摄影中具有语义感知能力的天空图像处理
+  tldr: 在手机夜景 ISP 中利用轻量分割网络单独处理天空区域，与 Google Night Sight 相关。
+CameraNet:
+  title: CameraNet：高效相机 ISP 学习的两阶段框架
+  tldr: 将 ISP 拆分为分别监督的复原和增强子网络，缓解单个网络同时学习去噪与色彩调整的冲突。
+  note: 官方代码基于 TensorFlow 1.15；README 仅提供 HDR+／SID 预处理数据，未找到权重链接。
+Deep Camera:
+  title: Deep Camera：用于图像信号处理的全卷积神经网络
+  tldr: 以单个全卷积网络替代完整相机 ISP 的早期尝试。
+HERN:
+  title: 用于图像去马赛克与增强的高分辨率网络
+  tldr: AIM 2019 RAW 到 RGB 获胜方案，采用高分辨率细节分支与低分辨率全局分支的双分支设计。
+  note: README 中挑战权重 114.pth／115.pth 的两个 OneDrive 链接均返回 404（核验日期：2026-10-11）。
+W-Net:
+  title: W-Net：利用错位数据完成 RAW 到 RGB 映射的两阶段 U-Net
+  tldr: AIM 2019 RAW 到 RGB 参赛方案，以两阶段 U-Net 处理手机 RAW 与单反 RGB 之间错位的监督数据。
+  weight_labels:
+  - 预训练模型（Google Drive）
+DeepISP:
+  title: DeepISP：迈向端到端图像处理管线学习
+  tldr: 最早的端到端学习型 ISP 之一，包含局部去噪／去马赛克和全局色调／色彩调整两阶段，并提供三星 S7 数据集。
+DPED:
+  title: 利用深度卷积网络在移动设备上生成单反级照片
+  tldr: 对手机照片进行 sRGB 到 sRGB 增强，使其达到单反照片风格与质量；采用 DPED 数据集，是 PyNET 学习型 ISP 系列的前身。
+  weight_labels:
+  - models_orig/{iphone,sony,blackberry}_orig（仓库内）
+Scene-Dependent Imaging:
+  title: 利用深度神经网络建模相机中依赖场景的成像过程
+  tldr: 以深度神经网络建模相机随场景变化的 RAW 到 sRGB 渲染，是学习型 ISP 的早期尝试之一。
+Edit-aware RAW:
+  title: 编辑感知的 RAW 重建
+  tldr: 要求重建 RAW 在后续白平衡、曝光、风格等编辑中仍保持质量，因此针对编辑后的误差进行训练。
+  note: 仓库包含 NILUT 与色调曲线辅助模型；主模型需利用 S24 数据自行训练。
+MambaRaw:
+  title: MambaRaw：通过选择性状态空间建模实现高效 4K RAW 图像重建
+  tldr: 以 JPEG 为条件进行 4K RAW 编码与重建，在熵模型中采用选择性状态空间建模。
+  note: 每个 λ 值都需要单独训练。
+MERIT:
+  title: MERIT：多域高效 RAW 图像转换
+  tldr: 使用单个模型在多个相机 RAW 域之间高效转换，并发布 MDRAW 数据集。
+RAW-Flow:
+  title: RAW-Flow：利用确定性潜空间流匹配推进 RGB 到 RAW 图像重建
+  tldr: 通过潜空间中的确定性流匹配完成 RGB 到 RAW 重建。
+  weight_labels:
+  - nikon_d700 / canon_eos_5d 权重（Google Drive）
+Raw-JPEG Adapter:
+  title: Raw-JPEG Adapter：利用 JPEG 高效压缩 RAW 图像
+  tldr: 采用约 3.7 万参数的可逆预处理（逐像素伽马、1D LUT 及可选 DCT），使 RAW 图像能够使用标准 JPEG 存储。
+  weight_labels:
+  - models/raw_jpeg_adapter_q_*.pth（仓库内）
+RawGen:
+  title: RawGen：学习相机 RAW 图像生成
+  tldr: 三星多伦多 AI 中心的工作：使用 FLUX Kontext LoRA 和 XYZ 空间 VAE 解码器，从文本或 sRGB 生成特定相机的 RAW 图像。
+  note: 官方仓库本身不含权重，指向作者仓库 DY112/RawGen。
+  weight_labels:
+  - kontext_lora.pt + vae_decoder_xyz.pt（Google Drive，作者仓库 DY112/RawGen）
+RAWIC:
+  title: RAWIC：位深自适应的无损 RAW 图像压缩
+  tldr: 对 RAW 图像进行位深自适应的学习型无损压缩。
+  note: README 还列有百度网盘镜像。
+  weight_labels:
+  - 主模型与消融模型（北京大学网盘）
+SpiralDiff:
+  title: SpiralDiff：结合 LoRA 的螺旋扩散，实现跨相机 RGB 到 RAW 转换
+  tldr: 结合强度分层的螺旋扩散与每相机 LoRA，在多个相机之间实现 RGB 到 RAW 转换。
+  note: 采用 Apache-2.0 许可证。README 的模型链接 huggingface.co/Chuancy/SpiralDiff 返回 404；检查点实际位于存放 FiveK DNG 数据的数据集仓库中。
+  weight_labels:
+  - checkpoints.zip（Hugging Face 数据集仓库）
+Illum–Sensor Mapping:
+  title: 改进 RAW 图像在光照与传感器之间的映射
+  tldr: 在不同光照和传感器之间映射 RAW 图像，用于数据增强与跨相机迁移。
+Physically-Informed Raw2Raw:
+  title: 超越标定：物理知识引导的 RAW 到 RAW 映射学习
+  tldr: 在物理约束下学习相机之间的 RAW 到 RAW 映射。
+RAW-Diffusion:
+  title: RAW-Diffusion：用于高保真 RAW 图像生成的 RGB 引导扩散模型
+  tldr: 使用 RGB 引导的扩散模型生成高保真 RAW 图像，为 RAW 目标检测扩充训练数据。
+  note: README 未提供权重。
+ReRAW:
+  title: ReRAW：通过分层采样进行 RGB 到 RAW 重建，用于高效边缘目标检测
+  tldr: 通过分层采样训练 RGB 到 RAW 重建模型，为边缘设备上的 RAW 目标检测生成数据。
+Learnable CCM RAW Recon:
+  title: 用于 RAW 重建的可学习色彩校正矩阵
+  tldr: 利用可学习的色彩校正矩阵实现轻量 sRGB 到 RAW 重建。
+Prior Metadata RAW Recon:
+  title: 先验元数据驱动的 RAW 重建：无需逐图像元数据
+  tldr: 使用相机级先验元数据代替逐图像元数据进行 RAW 重建。
+Rawformer:
+  title: Rawformer：面向可学习相机 ISP 的非配对 RAW 到 RAW 转换
+  tldr: 通过非配对跨相机 RAW 到 RAW 转换，使已训练的神经 ISP 能迁移到新传感器。
+  note: README 待办列表中的上传预训练模型事项尚未完成。
+SEL-CIE:
+  title: SEL-CIE：从非线性 sRGB 重建 CIE-XYZ 的知识引导自监督学习框架
+  tldr: 以自监督方式从非线性 sRGB 图像重建 CIE XYZ 图像。
+sRGB-to-RAW Video:
+  title: 利用帧间亲和关系进行 sRGB 到 RAW 视频逆渲染
+  tldr: 利用视频帧间的亲和关系，将 sRGB 视频逆渲染为 RAW。
+Unsupervised Raw2Raw ISP:
+  title: 通过无监督 RAW 到 RAW 映射提升 ISP 模型泛化能力
+  tldr: 采用无监督跨相机 RAW 到 RAW 映射，使训练好的 ISP 模型泛化到新传感器。
+Beyond R2LCM:
+  title: 超越基于学习型元数据的 RAW 图像重建
+  tldr: R2LCM 的扩展：利用学习型元数据实现可变码率 RAW 重建，也是 MambaRaw 的对比基线。
+Graphics2RAW:
+  title: Graphics2RAW：将计算机图形图像映射为传感器 RAW 图像
+  tldr: 将计算机图形渲染结果转换为真实感传感器 RAW 图像，用作训练数据。
+Metadata RAW (INF):
+  title: 通过隐式神经函数进行基于元数据的 RAW 重建
+  tldr: 利用隐式神经函数，在元数据引导下重建 RAW。
+R2LCM:
+  title: 利用学习型紧凑元数据重建 RAW 图像
+  tldr: 端到端学习极紧凑的潜在元数据，并与 JPEG 一同存储，实现码率可控的 RAW 重建。
+  weight_labels:
+  - 索尼模型（Google Drive）
+  - 三星模型（Google Drive）
+SRISP:
+  title: 通过参考引导的动态参数选择实现自监督逆向图像信号处理
+  tldr: 在参考图像引导下动态选择参数，执行自监督逆向 ISP。
+Content-Aware Metadata:
+  title: 利用内容感知元数据学习 sRGB 到 RAW-RGB 逆渲染
+  tldr: 学习选取依赖图像内容的采样点作为元数据，提高 sRGB 到 RAW 重建质量。
+  note: README 中的数据集链接为空。
+MBISPLD:
+  title: 通过可学习字典构建基于模型的图像信号处理器
+  tldr: 结合可解释传统 ISP 模块与可学习字典，对可逆 RAW 与 RGB 映射进行建模。
+  note: mv-lab/AISP/mbispld 目录仅含论文 PDF 和配图。
+Overexposure Mask Fusion:
+  title: 过曝掩码融合：可泛化逆向 ISP 的多步细化
+  tldr: 在逆向 ISP 中单独处理过曝区域，并进行多步细化。
+  weight_labels:
+  - trained_models/（仓库内，S7 数据）
+Reverse Style Transfer ISP:
+  title: 通过反向风格迁移逆转图像信号处理器
+  tldr: 将 ISP 求逆视为反向风格迁移问题。
+CIE XYZ Net:
+  title: CIE XYZ Net：面向低层计算机视觉任务的图像逆处理
+  tldr: 学习可逆 sRGB 与 CIE XYZ 映射，将已渲染图像逆处理回场景参考空间，用于低层视觉任务。
+  note: 论文结果使用 MATLAB 版本；PyTorch 权重是为方便使用提供的移植版本。
+  weight_labels:
+  - PyTorch/models/model_sRGB-XYZ-sRGB.pth（仓库内）
+InvISP:
+  title: 可逆图像信号处理
+  tldr: 利用可逆网络同时完成 RAW 到 sRGB 渲染与近无损的 sRGB 到 RAW 恢复，并考虑 JPEG 压缩影响。
+  weight_labels:
+  - pretrained/canon.pth、nikon.pth（仓库内）
+Raw Bayer Synthesis for CV-ISP:
+  title: 面向计算机视觉的 ISP 管线设计中的 RAW Bayer 图像合成
+  tldr: 从 sRGB 合成 Bayer RAW，以设计和评估面向计算机视觉任务的 ISP。
+Raw-to-Raw (Semi-Sup.):
+  title: 半监督 RAW 到 RAW 映射
+  tldr: 利用少量配对数据与大量非配对数据，学习不同相机 RAW 空间之间的映射。
+  note: 提供 DNG 数据及预计算映射。
+Spatially Aware Metadata:
+  title: 用于 RAW 重建的空间感知元数据
+  tldr: 将少量空间采样的 RAW 值作为元数据嵌入 JPEG，以实现高质量 RAW 重建。
+CycleISP:
+  title: CycleISP：通过改进数据合成实现真实图像复原
+  tldr: 学习双向 RGB-RAW ISP，在两个域中合成真实感噪声数据，用于训练去噪器。
+  weight_labels:
+  - 全部模型（Google Drive）
+Lossless Mosaic Compression:
+  title: 利用卷积神经网络预测对马赛克图像进行无损压缩
+  tldr: 通过 CNN 预测实现 Bayer 马赛克图像的无损压缩。
+SingleHDR:
+  title: 通过学习逆转相机管线进行单图像 HDR 重建
+  tldr: 将 LDR 形成过程建模为去量化、线性化、过曝恢复三阶段逆向 ISP，逐步逆转以重建 HDR。
+  weight_labels:
+  - 模型检查点 ckpt（Google Drive）
+Camera Pipeline Simulation:
+  title: 通过相机管线模拟生成真实 RGB 图像去噪训练数据
+  tldr: 模拟包含 RAW 噪声的完整相机管线，合成 sRGB 去噪训练数据。
+Unprocessing:
+  title: 面向学习型 RAW 去噪的图像逆处理
+  tldr: 对网络 sRGB 图像执行逆 ISP，生成带泊松-高斯噪声的真实感 RAW，用于训练 RAW 去噪器。
+  note: 位于 google-research 单一大仓库的子目录中。
+  weight_labels:
+  - 训练完成的模型（Google Drive）
+MeanFlow RAW:
+  title: 当极暗场景遇到运动模糊：用于统一 RAW 复原的 MeanFlow
+  tldr: 联合处理极暗场景与运动模糊的 RAW 图像复原方法。
+NEC-Diff:
+  title: NEC-Diff：噪声鲁棒的事件与 RAW 互补扩散，在极暗环境中看清运动
+  tldr: 利用扩散模型融合事件相机与 RAW 的互补数据，处理极暗场景中的运动。
+  note: 数据集正在分批上传；尚无权重。
+RawMetaDiff:
+  title: RawMetaDiff：通过元数据引导扩散挖掘双曝光 RAW 中的极暗场景信息
+  tldr: 在双曝光 RAW 上进行元数据引导的扩散处理，用于极暗场景。
+DarkDiff:
+  title: DarkDiff：将扩散模型改用于相机 ISP，推进低光 RAW 增强
+  tldr: 将预训练图像扩散模型重新用于低光 RAW 的相机 ISP。
+ERIENet:
+  title: ERIENet：低光环境中的高效 RAW 图像增强网络
+  tldr: 注重低参数量与快速推理的低光 RAW 到 sRGB 增强网络，获 ICVISP 2025 最佳论文。
+  note: 仓库含训练和测试代码；未找到权重。
+HiMA:
+  title: 用于低光 RAW 图像增强的层次化混合架构
+  tldr: 通过层次化混合 Transformer 与 Mamba 增强低光 RAW，与 Retinex-RAWMamba 来自相同作者。
+  weight_labels:
+  - 预训练模型（Google Drive）
+  - 预训练模型（百度网盘，提取码 8fem）
+ISP-driven LLIE Data:
+  title: 通过 ISP 驱动的数据建模实现更真实的低光图像增强
+  tldr: 对 ISP 管线建模，合成更真实的低光训练数据。
+LDM-ISP:
+  title: LDM-ISP：利用潜空间扩散模型改进低光神经 ISP
+  tldr: 将潜空间扩散先验引入神经 ISP，以恢复极低光 RAW 中的细节和色彩。
+  note: 作者称发布模型为重新训练的版本，得分略高于论文所报结果。
+  weight_labels:
+  - pretrained_models（OneDrive/SharePoint）
+Reconstruction & Denoising in the Dark:
+  title: 重新思考暗光中的重建与去噪：新视角、通用架构及其拓展
+  tldr: 在通用架构中统一低光 RAW 重建与去噪，重新审视两者关系。
+Rectified-Flow LL RAW:
+  title: 用于低光 RAW 图像增强的物理引导整流流
+  tldr: 利用物理噪声模型引导整流流，对低光 RAW 图像进行增强。
+SIED:
+  title: 学习在极暗环境中看见
+  tldr: 将低光 RAW 增强推进至比 SID 更暗的场景，发布 SIED 数据集及对应增强方法。
+  weight_labels:
+  - 预训练模型（OneDrive）
+  - 镜像（百度网盘，提取码 m9zp）
+TS-Diff:
+  title: TS-Diff：用于低光 RAW 图像增强的两阶段扩散模型
+  tldr: 先在多相机数据上预训练，再在目标相机上快速微调的两阶段扩散方法。
+  note: pretrained_models/ 目录仅包含占位文件。
+Retinex-RAWMamba:
+  title: Retinex-RAWMamba：连接去马赛克与去噪以增强低光 RAW 图像
+  tldr: 将 Retinex 分解与 Mamba 架构结合，联合处理去马赛克与去噪。
+  note: 各模型检查点还提供百度网盘镜像。
+  weight_labels:
+  - 索尼模型（Google Drive）
+  - 富士模型（Google Drive）
+  - MCR 模型（Google Drive）
+DiffuseRAW:
+  title: DiffuseRAW：用于低光图像的端到端生成式 RAW 图像处理
+  tldr: 使用扩散模型直接从低光 RAW 生成 sRGB。
+DNF:
+  title: DNF：用于暗光成像的解耦与反馈网络
+  tldr: 将 RAW 域去噪与 sRGB 域色彩恢复解耦，再以反馈连接联结两个阶段。
+  weight_labels:
+  - SID 索尼模型（Google Drive）
+  - SID 富士模型（Google Drive）
+  - MCR 模型（Google Drive）
+  - SID 索尼模型（百度网盘，提取码 eoiz）
+ExposureDiffusion:
+  title: ExposureDiffusion：学习曝光以增强低光图像
+  tldr: 将物理曝光过程嵌入扩散模型，逐步把低光 RAW 曝光至正常光照。
+  note: 与 R2LCM 为同一作者。
+  weight_labels:
+  - SID_Pg / SID_PGru / SID_real 等模型（Google Drive）
+FDA Low-Light:
+  title: 通过特征域适应学习看清低光图像
+  tldr: 单阶段低光 RAW 到 sRGB 网络，通过特征域适应解耦去噪与色彩映射，避免两阶段网络的计算开销。
+MCR:
+  title: 抛弃 Bayer 滤色阵列以看清暗处
+  tldr: 采集无 Bayer 滤色阵列的单色传感器与彩色传感器配对数据（MCR），先解码图像，再进行着色。
+  note: MCR 数据集也可从百度网盘获取，提取码 22cv。
+  weight_labels:
+  - MCR_pretrained_model（Google Drive）
+  - SID_pretrained_model（Google Drive）
+Progressive LL RAW:
+  title: 面向 RAW 图像的渐进式联合低光增强与去噪
+  tldr: 对 RAW 图像渐进地联合进行低光增强与噪声去除。
+RAW LLE (TIP):
+  title: 迈向利用 RAW 图像的低光增强
+  tldr: 系统比较 RAW 与 sRGB 输入在低光增强中的表现，并提出 RAW 域方法。
+Burst Dark Enhancement:
+  title: 通过连拍摄影学习增强极暗图像
+  tldr: 对极暗 RAW 连拍序列进行由粗到细的增强。
+Few-Shot LL RAW:
+  title: 面向低光 RAW 图像增强的小样本域适应
+  tldr: 采用小样本跨相机域适应进行低光 RAW 增强，获 BMVC 最佳学生论文提名。
+RED:
+  title: 实时复原极暗图像
+  tldr: 轻量低光 RAW 复原网络，将大部分计算放在极低分辨率进行；CPU 上每张 800 万像素图像约需 1.8 秒，参数量约 78 万。
+  note: 仓库另含 SID／SGN／DID 的对比训练脚本。
+  weight_labels:
+  - demo_imgs/weights（仓库内，由 demo.py 直接加载）
+Adaptive Low-Light RAW:
+  title: 学习用于极低光 RAW 图像处理的自适应模型
+  tldr: 自适应估计曝光的极低光 RAW 图像处理模型。
+EEMEFN:
+  title: EEMEFN：通过边缘增强多曝光融合网络进行低光图像增强
+  tldr: 从单张极暗 RAW 生成多种曝光并融合，再利用边缘分支细化细节，在 SID 数据上评估。
+  note: 发表于 AAAI 2020，无 arXiv 版本。
+  weight_labels:
+  - 索尼／富士模型（MEGA）
+LLPackNet:
+  title: 迈向快速轻量的暗光图像复原
+  tldr: 利用打包／解包操作在极低分辨率上处理图像并自行估计放大系数，运行速度显著快于 SID。
+Short/Long Raw Pairs:
+  title: 利用短曝光与长曝光 RAW 图像对进行低光图像复原
+  tldr: 同时利用有噪声的短曝光 RAW 与有模糊的长曝光 RAW 恢复低光图像。
+Low-Light Camera Pipeline:
+  title: 学习用于极低光成像的数字相机管线
+  tldr: 针对极低光场景学习完整数字相机管线。
+Moving Objects in the Dark:
+  title: 学习在黑暗中看清运动物体
+  tldr: 利用分光器同轴相机采集低光／正常光 RAW 配对视频，训练低光 RAW 视频增强模型。
+  weight_labels:
+  - python download_model.py（脚本下载）
+Seeing Motion in the Dark:
+  title: 在黑暗中看清运动
+  tldr: 将 SID 扩展到低光 RAW 视频（DRV 数据集），在静态视频上训练并抑制时序闪烁。
+  weight_labels:
+  - 预训练模型（Google Drive）
+SID:
+  title: 学习在黑暗中看见
+  tldr: 使用 U-Net 将短曝光极暗 RAW 映射为长曝光 sRGB，发布 SID（索尼／富士）数据集，开启低光 RAW 研究。
+  note: 2025 年 9 月作者因存储成本移除了数据集下载脚本，数据需手动下载；模型仍可通过脚本获取。
+  weight_labels:
+  - python download_models.py（脚本下载）
+RIECR:
+  title: 通过线性光照与频率自适应增强实现统一 RAW 图像曝光校正与复原
+  tldr: 利用通道感知线性光照增益与频率自适应复原，联合校正欠曝和过曝 RAW 图像；提供涵盖 223 个场景的 1784 对配对拍摄数据。
+  note: 2026-10-20 发布。作者仓库将该工作标为 ACAIT 2026，但仅含 README；截至 2026-10-28 尚无实现代码与权重。
+Fourier Unpaired ISP:
+  title: 固定结构、释放色彩：面向非配对手机 ISP 的傅里叶域训练
+  tldr: 非配对训练时固定结构，仅在傅里叶幅度上学习色彩，是 NTIRE 2026 非配对 ISP 方案。
+Unpaired ISP Transfer:
+  title: 利用语义伪配对实现轻量非配对手机 ISP 迁移
+  tldr: 通过语义伪配对构建训练对，实现非配对手机 ISP 迁移，是 NTIRE 2026 非配对 ISP 赛道方案。
+  weight_labels:
+  - 模型检查点（Google Drive，见 checkpoints/weight_url.txt）
+Unpaired Lightweight ISP:
+  title: 利用非配对数据学习轻量智能手机 ISP
+  tldr: 结合多种损失与对抗训练，在无配对数据条件下训练轻量 ISP，并在 ZRR／UltraISP 上评估。
+  weight_labels:
+  - pretrained/models/{ZRR,Fujifilm}（仓库内）
+CoDISP:
+  title: CoDISP：利用 RGB 引导编码器探索压缩域相机 ISP
+  tldr: 在压缩域执行相机 ISP，以降低移动设备的带宽需求。
+PyNET-QxQ:
+  title: PyNET-QxQ：用于 CMOS 图像传感器 QxQ Bayer 图案去马赛克的高效 PyNET 变体
+  tldr: 面向 Quad／QxQ Bayer 图案传感器的轻量 PyNET 变体。
+  note: README 要求放置 best_acc_model.pth，但未提供下载链接。
+SYENet:
+  title: SYENet：在移动设备上实时执行多种低层视觉任务的简洁高效网络
+  tldr: 采用小型重参数化网络处理 ISP、低光增强与超分辨率，在 MAI 2022 移动 ISP 赛道取得最高分。
+  note: README 说明了加载预训练模型的参数，但未找到权重下载链接；提供 ONNX 导出脚本。
+LAN:
+  title: LAN：用于智能手机 RAW 到 RGB 图像处理的轻量注意力网络
+  tldr: 针对 MAI 2021 移动 ISP 数据（索尼 IMX586 RAW 到富士 GFX100）的轻量注意力网络。
+  weight_labels:
+  - models/LAN_iteration_200000.ckpt（仓库内）
+LW-ISP:
+  title: LW-ISP：结合 ISP 与深度学习的轻量模型
+  tldr: 面向移动设备的轻量学习型 ISP，用更少参数替代大型 PyNET 式模型。
+MicroISP:
+  title: MicroISP：利用深度学习在移动设备上处理 3200 万像素照片
+  tldr: 采用逐通道分支的极小 ISP，在手机上不到 1 秒即可处理 3200 万像素照片，并提供富士 UltraISP 数据集。
+  note: 仅限学术用途。
+  weight_labels:
+  - pretrained_weights/MicroISP.ckpt（仓库内）
+PyNET-V2 Mobile:
+  title: PyNet-V2 Mobile：利用神经网络进行高效端侧照片处理
+  tldr: 围绕 NPU 算子约束重新设计的移动版 PyNET，可在手机上处理全分辨率照片。
+  note: README 中预训练模型的 Google Drive 链接返回 404（核验日期：2026-10-11）。
+CSANet:
+  title: CSAnet：用于移动 ISP 的高速通道空间注意力网络
+  tldr: MAI 2021 移动 ISP 方案，结合通道与空间注意力，重点优化 NPU 推理速度。
+Del-Net:
+  title: Del-Net：用于移动相机 ISP 的单阶段网络
+  tldr: 面向智能手机的单阶段 ISP 网络，是 MAI 2021 挑战赛参赛方案。
+NTIRE 2026 Unpaired ISP:
+  title: NTIRE 2026 非配对数据学习型智能手机 ISP 挑战赛：方法与结果
+  tldr: 首届使用非配对数据的智能手机 ISP 挑战赛报告。
+AIM 2025 LL RAW Video:
+  title: AIM 2025 低光 RAW 视频去噪挑战赛：数据集、方法与结果
+  tldr: 关于低光 RAW 视频去噪的挑战赛报告。
+AIM 2025 RAW Denoise:
+  title: AIM 2025 真实世界 RAW 图像去噪挑战赛
+  tldr: 关于真实世界 RAW 图像去噪的挑战赛报告。
+Low-light ISP Survey (2025):
+  title: 用于低照度图像增强的图像信号处理方法综合综述
+  tldr: 从 ISP 视角综述低光图像增强方法。
+MAI 2025 ISP:
+  title: 移动 GPU 上的学习型智能手机 ISP：Mobile AI 2025 挑战赛报告
+  tldr: 2025 年移动 GPU 学习型智能手机 ISP 挑战赛报告。
+NTIRE 2025 Night:
+  title: NTIRE 2025 夜间摄影渲染挑战赛
+  tldr: 第四届夜间摄影渲染挑战赛报告。
+NTIRE 2025 RAW Restoration:
+  title: NTIRE 2025 RAW 图像复原与超分辨率挑战赛
+  tldr: 关于 RAW 图像复原与超分辨率的挑战赛报告。
+NTIRE 2025 RGB→RAW:
+  title: 从智能手机 RGB 重建 RAW 图像：NTIRE 2025 挑战赛报告
+  tldr: 智能手机 RGB 到 RAW 重建挑战赛；数据位于 Hugging Face 的 marcosv/rgb2raw。
+MIPI 2024 Demosaic:
+  title: MIPI 2024 HybridEVS 相机去马赛克挑战赛：方法与结果
+  tldr: 关于 HybridEVS 相机去马赛克的挑战赛报告。
+MIPI 2024 Few-shot Denoise:
+  title: MIPI 2024 小样本 RAW 图像去噪挑战赛：方法与结果
+  tldr: 关于小样本 RAW 图像去噪的挑战赛报告。
+NTIRE 2024 Night:
+  title: NTIRE 2024 夜间摄影渲染挑战赛
+  tldr: 第三届夜间摄影渲染挑战赛报告。
+NTIRE 2024 RAW SR:
+  title: 深度 RAW 图像超分辨率：NTIRE 2024 挑战赛综述
+  tldr: RAW 图像超分辨率挑战赛综述。
+ISP Survey (2023):
+  title: 当 ISP 遇见深度学习：图像信号处理深度学习方法综述
+  tldr: 综述深度学习 ISP，将方法与数据集按模块级和端到端两类组织。
+MIPI 2023 RGBW Remosaic:
+  title: MIPI 2023 RGBW 重马赛克挑战赛：方法与结果
+  tldr: 第二届 RGBW 重马赛克挑战赛报告。
+NTIRE 2023 Night:
+  title: NTIRE 2023 夜间摄影渲染挑战赛
+  tldr: 第二届夜间摄影渲染挑战赛报告。
+AIM 2022 Reverse ISP:
+  title: 逆向图像信号处理与 RAW 重建：AIM 2022 挑战赛报告
+  tldr: 设有 S7／P20 两个赛道的 RGB 到 RAW 重建挑战赛；官方基线位于 mv-lab/AISP。
+MAI 2022 ISP:
+  title: 利用深度学习在移动 GPU 上实现智能手机 ISP：Mobile AI 与 AIM 2022 挑战赛报告
+  tldr: 移动 GPU 上的 ISP 挑战赛；官方基线提供 .h5 与 .tflite 模型。
+  weight_labels:
+  - mai22-learnedisp/model.tflite 与 .h5（基线）
+MIPI 2022 Quad Remosaic:
+  title: MIPI 2022 Quad-Bayer 重马赛克挑战赛：数据集与报告
+  tldr: Quad-Bayer 传感器重马赛克挑战赛。
+MIPI 2022 RGBW Remosaic:
+  title: MIPI 2022 RGBW 传感器重马赛克挑战赛：数据集与报告
+  tldr: 将 RGBW 传感器数据重马赛克为 Bayer 的挑战赛，并提供数据集。
+  note: 仓库列出各赛道的数据和获胜方案链接。
+NTIRE 2022 Burst SR:
+  title: NTIRE 2022 连拍超分辨率挑战赛
+  tldr: 第二届连拍超分辨率挑战赛，冠军为 BSRT。
+NTIRE 2022 Night:
+  title: NTIRE 2022 夜间摄影渲染挑战赛
+  tldr: 以主观偏好评分的夜间 RAW 渲染挑战赛。
+MAI 2021 ISP:
+  title: 利用深度学习在移动 NPU 上实现智能手机 ISP：Mobile AI 2021 挑战赛报告
+  tldr: 首届在手机 NPU 上测量运行时间的 ISP 挑战赛，任务为索尼 IMX586 RAW 到富士 GFX100 图像映射。
+NTIRE 2021 Burst SR:
+  title: NTIRE 2021 连拍超分辨率挑战赛：方法与结果
+  tldr: 包含合成与真实赛道的 BurstSR 挑战赛。
+  note: 提供官方工具包与测试集。
+AIM 2020 ISP:
+  title: AIM 2020 学习型图像信号处理管线挑战赛
+  tldr: 基于 ZRR 数据的 RAW 到 RGB 挑战赛报告，设有保真度与感知质量两个赛道。
+NTIRE 2020 Real Denoising:
+  title: NTIRE 2020 真实图像去噪挑战赛：数据集、方法与结果
+  tldr: 基于 SIDD+ 的真实图像去噪挑战赛，设 RAW 与 sRGB 赛道；MWRCANet 获 RAW 赛道第一。
+AIM 2019 RAW→RGB:
+  title: AIM 2019 RAW 到 RGB 映射挑战赛：方法与结果
+  tldr: 首届智能手机 RAW 到单反 RGB 映射挑战赛，使用 ZRR 的前身数据。
+NTIRE 2019 Real Denoising:
+  title: NTIRE 2019 真实图像去噪挑战赛：方法与结果
+  tldr: 基于 SIDD 的真实图像去噪挑战赛，设有 RAW 与 sRGB 赛道。
+RAW vs RGB Restoration Benchmark:
+  title: 图像信号处理器中 RAW 与 RGB 域图像复原的基准评测
+  tldr: 系统比较 RAW 域与 RGB 域的图像复原，为 ISP 中复原模块的位置选择提供实验证据。
+  note: 代码已合并至 mv-lab/AISP 仓库。
+Reference-free ISP Evaluation:
+  title: 用于评估单帧 ISP 管线的无参考框架
+  tldr: 无需参考图像即可评估单帧 ISP 管线的输出质量。
+Small-Pixel Neural ISP:
+  title: 小像素时代对神经 ISP 的需求：像素缩小如何将光学性能推向极限，以及神经复原如何弥补
+  tldr: 在五种像素尺寸的受控长焦模拟中比较传统与神经 ISP，并评估低信噪比多帧复原，研究学习式复原如何补偿光学像差。
+Beyond Bayer:
+  title: 超越 Bayer：面向鲁棒自动驾驶分割的任务最优传感器协同设计
+  tldr: 联合优化滤色阵列设计与分割网络，为自动驾驶分割寻找任务最优传感器。
+FreqAdapt:
+  title: FreqAdapt：用于 RAW 目标检测的频率自适应处理
+  tldr: 面向 RAW 目标检测进行频率自适应预处理。
+RAWDet-7:
+  title: RAWDet-7：量化 RAW 图像目标检测与描述的多场景基准
+  tldr: 面向量化 RAW 图像的目标检测与描述基准，包含低比特 RAW 输入。
+  note: 基准代码基于 MMDetection。
+RAWild:
+  title: RAWild：通过物理引导的曲线与网格建模实现传感器无关 RAW 目标检测
+  tldr: 轻量适配器采用逐图像贝塞尔色调曲线与双边网格色彩变换，实现传感器无关的 RAW 感知。
+  weight_labels:
+  - 检测／分割模型检查点（Google Drive）
+RawVLA:
+  title: RawVLA：面向机器人操作的具身神经图像信号处理器
+  tldr: 学习直接处理 RAW 的神经 ISP，用于机器人视觉语言动作（VLA）策略。
+SimROD:
+  title: SimROD：结合全局与局部增强的简洁 RAW 目标检测基线
+  tldr: 结合全局伽马增强与基于绿色通道的局部细节增强，构成简洁的 RAW 检测基线。
+  weight_labels:
+  - 全部权重（百度网盘，提取码 2025）
+  - 全部权重（Google Drive）
+Synthetic RAW Aug (Person Det):
+  title: 让离散变连续：利用合成 RAW 增强精细评估低光下的行人检测性能
+  tldr: 在 RAW 域合成连续变化的低光程度，用于精细评估行人检测性能退化。
+TA-ISP:
+  title: 面向先进视觉感知的任务感知图像信号处理器
+  tldr: 轻量任务感知 ISP 预测多尺度调制算子，将 RAW 输入适配到下游检测／分割任务。
+  weight_labels:
+  - 预训练模型（GitHub Release v0.0）
+UniISP:
+  title: UniISP：兼顾人类与机器视觉的统一 ISP 框架
+  tldr: 以单个 ISP 同时服务于人类观看与下游视觉任务。
+AODRaw:
+  title: 迈向多样条件下的 RAW 目标检测
+  tldr: 提供覆盖多种天气与光照的 AODRaw 检测数据集（7785 张 6000×4000 图像），并研究 RAW 域预训练。
+  note: README 主要介绍数据集下载（百度网盘／TeraBox）。
+APP (Beyond RGB):
+  title: 超越 RGB：用于 RAW 目标检测的自适应并行处理
+  tldr: 对 RAW 进行多分支并行处理，自适应融合各分支输出后送入检测器。
+Bayer-Domain Video CV:
+  title: 通过快速运动估计与学习型感知残差实现高效 Bayer 域视频计算机视觉
+  tldr: 跳过 ISP，直接在 Bayer 域执行视频视觉任务，并利用快速运动估计复用相邻帧计算。
+  note: 同团队相关工作：利用运动估计实现高效 Bayer 域计算机视觉，arXiv 2501.15119。
+Dark-ISP:
+  title: Dark-ISP：增强 RAW 图像处理以实现低光目标检测
+  tldr: 将传统 ISP 拆分为可微线性／非线性子模块，与检测器联合优化以处理低光 RAW。
+  note: README 另有 Google Drive 链接，并称其为官方实现。
+  weight_labels:
+  - 模型检查点（百度网盘，提取码 2025）
+HDR Tone Mapping for Detection:
+  title: 用于高动态范围目标检测的实时场景自适应色调映射
+  tldr: 以目标检测性能为优化目标，实现实时场景自适应色调映射。
+  weight_labels:
+  - tmo_pre.pt（仓库 pretrained_model/ 内）
+  - 含检测器的完整模型（Google Drive）
+RAW Keypoints:
+  title: RAW Bayer 图像的关键点检测与描述
+  tldr: 直接在 Bayer RAW 图像上进行关键点检测与描述。
+RAW-Bench:
+  title: RAW-Adapter：将预训练视觉模型适配至相机 RAW 图像及其基准
+  tldr: RAW-Adapter 的扩展版本，引入覆盖 17 种 RAW 域退化的 RAW-Bench。
+  note: RAW-Bench 标为即将发布。
+SFA RAW Detection:
+  title: RAW 图像目标检测中的空间频率感知
+  tldr: 在 RAW 图像中进行空间频率感知的目标检测。
+γ-Quant:
+  title: γ-Quant：迈向低比特模式识别的可学习量化
+  tldr: 直接对 RAW 传感器数据学习非线性低比特量化曲线，用于识别并替代 ISP。
+  note: 目前仅发布惯性传感器部分；视觉实验代码计划稍后发布。
+AdaptiveISP:
+  title: AdaptiveISP：学习用于目标检测的自适应图像信号处理器
+  tldr: 以检测准确率为奖励，通过强化学习为每张图像选择 ISP 模块序列与参数。
+  note: README 中两个检查点的文字标签与文件名对应关系颠倒；下载后请按文件名区分。
+  weight_labels:
+  - ckpt-lod-df-1.0（Release）
+  - ckpt-lod-df-0.98（Release）
+  - yolov3.pt（Release）
+ISP-Teacher:
+  title: ISP-Teacher：结合解耦正则化的图像信号处理，用于无监督域适应暗光目标检测
+  tldr: 采用 ISP 引导的教师学生框架，完成从日间到夜间的无监督域适应检测。
+  note: 发表于 AAAI 2024 论文集，无 arXiv 版本；README 另有 Google Drive 镜像。
+  weight_labels:
+  - BDD100k 预训练模型（百度网盘，提取码 1234）
+RAW-Adapter:
+  title: RAW-Adapter：将预训练视觉模型适配至相机 RAW 图像
+  tldr: 通过输入级与模型级适配器，让 sRGB 预训练检测／分割模型直接接受 RAW 输入。
+  note: README 无权重；扩展版 RAW-Bench 位于 arXiv 2503.17027。
+ρ-Vision:
+  title: 利用相机 RAW 快照进行高效视觉计算
+  tldr: 通过非配对 RAW 与 RGB 转换 CycleR2R，使视觉模型直接在 RAW 上训练和部署，从而省去 ISP。
+  note: MultiRAW 数据集也位于南京大学网盘。
+  weight_labels:
+  - 预训练模型（南京大学网盘）
+DynamicISP:
+  title: DynamicISP：用于图像识别的动态控制图像信号处理器
+  tldr: 依据前一帧识别结果动态调整传统 ISP 参数。
+Fully-Quantized Face Detector:
+  title: 考虑移动图像传感器特性的全量化常开人脸检测器
+  tldr: 围绕移动图像传感器输出特性设计全量化常开人脸检测器，研究低比特传感器输入。
+ISP-less CV:
+  title: 实现无需 ISP 的低功耗计算机视觉
+  tldr: 省去 ISP，直接在 RAW 上运行计算机视觉任务以降低能耗。
+LIS:
+  title: 暗光中的实例分割
+  tldr: 结合自适应下采样、平滑去噪特征与 LIS 数据集，进行低光 RAW 实例分割。
+  note: README 表格提供多种主干网络的模型链接。
+  weight_labels:
+  - Mask R-CNN 及其他模型（百度网盘）
+RAOD / ROD:
+  title: 迈向 RAW 目标检测：新基准与新模型
+  tldr: 提出 24 比特高动态范围 RAW 检测数据集 ROD，以及可学习 RAW 预处理模块。
+  note: RAOD 代码随 TA-ISP 仓库分发，含华为第三方声明；ROD 数据位于百度网盘，提取码 udqg。
+Raw Instinct:
+  title: Raw Instinct：相信分类器，跳过转换
+  tldr: 直接在 RAW 图像上训练分类器，并比较省去 ISP 转换时的准确率。
+  note: 数据集已在 Kaggle 发布，名称 raw-instinct。
+Raw or Cooked:
+  title: 生图还是熟图？RAW 图像目标检测
+  tldr: 比较 RAW 图像与经过 ISP 处理的图像作为目标检测输入的效果。
+Rawgment:
+  title: Rawgment：考虑噪声的 RAW 增强，使识别适应多样环境
+  tldr: 在 RAW 域进行考虑噪声的数据增强，提高不同光照条件下识别的鲁棒性。
+Shadow Detection in RAW:
+  title: 用于 RAW 图像阴影检测的自适应光照映射
+  tldr: 通过自适应光照映射在 RAW 图像中检测阴影。
+All You Need is RAW:
+  title: 你只需要 RAW：利用相机成像管线抵御对抗攻击
+  tldr: 将图像映射回 RAW 并重新经过 ISP，以防御对抗攻击。
+GenISP:
+  title: GenISP：用于低光机器认知的神经 ISP
+  tldr: 面向低光检测的精简神经 ISP，首先进行设备无关的色彩空间转换，并发布 RAW-NOD 数据集。
+  note: 第三方复现；数据集位于 igor-morawski/RAW-NOD。
+IA-YOLO:
+  title: 面向恶劣天气目标检测的图像自适应 YOLO
+  tldr: 使用小型网络预测可微 ISP 滤波参数，并与 YOLO 联合训练以处理雾天与低光场景。
+  weight_labels:
+  - 测试集与模型（Google Drive）
+  - 镜像（百度网盘，提取码 iayl）
+Log-Gradient Input:
+  title: 利用对数梯度输入图像提高 tinyML 计算机视觉的能效与鲁棒性
+  tldr: 采用对数梯度图像替代 ISP 处理后的图像作为 tinyML 输入，从而允许更低位宽。
+Dirty Pixels:
+  title: Dirty Pixels：迈向端到端图像处理与感知
+  tldr: 将 ISP 与分类／检测网络联合端到端训练，在低光与噪声场景中优于分别优化。
+  note: 采用 MIT 许可证。
+  weight_labels:
+  - README：代码、数据与训练完成的模型
+ISP Distillation:
+  title: ISP 蒸馏
+  tldr: 将 RGB 模型蒸馏为 RAW 输入模型，从而跳过 ISP。
+Lightweight HDR ISP:
+  title: 通过傅里叶对抗网络构建轻量 HDR 相机 ISP，实现动态照明条件下的鲁棒感知
+  tldr: 面向感知任务设计轻量 HDR 相机 ISP。
+LOD:
+  title: 构建极低光环境下的目标检测
+  tldr: 提供低光／正常光配对 RAW 检测数据集 LOD，并研究 RAW 预处理对检测的影响。
+  note: 数据集仓库提供百度网盘下载，提取码 2021；AdaptiveISP 等项目提供整理版本。
+MAET:
+  title: 结合正交切线正则性的多任务自编码变换，用于暗光目标检测
+  tldr: 利用物理 ISP 模型合成低光退化，再通过多任务自编码变换学习暗光目标检测特征。
+  note: 百度网盘镜像提取码为 1234。
+  weight_labels:
+  - MAET-COCO（Google Drive）
+  - MAET-EXDark（Google Drive）
+Matching in the Dark:
+  title: 暗光中的匹配：用于低光场景图像对匹配的数据集
+  tldr: 提供低光 RAW 图像对的特征匹配数据集。
+  note: 仓库仅提供 MID 数据集（Google Drive，约 460 GB），无模型。
+Optical Flow in the Dark:
+  title: 暗光中的光流
+  tldr: 合成低光 RAW 训练数据，研究极暗条件下的光流估计。
+ISP4ML:
+  title: ISP4ML：理解图像信号处理在高效深度学习视觉系统中的作用
+  tldr: 定量分析各 ISP 模块对下游深度神经网络准确率与能耗的影响。
+Reconfiguring Pipeline:
+  title: 为计算机视觉重配置成像管线
+  tldr: 分析视觉任务需要哪些 ISP 阶段，并提出简化的低功耗管线。
+POS-ISP:
+  title: POS-ISP：面向任务感知 ISP 的序列级管线优化
+  tldr: 一次前向传播即可预测整个 ISP 模块序列及全部参数，并利用下游任务奖励进行优化。
+  weight_labels:
+  - weights/*.pth（仓库内：LOD / LIS / KITTI）
+ChameleonTuner:
+  title: ChameleonTuner：主观场景中的自动 ISP 色彩调优
+  tldr: 面向主观评价场景自动调整 ISP 色彩参数。
+  note: 仓库表示代码即将发布。
+Language Color ISP Tuning:
+  title: 基于语言的色彩 ISP 调优
+  tldr: 使用视觉语言模型，根据对目标外观的自然语言描述自动调整色彩 ISP 参数。
+MLLM ISP Tuning:
+  title: 结合动态偏好学习的多模态大语言模型引导 ISP 超参数优化
+  tldr: 利用多模态大语言模型评估图像并动态学习偏好，引导 ISP 超参数搜索。
+RL Photo-Finishing Tuning:
+  title: 用于照片精修调优的目标条件强化学习
+  tldr: 通过目标条件强化学习自动调整照片精修／后端 ISP 参数，与 AdaptiveISP 出自同一团队。
+  weight_labels:
+  - envs/checkpoints/best_model*.zip（仓库内）
+Sequence-Specific ISP Prior:
+  title: 学习利用序列特定先验知识优化图像处理管线
+  tldr: 利用 ISP 模块顺序的先验知识预测参数，与 Attention-aware ISP Tuning 出自同一团队。
+Attention-aware ISP Tuning:
+  title: 用于图像处理管线超参数预测的注意力感知学习
+  tldr: 根据图像内容预测 ISP 超参数，并利用注意力建模参数之间的关系。
+DRL-ISP:
+  title: DRL-ISP：基于深度强化学习的多目标相机 ISP
+  tldr: 通过强化学习从工具箱中选择 ISP 模块，同时兼顾检测、分割和深度估计等多个目标。
+  note: 包含 scripts/4.copy_weights.sh 与预处理数据链接（SharePoint）。
+Neural Photo-Finishing:
+  title: 神经照片精修
+  tldr: 为相机照片精修管线构建可微代理，从目标图像反求管线参数。
+HDR Pipeline Opt.:
+  title: 端到端高动态范围相机管线优化
+  tldr: 面向 HDR 场景端到端优化相机管线，同时涵盖传感器曝光与 ISP 参数。
+ReconfigISP:
+  title: ReconfigISP：可重配置的相机图像处理管线
+  tldr: 利用可微代理与类似神经架构搜索的方法，自动选择 ISP 模块组合及参数，并发布一加相机数据。
+  note: README 提供一加数据集（Google Drive）。
+RL Self-Enhancing ISP:
+  title: 通过强化学习实现自增强相机图像与信号处理
+  tldr: 使用强化学习调整相机和 ISP 参数。
+HW-in-the-loop ISP:
+  title: 硬件在环的端到端相机图像处理管线优化
+  tldr: 将真实硬件 ISP 纳入优化环路，通过进化策略为下游任务调整参数。
+Differentiable Proxies:
+  title: 利用可微代理优化黑盒图像处理超参数
+  tldr: 训练可微代理网络模拟黑盒硬件 ISP，再通过梯度下降调整 ISP 参数。
+ISP IQ Tuning:
+  title: 利用非线性优化自动调整 ISP 图像质量
+  tldr: 以图像质量指标为目标，通过非线性优化自动调整 ISP 参数。
+EMOVIS:
+  title: EMOVIS：情绪优化的图像处理
+  tldr: 将目标情绪映射为传统 16 比特 RAW ISP 的饱和度、亮度、对比度与色彩控制，并通过用户研究标定。
+  note: 这是传统免训练 ISP 控制基线，并非神经 ISP；官方处理代码已公开，无需学习型模型检查点（核验日期：2026-10-28）。
+PQDynamicISP:
+  title: PQDynamicISP：追求感知质量、适配不同图像传感器的动态控制 ISP
+  tldr: 为轻量传统 ISP 函数动态预测全局与局部参数，以提高不同传感器的感知质量。
+  note: 属于依据图像内容自动控制，并未提供面向用户的编辑界面，因此归入 ISP 参数调优。2026-10-28 未找到官方实现。
+BinRVR:
+  title: 二值化高效 RAW 视频复原及其拓展
+  tldr: BRVE 的扩展，采用二值化与多比特 RAW 视频复原，覆盖低光增强、去噪、去模糊和超分辨率。
+  note: 仓库目前仅包含 README。
+RawHDRV:
+  title: 从单曝光 RAW 序列重建高动态范围视频
+  tldr: 从单曝光 RAW 视频序列重建 HDR 视频。
+Real-Time Raw2Raw Mobile Denoise:
+  title: 面向移动设备极低光超高清视频的高效实时 RAW 到 RAW 去噪
+  tldr: 在手机上对极低光 4K RAW 视频进行实时 RAW 到 RAW 去噪。
+DarkVRAI:
+  title: DarkVRAI：利用拍摄条件调制与连拍顺序选择性扫描进行低光 RAW 视频去噪
+  tldr: 结合拍摄条件调制与连拍顺序选择性扫描，实现低光 RAW 视频去噪，是 AIM 2025 方案。
+RViDeformer:
+  title: RViDeformer：高效 RAW 视频去噪 Transformer 与更大规模基准数据集
+  tldr: 提供通过屏幕重拍采集的更大规模 RAW 视频去噪数据集，并提出高效 Transformer。
+  weight_labels:
+  - RViDeformer 与 ISP 权重（Google Drive）
+  - 镜像（百度网盘，提取码 4g5b）
+Alignment-free Raw Video Demoire:
+  title: 无需配准的 RAW 视频去摩尔纹
+  tldr: 无需显式帧间配准即可去除 RAW 视频中的摩尔纹。
+BRVE:
+  title: 二值化低光 RAW 视频增强
+  tldr: 采用分布感知二值卷积的 1 比特低光 RAW 视频增强网络。
+  note: README 还提供第二组模型，位于 Google Drive／百度网盘，提取码 wq1u。
+  weight_labels:
+  - LLRVD 模型（Google Drive）
+  - 镜像（百度网盘，提取码 4v88）
+Pre/Post-Demosaic Video Denoise:
+  title: 结合去马赛克前后噪声去除的 RAW 视频处理
+  tldr: 在去马赛克前和后均执行去噪的 RAW 视频处理管线。
+VJDD:
+  title: 迈向从 RAW 数据获得准确且时序一致的视频复原
+  tldr: 对 RAW 视频联合去噪与去马赛克，重点保证时序一致性。
+  note: 仓库仅包含 README。
+FloRNN:
+  title: 通过前瞻前向循环模块模拟后向模块，实现单向视频去噪
+  tldr: 在单向循环网络中利用前瞻模块模拟双向行为，支持 CRVD 等 RAW 视频数据。
+  weight_labels:
+  - 预训练模型（Google Drive）
+  - 预训练模型（百度网盘，提取码 ogua）
+Real-RawVSR:
+  title: Real-RawVSR：真实世界 RAW 视频超分辨率与基准数据集
+  tldr: 提供真实世界 RAW 视频超分辨率数据集及对应方法。
+  note: 数据集位于百度网盘，提取码 hxyl。
+  weight_labels:
+  - 训练完成的模型（Google Drive）
+Starlight Denoising:
+  title: 星空下的舞蹈：星光条件下的视频去噪
+  tldr: 在低于毫勒克斯的照度下学习结合物理模型与 GAN 的 RAW 噪声模型，用于星光级视频去噪。
+  weight_labels:
+  - 噪声模型与去噪器（Google Drive）
+EMVD:
+  title: 通过循环时空融合实现高效多阶段视频去噪
+  tldr: 在可学习的可逆线性变换域中进行循环时空融合，实现手机 SoC 上的实时 RAW 视频去噪。
+  note: 非官方 PyTorch 复现；官方代码尚未开源。
+RViDeNet:
+  title: 动态场景基准数据集与监督式 RAW 视频去噪
+  tldr: 提供首个动态场景 RAW 视频去噪数据集 CRVD，并配套 RAW 到 sRGB ISP 模块。
+  weight_labels:
+  - 训练完成的模型（Google Drive）
+  - 训练完成的模型（百度网盘，提取码 xssc）
+High-Sensitivity Noise Video:
+  title: 通过探索高感光度相机噪声增强低光视频
+  tldr: 建模高感光度相机噪声，以增强低光视频。

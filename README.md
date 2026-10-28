@@ -6,15 +6,17 @@
 
 **Neural (learned) camera ISPs with released code and pretrained weights, plus a primer on the classical pipeline they build on.**
 
-[![papers](https://img.shields.io/badge/papers-415-blue)](#papers) [![with code](https://img.shields.io/badge/with%20code-204-0a7bbb)](#papers) [![with weights](https://img.shields.io/badge/with%20weights-132-2ea44f)](WEIGHTS.md) [![links checked](https://img.shields.io/badge/links%20checked-2026--10--11-lightgrey)](#about-this-list) [![license](https://img.shields.io/badge/license-CC0--1.0-lightgrey)](LICENSE) [![PRs](https://img.shields.io/badge/PRs-welcome-brightgreen)](CONTRIBUTING.md)
+[![papers](https://img.shields.io/badge/papers-419-blue)](#papers) [![with code](https://img.shields.io/badge/with%20code-205-0a7bbb)](#papers) [![with weights](https://img.shields.io/badge/with%20weights-132-2ea44f)](WEIGHTS.md) [![links checked](https://img.shields.io/badge/links%20checked-2026--10--11-lightgrey)](#about-this-list) [![license](https://img.shields.io/badge/license-CC0--1.0-lightgrey)](LICENSE) [![PRs](https://img.shields.io/badge/PRs-welcome-brightgreen)](CONTRIBUTING.md)
 
-**[Interactive page](https://ruilin.li/Awesome-Neural-ISP/) · [Weights index](WEIGHTS.md) · [ISP 101](guide/isp-101.md) · [Contributing](CONTRIBUTING.md)**
+**[English](README.md) · [简体中文](README.zh-CN.md) · [Interactive page](https://ruilin.li/Awesome-Neural-ISP/) · [Weights index](WEIGHTS.md) · [ISP 101](guide/isp-101.md) · [Contributing](CONTRIBUTING.md)**
 
 </div>
 
-A curated list of research on neural (learned) camera image signal processors (ISPs). It covers learned replacements for each stage of the classical pipeline (denoising, demosaicing, white balance, color and tone), end-to-end RAW-to-sRGB networks, inverse ISPs, ISPs for machine vision, and ISP tuning. For every paper the list records whether code and pretrained weights are public, and links the weights exactly as the official repository does.
+A curated list of research on neural (learned) camera image signal processors (ISPs). It covers learned replacements for each stage of the classical pipeline (denoising, demosaicing, white balance, color and tone), end-to-end RAW-to-sRGB networks, controllable neural ISPs, inverse ISPs, ISPs for machine vision, and ISP tuning. For every paper the list records whether code and pretrained weights are public, and links the weights exactly as the official repository does.
 
-It currently holds **415 papers**, of which **204 have public code** and **132 release pretrained weights**, plus 29 datasets. The [interactive page](https://ruilin.li/Awesome-Neural-ISP/) has the same data with search and filters by pipeline stage and weight host.
+It currently holds **419 papers**, of which **205 have public code** and **132 release pretrained weights**, plus 29 datasets. The [interactive page](https://ruilin.li/Awesome-Neural-ISP/) has the same data with search and filters by topic, year, release status and weight host.
+
+**Literature update: 2026-10-28.** The full code/weight audit date remains 2026-10-11; see [sources and update notes](guide/literature-update-2026-10-28.md) for newly checked entries.
 
 **Reading the tables.** In each section, papers with downloadable weights come first. The *Weights* column copies the links from each repository README; "in repo" means the checkpoint files are committed to the repository. In the *Code* column, "unofficial" marks a third-party implementation, "coming soon" a placeholder repository, and "—" means no public code was found.
 
@@ -23,18 +25,19 @@ It currently holds **415 papers**, of which **204 have public code** and **132 r
 - [ISP 101](#isp-101)
 - [Research Threads](#research-threads)
 - [Papers](#papers)
-  - [End-to-End RAW-to-sRGB](#end-to-end-raw-to-srgb) (45 papers, 12 with weights)
+  - [End-to-End RAW-to-sRGB](#end-to-end-raw-to-srgb) (38 papers, 9 with weights)
+  - [Controllable Neural ISP](#controllable-neural-isp) (5 papers, 3 with weights)
   - [Mobile & Lightweight ISP](#mobile--lightweight-isp) (12 papers, 4 with weights)
   - [RAW Denoising & Noise Modeling](#raw-denoising--noise-modeling) (28 papers, 13 with weights)
   - [Low-Light RAW Enhancement](#low-light-raw-enhancement) (32 papers, 12 with weights)
   - [Demosaicing, Joint Restoration & RAW Super-Resolution](#demosaicing-joint-restoration--raw-super-resolution) (55 papers, 14 with weights)
-  - [Burst & HDR](#burst--hdr) (37 papers, 13 with weights)
+  - [Burst & HDR](#burst--hdr) (38 papers, 13 with weights)
   - [RAW Video](#raw-video) (15 papers, 6 with weights)
   - [White Balance, Color & Tone](#white-balance-color--tone) (68 papers, 31 with weights)
   - [Inverse ISP, RAW Reconstruction & Compression](#inverse-isp-raw-reconstruction--compression) (37 papers, 12 with weights)
-  - [ISP for Machine Vision](#isp-for-machine-vision) (44 papers, 12 with weights)
-  - [ISP Parameter Tuning](#isp-parameter-tuning) (15 papers, 2 with weights)
-  - [Challenges & Surveys](#challenges--surveys) (27 papers, 1 with weights)
+  - [ISP for Machine Vision](#isp-for-machine-vision) (45 papers, 13 with weights)
+  - [ISP Parameter Tuning](#isp-parameter-tuning) (16 papers, 1 with weights)
+  - [Challenges & Surveys](#challenges--surveys) (30 papers, 1 with weights)
 - [Datasets](#datasets)
 - [Tools & Open-source ISPs](#tools--open-source-isps)
 - [Learning Resources](#learning-resources)
@@ -62,6 +65,7 @@ flowchart LR
 | White balance | estimate and cancel the illuminant color | [WB / Color / Tone](#white-balance-color--tone) |
 | Color correction, tone, gamma | map camera RGB to sRGB and compress dynamic range | [WB / Color / Tone](#white-balance-color--tone) |
 | The whole pipeline | RAW in, sRGB out | [End-to-end](#end-to-end-raw-to-srgb) · [Mobile](#mobile--lightweight-isp) |
+| Explicit rendering controls | user editing, camera conditioning and modular stages | [Controllable ISP](#controllable-neural-isp) |
 | The pipeline in reverse | sRGB back to RAW | [Inverse ISP](#inverse-isp-raw-reconstruction--compression) |
 | Output for machines, not people | detection or segmentation on RAW | [For vision tasks](#isp-for-machine-vision) |
 | Parameters of a hardware ISP | automatic tuning | [ISP tuning](#isp-parameter-tuning) |
@@ -73,22 +77,19 @@ flowchart LR
 - **Feeding camera metadata to the network.** EXIF, ISO, color matrices and capture time are encoded explicitly for cross-camera generalization and controllable rendering. <sub>Examples: ParamISP · MetaISP · CCMNet · Time-Aware AWB · PMRID k-Sigma</sub>
 - **Deployment: from challenges to low-bit networks.** The MAI challenges time submissions on phone NPUs, which produced compact designs such as MicroISP and PyNET-V2. Explicit quantization and binarization work concentrates on RAW video and demosaicing. <sub>Examples: MAI 2021/2022/2025 · MicroISP · BRVE · BinRVR · BMTNet · RAWDet-7</sub>
 - **ISPs that serve machines.** RAW detection datasets and methods grew quickly after 2023: jointly trained ISPs, reinforcement-learned ISP sequences, and adapters that consume RAW directly. <sub>Examples: Dirty Pixels · AdaptiveISP · RAW-Adapter · TA-ISP · POS-ISP · RAWild</sub>
-- **Controllable and modular again.** After black-box end-to-end models, work is splitting the ISP back into interpretable, replaceable modules, with attention to user editing and style control. <sub>Examples: Modular Neural ISP · CtrlISP · Edit-aware RAW · DualDn · NILUT</sub>
+- **Controllable and modular again.** The Controllable Neural ISP category separates user editing and replaceable processing stages from camera/style conditioning. Automatic parameter tuning and task-driven optimization remain distinct topics; NILUT and edit-aware RAW reconstruction connect the category to color modules and inverse imaging. <sub>Examples: CtrlISP · Modular Neural ISP (SIGGRAPH Asia 2026) · ParamISP · MetaISP · Uni-ISP</sub>
 
 ## Papers
 
 ### End-to-End RAW-to-sRGB
 
-One network replaces the whole ISP. Early work is CNN-based (DeepISP, PyNET, LiteISPNet); recent work moves to diffusion and autoregressive priors, camera-parameter conditioning and modular designs. Misaligned RAW/sRGB training pairs are a recurring problem.
+One network replaces the whole ISP. Early work is CNN-based (DeepISP, PyNET, LiteISPNet); recent work moves to diffusion and autoregressive priors. Misaligned RAW/sRGB training pairs are a recurring problem. See Controllable Neural ISP for explicit rendering controls, camera conditioning and modular editing.
 
-**With pretrained weights (12)**
+**With pretrained weights (9)**
 
 | Paper | Venue | Code | Weights |
 |:--|:--|:--|:--|
 | **[ISPDiffuser](https://arxiv.org/abs/2503.19283)**<br>ISPDiffuser: Learning RAW-to-sRGB Mappings with Texture-Aware Diffusion Models and Histogram-Guided Color Consistency<br><sub>Diffusion model for RAW-to-sRGB with a texture-aware loss and histogram-guided color consistency.</sub> | AAAI 2025 | [GitHub](https://github.com/RenYangSCU/ISPDiffuser)<br><sub>PyTorch</sub> | [ZRR / MAI weights (Google Drive)](https://drive.google.com/drive/folders/1smqKEttfKNEZfS8OT-g9yoMOCoRs90Gy?usp=sharing)<br>[Mirror (Baidu, code f1gv)](https://pan.baidu.com/s/1eAAZf0TbHakxrqwyl2AZVA?pwd=f1gv) |
-| **[Modular Neural ISP](https://arxiv.org/abs/2512.08564)**<br>Modular Neural Image Signal Processing<br><sub>Splits a neural ISP into swappable modules for denoising, AWB/CCM, photofinishing and upsampling, with an interactive photo-editing GUI. <i>Note: Afifi / Brown group; a standalone executable GUI is also available</i></sub> | arXiv 2025 | [GitHub](https://github.com/mahmoudnafifi/modular_neural_isp)<br><sub>PyTorch</sub> | [denoising/models/\*.pth (lite/base/large)](https://github.com/mahmoudnafifi/modular_neural_isp/tree/main/denoising/models)<br>[photofinishing/models/\*.pth (multiple styles)](https://github.com/mahmoudnafifi/modular_neural_isp/tree/main/photofinishing/models) |
-| **[ParamISP](https://arxiv.org/abs/2312.13313)**<br>ParamISP: Learned Forward and Inverse ISPs using Camera Parameters<br><sub>Encodes EXIF parameters such as exposure, ISO and focal length into the network to learn both forward and inverse ISPs, trained per camera model.</sub> | CVPR 2024 | [GitHub](https://github.com/woo525/ParamISP)<br><sub>PyTorch</sub> | [Official weights (Google Drive, inverse and forward)](https://drive.google.com/drive/folders/1L7ZSikYt5eaCOEINpjjwmPX0CoZLbBG6) |
-| **[MetaISP](https://arxiv.org/abs/2401.03220)**<br>MetaISP – Exploiting Global Scene Structure for Accurate Multi-Device Color Rendition<br><sub>Uses global scene features and device metadata so that one network renders the distinct color styles of multiple smartphones.</sub> | VMV 2023 | [GitHub](https://github.com/vccimaging/MetaISP)<br><sub>PyTorch</sub> | [MetaISPNet weights (Google Drive)](https://drive.google.com/drive/folders/1tLWlx0LDUjQ9niZje0cfLKt98dx1VEIR?usp=sharing) |
 | **[CBUnet](https://arxiv.org/abs/2204.08970)**<br>Rendering Nighttime Image Via Cascaded Color and Brightness Compensation<br><sub>Cascaded color-compensation and brightness-compensation networks for night RAW rendering. <i>Note: Stage-2 and other weights are listed in the README</i></sub> | CVPRW (NTIRE) 2022 | [GitHub](https://github.com/njuvision/CBUnet)<br><sub>PyTorch</sub> | [stage-1 cube++.pth (Google Drive)](https://drive.google.com/file/d/1K8CgwXp0Pk7yPNUWXOF6zbK9iHgpiVDS/view?usp=sharing) |
 | **[LiteISPNet](https://openaccess.thecvf.com/content/ICCV2021/html/Zhang_Learning_RAW-to-sRGB_Mappings_With_Inaccurately_Aligned_Supervision_ICCV_2021_paper.html)**<br>Learning RAW-to-sRGB Mappings with Inaccurately Aligned Supervision<br><sub>Joint alignment and global color mapping to handle spatial misalignment and color differences in RAW/sRGB training pairs; includes the lightweight LiteISPNet. <i>Note: The README also provides ZRR via Baidu (code 8sq1) and a preprocessed SR-RAW.</i></sub> | ICCV 2021 | [GitHub](https://github.com/cszhilu1998/RAW-to-sRGB)<br><sub>PyTorch</sub> | [ZRR / SR-RAW pretrained models (Google Drive)](https://drive.google.com/drive/folders/12eMNZh-A9E4bVup-Kcy_F0_c0IToUyw7?usp=sharing) |
 | **[AWNet](https://arxiv.org/abs/2008.09228)**<br>AWNet: Attentive Wavelet Network for Image ISP<br><sub>Wavelet-transform and attention ISP network with dual inputs (RAW / demosaiced image); a top-ranked AIM 2020 entry.</sub> | ECCVW (AIM) 2020 | [GitHub](https://github.com/Charlie0215/AWNet-Attentive-Wavelet-Network-for-Image-ISP)<br><sub>PyTorch</sub> | [demosaiced_model (Google Drive)](https://drive.google.com/file/d/1uhohG6cYkM_-W4dGLl8yGlo85UMF6KEK/view?usp=sharing)<br>[Raw_model (Google Drive)](https://drive.google.com/file/d/1jBwEm7_zbU55qOlGAVuOAQ8BIwx2g7Fw/view?usp=sharing) |
@@ -98,11 +99,10 @@ One network replaces the whole ISP. Early work is CNN-based (DeepISP, PyNET, Lit
 | **[W-Net](https://arxiv.org/abs/1911.08656)**<br>W-Net: Two-stage U-Net with misaligned data for raw-to-RGB mapping<br><sub>AIM 2019 RAW-to-RGB challenge entry; a two-stage U-Net that handles misaligned supervision between smartphone RAW and DSLR RGB.</sub> | ICCVW (AIM) 2019 | [GitHub](https://github.com/khuhm/W-Net) | [pretrained models (Google Drive)](https://drive.google.com/drive/folders/1eH_prE7EWEUqxJes5IfHTdsFyqP64o7w?usp=sharing) |
 | **[DPED](https://arxiv.org/abs/1704.02470)**<br>DSLR-Quality Photos on Mobile Devices with Deep Convolutional Networks<br><sub>sRGB→sRGB enhancement of phone photos to DSLR quality (DPED dataset); the precursor of the PyNET family of learned ISPs.</sub> | ICCV 2017 | [GitHub](https://github.com/aiff22/DPED)<br><sub>TensorFlow</sub> | [models_orig/{iphone,sony,blackberry}_orig (in repo)](https://github.com/aiff22/DPED/tree/master/models_orig) |
 
-**Code only or not released (33)**
+**Code only or not released (29)**
 
 | Paper | Venue | Code |
 |:--|:--|:--|
-| **[RAW vs RGB Restoration Benchmark](https://arxiv.org/abs/2609.02831)**<br>Benchmarking RAW and RGB Restoration in Image Signal Processors<br><sub>Systematically compares restoration in the RAW versus RGB domain, giving empirical evidence on where to place restoration modules in an ISP. <i>Note: Code merged into the mv-lab/AISP repo</i></sub> | BMVC 2026 | [GitHub](https://github.com/mv-lab/AISP) |
 | **[RGB-Event ISP](https://arxiv.org/abs/2501.19129)**<br>RGB-Event ISP: The Dataset and Benchmark<br><sub>First ISP dataset and benchmark for hybrid RGB-event sensors, studying how event data helps demosaicing, denoising and color. <i>Note: Dataset on HF yunfanlu/RGB-Event-ISP-Dataset and Baidu; non-commercial research use only</i></sub> | ICLR 2025 | [GitHub](https://github.com/yunfanLu/RGB-Event-ISP) |
 | **[FourierISP](https://arxiv.org/abs/2401.02161)**<br>Enhancing RAW-to-sRGB with Decoupled Style Structure in Fourier Domain<br><sub>Decouples style (color/brightness) from structure in the Fourier domain and learns each separately. <i>Note: README explicitly states checkpoints will not be released; you need to train it yourself</i></sub> | AAAI 2024 | [GitHub](https://github.com/alexhe101/FourierISP)<br><sub>PyTorch</sub> |
 | **[Day-to-Night](https://openaccess.thecvf.com/content/CVPR2022/html/Punnappurath_Day-to-Night_Image_Synthesis_for_Training_Nighttime_Neural_ISPs_CVPR_2022_paper.html)**<br>Day-to-Night Image Synthesis for Training Nighttime Neural ISPs<br><sub>Synthesizes nighttime RAW (with noise and multiple illuminants) from daytime RAW to train nighttime neural ISPs. <i>Note: README references pretrained_\* directories, but no weight files were found in the repo and the dataset link is empty</i></sub> | CVPR 2022 | [GitHub](https://github.com/SamsungLabs/day-to-night)<br><sub>PyTorch</sub> |
@@ -111,9 +111,7 @@ One network replaces the whole ISP. Early work is CNN-based (DeepISP, PyNET, Lit
 | **[HERN](https://arxiv.org/abs/1911.08098)**<br>HighEr-Resolution Network for Image Demosaicing and Enhancing<br><sub>Winning AIM 2019 RAW-to-RGB solution with a dual-branch design: a high-resolution detail branch and a low-resolution global branch. <i>Note: Both OneDrive links for the challenge weights (114.pth / 115.pth) in the README return 404 (checked 2026-10-11).</i></sub> | ICCVW (AIM) 2019 | [GitHub](https://github.com/MKFMIKU/RAW2RGBNet)<br><sub>PyTorch</sub> |
 | **[DRIFT](https://openaccess.thecvf.com/content/CVPR2026W/NTIRE/html/Majee_DRIFT_Deep_Restoration_ISP_Fusion_and_Tone-mapping_CVPRW_2026_paper.html)**<br>DRIFT: Deep Restoration, ISP Fusion, and Tone-mapping<br><sub>Combines restoration, ISP fusion and tone mapping into a single unified framework.</sub> | CVPRW (NTIRE) 2026 | — |
 | **[NPR Color Bias](https://arxiv.org/abs/2604.28136)**<br>Beyond Pixel Fidelity: Minimizing Perceptual Distortion and Color Bias in Night Photography Rendering<br><sub>Night photography rendering that jointly constrains perceptual distortion and color bias.</sub> | ICIP 2026 | — |
-| **[Reference-free ISP Evaluation](https://arxiv.org/abs/2607.23321)**<br>A Reference-Free Framework for Evaluating Single-Frame ISP Pipelines<br><sub>A framework for evaluating the output quality of single-frame ISP pipelines without reference images.</sub> | arXiv 2026 | — |
 | **[RPBA-Net](https://arxiv.org/abs/2605.03626)**<br>RPBA-Net: An Interpretable Residual Pyramid Bilateral Affine Network for RAW-Domain ISP Enhancement<br><sub>Interpretable RAW-domain ISP enhancement built on a residual pyramid and bilateral affine grids.</sub> | arXiv 2026 | — |
-| **[Small-Pixel Neural ISP](https://arxiv.org/abs/2606.07675)**<br>The Need for Neural ISP in the Small-Pixel Era<br><sub>Position paper: as pixels shrink and optics approach their limits, neural ISPs are needed to compensate through restoration.</sub> | arXiv 2026 | — |
 | **[VAR-ISP](https://arxiv.org/abs/2609.18302)**<br>Visual Autoregressive Priors for RAW-to-sRGB Image Signal Processing<br><sub>Introduces visual autoregressive (VAR) generative priors into RAW-to-sRGB processing.</sub> | ECCVW (LoViF) 2026 | — |
 | **[EGUOT-ISP](https://arxiv.org/abs/2512.05635)**<br>Experts-Guided Unbalanced Optimal Transport for ISP Learning from Unpaired and/or Paired Data<br><sub>Unifies paired and unpaired ISP learning with expert-guided unbalanced optimal transport. <i>Note: Repo currently contains only a README</i></sub> | arXiv 2025 | [GitHub (coming soon)](https://github.com/gosha20777/EGUOT-ISP) |
 | **[EvRAW](https://scholar.google.com/scholar?q=%22EvRAW%22+RAW-to-sRGB)**<br>EvRAW: Event-guided Structural and Color Modeling for RAW-to-sRGB Image Reconstruction<br><sub>Event-camera-guided structural and color modeling for RAW→sRGB reconstruction.</sub> | ACM MM 2025 | — |
@@ -122,7 +120,6 @@ One network replaces the whole ISP. Early work is CNN-based (DeepISP, PyNET, Lit
 | **[Real-World Camera Pipeline](https://arxiv.org/abs/2411.10773)**<br>An End-to-End Real-World Camera Imaging Pipeline<br><sub>End-to-end ISP for real smartphone imaging pipelines, covering denoising, color and tone.</sub> | ACM MM 2024 | — |
 | **[RMFA-Net](https://arxiv.org/abs/2406.11469)**<br>RMFA-Net: A Neural ISP for Real RAW to RGB Image Reconstruction<br><sub>ISP network for real smartphone RAW images using multi-frequency attention fusion.</sub> | arXiv 2024 | — |
 | **[Simple ISP](https://arxiv.org/abs/2404.11569)**<br>Simple Image Signal Processing using Global Context Guidance<br><sub>Adds a global context guidance module to a lightweight ISP backbone to improve tonal consistency across the whole image.</sub> | ICIP 2024 | — |
-| **[Uni-ISP](https://arxiv.org/abs/2406.01003)**<br>Uni-ISP: Toward Unifying the Learning of ISPs from Multiple Mobile Cameras<br><sub>A single model that learns the ISPs of multiple smartphones and supports style transfer between cameras.</sub> | IEEE TIP 2024 | — |
 | **[Back to the Future ISP](https://openaccess.thecvf.com/content/CVPR2023W/NTIRE/html/Zini_Back_to_the_Future_A_Night_Photography_Rendering_ISP_Without_CVPRW_2023_paper.html)**<br>Back to the Future: A Night Photography Rendering ISP Without Deep Learning<br><sub>A night photography rendering ISP without deep learning, serving as a reference point for learned methods.</sub> | CVPRW (NTIRE) 2023 | — |
 | **[Contrastive Subspace ISP](https://arxiv.org/abs/2104.00253)**<br>Deep Contrastive Patch-Based Subspace Learning for Camera Image Signal Processing<br><sub>Learns ISP modules using patch-based subspaces and contrastive learning.</sub> | IEEE AIC 2023 | — |
 | **[Single-Frame HDR ISP](https://openaccess.thecvf.com/content/WACV2023/html/Dinh_End-to-End_Single-Frame_Image_Signal_Processing_for_High_Dynamic_Range_Scenes_WACV_2023_paper.html)**<br>End-to-End Single-Frame Image Signal Processing for High Dynamic Range Scenes<br><sub>End-to-end ISP operating on a single RAW frame in high dynamic range scenes.</sub> | WACV 2023 | — |
@@ -135,6 +132,27 @@ One network replaces the whole ISP. Early work is CNN-based (DeepISP, PyNET, Lit
 | **[Deep Camera](https://arxiv.org/abs/1908.09191)**<br>Deep Camera: A Fully Convolutional Neural Network for Image Signal Processing<br><sub>An early attempt to replace the entire camera ISP with a single fully convolutional network.</sub> | ICCVW 2019 | — |
 | **[DeepISP](https://arxiv.org/abs/1801.06724)**<br>DeepISP: Towards Learning an End-to-End Image Processing Pipeline<br><sub>One of the earliest end-to-end learned ISPs, with two stages: local denoising/demosaicing and global tone/color adjustment; comes with a Samsung S7 dataset.</sub> | IEEE TIP 2018 | — |
 | **[Scene-Dependent Imaging](https://arxiv.org/abs/1707.08350)**<br>Modelling the Scene Dependent Imaging in Cameras with a Deep Neural Network<br><sub>Models a camera's scene-dependent RAW→sRGB rendering with a DNN; one of the early attempts at a learned ISP.</sub> | ICCV 2017 | — |
+
+<p align="right"><a href="#contents">back to contents</a></p>
+
+### Controllable Neural ISP
+
+Learned rendering with explicit controls or replaceable stages. User-editable pipelines: CtrlISP and Modular Neural ISP. Camera/style conditioning: ParamISP, MetaISP and Uni-ISP; metadata conditioning is not necessarily a user-editing interface. Related modules (NILUT and white-balance editing) remain under White Balance, Color & Tone; edit-aware RAW reconstruction remains under Inverse ISP. Automatic parameter prediction and conventional ISP controls belong to ISP Parameter Tuning; task-reward optimization belongs to ISP for Machine Vision.
+
+**With pretrained weights (3)**
+
+| Paper | Venue | Code | Weights |
+|:--|:--|:--|:--|
+| **[Modular Neural ISP](https://arxiv.org/abs/2512.08564)**<br>Modular Neural Image Signal Processing<br><sub>Splits a neural ISP into swappable modules for denoising, AWB/CCM, photofinishing and upsampling, with an interactive photo-editing GUI. <i>Note: Official repository announces acceptance at SIGGRAPH Asia 2026 (checked 2026-10-28); a standalone editing GUI is available.</i></sub> | SIGGRAPH Asia 2026 | [GitHub](https://github.com/mahmoudnafifi/modular_neural_isp)<br><sub>PyTorch</sub> | [denoising/models/\*.pth (lite/base/large)](https://github.com/mahmoudnafifi/modular_neural_isp/tree/main/denoising/models)<br>[photofinishing/models/\*.pth (multiple styles)](https://github.com/mahmoudnafifi/modular_neural_isp/tree/main/photofinishing/models) |
+| **[ParamISP](https://arxiv.org/abs/2312.13313)**<br>ParamISP: Learned Forward and Inverse ISPs using Camera Parameters<br><sub>Encodes EXIF parameters such as exposure, ISO and focal length into the network to learn both forward and inverse ISPs, trained per camera model.</sub> | CVPR 2024 | [GitHub](https://github.com/woo525/ParamISP)<br><sub>PyTorch</sub> | [Official weights (Google Drive, inverse and forward)](https://drive.google.com/drive/folders/1L7ZSikYt5eaCOEINpjjwmPX0CoZLbBG6) |
+| **[MetaISP](https://arxiv.org/abs/2401.03220)**<br>MetaISP – Exploiting Global Scene Structure for Accurate Multi-Device Color Rendition<br><sub>Uses global scene features and device metadata so that one network renders the distinct color styles of multiple smartphones.</sub> | VMV 2023 | [GitHub](https://github.com/vccimaging/MetaISP)<br><sub>PyTorch</sub> | [MetaISPNet weights (Google Drive)](https://drive.google.com/drive/folders/1tLWlx0LDUjQ9niZje0cfLKt98dx1VEIR?usp=sharing) |
+
+**Code only or not released (2)**
+
+| Paper | Venue | Code |
+|:--|:--|:--|
+| **[CtrlISP](https://openaccess.thecvf.com/content/CVPR2026F/html/Zhang_CtrlISP_Rescuing_Low-Light_RAW_Images_via_Controllable_Neural_ISP_CVPRF_2026_paper.html)**<br>CtrlISP: Rescuing Low-Light RAW Images via Controllable Neural ISP<br><sub>Controllable neural ISP that lets users adjust the brightness and style of low-light RAW.</sub> | CVPR Findings 2026 | — |
+| **[Uni-ISP](https://arxiv.org/abs/2406.01003)**<br>Uni-ISP: Toward Unifying the Learning of ISPs from Multiple Mobile Cameras<br><sub>A single model that learns the ISPs of multiple smartphones and supports style transfer between cameras.</sub> | IEEE TIP 2025 | — |
 
 <p align="right"><a href="#contents">back to contents</a></p>
 
@@ -212,7 +230,7 @@ The front of the pipeline. The main thread runs from Poisson-Gaussian models to 
 
 ### Low-Light RAW Enhancement
 
-Extreme low-light RAW-to-sRGB, started by SID. Methods progress from U-Nets to decoupled two-stage designs (DNF), Mamba and diffusion models.
+Extreme low-light RAW-to-sRGB, started by SID. Methods progress from U-Nets to decoupled two-stage designs (DNF), Mamba and diffusion models, with newer work jointly correcting under- and over-exposure. See Controllable Neural ISP for user-guided low-light rendering (CtrlISP).
 
 **With pretrained weights (12)**
 
@@ -239,9 +257,9 @@ Extreme low-light RAW-to-sRGB, started by SID. Methods progress from U-Nets to d
 | **[ERIENet](https://arxiv.org/abs/2512.15186)**<br>ERIENet: An Efficient RAW Image Enhancement Network under Low-Light Environment<br><sub>Efficient low-light RAW→sRGB enhancement network emphasizing low parameter count and fast inference (ICVISP 2025 Best Paper). <i>Note: The repo has training/testing code; no weights found.</i></sub> | ICVISP 2025 | [GitHub](https://github.com/whiteknight-WJN/An-Efficient-RAW-Image-Enhancement-Network-under-Low-Light-Environment)<br><sub>PyTorch</sub> |
 | **[TS-Diff](https://arxiv.org/abs/2505.04281)**<br>TS-Diff: Two-Stage Diffusion Model for Low-Light RAW Image Enhancement<br><sub>Two-stage diffusion: pretrains on multiple cameras, then quickly fine-tunes on the target camera. <i>Note: The pretrained_models/ directory contains only placeholder files</i></sub> | IJCNN 2025 | [GitHub](https://github.com/CircccleK/TS-Diff)<br><sub>PyTorch</sub> |
 | **[LLPackNet](https://www.bmva-archive.org.uk/bmvc/2020/assets/papers/0145.pdf)**<br>Towards Fast and Light-Weight Restoration of Dark Images<br><sub>Pack/unpack operations let the network work at very low resolution and self-estimate the amplification factor, running much faster than SID.</sub> | BMVC 2020 | [GitHub](https://github.com/MohitLamba94/LLPackNet)<br><sub>PyTorch</sub> |
-| **[CtrlISP](https://openaccess.thecvf.com/content/CVPR2026F/html/Zhang_CtrlISP_Rescuing_Low-Light_RAW_Images_via_Controllable_Neural_ISP_CVPRF_2026_paper.html)**<br>CtrlISP: Rescuing Low-Light RAW Images via Controllable Neural ISP<br><sub>Controllable neural ISP that lets users adjust the brightness and style of low-light RAW.</sub> | CVPR 2026 (Findings) 2026 | — |
 | **[MeanFlow RAW](https://arxiv.org/abs/2608.01720)**<br>When Extreme Darkness Meets Motion Blur: MeanFlow for Unified RAW Restoration<br><sub>RAW restoration that handles extreme darkness and motion blur jointly.</sub> | arXiv 2026 | — |
 | **[RawMetaDiff](https://openaccess.thecvf.com/content/CVPR2026/html/Liu_RawMetaDiff_Unlocking_Extreme_Darkness_from_Dual-Exposure_RAW_with_Meta-Guided_Diffusion_CVPR_2026_paper.html)**<br>RawMetaDiff: Unlocking Extreme Darkness from Dual-Exposure RAW with Meta-Guided Diffusion<br><sub>Metadata-guided diffusion on dual-exposure RAW for extremely dark scenes.</sub> | CVPR 2026 | — |
+| **[RIECR](https://arxiv.org/abs/2610.28191)**<br>Unified RAW Image Exposure Correction and Restoration via Linear Illumination and Frequency-Adaptive Enhancement<br><sub>Jointly corrects under- and over-exposed RAW images using channel-aware linear illumination gains and frequency-adaptive restoration; introduces 1,784 paired captures across 223 scenes. <i>Note: Posted 2026-10-20. The author repository labels the work ACAIT 2026 but contains only a README; implementation and weights were not available on 2026-10-28.</i></sub> | arXiv 2026 | [GitHub (coming soon)](https://github.com/yingkai-zhang/RIECR) |
 | **[DarkDiff](https://arxiv.org/abs/2505.23743)**<br>DarkDiff: Advancing Low-Light Raw Enhancement by Retasking Diffusion Models for Camera ISP<br><sub>Repurposes a pretrained image diffusion model as a camera ISP for low-light RAW.</sub> | arXiv 2025 | — |
 | **[ISP-driven LLIE Data](https://arxiv.org/abs/2504.12204)**<br>Towards Realistic Low-Light Image Enhancement via ISP Driven Data Modeling<br><sub>Models the ISP pipeline to synthesize more realistic low-light training data.</sub> | arXiv 2025 | — |
 | **[Reconstruction & Denoising in the Dark](https://openaccess.thecvf.com/content/CVPR2025/html/Ma_Rethinking_Reconstruction_and_Denoising_in_the_Dark_New_Perspective_General_CVPR_2025_paper.html)**<br>Rethinking Reconstruction and Denoising in the Dark: New Perspective, General Architecture and Beyond<br><sub>Revisits low-light RAW reconstruction and denoising by unifying them within a general architecture.</sub> | CVPR 2025 | — |
@@ -351,7 +369,7 @@ Aligning and fusing multiple RAW frames for super-resolution, denoising and HDR.
 | **[EBSR](https://openaccess.thecvf.com/content/CVPR2021W/NTIRE/html/Luo_EBSR_Feature_Enhanced_Burst_Super-Resolution_With_Deformable_Alignment_CVPRW_2021_paper.html)**<br>EBSR: Feature Enhanced Burst Super-Resolution with Deformable Alignment<br><sub>Winning solution of NTIRE 2021 burst super-resolution, using deformable alignment and feature enhancement.</sub> | CVPRW (NTIRE) 2021 | [GitHub](https://github.com/Algolzw/EBSR)<br><sub>PyTorch</sub> | [Synthetic track model (Google Drive)](https://drive.google.com/file/d/1_WA2chhITIsCj6qImcEM2lD6c-iJsRpy/view?usp=sharing)<br>[Real track model (Google Drive)](https://drive.google.com/file/d/1Zz21YwNtiKZCjerrZsdvcWyubqTJBwaD/view?usp=sharing) |
 | **[GCP-Net](https://arxiv.org/abs/2101.09870)**<br>Joint Denoising and Demosaicking with Green Channel Prior for Real-world Burst Images<br><sub>Joint denoising and demosaicking of real-world burst images using a green channel prior.</sub> | IEEE TIP 2021 | [GitHub](https://github.com/GuoShi28/GCP-Net)<br><sub>PyTorch</sub> | [experiments/gcpnet_model/600000_G.pth (in repo)](https://github.com/GuoShi28/GCP-Net/blob/main/experiments/gcpnet_model/600000_G.pth) |
 
-**Code only or not released (24)**
+**Code only or not released (25)**
 
 | Paper | Venue | Code |
 |:--|:--|:--|
@@ -363,6 +381,7 @@ Aligning and fusing multiple RAW frames for super-resolution, denoising and HDR.
 | **[GenMFSR](https://arxiv.org/abs/2603.19187)**<br>GenMFSR: Generative Multi-Frame Image Restoration and Super-Resolution<br><sub>Generative multi-frame image restoration and super-resolution.</sub> | arXiv 2026 | — |
 | **[Keyframe SSM Burst SR](https://arxiv.org/abs/2503.19634)**<br>Keyframe-Centric State-Space Modeling for Burst Image Super-Resolution<br><sub>Keyframe-centric state-space modeling for multi-frame RAW super-resolution, reducing computation on long sequences.</sub> | SIGGRAPH Asia 2026 | — |
 | **[LatentBurst](https://arxiv.org/abs/2604.23268)**<br>LatentBurst: A Fast and Efficient Multi Frame Super-Resolution for Hexadeca-Bayer Pattern CIS images<br><sub>Efficient multi-frame super-resolution for 16-in-1 (Hexadeca-Bayer) image sensors.</sub> | arXiv 2026 | — |
+| **[Neural Block-wise Auto-exposure](https://arxiv.org/abs/2610.18733)**<br>Neural Block-wise Auto-exposure for Single-Shot High Dynamic Range Imaging<br><sub>Predicts exposure times for non-overlapping 16 x 16 sensor blocks from a preview and its exposure time; compares RAW and sRGB previews for single-shot HDR capture. <i>Note: Posted 2026-10-09 and revised 2026-10-16. No implementation or pretrained checkpoint link was found in the paper or repository search on 2026-10-28.</i></sub> | arXiv 2026 | — |
 | **[QMambaBSR](https://arxiv.org/abs/2408.08665)**<br>QMambaBSR: Burst Image Super-Resolution with Query State Space Model<br><sub>Burst super-resolution with a query-based state space model.</sub> | CVPR 2025 | — |
 | **[Bracket Restoration](https://arxiv.org/abs/2404.10358)**<br>Improving Bracket Image Restoration and Enhancement with Flow-guided Alignment and Enhanced Feature Aggregation<br><sub>NTIRE 2024 bracketing image restoration solution built on optical-flow-guided alignment.</sub> | CVPRW (NTIRE) 2024 | — |
 | **[Efficient Raw HDR](https://arxiv.org/abs/2306.10311)**<br>Efficient HDR Reconstruction from Real-World Raw Images<br><sub>Efficient HDR reconstruction from real-world smartphone RAW images.</sub> | arXiv 2023 | — |
@@ -554,10 +573,11 @@ Recovering RAW from sRGB to synthesize training data, save RAW storage or transf
 
 The ISP output feeds a detector or segmenter instead of a human viewer: jointly trained ISPs, perception directly on RAW, adapters and RAW detection datasets.
 
-**With pretrained weights (12)**
+**With pretrained weights (13)**
 
 | Paper | Venue | Code | Weights |
 |:--|:--|:--|:--|
+| **[POS-ISP](https://arxiv.org/abs/2604.06938)**<br>POS-ISP: Pipeline Optimization at the Sequence Level for Task-aware ISP<br><sub>Predicts the entire ISP module sequence and all its parameters in a single forward pass, optimized with downstream task rewards.</sub> | CVPR Findings 2026 | [GitHub](https://github.com/w1jyun/POS-ISP)<br><sub>PyTorch</sub> | [weights/\*.pth (in repo: LOD / LIS / KITTI)](https://github.com/w1jyun/POS-ISP/tree/main/weights) |
 | **[RAWild](https://arxiv.org/abs/2605.05941)**<br>RAWild: Sensor-Agnostic RAW Object Detection via Physics-Guided Curve and Grid Modeling<br><sub>Lightweight adapter using per-image Bezier tone curves and bilateral-grid color transforms for sensor-agnostic RAW perception.</sub> | NeurIPS 2026 | [GitHub](https://github.com/I2WM/RAWild)<br><sub>PyTorch</sub> | [Checkpoints Det/Seg (Google Drive)](https://drive.google.com/drive/folders/1gJlPLMO7Ty0XszLQTJkoZUIxeqbOwKqd?usp=sharing) |
 | **[SimROD](https://arxiv.org/abs/2503.07101)**<br>SimROD: A Simple Baseline for Raw Object Detection with Global and Local Enhancements<br><sub>Simple RAW detection baseline combining global gamma enhancement with green-channel-based local detail enhancement.</sub> | AAAI 2026 | [GitHub](https://github.com/ocean146/SimROD)<br><sub>PyTorch</sub> | [all weights (Baidu, code 2025)](https://pan.baidu.com/s/17zEp6-Zz49M7q1O6e5cUfw)<br>[all weights (Google Drive)](https://drive.google.com/file/d/1zoT8VOwrtebnmDEtXfdQQeRvkVNoXOIx/view?usp=sharing) |
 | **[TA-ISP](https://arxiv.org/abs/2509.13762)**<br>Task-Aware Image Signal Processor for Advanced Visual Perception<br><sub>Lightweight task-aware ISP that predicts multi-scale modulation operators to adapt RAW input to downstream detection/segmentation.</sub> | CVPR 2026 | [GitHub](https://github.com/CVL-UESTC/TA-ISP)<br><sub>PyTorch (mmdet/mmseg)</sub> | [pretrained models (GitHub Release v0.0)](https://github.com/CVL-UESTC/TA-ISP/releases/tag/v0.0) |
@@ -612,24 +632,25 @@ The ISP output feeds a detector or segmenter instead of a human viewer: jointly 
 
 ### ISP Parameter Tuning
 
-Instead of replacing the ISP, automatically tune the parameters of a hardware or differentiable ISP with differentiable proxies, evolution strategies, reinforcement learning and, since 2025, multimodal LLM judges.
+Instead of replacing the ISP, automatically tune the parameters of a hardware or differentiable ISP with differentiable proxies, evolution strategies, reinforcement learning and, since 2025, multimodal LLM judges. Also includes conventional user-driven control baselines such as EMOVIS. Learned user-editable rendering is grouped under Controllable Neural ISP; sequence optimization driven by detection rewards (POS-ISP) is under ISP for Machine Vision.
 
-**With pretrained weights (2)**
+**With pretrained weights (1)**
 
 | Paper | Venue | Code | Weights |
 |:--|:--|:--|:--|
-| **[POS-ISP](https://arxiv.org/abs/2604.06938)**<br>POS-ISP: Pipeline Optimization at the Sequence Level for Task-aware ISP<br><sub>Predicts the entire ISP module sequence and all its parameters in a single forward pass, optimized with downstream task rewards.</sub> | CVPR 2026 (Findings) 2026 | [GitHub](https://github.com/w1jyun/POS-ISP)<br><sub>PyTorch</sub> | [weights/\*.pth (in repo: LOD / LIS / KITTI)](https://github.com/w1jyun/POS-ISP/tree/main/weights) |
 | **[RL Photo-Finishing Tuning](https://arxiv.org/abs/2503.07300)**<br>Goal Conditioned Reinforcement Learning for Photo Finishing Tuning<br><sub>Goal-conditioned reinforcement learning that automatically tunes photo-finishing / back-end ISP parameters (same group as AdaptiveISP).</sub> | NeurIPS 2024 | [GitHub](https://github.com/OpenImagingLab/RLPixTuner)<br><sub>PyTorch</sub> | [envs/checkpoints/best_model\*.zip (in repo)](https://github.com/OpenImagingLab/RLPixTuner) |
 
-**Code only or not released (13)**
+**Code only or not released (15)**
 
 | Paper | Venue | Code |
 |:--|:--|:--|
+| **[EMOVIS](https://arxiv.org/abs/2605.03131)**<br>EMOVIS: Emotion-Optimized Image Processing<br><sub>Maps target emotions to saturation, brightness, contrast and color controls in a conventional 16-bit RAW ISP, calibrated through a user study. <i>Note: A conventional, training-free ISP control baseline rather than a neural ISP; official processing code is released, with no learned checkpoints required (checked 2026-10-28).</i></sub> | ICIP 2026 | [GitHub](https://github.com/dorbarber79/EMOVIS)<br><sub>Python / NumPy / OpenCV</sub> |
 | **[DRL-ISP](https://arxiv.org/abs/2207.03081)**<br>DRL-ISP: Multi-Objective Camera ISP with Deep Reinforcement Learning<br><sub>Reinforcement learning selects ISP modules from a toolbox while balancing multiple objectives such as detection, segmentation and depth. <i>Note: Includes scripts/4.copy_weights.sh and links to preprocessed data (SharePoint)</i></sub> | IROS 2022 | [GitHub](https://github.com/UkcheolShin/DRL-ISP)<br><sub>PyTorch</sub> |
 | **[ReconfigISP](https://arxiv.org/abs/2109.04760)**<br>ReconfigISP: Reconfigurable Camera Image Processing Pipeline<br><sub>Uses differentiable proxies and NAS-style search to automatically select ISP module combinations and parameters; releases OnePlus data. <i>Note: README provides the OnePlus dataset (Google Drive)</i></sub> | ICCV 2021 | [GitHub](https://github.com/yuke93/ReconfigISP)<br><sub>PyTorch</sub> |
 | **[ChameleonTuner](https://openaccess.thecvf.com/content/WACV2026/html/Tan_ChameleonTuner_Automatic_ISP_Color_Tuning_in_Subjective_Scenarios_WACV_2026_paper.html)**<br>ChameleonTuner: Automatic ISP Color Tuning in Subjective Scenarios<br><sub>Automatically tunes ISP color parameters in subjective scenarios. <i>Note: “We will release the code soon”</i></sub> | WACV 2026 | [GitHub (coming soon)](https://github.com/AISmartPerception/ChameleonTuner) |
 | **[Language Color ISP Tuning](https://arxiv.org/abs/2509.10765)**<br>Language-based Color ISP Tuning<br><sub>Automatically tunes color ISP parameters from natural-language descriptions of the target look, using a vision-language model.</sub> | CIC 2025 | — |
 | **[MLLM ISP Tuning](https://openaccess.thecvf.com/content/ICCV2025/html/Sun_Multimodal_Large_Language_Model-Guided_ISP_Hyperparameter_Optimization_with_Dynamic_Preference_ICCV_2025_paper.html)**<br>Multimodal Large Language Model-Guided ISP Hyperparameter Optimization with Dynamic Preference Learning<br><sub>Uses a multimodal large language model to assess images and dynamically learn preferences, guiding ISP hyperparameter search.</sub> | ICCV 2025 | — |
+| **[PQDynamicISP](https://arxiv.org/abs/2403.10091)**<br>PQDynamicISP: Dynamically Controlled Image Signal Processor for Any Image Sensors Pursuing Perceptual Quality<br><sub>Dynamically predicts global and local parameters of lightweight conventional ISP functions for perceptual quality across different sensors. <i>Note: Automatic content-dependent control, not an exposed user-editing interface; grouped with ISP parameter tuning. No official implementation was found on 2026-10-28.</i></sub> | arXiv 2024 | — |
 | **[Sequence-Specific ISP Prior](https://openaccess.thecvf.com/content/CVPR2023/html/Qin_Learning_To_Exploit_the_Sequence-Specific_Prior_Knowledge_for_Image_Processing_CVPR_2023_paper.html)**<br>Learning to Exploit the Sequence-Specific Prior Knowledge for Image Processing Pipelines Optimization<br><sub>Predicts ISP parameters using prior knowledge of the ISP module order (same group as Attention-aware ISP Tuning).</sub> | CVPR 2023 | — |
 | **[Attention-aware ISP Tuning](https://www.ecva.net/papers/eccv_2022/papers_ECCV/html/4948_ECCV_2022_paper.php)**<br>Attention-Aware Learning for Hyperparameter Prediction in Image Processing Pipelines<br><sub>Predicts ISP hyperparameters from image content, using attention to model relationships between parameters.</sub> | ECCV 2022 | — |
 | **[Neural Photo-Finishing](https://scholar.google.com/scholar?q=%22Neural+Photo-Finishing%22+Tseng)**<br><sub>Builds a differentiable proxy of a camera's photo-finishing pipeline, allowing parameters to be recovered from a target image.</sub> | SIGGRAPH Asia (TOG) 2022 | — |
@@ -643,7 +664,7 @@ Instead of replacing the ISP, automatically tune the parameters of a hardware or
 
 ### Challenges & Surveys
 
-AIM, Mobile AI, NTIRE and MIPI challenge reports plus survey papers: the quickest way to see the methods and data of a sub-field.
+AIM, Mobile AI, NTIRE and MIPI challenge reports, surveys, evaluation frameworks and position papers: the quickest way to see the methods, data and open questions of a sub-field.
 
 **With pretrained weights (1)**
 
@@ -651,15 +672,18 @@ AIM, Mobile AI, NTIRE and MIPI challenge reports plus survey papers: the quickes
 |:--|:--|:--|:--|
 | **[MAI 2022 ISP](https://arxiv.org/abs/2211.03885)**<br>Learned Smartphone ISP on Mobile GPUs with Deep Learning, Mobile AI & AIM 2022 Challenge: Report<br><sub>ISP challenge on mobile GPUs; the official baseline provides .h5 and .tflite models.</sub> | ECCVW 2022 | [GitHub](https://github.com/mv-lab/AISP)<br><sub>TensorFlow Lite</sub> | [mai22-learnedisp/model.tflite + .h5 (baseline)](https://github.com/mv-lab/AISP/tree/main/mai22-learnedisp) |
 
-**Code only or not released (26)**
+**Code only or not released (29)**
 
 | Paper | Venue | Code |
 |:--|:--|:--|
+| **[RAW vs RGB Restoration Benchmark](https://arxiv.org/abs/2609.02831)**<br>Benchmarking RAW and RGB Restoration in Image Signal Processors<br><sub>Systematically compares restoration in the RAW versus RGB domain, giving empirical evidence on where to place restoration modules in an ISP. <i>Note: Code merged into the mv-lab/AISP repo</i></sub> | BMVC 2026 | [GitHub](https://github.com/mv-lab/AISP) |
 | **[AIM 2022 Reverse ISP](https://arxiv.org/abs/2210.11153)**<br>Reversed Image Signal Processing and RAW Reconstruction. AIM 2022 Challenge Report<br><sub>RGB→RAW reconstruction challenge with two tracks (S7 / P20); the official baseline is in mv-lab/AISP.</sub> | ECCVW 2022 | [GitHub](https://github.com/mv-lab/AISP/tree/main/aim22-reverseisp) |
 | **[MIPI 2022 Quad Remosaic](https://arxiv.org/abs/2209.07060)**<br>MIPI 2022 Challenge on Quad-Bayer Re-mosaic: Dataset and Report<br><sub>Quad-Bayer sensor re-mosaic challenge.</sub> | ECCVW (MIPI) 2022 | [GitHub](https://github.com/mipi-challenge/MIPI2022) |
 | **[MIPI 2022 RGBW Remosaic](https://arxiv.org/abs/2209.08471)**<br>MIPI 2022 Challenge on RGBW Sensor Re-mosaic: Dataset and Report<br><sub>Challenge on re-mosaicing RGBW sensor data to Bayer, including a dataset. <i>Note: The repo lists data and winning-solution links for each track.</i></sub> | ECCVW (MIPI) 2022 | [GitHub](https://github.com/mipi-challenge/MIPI2022) |
 | **[NTIRE 2021 Burst SR](https://openaccess.thecvf.com/content/CVPR2021W/NTIRE/html/Bhat_NTIRE_2021_Challenge_on_Burst_Super-Resolution_Methods_and_Results_CVPRW_2021_paper.html)**<br>NTIRE 2021 Challenge on Burst Super-Resolution: Methods and Results<br><sub>BurstSR challenge with synthetic and real tracks. <i>Note: Official toolkit and test sets.</i></sub> | CVPRW 2021 | [GitHub](https://github.com/goutamgmb/NTIRE21_BURSTSR) |
 | **[NTIRE 2026 Unpaired ISP](https://openaccess.thecvf.com/content/CVPR2026W/NTIRE/html/Perevozchikov_NTIRE_2026_Challenge_on_Learned_Smartphone_ISP_with_Unpaired_Data_CVPRW_2026_paper.html)**<br>NTIRE 2026 Challenge on Learned Smartphone ISP with Unpaired Data: Methods and Results<br><sub>Report of the first smartphone ISP challenge using unpaired data.</sub> | CVPRW 2026 | — |
+| **[Reference-free ISP Evaluation](https://arxiv.org/abs/2607.23321)**<br>A Reference-Free Framework for Evaluating Single-Frame ISP Pipelines<br><sub>A framework for evaluating the output quality of single-frame ISP pipelines without reference images.</sub> | arXiv 2026 | — |
+| **[Small-Pixel Neural ISP](https://arxiv.org/abs/2606.07675)**<br>The Need for Neural ISP in the Small-Pixel Era: How Shrinking Pixels Push Optics to the Limit and Neural Restoration Pushes Back<br><sub>Compares conventional and neural ISPs in controlled telephoto simulations across five pixel sizes, including low-SNR multi-frame restoration, to study how learned restoration compensates for optical aberrations.</sub> | arXiv 2026 | — |
 | **[AIM 2025 LL RAW Video](https://arxiv.org/abs/2508.16830)**<br>AIM 2025 Low-light RAW Video Denoising Challenge: Dataset, Methods and Results<br><sub>Challenge report on low-light RAW video denoising.</sub> | ICCVW 2025 | — |
 | **[AIM 2025 RAW Denoise](https://arxiv.org/abs/2510.06601)**<br>AIM 2025 Challenge on Real-World RAW Image Denoising<br><sub>Challenge report on real-world RAW image denoising.</sub> | ICCVW 2025 | — |
 | **[Low-light ISP Survey (2025)](https://arxiv.org/abs/2502.05995)**<br>A Comprehensive Survey on Image Signal Processing Approaches for Low-Illumination Image Enhancement<br><sub>Survey of low-light image enhancement methods from an ISP perspective.</sub> | arXiv 2025 | — |
@@ -796,7 +820,7 @@ AIM, Mobile AI, NTIRE and MIPI challenge reports plus survey papers: the quickes
 
 ## Contributing
 
-Contributions are welcome: a missing paper, a newly released checkpoint, or a dead link. All content lives in the YAML files under [`data/`](data/); README.md, WEIGHTS.md and the interactive page are generated from them. See [CONTRIBUTING.md](CONTRIBUTING.md) for the entry format and the inclusion rules.
+Contributions are welcome: a missing paper, a newly released checkpoint, or a dead link. All content lives in the YAML files under [`data/`](data/), with Chinese overlays under `data/i18n/`; both languages of the README, weights index and interactive page are generated from them. See [CONTRIBUTING.md](CONTRIBUTING.md) for the entry format and the inclusion rules.
 
 ## About This List
 
@@ -804,7 +828,7 @@ Contributions are welcome: a missing paper, a newly released checkpoint, or a de
 
 **How code and weights were checked.** Each repository README (and, where needed, its file tree) was read on 2026-10-11. The weight links are the ones the README gives, including extraction codes for Baidu Netdisk. No checkpoint was downloaded or run, and hosted files can disappear; please open an issue or PR when a link breaks or new weights appear. Checkpoints remain under their authors' licenses.
 
-**Known gaps.** ECCV 2026 and NeurIPS 2025 proceedings were not fully available when the list was built. AAAI, ACM MM, TIP, TPAMI, IJCV and BMVC are covered through arXiv, so journal-only papers may be missing. Deliberately out of scope: general restoration backbones (SwinIR, Restormer, NAFNet), enhancement or denoising that only operates on sRGB, RAW-domain NeRF / 3DGS reconstruction, and multispectral or polarization demosaicing.
+**Known gaps.** This curated index is not an exhaustive survey; newly released proceedings may be missing. AAAI, ACM MM, TIP, TPAMI, IJCV and BMVC are covered through arXiv, so journal-only papers may be missing. Deliberately out of scope: general restoration backbones (SwinIR, Restormer, NAFNet), enhancement or denoising that only operates on sRGB, RAW-domain NeRF / 3DGS reconstruction, and multispectral or polarization demosaicing.
 
 ## License
 

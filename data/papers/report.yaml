@@ -199,3 +199,26 @@
   paper: https://openaccess.thecvf.com/CVPR2019_workshops/CVPR2019_NTIRE
   status: no-code
   tldr: Real image denoising challenge on SIDD with RAW and sRGB tracks.
+- name: RAW vs RGB Restoration Benchmark
+  title: Benchmarking RAW and RGB Restoration in Image Signal Processors
+  venue: BMVC
+  year: 2026
+  paper: https://arxiv.org/abs/2609.02831
+  code: https://github.com/mv-lab/AISP
+  status: code
+  tldr: Systematically compares restoration in the RAW versus RGB domain, giving empirical evidence on where to place restoration modules in an ISP.
+  note: Code merged into the mv-lab/AISP repo
+- name: Reference-free ISP Evaluation
+  title: A Reference-Free Framework for Evaluating Single-Frame ISP Pipelines
+  venue: arXiv
+  year: 2026
+  paper: https://arxiv.org/abs/2607.23321
+  status: no-code
+  tldr: A framework for evaluating the output quality of single-frame ISP pipelines without reference images.
+- name: Small-Pixel Neural ISP
+  title: 'The Need for Neural ISP in the Small-Pixel Era: How Shrinking Pixels Push Optics to the Limit and Neural Restoration Pushes Back'
+  venue: arXiv
+  year: 2026
+  paper: https://arxiv.org/abs/2606.07675
+  status: no-code
+  tldr: Compares conventional and neural ISPs in controlled telephoto simulations across five pixel sizes, including low-SNR multi-frame restoration, to study how learned restoration compensates for optical aberrations.

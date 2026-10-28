@@ -6,8 +6,17 @@
   short: End-to-end
   description: >-
     One network replaces the whole ISP. Early work is CNN-based (DeepISP, PyNET, LiteISPNet); recent work moves to
-    diffusion and autoregressive priors, camera-parameter conditioning and modular designs. Misaligned RAW/sRGB
-    training pairs are a recurring problem.
+    diffusion and autoregressive priors. Misaligned RAW/sRGB training pairs are a recurring problem. See
+    Controllable Neural ISP for explicit rendering controls, camera conditioning and modular editing.
+- id: controllable
+  title: Controllable Neural ISP
+  short: Controllable ISP
+  description: >-
+    Learned rendering with explicit controls or replaceable stages. User-editable pipelines: CtrlISP and Modular
+    Neural ISP. Camera/style conditioning: ParamISP, MetaISP and Uni-ISP; metadata conditioning is not necessarily
+    a user-editing interface. Related modules (NILUT and white-balance editing) remain under White Balance, Color
+    & Tone; edit-aware RAW reconstruction remains under Inverse ISP. Automatic parameter prediction and conventional
+    ISP controls belong to ISP Parameter Tuning; task-reward optimization belongs to ISP for Machine Vision.
 - id: mobile
   title: Mobile & Lightweight ISP
   short: Mobile
@@ -25,7 +34,8 @@
   short: Low-light RAW
   description: >-
     Extreme low-light RAW-to-sRGB, started by SID. Methods progress from U-Nets to decoupled two-stage designs (DNF),
-    Mamba and diffusion models.
+    Mamba and diffusion models, with newer work jointly correcting under- and over-exposure. See Controllable
+    Neural ISP for user-guided low-light rendering (CtrlISP).
 - id: demosaic
   title: Demosaicing, Joint Restoration & RAW Super-Resolution
   short: Demosaic / SR
@@ -68,9 +78,12 @@
   description: >-
     Instead of replacing the ISP, automatically tune the parameters of a hardware or differentiable ISP with
     differentiable proxies, evolution strategies, reinforcement learning and, since 2025, multimodal LLM judges.
+    Also includes conventional user-driven control baselines such as EMOVIS. Learned user-editable rendering is
+    grouped under Controllable Neural ISP; sequence optimization driven by detection rewards (POS-ISP) is under
+    ISP for Machine Vision.
 - id: report
   title: Challenges & Surveys
   short: Challenges / surveys
   description: >-
-    AIM, Mobile AI, NTIRE and MIPI challenge reports plus survey papers: the quickest way to see the methods and
-    data of a sub-field.
+    AIM, Mobile AI, NTIRE and MIPI challenge reports, surveys, evaluation frameworks and position papers: the
+    quickest way to see the methods, data and open questions of a sub-field.

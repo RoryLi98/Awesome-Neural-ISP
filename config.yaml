@@ -9,3 +9,5 @@ title: Awesome Neural ISP
 tagline: Neural (learned) camera ISPs with released code and pretrained weights, plus a primer on the classical pipeline they build on.
 # Date the code / weight links were last checked by hand
 checked: '2026-10-11'
+# Literature refresh; the full code/weight link audit date above is unchanged.
+literature_updated: '2026-10-28'

@@ -1,10 +1,13 @@
 """Chinese Markdown exports, using the same records and links as the English edition."""
 from __future__ import annotations
 
-from isp_data import WEIGHT_STATUSES
+from isp_data import WEIGHT_STATUSES, has_weights, resources
 
 
 def code(p, link, md):
+    if p.get('implementations'):
+        return '<br>'.join((md(r['name']) + '：' if r is not p else '') + code(r,link,md)
+                          for r in resources(p) if r.get('code')) or '—'
     if not p.get('code'):
         return '待发布' if p['status'] == 'coming-soon' else '—'
     label = {'unofficial': '非官方代码', 'coming-soon': '代码仓库（待发布）'}.get(p['status'], '代码')
@@ -12,34 +15,40 @@ def code(p, link, md):
 
 
 def paper(p, link, md):
-    text = f"**{link(p['name'], p['paper'])}**<br>{md(p['title'])}"
+    text = f"**{link(p.get('original_title') or p['title'], p['paper'])}**"
     if p.get('original_title') and p['original_title'] != p['title']:
-        text += f"<br><sub>{md(p['original_title'])}</sub>"
+        text += f"<br><sub>{md(p['title'])}</sub>"
     text += f"<br><sub>{md(p['tldr'])}"
     if p.get('note'):
         text += f" <i>备注：{md(p['note'])}</i>"
+    for r in p.get('implementations', []):
+        text += f"<br><b>实现资源：{md(r['name'])}。</b>{md(r['tldr'])}"
     return text + '</sub>'
 
 
 def readme(d):
-    from build import GENERATED, link, md, slug, sort_papers, stats, weights_cell
+    from build import GENERATED, link, md, slug, sort_papers, stats, weights_cell, collection_sections
     cfg, cats, s = d['config'], d['categories'], stats(d)
     pages = (cfg.get('site') or f"https://{cfg['owner']}.github.io/{cfg['repo']}/").rstrip('/') + '/zh-CN.html'
-    ref = {c['id']: f"[{c['short']}](#{slug(c['title'])})" for c in cats}
+    ref = {c['id']: f"[{c['short']}](#{slug(c['title'])})" for c in cats + d['collections']}
     L = [GENERATED, '', '# Awesome Neural ISP · 中文', '', '[English](README.md) · **简体中文**', '',
          f"**{cfg['tagline']}**", '',
          f"[交互式论文库]({pages}) · [预训练权重索引](WEIGHTS.zh-CN.md) · [ISP 入门](guide/isp-101.zh-CN.md) · [贡献指南](CONTRIBUTING.zh-CN.md)", '',
          '这份目录覆盖完整神经 ISP、RAW 图像复原、颜色与色调处理、可控渲染、逆向 ISP、机器视觉成像与参数调优。'
          '每篇论文记录公开代码和预训练权重状态，权重链接以官方仓库为依据。中文标题为阅读辅助译名，同时保留正式英文标题与方法名，便于检索和引用。', '',
-         f"目前共 **{s['n']} 篇论文**，其中 **{s['code']} 篇有公开代码**（含非官方实现），**{s['weights']} 篇提供预训练权重**，另有 **{s['datasets']} 个数据集**。", '',
+         f"目前共 **{s['n']} 篇独立文献**，其中 **{s['code']} 篇有公开代码**（含非官方实现），**{s['weights']} 篇提供预训练权重**，另有 **{s['datasets']} 个数据集**。"
+         '每篇文献仅归入一个任务主分类，可控与移动端 / 高效 ISP 作为跨任务专题；两个参赛实现合并于对应报告下，不重复计数。', '',
+         f"代码与权重统计包含明确标识的第三方实现；当前权重索引中有 {s['third_party_weights']} 篇属于此情况。", '',
          f"文献更新：**{cfg.get('literature_updated', cfg['checked'])}**；最近一次全面代码与权重链接核验：**{cfg['checked']}**。"
          '新增条目另行核验，详见[来源与更新记录](guide/literature-update-2026-10-28.md)。', '',
+         f"摘要修订：**{cfg['summary_updated']}**；分类复核：**{cfg['taxonomy_updated']}**。"
+         '详见[分类规则与完整审计](guide/classification-2026-11-05.zh-CN.md)和[摘要修订记录](guide/summary-revision-2026-11-05.md)。', '',
          '**表格说明。** 各分类内先列有权重的论文，再列仅有代码或未公开代码的论文；各组按年份降序排列。'
          '“仓库内”表示检查点直接保存在仓库中；“非官方”表示第三方实现；“待发布”表示占位仓库或尚未发布实现；“—”表示未发现公开代码。', '',
-         '## 目录', '', '- [ISP 入门](#isp-入门)', '- [研究脉络](#研究脉络)', '- [论文](#论文)']
+         '## 目录', '', '- [ISP 入门](#isp-入门)', '- [研究脉络](#研究脉络)', '- [跨任务专题](#跨任务专题)', '- [论文](#论文)']
     for c in cats:
         ps = d['papers'][c['id']]
-        nw = sum(p['status'] in WEIGHT_STATUSES for p in ps)
+        nw = sum(has_weights(p) for p in ps)
         L.append(f"  - [{c['title']}](#{slug(c['title'])})（{len(ps)} 篇，{nw} 篇有权重）")
     L += ['- [数据集](#数据集)', '- [工具与开源 ISP](#工具与开源-isp)', '- [学习资料](#学习资料)',
           '- [相关目录](#相关目录)', '- [贡献](#贡献)', '- [关于本目录](#关于本目录)', '- [许可](#许可)', '',
@@ -59,12 +68,14 @@ def readme(d):
           f"| ISP 参数 | 自动优化与传统控制基线 | {ref['tuning']} |", '', '## 研究脉络', '']
     for t in d['trends']:
         L.append(f"- **{t['title']}。** {t['text']} <sub>代表工作：{md(t['examples'])}</sub>")
-    L += ['', '## 论文', '']
+    L += ['', '## 跨任务专题', '', '专题允许与任务主分类交叉，专题数量不累加至独立文献总数。', '']
+    L += collection_sections(d, 'zh-CN')
+    L += ['## 论文', '']
     for c in cats:
         ps = sort_papers(d['papers'][c['id']])
         L += [f"### {c['title']}", '', c['description'], '']
         for with_weights, heading in [(True, '提供预训练权重'), (False, '仅有代码或尚未公开')]:
-            group = [p for p in ps if (p['status'] in WEIGHT_STATUSES) == with_weights]
+            group = [p for p in ps if has_weights(p) == with_weights]
             if not group:
                 continue
             L += [f'**{heading}（{len(group)}）**', '',
@@ -113,14 +124,15 @@ def weights_md(d):
     from build import GENERATED, link, md, sort_papers, stats, weights_cell
     L = [GENERATED, '', '# 预训练权重索引', '', '[English](WEIGHTS.md) · [中文论文目录](README.zh-CN.md)', '',
          f"收录提供预训练权重的 **{stats(d)['weights']} 篇论文**，按主题归类。链接来自官方仓库，最近一次全面核验日期为 "
-         f"{d['config']['checked']}；新增与修订项的检查时间见备注或[更新记录](guide/literature-update-2026-10-28.md)。权重文件未下载或运行。", '']
+         f"{d['config']['checked']}；新增与修订项的检查时间见备注或[更新记录](guide/literature-update-2026-10-28.md)。包含明确标识的第三方权重，当前有 {stats(d)['third_party_weights']} 篇。权重文件未下载或运行。", '']
     for c in d['categories']:
-        ps = [p for p in sort_papers(d['papers'][c['id']]) if p['status'] in WEIGHT_STATUSES]
+        ps = [p for p in sort_papers(d['papers'][c['id']]) if has_weights(p)]
         if not ps:
             continue
         L += [f"## {c['title']}", '', '| 模型 | 发表信息 | 权重 | 代码 | 框架 |', '|:--|:--|:--|:--|:--|']
         for p in ps:
             note = f"<br><sub>{md(p['note'])}</sub>" if p.get('note') else ''
-            L.append(f"| **{link(p['name'], p['paper'])}**{note} | {md(p['venue'])} {p['year']} | {weights_cell(p)} | {code(p, link, md)} | {md(p.get('framework') or '—')} |")
+            frameworks = ' / '.join(dict.fromkeys(r.get('framework', '') for r in resources(p) if r.get('framework'))) or '—'
+            L.append(f"| **{link(p.get('original_title') or p['title'], p['paper'])}**<br><sub>{md(p['title'])}</sub>{note} | {md(p['venue'])} {p['year']} | {weights_cell(p)} | {code(p, link, md)} | {md(frameworks)} |")
         L.append('')
     return '\n'.join(L)

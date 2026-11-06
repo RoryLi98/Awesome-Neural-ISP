@@ -4,7 +4,7 @@ from __future__ import annotations
 import copy
 import re
 
-from isp_data import ROOT, _load
+from isp_data import ROOT, _load, resources as publication_resources
 
 
 def chinese(d):
@@ -23,11 +23,11 @@ def chinese(d):
             else:
                 target[field] = translated[field]
 
-    names = {p['name'] for ps in d['papers'].values() for p in ps}
+    names = {r['name'] for ps in d['papers'].values() for p in ps for r in publication_resources(p)}
     for extra in set(papers) - names:
         errors.append(f'Chinese paper no longer exists: {extra}')
     for ps in out['papers'].values():
-        for p in ps:
+        for p in [r for publication in ps for r in publication_resources(publication)]:
             p['original_title'] = p['title']
             p['original_tldr'] = p['tldr']
             overlay(p, papers, p['name'], ('title', 'tldr', 'note'), p['name'])
@@ -43,10 +43,10 @@ def chinese(d):
                     errors.append(f'{p["name"]}: empty Chinese weight label')
                 else:
                     weight['label'] = label
-    for c in out['categories']:
-        overlay(c, content.get('categories', {}), c['id'], ('title', 'short', 'description'), c['id'])
+    for c in out['categories'] + out['collections']:
+        overlay(c, content.get('categories', {}), c['id'], ('title', 'short', 'description', 'intro'), c['id'])
     for section, identity in [('categories', 'id'), ('datasets', 'name'), ('tools', 'name')]:
-        expected = {item[identity] for item in d[section]}
+        expected = {item[identity] for item in (d['categories'] + d['collections'] if section == 'categories' else d[section])}
         actual = set(content.get(section, {}))
         for extra in actual - expected:
             errors.append(f'{section}: Chinese key no longer exists: {extra}')

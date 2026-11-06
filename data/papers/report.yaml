@@ -1,109 +1,125 @@
-# report: one entry per paper; see CONTRIBUTING.md for the schema
 - name: NTIRE 2026 Unpaired ISP
   title: 'NTIRE 2026 Challenge on Learned Smartphone ISP with Unpaired Data: Methods and Results'
   venue: CVPRW
   year: 2026
   paper: https://openaccess.thecvf.com/content/CVPR2026W/NTIRE/html/Perevozchikov_NTIRE_2026_Challenge_on_Learned_Smartphone_ISP_with_Unpaired_Data_CVPRW_2026_paper.html
   status: no-code
-  tldr: Report of the first smartphone ISP challenge using unpaired data.
+  tldr: To benchmark ISP learning without matched captures, introduces UP-ISP with over 900 Pixel 6 scenes and a common
+    RAW-to-sRGB protocol; reports the official baseline and competing unpaired training strategies.
 - name: AIM 2025 LL RAW Video
   title: 'AIM 2025 Low-light RAW Video Denoising Challenge: Dataset, Methods and Results'
   venue: ICCVW
   year: 2025
   paper: https://arxiv.org/abs/2508.16830
   status: no-code
-  tldr: Challenge report on low-light RAW video denoising.
+  tldr: To evaluate sensor-specific temporal denoising, provides 756 ten-frame sequences from 14 phone sensors with burst-averaged
+    references; ranks Bayer-preserving final-frame outputs using PSNR/SSIM across light/exposure conditions.
 - name: AIM 2025 RAW Denoise
   title: AIM 2025 Challenge on Real-World RAW Image Denoising
   venue: ICCVW
   year: 2025
   paper: https://arxiv.org/abs/2510.06601
   status: no-code
-  tldr: Challenge report on real-world RAW image denoising.
+  tldr: To test synthetic-data-driven denoising across cameras, benchmarks real low-light RAW from five DSLRs; compares
+    noise synthesis, architectures and training using both full-reference fidelity and no-reference quality metrics.
 - name: Low-light ISP Survey (2025)
   title: A Comprehensive Survey on Image Signal Processing Approaches for Low-Illumination Image Enhancement
   venue: arXiv
   year: 2025
   paper: https://arxiv.org/abs/2502.05995
   status: no-code
-  tldr: Survey of low-light image enhancement methods from an ISP perspective.
+  tldr: To organize low-illumination enhancement methods, reviews traditional, deep-learning and hybrid processing approaches;
+    compares how they handle brightness, contrast, noise and detail within an ISP-oriented taxonomy.
 - name: MAI 2025 ISP
   title: 'Learned Smartphone ISP on Mobile GPUs, Mobile AI 2025 Challenge: Report'
   venue: CVPRW
   year: 2025
   paper: https://openaccess.thecvf.com/content/CVPR2025W/MAI/html/Ignatov_Learned_Smartphone_ISP_on_Mobile_GPUs_Mobile_AI_2025_Challenge_CVPRW_2025_paper.html
   status: no-code
-  tldr: Report of the 2025 learned smartphone ISP challenge on mobile GPUs.
+  tldr: To assess deployable learned smartphone ISP, reviews mobile-GPU RAW-to-RGB challenge methods and their quality/runtime
+    trade-offs; documents the benchmark and competing pipeline designs rather than introducing one standalone model.
 - name: NTIRE 2025 Night
   title: NTIRE 2025 Challenge on Night Photography Rendering
   venue: CVPRW
   year: 2025
   paper: https://openaccess.thecvf.com/content/CVPR2025W/NTIRE/html/Ershov_NTIRE_2025_Challenge_on_Night_Photography_Rendering_CVPRW_2025_paper.html
   status: no-code
-  tldr: Fourth edition of the night photography rendering challenge.
+  tldr: To compare night rendering against a professional-camera reference, captures smartphone/camera pairs through
+    a beam splitter; evaluates objective PSNR/SSIM and viewer similarity scores, documenting the competing neural/conventional
+    pipelines.
 - name: NTIRE 2025 RAW Restoration
   title: NTIRE 2025 Challenge on RAW Image Restoration and Super-Resolution
   venue: CVPRW
   year: 2025
   paper: https://arxiv.org/abs/2506.02197
   status: no-code
-  tldr: Challenge report on RAW image restoration and super-resolution.
+  tldr: To benchmark blind sensor-domain restoration, defines RAW denoising/deblurring and 2× Bayer SR tasks under unknown
+    degradations; reviews submitted methods and results for integration into camera pipelines.
 - name: NTIRE 2025 RGB→RAW
   title: RAW Image Reconstruction from RGB on Smartphones. NTIRE 2025 Challenge Report
   venue: CVPRW
   year: 2025
   paper: https://arxiv.org/abs/2506.01947
   status: no-code
-  tldr: Smartphone RGB→RAW reconstruction challenge; data is on Hugging Face at marcosv/rgb2raw.
+  tldr: To generate smartphone RAW without capture metadata, benchmarks inverse ISP from matching sRGB images; documents
+    the reconstruction dataset, baseline and submitted efficient models for reusable RAW-data synthesis.
 - name: MIPI 2024 Demosaic
   title: 'MIPI 2024 Challenge on Demosaic for HybridEVS Camera: Methods and Results'
   venue: CVPRW
   year: 2024
   paper: https://arxiv.org/abs/2405.04867
   status: no-code
-  tldr: Challenge report on demosaicing for HybridEVS cameras.
+  tldr: To evaluate HybridEVS reconstruction with interleaved event pixels, benchmarks RAW-to-color demosaicing solutions
+    and compares their reconstruction strategies; documents a sensor-specific challenge rather than a general image-restoration
+    backbone.
 - name: MIPI 2024 Few-shot Denoise
   title: 'MIPI 2024 Challenge on Few-shot RAW Image Denoising: Methods and Results'
   venue: CVPRW
   year: 2024
   paper: https://arxiv.org/abs/2406.07006
   status: no-code
-  tldr: Challenge report on few-shot RAW image denoising.
+  tldr: To reduce camera-calibration data requirements, benchmarks few-shot RAW denoising under a shared challenge protocol;
+    reviews submitted noise modeling, adaptation and reconstruction solutions and their measured results.
 - name: NTIRE 2024 Night
   title: NTIRE 2024 Challenge on Night Photography Rendering
   venue: CVPRW
   year: 2024
   paper: https://openaccess.thecvf.com/content/CVPR2024W/NTIRE/html/Ershov_NTIRE_2024_Challenge_on_Night_Photography_Rendering_CVPRW_2024_paper.html
   status: no-code
-  tldr: Third edition of the night photography rendering challenge.
+  tldr: To balance night-photo quality and mobile efficiency, evaluates smartphone RAW rendering by viewer preference
+    and execution time; reports separate quality/efficiency nominations and the top processing pipelines.
 - name: NTIRE 2024 RAW SR
   title: Deep RAW Image Super-Resolution. A NTIRE 2024 Challenge Survey
   venue: CVPRW
   year: 2024
   paper: https://arxiv.org/abs/2404.16223
   status: no-code
-  tldr: Survey of the RAW image super-resolution challenge.
+  tldr: To compare blind RAW super-resolution, tasks models with 2× Bayer upscaling under unknown blur/noise; reviews
+    the top submissions using a shared evaluation setup for sensor-domain reconstruction.
 - name: ISP Survey (2023)
   title: 'ISP meets Deep Learning: A Survey on Deep Learning Methods for Image Signal Processing'
   venue: ACM Computing Surveys
   year: 2023
   paper: https://arxiv.org/abs/2305.11994
   status: no-code
-  tldr: Survey of deep-learning ISPs, organizing methods and datasets into module-level and end-to-end categories.
+  tldr: To connect learned ISP stages with full pipelines, surveys deep methods for demosaicing, denoising and enhancement
+    alongside end-to-end RAW rendering; compares datasets/results and identifies limitations for future research.
 - name: MIPI 2023 RGBW Remosaic
   title: 'MIPI 2023 Challenge on RGBW Remosaic: Methods and Results'
   venue: CVPRW (MIPI)
   year: 2023
   paper: https://arxiv.org/abs/2304.10551
   status: no-code
-  tldr: The second RGBW re-mosaic challenge.
+  tldr: To process RGBW sensors with existing Bayer pipelines, benchmarks joint remosaicing/denoising and compares top
+    methods using PSNR, SSIM, LPIPS and distribution metrics; documents the challenge protocol and results.
 - name: NTIRE 2023 Night
   title: NTIRE 2023 Challenge on Night Photography Rendering
   venue: CVPRW
   year: 2023
   paper: https://openaccess.thecvf.com/content/CVPR2023W/NTIRE/html/Shutova_NTIRE_2023_Challenge_on_Night_Photography_Rendering_CVPRW_2023_paper.html
   status: no-code
-  tldr: Second edition of the night photography rendering challenge.
+  tldr: To test night rendering with limited target-sensor data, supplies calibrated color-checker captures instead of
+    a large training set; compares RAW-to-sRGB solutions through viewer and photographer preference rankings.
 - name: AIM 2022 Reverse ISP
   title: Reversed Image Signal Processing and RAW Reconstruction. AIM 2022 Challenge Report
   venue: ECCVW
@@ -111,7 +127,8 @@
   paper: https://arxiv.org/abs/2210.11153
   code: https://github.com/mv-lab/AISP/tree/main/aim22-reverseisp
   status: code
-  tldr: RGB→RAW reconstruction challenge with two tracks (S7 / P20); the official baseline is in mv-lab/AISP.
+  tldr: To recover sensor-like images from ordinary RGB without metadata, defines two smartphone inverse-ISP tracks;
+    reports baselines and submitted RAW-reconstruction methods for downstream restoration-data generation.
 - name: MAI 2022 ISP
   title: 'Learned Smartphone ISP on Mobile GPUs with Deep Learning, Mobile AI & AIM 2022 Challenge: Report'
   venue: ECCVW
@@ -123,7 +140,8 @@
   - label: mai22-learnedisp/model.tflite + .h5 (baseline)
     url: https://github.com/mv-lab/AISP/tree/main/mai22-learnedisp
   framework: TensorFlow Lite
-  tldr: ISP challenge on mobile GPUs; the official baseline provides .h5 and .tflite models.
+  tldr: To optimize neural ISP for real phone GPUs, benchmarks TensorFlow Lite models on paired UltraISP data and Snapdragon
+    8 Gen 1 hardware; reports rendering fidelity alongside measured mobile latency.
 - name: MIPI 2022 Quad Remosaic
   title: 'MIPI 2022 Challenge on Quad-Bayer Re-mosaic: Dataset and Report'
   venue: ECCVW (MIPI)
@@ -131,7 +149,8 @@
   paper: https://arxiv.org/abs/2209.07060
   code: https://github.com/mipi-challenge/MIPI2022
   status: code
-  tldr: Quad-Bayer sensor re-mosaic challenge.
+  tldr: To reuse Bayer pipelines with Quad sensors, defines full-resolution Quad-to-Bayer interpolation jointly with
+    denoising; contributes sensor data and a common challenge evaluation of submitted remosaicing methods.
 - name: MIPI 2022 RGBW Remosaic
   title: 'MIPI 2022 Challenge on RGBW Sensor Re-mosaic: Dataset and Report'
   venue: ECCVW (MIPI)
@@ -139,7 +158,8 @@
   paper: https://arxiv.org/abs/2209.08471
   code: https://github.com/mipi-challenge/MIPI2022
   status: code
-  tldr: Challenge on re-mosaicing RGBW sensor data to Bayer, including a dataset.
+  tldr: To convert RGBW sensor measurements into standard Bayer, benchmarks full-resolution remosaicing and denoising;
+    supplies sensor-specific data and compares algorithms under a shared reconstruction protocol.
   note: The repo lists data and winning-solution links for each track.
 - name: NTIRE 2022 Burst SR
   title: NTIRE 2022 Burst Super-Resolution Challenge
@@ -147,21 +167,24 @@
   year: 2022
   paper: https://openaccess.thecvf.com/content/CVPR2022W/NTIRE/html/Bhat_NTIRE_2022_Burst_Super-Resolution_Challenge_CVPRW_2022_paper.html
   status: no-code
-  tldr: The second burst super-resolution challenge (won by BSRT).
+  tldr: To compare multiframe reconstruction, requires 4× RGB output from noisy RAW bursts, jointly testing denoising/demosaicing/SR;
+    separates pixel-aligned synthetic data from real handheld bursts with approximate DSLR references.
 - name: NTIRE 2022 Night
   title: NTIRE 2022 Challenge on Night Photography Rendering
   venue: CVPRW
   year: 2022
   paper: https://openaccess.thecvf.com/content/CVPR2022W/NTIRE/html/Ershov_NTIRE_2022_Challenge_on_Night_Photography_Rendering_CVPRW_2022_paper.html
   status: no-code
-  tldr: Night RAW rendering challenge, scored by subjective preference.
+  tldr: To assess subjective night rendering, evaluates RAW-to-sRGB outputs using mean viewer opinions followed by professional-photographer
+    ranking; documents thirteen teams' pipelines and their visual-quality results.
 - name: MAI 2021 ISP
   title: 'Learned Smartphone ISP on Mobile NPUs with Deep Learning, Mobile AI 2021 Challenge: Report'
   venue: CVPRW
   year: 2021
   paper: https://arxiv.org/abs/2105.07809
   status: no-code
-  tldr: First ISP challenge with runtime measured on smartphone NPUs; Sony IMX586 RAW to Fujifilm GFX100.
+  tldr: To measure learned ISP on mobile NPUs, provides Sony Quad-Bayer RAW/medium-format RGB pairs and evaluates NPU-compatible
+    models; reports both reconstruction fidelity and actual full-HD processing latency.
 - name: NTIRE 2021 Burst SR
   title: 'NTIRE 2021 Challenge on Burst Super-Resolution: Methods and Results'
   venue: CVPRW
@@ -169,7 +192,8 @@
   paper: https://openaccess.thecvf.com/content/CVPR2021W/NTIRE/html/Bhat_NTIRE_2021_Challenge_on_Burst_Super-Resolution_Methods_and_Results_CVPRW_2021_paper.html
   code: https://github.com/goutamgmb/NTIRE21_BURSTSR
   status: code
-  tldr: BurstSR challenge with synthetic and real tracks.
+  tldr: To benchmark 4× reconstruction from noisy RAW bursts, separates synthetic and real-handheld tracks; compares
+    alignment, fusion and reconstruction designs for joint denoising, demosaicing and super-resolution.
   note: Official toolkit and test sets.
 - name: AIM 2020 ISP
   title: AIM 2020 Challenge on Learned Image Signal Processing Pipeline
@@ -177,28 +201,66 @@
   year: 2020
   paper: https://arxiv.org/abs/2011.04994
   status: no-code
-  tldr: Report of the RAW-to-RGB challenge on ZRR data, with fidelity and perceptual tracks.
+  tldr: To benchmark learned phone-to-DSLR rendering, maps Huawei P20 RAW to Canon references and combines fidelity metrics
+    with user-study perception; reviews submitted demosaicing, restoration and color-mapping pipelines.
+  implementations:
+  - name: MW-ISPNet
+    title: AIM 2020 Challenge on Learned Image Signal Processing Pipeline
+    venue: ECCVW (AIM)
+    year: 2020
+    paper: https://arxiv.org/abs/2011.04994
+    code: https://github.com/cszhilu1998/MW-ISPNet
+    status: weights
+    weights:
+    - label: Track1 models (Google Drive)
+      url: https://drive.google.com/drive/folders/1lt5eXn49LgLzdj3z7k7lPK0B7obiLIHd?usp=sharing
+    - label: Track2 models (Google Drive)
+      url: https://drive.google.com/drive/folders/1uyU1huZnh8Wf7BYFkXVfrTl64EuFNcO7?usp=sharing
+    framework: PyTorch
+    tldr: For the AIM 2020 phone-RAW-to-DSLR benchmark, MW-ISPNet combines a U-Net, multilevel wavelets and residual
+      channel attention for restoration and color rendering; the linked publication is the challenge report documenting
+      this solution.
 - name: NTIRE 2020 Real Denoising
   title: 'NTIRE 2020 Challenge on Real Image Denoising: Dataset, Methods and Results'
   venue: CVPRW
   year: 2020
   paper: https://arxiv.org/abs/2005.04117
   status: no-code
-  tldr: Real image denoising challenge on SIDD+ with RAW and sRGB tracks (MWRCANet ranked first in the RAW track).
+  tldr: To compare real-noise removal in sensor and display spaces, introduces SIDD+ evaluation data and separate Bayer/sRGB
+    tracks; reviews submitted models under a shared denoising protocol.
+  implementations:
+  - name: MWRCANet
+    title: 'NTIRE 2020 Challenge on Real Image Denoising: Dataset, Methods and Results'
+    venue: CVPRW (NTIRE)
+    year: 2020
+    paper: https://arxiv.org/abs/2005.04117
+    code: https://github.com/happycaoyue/NTIRE20_raw_image_denoising_winner_MWRCANet
+    status: weights
+    weights:
+    - label: RAW model dn_mwrcanet_raw_c1.pth (Google Drive)
+      url: https://drive.google.com/drive/folders/1T23SqUEE1_oGGBK-gaRJ3L1jfVctRQtX?usp=sharing
+    - label: Mirror (Baidu, code 0odp)
+      url: https://pan.baidu.com/s/1Hbo86y3NYYf-WtLONRH3Sg
+    framework: PyTorch
+    tldr: For real Bayer-noise removal, combines multilevel wavelet decomposition and residual channel attention to aggregate
+      restoration features; the linked NTIRE 2020 report documents the RAW-track solution and the SIDD+ evaluation protocol.
 - name: AIM 2019 RAW→RGB
   title: 'AIM 2019 Challenge on RAW to RGB Mapping: Methods and Results'
   venue: ICCVW
   year: 2019
-  paper: https://openaccess.thecvf.com/ICCV2019_workshops/ICCV2019_AIM
+  paper: https://doi.org/10.1109/ICCVW.2019.00443
   status: no-code
-  tldr: The first smartphone RAW→DSLR RGB mapping challenge (predecessor data of ZRR).
+  tldr: To establish real smartphone-to-DSLR ISP evaluation, benchmarks RAW-to-RGB reconstruction combining demosaicing,
+    denoising and color rendering; documents participating solutions and fidelity/perceptual results on cross-camera
+    data.
 - name: NTIRE 2019 Real Denoising
   title: 'NTIRE 2019 Challenge on Real Image Denoising: Methods and Results'
   venue: CVPRW
   year: 2019
-  paper: https://openaccess.thecvf.com/CVPR2019_workshops/CVPR2019_NTIRE
+  paper: https://openaccess.thecvf.com/content_CVPRW_2019/html/NTIRE/Abdelhamed_NTIRE_2019_Challenge_on_Real_Image_Denoising_Methods_and_Results_CVPRW_2019_paper.html
   status: no-code
-  tldr: Real image denoising challenge on SIDD with RAW and sRGB tracks.
+  tldr: To evaluate real smartphone denoising consistently, defines SIDD-based RAW and sRGB tracks; compares submitted
+    networks and training strategies using common test images and quantitative reconstruction metrics.
 - name: RAW vs RGB Restoration Benchmark
   title: Benchmarking RAW and RGB Restoration in Image Signal Processors
   venue: BMVC
@@ -206,7 +268,8 @@
   paper: https://arxiv.org/abs/2609.02831
   code: https://github.com/mv-lab/AISP
   status: code
-  tldr: Systematically compares restoration in the RAW versus RGB domain, giving empirical evidence on where to place restoration modules in an ISP.
+  tldr: To separate restoration placement from training alignment, compares pre-ISP RAW and post-ISP RGB models across
+    devices, ISPs and noise/blur regimes; shows ISP-aware RGB supervision can outperform generic placement choices.
   note: Code merged into the mv-lab/AISP repo
 - name: Reference-free ISP Evaluation
   title: A Reference-Free Framework for Evaluating Single-Frame ISP Pipelines
@@ -214,11 +277,14 @@
   year: 2026
   paper: https://arxiv.org/abs/2607.23321
   status: no-code
-  tldr: A framework for evaluating the output quality of single-frame ISP pipelines without reference images.
+  tldr: To estimate pipeline quality without a clean image, predicts a proxy sRGB reference from output/ISO and computes
+    standard full-reference metrics against it; lightweight LoRA adapts the evaluator when ISP components change.
 - name: Small-Pixel Neural ISP
-  title: 'The Need for Neural ISP in the Small-Pixel Era: How Shrinking Pixels Push Optics to the Limit and Neural Restoration Pushes Back'
+  title: 'The Need for Neural ISP in the Small-Pixel Era: How Shrinking Pixels Push Optics to the Limit and Neural Restoration
+    Pushes Back'
   venue: arXiv
   year: 2026
   paper: https://arxiv.org/abs/2606.07675
   status: no-code
-  tldr: Compares conventional and neural ISPs in controlled telephoto simulations across five pixel sizes, including low-SNR multi-frame restoration, to study how learned restoration compensates for optical aberrations.
+  tldr: To test whether neural restoration compensates shrinking pixels, simulates a telephoto module at five pixel pitches
+    and compares stagewise versus learned ISP; analyzes residual optical aberrations and low-SNR multiframe recovery.

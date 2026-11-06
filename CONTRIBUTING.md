@@ -15,6 +15,7 @@ please **do not edit the generated files by hand**.
    ```bash
    pip install -r requirements.txt
    python scripts/build.py
+   python scripts/check_research.py
    ```
 
 4. Add or update the corresponding Chinese content in `data/i18n/` (see **Bilingual content** below).
@@ -29,36 +30,39 @@ Not comfortable with a PR? Open an issue with the [Add a paper](https://github.c
 
 | File | Section |
 |:--|:--|
-| `data/papers/e2e.yaml` | End-to-end RAW-to-sRGB |
-| `data/papers/controllable.yaml` | Controllable Neural ISP |
-| `data/papers/mobile.yaml` | Mobile & lightweight ISP |
-| `data/papers/denoise.yaml` | RAW denoising & noise modeling |
-| `data/papers/lowlight.yaml` | Low-light RAW enhancement |
-| `data/papers/demosaic.yaml` | Demosaicing, joint restoration & RAW super-resolution |
-| `data/papers/burst.yaml` | Burst & HDR |
-| `data/papers/video.yaml` | RAW video |
-| `data/papers/color.yaml` | White balance, color & tone |
-| `data/papers/inverse.yaml` | Inverse ISP, RAW reconstruction & compression |
-| `data/papers/task.yaml` | ISP for machine vision |
-| `data/papers/tuning.yaml` | ISP parameter tuning |
-| `data/papers/report.yaml` | Challenges & surveys |
+| `data/papers/e2e.yaml` | End-to-End RAW-to-sRGB |
+| `data/papers/denoise.yaml` | RAW Denoising & Noise Modeling |
+| `data/papers/lowlight.yaml` | Low-Light Rendering & Exposure Correction |
+| `data/papers/demosaic.yaml` | Demosaicing & Remosaicing |
+| `data/papers/restoration.yaml` | RAW Deblurring & Other Restoration |
+| `data/papers/super-resolution.yaml` | RAW Super-Resolution & Resampling |
+| `data/papers/burst.yaml` | Burst & HDR Imaging |
+| `data/papers/video.yaml` | RAW Video |
+| `data/papers/white-balance.yaml` | White Balance & Color Constancy |
+| `data/papers/color.yaml` | Color Correction, Tone & Retouching |
+| `data/papers/inverse.yaml` | Inverse ISP & RAW Synthesis |
+| `data/papers/compression.yaml` | RAW Compression & Joint Coding |
+| `data/papers/task.yaml` | ISP for Machine Vision |
+| `data/papers/tuning.yaml` | ISP Parameter & Pipeline Optimization |
+| `data/papers/report.yaml` | Challenges, Surveys & Evaluation |
+| `data/collections.yaml` | Cross-task collection definitions |
+| `data/facets.yaml` | Bilingual facet labels |
+| `data/research.yaml` | Evidence, collection membership, reading notes, citations, dataset associations |
 | `data/datasets.yaml` | Datasets |
-| `data/tools.yaml` | Tools & open-source ISPs |
-| `data/resources.yaml` | Tutorials, books, classical papers, related lists |
+| `data/tools.yaml` | Tools |
+| `data/resources.yaml` | Learning resources |
+| `data/trends.yaml` | Research threads |
 
-If a paper fits several sections, put it where its main contribution is. Entry order inside a file does not matter;
-the build sorts them.
+Assign one **primary task** by the main evaluated contribution. Controllable and mobile/efficient ISPs are overlapping collections, stored in `data/research.yaml`; do not duplicate papers in separate files. See the [classification rules and full audit](guide/classification-2026-11-05.md).
 
-**Controllable Neural ISP** covers explicit user controls, replaceable learned rendering stages and camera/style
-conditioning. These are different control interfaces: a metadata-conditioned model is not necessarily an interactive
-editor. Automatic content-dependent parameter prediction belongs in `tuning`; methods optimized for downstream
-task rewards belong in `task`. Color-only modules and edit-aware inverse methods stay in `color` and `inverse`,
-with cross-references in the category descriptions. Move entries instead of duplicating them.
+Keep camera/capture conditioning distinct from exposed user controls. Automatic prediction or optimization alone does not imply user editing. Color-only controls and inverse reconstruction retain their primary tasks. General-purpose multi-objective optimizers belong in tuning; a specific downstream-task objective belongs in machine vision.
+
+A challenge solution without its own publication is an `implementations` resource on the report, using the same resource schema. Add its translation under its existing internal name; code and weight availability aggregate to the one publication.
 
 ## Paper entry format
 
 ```yaml
-- name: LiteISPNet                      # short name shown in bold (method name or acronym)
+- name: LiteISPNet                      # stable internal key / search alias; not the display heading
   title: Learning RAW-to-sRGB Mappings With Inaccurately Aligned Supervision
   venue: ICCV                           # CVPR, ICCV, ECCV, NeurIPS, CVPRW (NTIRE), IEEE TIP, arXiv, ...
   year: 2021
@@ -71,7 +75,7 @@ with cross-references in the category descriptions. Move entries instead of dupl
     - label: Mirror (Baidu, code 8sq1)  # put extraction codes in the label
       url: https://pan.baidu.com/s/...
   framework: PyTorch                    # optional
-  tldr: One neutral sentence on what the paper does, ideally 12-28 words.
+  tldr: Explain the challenge, specific method and concrete contribution in 1-2 concise sentences.
   note: Optional practical remark (e.g. "weights are for the TPAMI extension").
 ```
 
@@ -116,8 +120,10 @@ Out of scope:
 ## Style
 
 - Maintain English source records and complete Chinese overlays, in a neutral tone: no "novel", "state-of-the-art" or "outperforms". Describe what the method does.
-- Use the paper's own capitalization for titles and method names.
-- One entry per paper; challenge-winning solutions that have their own repository may be listed next to the report.
+- Display the paper's full official title, with its original capitalization. Do not invent display names. `name` is a stable internal key used by translations and search; an existing alias is not a paper title.
+- Summaries should explain **challenge → specific mechanism/model → contribution**, usually in 25–55 English words. Verify architecture labels (CNN, Transformer, Mamba, diffusion, etc.) from the paper or official project; a PyTorch implementation does not identify an architecture. Describe benchmark/data/protocol contributions for reports and datasets. Avoid unsupported rankings and numbers.
+- Chinese summaries must preserve the same technical facts. Keep the official English title as the heading and use the Chinese translation as reading assistance. When an entry links to a challenge report rather than a standalone solution paper, use the report's title and identify the solution in the summary.
+- One entry per unique publication. Nest separately released challenge solutions under their report; a repository does not constitute another publication.
 
 ## Bilingual content
 
@@ -144,3 +150,13 @@ Out of scope:
   [lychee](https://github.com/lycheeverse/lychee) every Monday and opens an issue if links are broken; its settings
   are in `lychee.toml`.
 - When you re-check links by hand, update `checked` in `config.yaml`.
+
+## Research annotations
+
+Facet values come from `data/facets.yaml`; attach an explicit source-grounded excerpt under `evidence` for every assigned value. Missing annotations mean unknown, not absent. Do not identify architecture from a framework or from a model nickname. Reading notes need `challenge`, `method`, `contribution` and editorial `limits` in both `en` and `zh-CN`. Dataset associations must reference exact dataset names. BibTeX must retain source author/editor metadata and a `bibtex_source` URL; do not invent authors, pages or a conference version.
+
+Use `summary_updated` and `taxonomy_updated` for those revisions; keep `literature_updated` and `checked` for literature additions and a full link audit respectively.
+
+Longer website abstracts may be provided in `data/research.yaml` as `summary.en` and `summary.zh-CN`, with a `summary_source` primary-source URL. Explain each technical mechanism in accessible prose and keep the two languages factually aligned. The website uses these in place of the compact `tldr`; otherwise it integrates existing challenge/method/contribution notes, then falls back to `tldr`. Audit dates remain in source records, not in individual cards.
+
+`data/navigation.yaml` defines the four bilingual sidebar groups. Include every primary task and cross-task view exactly once; grouping does not change paper assignments. Venue filtering uses the stored `venue` field: keep main conferences, Workshops, Findings, journals and preprints accurate and distinct. `scripts/site_build.py` normalizes known label variants for multi-selection while preserving the original venue on cards.

@@ -1,0 +1,15 @@
+- id: controllable
+  title: Controllable Neural ISP
+  short: Controllable ISP
+  description: Learned rendering with explicit user parameters, style/reference controls, replaceable learned stages
+    or camera-conditioned outputs. Control badges distinguish interactive editing from camera conditioning. Color-only
+    modules and conventional parameter-tuning baselines remain in their own categories.
+  intro: Explore editable learned rendering and camera-conditioned ISPs; the control interface is labeled per paper.
+- id: mobile
+  title: Mobile & Efficient ISP
+  short: Mobile / efficient
+  description: Methods explicitly designed or evaluated for mobile, edge or sensor compute constraints, spanning full
+    ISPs, denoising, demosaicing and video. This is a deployment collection, not a separate imaging task; no field-wide
+    shift in training paradigm is assumed.
+  intro: Mobile and sensor-efficient methods across imaging tasks; efficiency claims remain tied to each paper’s tested
+    hardware.

@@ -1,0 +1,86 @@
+- name: Real-World Camera Pipeline
+  title: An End-to-End Real-World Camera Imaging Pipeline
+  venue: ACM MM
+  year: 2024
+  paper: https://arxiv.org/abs/2411.10773
+  status: no-code
+  tldr: To jointly handle optical distortion and compression, RealCamNet uses coordinate-aware distortion restoration
+    for vignetting/dark shading and coordinate-independent mapping compression for tone and redundancy; introduces real
+    captures for end-to-end rate–distortion evaluation.
+- name: RAWtoBit
+  title: 'RAWtoBit: A Fully End-to-end Camera ISP Network'
+  venue: ECCV
+  year: 2022
+  paper: https://arxiv.org/abs/2208.07639
+  status: no-code
+  tldr: To optimize rendering and compression together, learns a RAW-to-bitstream network under a rate–distortion objective;
+    separate ISP and compression teachers distill task-specific knowledge into the joint model.
+- name: MambaRaw
+  title: 'MambaRaw: Selective State Space Modeling for Efficient 4K Raw Image Reconstruction'
+  venue: ECCV
+  year: 2026
+  paper: https://arxiv.org/abs/2606.24479
+  code: https://github.com/Peizeli1/MambaRaw
+  status: code
+  framework: PyTorch
+  tldr: To reconstruct 4K RAW from JPEG plus compact metadata efficiently, uses selective state-space scans on information-dense
+    tiles and energy-aware residual refinement; models entropy with spatial/energy-coupled context.
+  note: Must be trained separately for each λ.
+- name: Raw-JPEG Adapter
+  title: 'Raw-JPEG Adapter: Efficient Raw Image Compression with JPEG'
+  venue: ECCV
+  year: 2026
+  paper: https://arxiv.org/abs/2509.19624
+  code: https://github.com/SamsungLabs/raw-jpeg-adapter
+  status: weights-in-repo
+  weights:
+  - label: models/raw_jpeg_adapter_q_*.pth (in repo)
+    url: https://github.com/SamsungLabs/raw-jpeg-adapter/tree/main/models
+  framework: PyTorch
+  tldr: To store linear RAW using standard JPEG, learns compact invertible spatial and optional frequency transforms
+    and stores parameters in the JPEG comment field; reconstructs RAW with improved rate–fidelity trade-offs.
+- name: RAWIC
+  title: 'RAWIC: Bit-Depth Adaptive Lossless Raw Image Compression'
+  venue: ICME
+  year: 2026
+  paper: https://arxiv.org/abs/2603.28105
+  code: https://github.com/chunbaobao/RAWIC
+  status: weights
+  weights:
+  - label: main + ablation models (PKU Disk)
+    url: https://disk.pku.edu.cn/link/AACF89B6C4E991420B9FF93197230EA21D
+  framework: PyTorch
+  tldr: To losslessly compress varying-bit-depth RAW, packs Bayer into RGGB patches and conditions a learned entropy
+    model on each patch's bit depth; adapts probability estimates to local signal ranges.
+  note: The README also lists a Baidu Netdisk mirror.
+- name: Beyond R2LCM
+  title: Beyond Learned Metadata-based Raw Image Reconstruction
+  venue: arXiv
+  year: 2023
+  paper: https://arxiv.org/abs/2306.12058
+  status: no-code
+  tldr: To improve JPEG-assisted RAW reconstruction, encodes compact latent metadata with asymmetric multiresolution
+    features and a conditional context model; iterative coding masks enable variable bitrates within one model.
+- name: R2LCM
+  title: Raw Image Reconstruction with Learned Compact Metadata
+  venue: CVPR
+  year: 2023
+  paper: https://openaccess.thecvf.com/content/CVPR2023/html/Wang_Raw_Image_Reconstruction_With_Learned_Compact_Metadata_CVPR_2023_paper.html
+  code: https://github.com/wyf0912/R2LCM
+  status: weights
+  weights:
+  - label: Sony models (Google Drive)
+    url: https://drive.google.com/file/d/19IFLxyreqNOWA573phNyvBUBwRwmXHtt/view?usp=sharing
+  - label: Samsung models (Google Drive)
+    url: https://drive.google.com/file/d/1xcEAgJztsI6QWaEpjqQzrYolKvHPzwZc/view?usp=sharing
+  framework: PyTorch
+  tldr: To reduce RAW storage while retaining a JPEG, learns compact latent metadata and an sRGB-guided entropy context
+    model; adaptively allocates bits to informative regions for improved reconstruction per stored bit.
+- name: Lossless Mosaic Compression
+  title: Lossless Compression of Mosaic Images with Convolutional Neural Network Prediction
+  venue: arXiv
+  year: 2020
+  paper: https://arxiv.org/abs/2001.10484
+  status: no-code
+  tldr: To remove spatial/spectral redundancy without changing RAW values, predicts mosaic samples with a high-order
+    nonlinear CNN and losslessly codes the residuals; specializes prediction for sensor color-pattern dependencies.

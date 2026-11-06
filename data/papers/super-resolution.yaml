@@ -1,0 +1,115 @@
+- name: Smartphone RAW Degradation
+  title: RAW-Domain Degradation Models for Realistic Smartphone Super-Resolution
+  venue: CVPR
+  year: 2026
+  paper: https://openaccess.thecvf.com/content/CVPR2026/html/Mosleh_RAW-Domain_Degradation_Models_for_Realistic_Smartphone_Super-Resolution_CVPR_2026_paper.html
+  status: no-code
+  tldr: To reduce synthetic-to-real SR mismatch, calibrates device-specific blur/noise and unprocesses rendered images
+    into smartphone RAW; trains mosaicked-RAW super-resolution and evaluates real captures from a held-out device.
+- name: ASRD
+  title: Learning Arbitrary-Scale RAW Image Downscaling with Wavelet-based Recurrent Reconstruction
+  venue: ACM MM
+  year: 2025
+  paper: https://arxiv.org/abs/2507.23219
+  code: https://github.com/RenYangSCU/ASRD
+  status: coming-soon
+  tldr: To downscale RAW at arbitrary factors without losing structure, recurrently reconstructs wavelet low/high-frequency
+    bands with separate scaling and prediction modules; adds an energy loss and a real noninteger-scale benchmark.
+  note: '"Code is coming soon".'
+- name: Camera-Specific RAW SR Sim
+  title: Camera-Specific Imaging Simulation for Raw Domain Image Super Resolution
+  venue: ACM MM
+  year: 2025
+  paper: https://doi.org/10.1145/3746027.3754785
+  status: no-code
+  tldr: To supply camera-matched RAW SR pairs, accelerates physical simulation through subgraph decomposition; LatentKAN
+    combines stage-supervised iterative feature fusion and learnable Kolmogorov–Arnold activations to reduce spectral
+    bias.
+- name: BSRAW
+  title: 'BSRAW: Improving Blind RAW Image Super-Resolution'
+  venue: WACV
+  year: 2024
+  paper: https://arxiv.org/abs/2312.15487
+  code: https://github.com/mv-lab/AISP
+  status: code
+  tldr: To improve blind RAW super-resolution in real scenes, synthesizes sensor noise, defocus and exposure degradations
+    before ISP nonlinearities; trains sensor-domain models and contributes a DSLM dataset for real-capture benchmarking.
+  note: Code and degradation tools are in mv-lab/AISP (imresutils).
+- name: RBSFormer
+  title: 'RBSFormer: Enhanced Transformer Network for Raw Image Super-Resolution'
+  venue: CVPRW (NTIRE)
+  year: 2024
+  paper: https://openaccess.thecvf.com/content/CVPR2024W/NTIRE/html/Jiang_RBSFormer_Enhanced_Transformer_Network_for_Raw_Image_Super-Resolution_CVPRW_2024_paper.html
+  status: no-code
+  tldr: To super-resolve RAW before complex ISP artifacts arise, enhances a Transformer with cross-covariance attention
+    and gated feed-forward blocks; RAW augmentation and hybrid ensembling improve reconstruction under a compact parameter
+    budget.
+- name: TENet
+  title: Rethinking Learning-based Demosaicing, Denoising, and Super-Resolution Pipeline
+  venue: ICCP
+  year: 2022
+  paper: https://arxiv.org/abs/1905.02538
+  code: https://github.com/guochengqian/TENet
+  status: code
+  framework: PyTorch
+  tldr: To determine how restoration order affects quality, compares denoising/demosaicing/SR pipelines and embeds intermediate
+    supervision through detachable heads; recommends DN→SR→DM and contributes PixelShift200 for evaluation.
+  note: The README links to the PixelShift200 and DIV2K data.
+- name: JDNDMSR
+  title: End-to-End Learning for Joint Image Demosaicing, Denoising and Super-Resolution
+  venue: CVPR
+  year: 2021
+  paper: https://openaccess.thecvf.com/content/CVPR2021/html/Xing_End-to-End_Learning_for_Joint_Image_Demosaicing_Denoising_and_Super-Resolution_CVPR_2021_paper.html
+  code: https://github.com/xingwz/End-to-End-JDNDMSR
+  status: weights-in-repo
+  weights:
+  - label: models/jdndmsr+_model.h5 etc. (in repo)
+    url: https://github.com/xingwz/End-to-End-JDNDMSR/tree/main/models
+  framework: Keras
+  tldr: To avoid accumulated errors across three restoration stages, trains a single CNN jointly for denoising, demosaicing
+    and super-resolution; compares task combinations and losses, including mean absolute error supervision.
+- name: JDSR
+  title: 'Joint Demosaicing and Super-Resolution (JDSR): Network Design and Perceptual Optimization'
+  venue: IEEE TCI
+  year: 2020
+  paper: https://arxiv.org/abs/1911.03558
+  status: no-code
+  tldr: To combine CFA reconstruction and upscaling perceptually, uses a predemosaicer plus residual-dense squeeze-and-excitation
+    blocks; a relativistic discriminator and pre-excitation perceptual loss improve textured-region reconstruction.
+- name: Real Scene SR with Raw
+  title: Towards Real Scene Super-Resolution with Raw Images
+  venue: CVPR
+  year: 2019
+  paper: https://arxiv.org/abs/1905.12156
+  code: https://github.com/xuxy09/RawSR
+  status: code
+  framework: TensorFlow
+  tldr: To reduce realistic-degradation mismatch and lost radiance, simulates camera formation for training and uses
+    a dual CNN on RAW; spatially varying color transformation restores local color after super-resolution.
+  note: The repo contains code for the TPAMI 2021 extended version. The ×2 / ×4 model folders (Google Drive) linked in
+    the README return 404 (checked 2026-10-11).
+- name: Zoom to Learn
+  title: Zoom to Learn, Learn to Zoom
+  venue: CVPR
+  year: 2019
+  paper: https://arxiv.org/abs/1905.05169
+  code: https://github.com/ceciliavision/zoom-learn-zoom
+  status: code
+  framework: TensorFlow
+  tldr: To train real computational zoom despite imperfect alignment, captures optical-zoom RAW reference pairs in SR-RAW
+    and introduces contextual bilateral loss; trains a deep model robust to small input/target displacements.
+  note: The README provides the SR-RAW dataset (Google Drive / Baidu, code wi02) and quick inference instructions.
+- name: Residual JDSR
+  title: Deep Residual Network for Joint Demosaicing and Super-Resolution
+  venue: CIC
+  year: 2018
+  paper: https://arxiv.org/abs/1802.06573
+  code: https://github.com/Linwei-Chen/Deep-Residual-Network-for-JointDemosaicing-and-Super-Resolution
+  status: unofficial
+  weights:
+  - label: Third-party reimplementation weights (Baidu)
+    url: https://pan.baidu.com/s/1QtwMmSbTNTfosQ3eEDW2Pg
+  framework: PyTorch
+  tldr: To avoid amplifying demosaicing artifacts during upscaling, trains a residual CNN directly from low-resolution
+    Bayer mosaics to high-resolution RGB; jointly solves missing colors and spatial detail in one step.
+  note: Third-party PyTorch reimplementation.

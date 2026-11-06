@@ -1,0 +1,20 @@
+- id: pipeline
+  label:
+    en: Full ISP & controllable imaging
+    zh-CN: 完整 ISP 与可控成像
+  topics: [e2e, controllable]
+- id: restoration
+  label:
+    en: Restoration & multi-frame imaging
+    zh-CN: 图像复原与多帧成像
+  topics: [lowlight, denoise, demosaic, restoration, super-resolution, burst, video]
+- id: representation
+  label:
+    en: Color & RAW representation
+    zh-CN: 色彩处理与 RAW 表示
+  topics: [white-balance, color, inverse, compression]
+- id: systems
+  label:
+    en: Vision tasks & system optimization
+    zh-CN: 视觉任务与系统优化
+  topics: [task, tuning, mobile, report]

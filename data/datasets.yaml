@@ -1,4 +1,3 @@
-# Commonly used datasets. `task` should match a category id in categories.yaml.
 - name: ZRR (Zurich RAW to RGB)
   year: 2020
   source: PyNET
@@ -10,7 +9,7 @@
 - name: MAI21 Learned ISP
   year: 2021
   source: MAI 2021 challenge
-  task: mobile
+  task: e2e
   capture: Sony IMX586 phone RAW paired with Fujifilm GFX100 sRGB
   size: Registration on CodaLab required
   url: https://competitions.codalab.org/competitions/28054
@@ -18,7 +17,7 @@
 - name: Fujifilm UltraISP
   year: 2022
   source: MicroISP / MAI 2022
-  task: mobile
+  task: e2e
   capture: Phone sensor RAW paired with Fujifilm GFX100 (102 MP)
   size: High-resolution pairs
   url: https://github.com/gosha20777/mai-25/releases/tag/1.0.0
@@ -28,13 +27,13 @@
   source: Transform your Smartphone into a DSLR
   task: e2e
   capture: Phone and DSLR, weakly paired in the wild
-  size: '—'
+  size: —
   url: https://github.com/4rdhendu/TransformPhone2DSLR
   use: Learning an ISP under weak alignment; the ETH download link in the repo README returns 404 (checked 2026-10-11)
 - name: SR-RAW
   year: 2019
   source: Zoom to Learn
-  task: demosaic
+  task: super-resolution
   capture: Sony FE 24-240 optical-zoom RAW at multiple focal lengths
   size: 500 sequences
   url: https://drive.google.com/drive/folders/1FHhcrZjYvFm-zliziQIRVzYjlZUCikai?usp=sharing
@@ -44,15 +43,15 @@
   source: Bychkovsky et al.
   task: color
   capture: 5,000 multi-camera RAW images, each retouched by 5 experts
-  size: '5,000'
+  size: 5,000
   url: https://data.csail.mit.edu/graphics/fivek/
   use: InvISP, RAW-Flow, color / LUT methods, inverse ISP
 - name: S24 RAW-sRGB
   year: 2025
   source: Time-Aware AWB
-  task: color
+  task: white-balance
   capture: Samsung Galaxy S24 Ultra RAW + in-camera sRGB + expert Lightroom renderings
-  size: '—'
+  size: —
   url: https://github.com/SamsungLabs/time-aware-awb/tree/main/s24-raw-srgb-dataset
   use: AWB, neural ISP, edit-aware RAW reconstruction
 - name: NTIRE 2025 RGB2RAW
@@ -60,7 +59,7 @@
   source: NTIRE 2025 challenge
   task: inverse
   capture: RGB and RAW from several smartphones
-  size: '—'
+  size: —
   url: https://huggingface.co/datasets/marcosv/rgb2raw
   use: RGB-to-RAW reconstruction
 - name: SID
@@ -76,7 +75,7 @@
   source: Abandoning the Bayer-Filter to See in the Dark
   task: lowlight
   capture: Paired monochrome and color sensors
-  size: '—'
+  size: —
   url: https://drive.google.com/file/d/1Q3NYGyByNnEKt_mREzD2qw9L2TuxCV_r/view?usp=share_link
   use: Low-light RAW enhancement
 - name: ELD
@@ -84,7 +83,7 @@
   source: ELD
   task: denoise
   capture: Extreme low-light RAW from several cameras
-  size: '—'
+  size: —
   url: https://drive.google.com/drive/folders/1QoEhB1P-hNzAc4cRb7RdzyEKktexPVgy?usp=sharing
   use: Physics-based noise modeling and low-light RAW denoising evaluation
 - name: LRID
@@ -146,7 +145,7 @@
 - name: NUS 8-Camera
   year: 2014
   source: Cheng et al.
-  task: color
+  task: white-balance
   capture: RAW illuminant estimation data from 8 cameras
   size: ~1,700 images
   url: https://yorkucvil.github.io/projects/public_html/illuminant/illuminant.html
@@ -154,7 +153,7 @@
 - name: Cube+
   year: 2019
   source: Banić et al.
-  task: color
+  task: white-balance
   capture: Canon 550D RAW with color-checker illuminants
   size: 2,070 images
   url: https://ipg.fer.hr/ipg/resources/color_constancy
@@ -162,7 +161,7 @@
 - name: Rendered WB (Set1/Set2)
   year: 2019
   source: WB_sRGB
-  task: color
+  task: white-balance
   capture: sRGB rendered with many cameras and white-balance presets
   size: ~65k images
   url: https://yorkucvil.github.io/projects/public_html/sRGB_WB_correction/dataset.html
@@ -170,7 +169,7 @@
 - name: LSMI
   year: 2021
   source: LSMI
-  task: color
+  task: white-balance
   capture: Mixed-illuminant RAW with per-pixel illuminant maps
   size: 7,486 images
   url: https://github.com/DY112/LSMI-dataset
@@ -220,14 +219,15 @@
   source: Instance Segmentation in the Dark
   task: task
   capture: Low-light RAW instance segmentation
-  size: '—'
+  size: —
   url: https://github.com/Linwei-Chen/LIS
   use: Low-light RAW segmentation
 - name: Camera-Native VR180
   year: 2026
   source: Lu 2026
   task: video
-  capture: Two Blackmagic URSA Cine Immersive stereo fisheye cameras; every sample as Blackmagic RAW plus fisheye and half-equirectangular HEVC, with factory lens calibration
+  capture: Two Blackmagic URSA Cine Immersive stereo fisheye cameras; every sample as Blackmagic RAW plus fisheye and
+    half-equirectangular HEVC, with factory lens calibration
   size: 1,211 samples (636 stereo clips, mostly 90 fps; 575 stereo stills)
   url: https://huggingface.co/datasets/lulinxuan/VR180
   use: Camera-native RAW source for stereo / immersive video processing and coding (CC BY-NC 4.0)

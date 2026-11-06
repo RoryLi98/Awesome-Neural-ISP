@@ -1,0 +1,101 @@
+architecture:
+  label:
+    en: Model / mechanism
+    zh-CN: 模型 / 机制
+  values:
+    cnn:
+      en: CNN
+      zh-CN: CNN
+    transformer:
+      en: Transformer
+      zh-CN: Transformer
+    ssm:
+      en: Mamba / SSM
+      zh-CN: Mamba / 状态空间
+    diffusion:
+      en: Diffusion
+      zh-CN: 扩散模型
+    flow:
+      en: Flow / flow matching
+      zh-CN: 流模型 / 流匹配
+    autoregressive:
+      en: Autoregressive
+      zh-CN: 自回归
+    implicit:
+      en: Implicit neural representation
+      zh-CN: 隐式神经表示
+    lut:
+      en: LUT / parametric rendering
+      zh-CN: LUT / 参数化渲染
+    classical:
+      en: Conventional / analytical
+      zh-CN: 传统 / 解析方法
+supervision:
+  label:
+    en: Training / optimization
+    zh-CN: 训练 / 优化
+  values:
+    paired:
+      en: Paired supervision
+      zh-CN: 配对监督
+    unpaired:
+      en: Unpaired
+      zh-CN: 非配对
+    self-supervised:
+      en: Self-supervised
+      zh-CN: 自监督
+    semi-supervised:
+      en: Semi-supervised
+      zh-CN: 半监督
+    few-shot:
+      en: Few-shot adaptation
+      zh-CN: 少样本适配
+    reinforcement:
+      en: Reinforcement learning
+      zh-CN: 强化学习
+signal:
+  label:
+    en: Signal / capture
+    zh-CN: 信号 / 采集
+  values:
+    raw-rgb:
+      en: RAW → RGB
+      zh-CN: RAW → RGB
+    rgb-raw:
+      en: RGB → RAW
+      zh-CN: RGB → RAW
+    raw-raw:
+      en: RAW → RAW
+      zh-CN: RAW → RAW
+    burst:
+      en: Burst / multi-exposure
+      zh-CN: 连拍 / 多曝光
+    video:
+      en: Video sequence
+      zh-CN: 视频序列
+    rgb:
+      en: Rendered RGB
+      zh-CN: 已渲染 RGB
+control:
+  label:
+    en: Control interface
+    zh-CN: 控制接口
+  values:
+    user-parameters:
+      en: User parameters
+      zh-CN: 用户参数
+    reference-style:
+      en: Reference / style
+      zh-CN: 参考 / 风格
+    modular:
+      en: Replaceable learned stages
+      zh-CN: 可替换学习模块
+    camera-conditioned:
+      en: Camera / capture conditioning
+      zh-CN: 相机 / 拍摄条件
+    text-guided:
+      en: Language guidance
+      zh-CN: 语言指导
+    automatic:
+      en: Automatic prediction / search
+      zh-CN: 自动预测 / 搜索

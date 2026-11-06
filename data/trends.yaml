@@ -1,33 +1,27 @@
-# Research threads shown in the README and on the interactive page.
-- title: From CNNs to generative ISPs
-  text: >-
-    CNNs dominated until 2023. Transformers and Mamba then entered low-light enhancement and demosaicing, and from
-    2025 diffusion and flow matching are used both for the forward ISP and for RGB-to-RAW.
-  examples: PyNET → LiteISPNet → ISPDiffuser · LDM-ISP · RAW-Flow · SpiralDiff
-- title: Training data is the bottleneck
-  text: >-
-    Phone RAW and DSLR sRGB are never perfectly aligned and differ in color. Responses moved from alignment-aware
-    losses to synthetic data and cross-camera RAW mapping; the 2025-2026 challenges switched to fully unpaired
-    training.
+- title: CNNs, attention and generative ISPs
+  text: The library includes pyramidal CNN pipelines, Transformer and state-space restoration, and diffusion, flow-matching
+    or autoregressive rendering/reconstruction. These families coexist and address different quality, training and deployment
+    constraints.
+  examples: PyNET · LiteISPNet · LDM-ISP · RAW-Flow · Retinex-RAWMamba · VAR-ISP
+- title: Learning with imperfect or missing pairs
+  text: Cross-camera RAW and RGB captures can differ in geometry and color. Alignment-aware losses, synthetic training
+    data and sensor-domain translation address different parts of this problem. MAI 2025 and NTIRE 2026 include explicit
+    unpaired smartphone-ISP settings.
   examples: LiteISPNet · Unprocessing · Day-to-Night · Rawformer · NTIRE 2026 Unpaired ISP
-- title: Feeding camera metadata to the network
-  text: >-
-    EXIF, ISO, color matrices and capture time are encoded explicitly for cross-camera generalization and
-    controllable rendering.
-  examples: ParamISP · MetaISP · CCMNet · Time-Aware AWB · PMRID k-Sigma
-- title: 'Deployment: from challenges to low-bit networks'
-  text: >-
-    The MAI challenges time submissions on phone NPUs, which produced compact designs such as MicroISP and PyNET-V2.
-    Explicit quantization and binarization work concentrates on RAW video and demosaicing.
-  examples: MAI 2021/2022/2025 · MicroISP · BRVE · BinRVR · BMTNet · RAWDet-7
-- title: ISPs that serve machines
-  text: >-
-    RAW detection datasets and methods grew quickly after 2023: jointly trained ISPs, reinforcement-learned ISP
-    sequences, and adapters that consume RAW directly.
-  examples: Dirty Pixels · AdaptiveISP · RAW-Adapter · TA-ISP · POS-ISP · RAWild
-- title: Controllable and modular again
-  text: >-
-    The Controllable Neural ISP category separates user editing and replaceable processing stages from
-    camera/style conditioning. Automatic parameter tuning and task-driven optimization remain distinct topics;
-    NILUT and edit-aware RAW reconstruction connect the category to color modules and inverse imaging.
-  examples: CtrlISP · Modular Neural ISP (SIGGRAPH Asia 2026) · ParamISP · MetaISP · Uni-ISP
+- title: Capture-aware conditioning
+  text: EXIF settings, device embeddings, calibrated color matrices and capture time provide different conditioning signals.
+    Their presence does not automatically imply exposed user editing controls.
+  examples: ParamISP · MetaISP · Uni-ISP · CRISPnet · CCMNet · Time-Aware AWB
+- title: Deployment depends on hardware
+  text: Mobile ISP challenges evaluate target-device execution, while compact and binarized designs also appear in denoising,
+    demosaicing and video. Parameter counts, quantization and measured latency answer different efficiency questions.
+  examples: MicroISP · PyNET-V2 Mobile · PMRID · BRVE · BinRVR · BMTNet
+- title: Imaging for perception and action
+  text: Task-driven rendering, direct RAW inference, learned pipeline selection and input adapters optimize information
+    for downstream models. Benchmarks span detection, segmentation, matching and robotic manipulation.
+  examples: Dirty Pixels · AdaptiveISP · RAW-Adapter · TA-ISP · POS-ISP · RawVLA
+- title: Different meanings of controllability
+  text: User parameters, reference-style adjustment, replaceable learned stages and camera conditioning are labeled separately
+    in the controllable collection. Color-only editing, inverse reconstruction and automatic tuning remain connected
+    through independent tags.
+  examples: CtrlISP · Modular Neural ISP · DRIFT · Deep-FlexISP · Neural Photo-Finishing · ParamISP

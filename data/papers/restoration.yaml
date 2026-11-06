@@ -1,0 +1,141 @@
+- name: R3 Bayer Deraining
+  title: 'R3: Reconstruction, Raw, and Rain: Deraining Directly in the Bayer Domain'
+  venue: WACV
+  year: 2026
+  paper: https://arxiv.org/abs/2509.24022
+  status: no-code
+  tldr: To avoid irreversible ISP mixing during deraining, reconstructs directly from Bayer mosaics before rendering;
+    introduces matched-bit-depth RAW/sRGB rainy captures and a color-invariant Information Conservation Score for evaluation.
+- name: DSDNet
+  title: 'DSDNet: Raw Domain Demoiréing via Dual Color-Space Synergy'
+  venue: ACM MM
+  year: 2025
+  paper: https://arxiv.org/abs/2504.15756
+  code: https://github.com/xxxxxxxxDSDNet/DSDNet-official
+  status: weights
+  weights:
+  - label: pre-train models (Google Drive)
+    url: https://drive.google.com/drive/folders/1hjJLFLX4pvBUxhPIvk6XCvCBLZNQIZ7N?usp=drive_link
+  - label: Mirror (Baidu, code ewnv)
+    url: https://pan.baidu.com/s/14_hywe6NE320qwFjwMJ31A
+  framework: PyTorch
+  tldr: To remove moiré while preserving color, fuses RAW and YCbCr streams with dynamically modulated synergic attention;
+    a luminance–chrominance adaptive Transformer separates brightness and color representations for more targeted correction.
+- name: FrENet
+  title: Efficient RAW Image Deblurring with Adaptive Frequency Modulation
+  venue: arXiv
+  year: 2025
+  paper: https://arxiv.org/abs/2505.24407
+  code: https://github.com/WenlongJiao/FrENet
+  status: code
+  framework: PyTorch
+  tldr: To deblur RAW efficiently, processes frequency-domain features and adaptively modulates components by spectral
+    position; targets RAW-to-RAW restoration while allowing the same design to extend to sRGB deblurring.
+  note: The README asks for pretrained models to be placed in checkpoints but gives no download link
+- name: RAW Reflection Removal
+  title: Removing Reflections from RAW Photos
+  venue: CVPR
+  year: 2025
+  paper: https://openaccess.thecvf.com/content/CVPR2025/html/Kee_Removing_Reflections_from_RAW_Photos_CVPR_2025_paper.html
+  status: no-code
+  tldr: To separate real reflections using linear image formation, trains on photometrically/geometrically simulated
+    RAW mixtures with optional opposite-view context; a low-resolution separation model and learned upsampler reconstruct
+    full-resolution layers.
+- name: RDDM
+  title: 'RDDM: Practicing RAW Domain Diffusion Model for Real-world Image Restoration'
+  venue: arXiv
+  year: 2025
+  paper: https://arxiv.org/abs/2508.19154
+  code: https://github.com/YanCHEN-fr/RDDM
+  status: coming-soon
+  tldr: To transfer diffusion restoration across RAW distributions, introduces a RAW VAE mapping into enhanced linear
+    images and configurable multi-Bayer LoRA; a scalable sRGB-to-RAW synthesis pipeline supplies low/high-quality training
+    pairs.
+  note: The repo currently contains only a README and images
+- name: Train on RAW & HDR
+  title: Training Neural Networks on RAW and HDR Images for Restoration Tasks
+  venue: CVPRW (NTIRE)
+  year: 2025
+  paper: https://arxiv.org/abs/2312.03640
+  status: no-code
+  tldr: To choose effective training representations for high-dynamic-range signals, compares linear-space losses with
+    PQ, PU21 and μ-law display encodings across denoising, deblurring and SR; identifies the benefit of perceptually
+    uniform encodings.
+- name: DREUDC
+  title: Panel-Specific Degradation Representation for Raw Under-Display Camera Image Restoration
+  venue: ECCV
+  year: 2024
+  paper: https://www.ecva.net/papers/eccv_2024/papers_ECCV/html/6479_ECCV_2024_paper.php
+  code: https://github.com/OBAKSA/DREUDC
+  status: weights
+  weights:
+  - label: Dataset + pretrained models (Google Drive)
+    url: https://drive.google.com/drive/folders/1k4RQQJhNNKa3J_XC0lI2XGojL8xWCUA9?usp=sharing
+  framework: PyTorch
+  tldr: To account for panel-dependent under-display degradation, learns implicit OLED-panel representations with unsupervised
+    triplet loss and conditions an efficient restoration Transformer on them; contributes aligned sensor-level real UDC
+    captures.
+- name: Efficient Blind RAW Restoration
+  title: Toward Efficient Deep Blind Raw Image Restoration
+  venue: ICIP
+  year: 2024
+  paper: https://arxiv.org/abs/2409.18204
+  code: https://github.com/mv-lab/AISP
+  status: code
+  tldr: To generalize blind restoration across cameras, simulates realistic sensor noise, motion blur and camera shake
+    in RAW and trains on multiple sensors; restores detail before nonlinear ISP processing complicates the degradations.
+- name: RRID
+  title: Image Demoireing in RAW and sRGB Domains
+  venue: ECCV
+  year: 2024
+  paper: https://arxiv.org/abs/2312.09063
+  code: https://github.com/rebeccaeexu/RRID
+  status: weights
+  weights:
+  - label: pre-trained model (Dropbox)
+    url: https://www.dropbox.com/scl/fo/wxhxlj6y064fbx4lrotcd/APoEwRwRT82LnW8wzDqvW24?rlkey=ghf505sfpkr8y9z5psourzpk6&st=enbcm5va&dl=0
+  framework: PyTorch
+  tldr: To exploit complementary moiré cues, jointly processes RAW and sRGB using gated-feedback and frequency-selection
+    skip modules; an RGB-guided learned ISP restores camera-dependent color after feature-level demoiréing.
+- name: RAW Rain Removal
+  title: End-to-end Rain Streak Removal with RAW Images
+  venue: arXiv
+  year: 2023
+  paper: https://arxiv.org/abs/2312.13304
+  status: no-code
+  tldr: To avoid ISP information loss before deraining, jointly learns rain removal and RAW processing; synthesizes rain
+    streaks in RAW space and tests transfer across cameras and rendering pipelines.
+- name: ISP-Agnostic UDC
+  title: ISP-Agnostic Image Reconstruction for Under-Display Cameras
+  venue: arXiv
+  year: 2021
+  paper: https://arxiv.org/abs/2111.01511
+  status: no-code
+  tldr: To restore under-display images without fixing their appearance, operates before the legacy ISP and preserves
+    its rendering freedom; uses an HDR-monitor capture/augmentation protocol to obtain diverse high-contrast real training
+    data.
+- name: Raw Image Deblurring
+  title: Raw Image Deblurring
+  venue: IEEE TMM
+  year: 2020
+  paper: https://arxiv.org/abs/2012.04264
+  status: no-code
+  tldr: To study deblurring before nonlinear rendering, introduces paired RAW/processed Deblur-RAW data and a RAW-oriented
+    restoration network; evaluates sensor transfer and the benefit of RAW training for existing models.
+- name: DiR
+  title: Learning Degradation-Independent Representations for Camera ISP Pipelines
+  venue: CVPR
+  year: 2024
+  paper: https://openaccess.thecvf.com/content/CVPR2024/html/Guo_Learning_Degradation-Independent_Representations_for_Camera_ISP_Pipelines_CVPR_2024_paper.html
+  status: no-code
+  tldr: To generalize across compounded sensor and ISP degradations, refines a self-supervised baseline into degradation-independent
+    representations; the learned features transfer to blind restoration, detection and instance segmentation under unfamiliar
+    imaging conditions.
+- name: Contrastive Subspace ISP
+  title: Deep Contrastive Patch-Based Subspace Learning for Camera Image Signal Processing
+  venue: IEEE AIC
+  year: 2023
+  paper: https://arxiv.org/abs/2104.00253
+  status: no-code
+  tldr: To handle spatially heterogeneous artifacts, PSL-AE contrastively embeds noisy/clean patches into local subspaces
+    and trains cluster-specific decoders; replaces a uniform full-image filter with patch-dependent reconstruction.

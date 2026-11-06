@@ -2,13 +2,15 @@
 
 [English index](../README.md) · [中文目录](../README.zh-CN.md)
 
+Later revision / 后续修订：**2026-11-05** — [419 bilingual summaries, official titles and compact layout / 419 篇双语总结、正式标题与紧凑排版](summary-revision-2026-11-05.md). One additional official code repository was verified; the current public-code count is **206**. / 新核实一项官方代码，当前公开代码总数为 **206**。
+
 This refresh adds **4 papers**, moves **9 existing entries** without duplication, and corrects publication metadata.
-The library now contains **419 papers, 205 with public code, 132 with pretrained weights, and 29 datasets**.
+At the time, the catalog counted **419 entries, 205 with public code, 132 with pretrained weights, and 29 datasets**. The later [classification audit](classification-2026-11-05.md) corrects publication deduplication and third-party weight counting.
 It is a targeted literature refresh, not a fresh audit of every existing download link.
 `literature_updated` is **2026-10-28**; the last full code/weight audit (`checked`) remains **2026-10-11**.
 
 本次新增 **4 篇论文**，重新归类 **9 条已有记录**，并修订部分出版信息，没有重复计数。
-目录现包含 **419 篇论文、205 项公开代码、132 项预训练权重与 29 个数据集**。
+当时目录统计为 **419 条记录、205 项公开代码、132 项预训练权重与 29 个数据集**；后续[分类复核](classification-2026-11-05.zh-CN.md)修正文献去重与第三方权重计数。
 这是针对近期文献与分类的更新；没有将全部旧链接的核验日期改成今天。
 文献更新日期为 **2026-10-28**，最近一次全面代码／权重核验日期仍为 **2026-10-11**。
 

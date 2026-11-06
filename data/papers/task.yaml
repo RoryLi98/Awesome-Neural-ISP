@@ -1,18 +1,19 @@
-# task: one entry per paper; see CONTRIBUTING.md for the schema
 - name: Beyond Bayer
   title: 'Beyond Bayer: Task-Optimal Sensor Co-Design for Robust Autonomous-Driving Segmentation'
   venue: arXiv
   year: 2026
   paper: https://arxiv.org/abs/2606.24096
   status: no-code
-  tldr: Jointly optimizes CFA design and a segmentation network to find a task-optimal sensor for autonomous-driving segmentation.
+  tldr: To optimize camera measurements for driving segmentation, differentiates a RAW-to-task pipeline through CFA and
+    optics; controlled comparisons favor learned 2×2 CFA weights while retaining an identity PSF under the studied simulation.
 - name: FreqAdapt
   title: 'FreqAdapt: Frequency-Adaptive Processing for RAW Object Detection'
   venue: arXiv
   year: 2026
   paper: https://arxiv.org/abs/2608.03385
   status: no-code
-  tldr: Frequency-adaptive preprocessing for RAW object detection.
+  tldr: To adapt RAW for detection efficiently, jointly encodes Fourier amplitude, phase and spatial features to predict
+    ISP parameters; learnable frequency-aware fusion enhances task-relevant detail before the detector.
 - name: RAWDet-7
   title: 'RAWDet-7: A Multi-Scenario Benchmark for Object Detection and Description on Quantized RAW Images'
   venue: TMLR
@@ -20,7 +21,9 @@
   paper: https://arxiv.org/abs/2602.03760
   code: https://github.com/Mishalfatima/RawDet-7
   status: code
-  tldr: Benchmark for object detection and description on quantized RAW images, including low-bit RAW inputs.
+  tldr: To measure detection under RAW quantization, provides multicamera/multilight RAW data annotated for seven categories
+    plus object descriptions derived from high-resolution sRGB; supports evaluation of information loss at reduced bit
+    depth.
   note: Benchmark code based on MMDetection
 - name: RAWild
   title: 'RAWild: Sensor-Agnostic RAW Object Detection via Physics-Guided Curve and Grid Modeling'
@@ -33,14 +36,17 @@
   - label: Checkpoints Det/Seg (Google Drive)
     url: https://drive.google.com/drive/folders/1gJlPLMO7Ty0XszLQTJkoZUIxeqbOwKqd?usp=sharing
   framework: PyTorch
-  tldr: Lightweight adapter using per-image Bezier tone curves and bilateral-grid color transforms for sensor-agnostic RAW perception.
+  tldr: To generalize detection across sensors, combines global Bézier tone correction with local bilateral-grid color
+    adjustment driven by RAW statistics; physics-based simulation varies spectra, illumination and sensor nonidealities
+    during training.
 - name: RawVLA
   title: 'RawVLA: Embodied Neural Image Signal Processor For Robotic Manipulation'
   venue: arXiv
   year: 2026
   paper: https://arxiv.org/abs/2609.37530
   status: no-code
-  tldr: Learns a neural ISP that processes RAW directly for robotic vision-language-action (VLA) policies.
+  tldr: To make imaging serve robotic action, trains a streaming neural ISP for frozen vision-language-action policies
+    after analyzing gain, noise, color, tone and bit depth; contributes RawVLA-Bench under clean/adverse capture conditions.
 - name: SimROD
   title: 'SimROD: A Simple Baseline for Raw Object Detection with Global and Local Enhancements'
   venue: AAAI
@@ -54,14 +60,18 @@
   - label: all weights (Google Drive)
     url: https://drive.google.com/file/d/1zoT8VOwrtebnmDEtXfdQQeRvkVNoXOIx/view?usp=sharing
   framework: PyTorch
-  tldr: Simple RAW detection baseline combining global gamma enhancement with green-channel-based local detail enhancement.
+  tldr: To adapt detectors to RAW cheaply, learns a four-parameter global gamma transform and green-channel-guided local
+    enhancement; combines global dynamic-range adjustment with Bayer-aware detail cues.
 - name: Synthetic RAW Aug (Person Det)
-  title: 'Making the Discrete Continuous: Synthetic RAW Augmentations for Fine-Grained Evaluation of Person Detection Performance in Low Light'
+  title: 'Making the Discrete Continuous: Synthetic RAW Augmentations for Fine-Grained Evaluation of Person Detection
+    Performance in Low Light'
   venue: CVPRW
   year: 2026
   paper: https://arxiv.org/abs/2605.22455
   status: no-code
-  tldr: Synthesizes continuously varying low-light levels in the RAW domain for fine-grained evaluation of person detection degradation.
+  tldr: To evaluate pedestrian detection continuously across illumination, synthesizes RAW low-light augmentations matched
+    to the sensor-noise model; fills sparse benchmark lighting levels and compares synthetic versus real performance
+    trends.
 - name: TA-ISP
   title: Task-Aware Image Signal Processor for Advanced Visual Perception
   venue: CVPR
@@ -73,14 +83,17 @@
   - label: pretrained models (GitHub Release v0.0)
     url: https://github.com/CVL-UESTC/TA-ISP/releases/tag/v0.0
   framework: PyTorch (mmdet/mmseg)
-  tldr: Lightweight task-aware ISP that predicts multi-scale modulation operators to adapt RAW input to downstream detection/segmentation.
+  tldr: To avoid a heavy neural renderer or rigid parameter tuning, predicts multiscale modulation operators in a compact
+    RAW-to-RGB adapter; optimizes representations for pretrained detection/segmentation models across day and night.
 - name: UniISP
   title: 'UniISP: A Unified ISP Framework for Both Human and Machine Vision'
   venue: arXiv
   year: 2026
   paper: https://arxiv.org/abs/2605.07359
   status: no-code
-  tldr: A single ISP that serves both human viewing and downstream vision tasks.
+  tldr: To serve viewing and perception together, uses hybrid attention for visually supervised ISP rendering and a feature
+    adapter that passes informative intermediate features to downstream networks; shares processing while preserving
+    task cues.
 - name: AODRaw
   title: Towards RAW Object Detection in Diverse Conditions
   venue: CVPR
@@ -88,7 +101,8 @@
   paper: https://arxiv.org/abs/2411.15678
   code: https://github.com/lzyhha/AODRaw
   status: code
-  tldr: AODRaw, a RAW detection dataset spanning diverse weather and lighting (7785 images at 6000×4000), plus a study of RAW-domain pretraining.
+  tldr: To evaluate RAW detection in diverse weather/light, contributes 7,785 images with 62 categories and studies direct
+    RAW pretraining; distills sRGB-model knowledge to reduce the pretraining domain gap without extra preprocessing modules.
   note: The README mainly covers dataset downloads (Baidu/TeraBox)
 - name: APP (Beyond RGB)
   title: 'Beyond RGB: Adaptive Parallel Processing for RAW Object Detection'
@@ -96,15 +110,18 @@
   year: 2025
   paper: https://arxiv.org/abs/2503.13163
   status: no-code
-  tldr: Parallel multi-branch RAW processing whose outputs are adaptively fused before being fed to the detector.
+  tldr: To replace viewing-oriented ISP for detection, learns adaptive parallel RAW-processing branches and fuses their
+    outputs through a task-optimized Raw Adaptation Module; exposes complementary representations to the detector.
 - name: Bayer-Domain Video CV
   title: Efficient Bayer-Domain Video Computer Vision with Fast Motion Estimation and Learned Perception Residual
   venue: arXiv
   year: 2025
   paper: https://arxiv.org/abs/2508.05990
   status: no-code
-  tldr: Skips the ISP to run video vision tasks directly in the Bayer domain, using fast motion estimation to reuse computation across adjacent frames.
-  note: 'Related work from the same group: Leveraging Motion Estimation for Efficient Bayer-Domain Computer Vision (arXiv 2501.15119).'
+  tldr: To remove redundant video perception compute, feeds Bayer directly into task models and propagates features with
+    fast parallel motion estimation; a learned perception residual corrects motion-induced feature errors.
+  note: 'Related work from the same group: Leveraging Motion Estimation for Efficient Bayer-Domain Computer Vision (arXiv
+    2501.15119).'
 - name: Dark-ISP
   title: 'Dark-ISP: Enhancing RAW Image Processing for Low-Light Object Detection'
   venue: ICCV
@@ -116,7 +133,8 @@
   - label: checkpoint (Baidu, code 2025)
     url: https://pan.baidu.com/s/1i9xUtQFjoFxC5mIbxJcq9A?pwd=2025
   framework: PyTorch (mmdet)
-  tldr: Splits the traditional ISP into differentiable linear/nonlinear submodules optimized jointly with the detector for low-light RAW.
+  tldr: To align low-light rendering with detection, makes linear calibration and nonlinear tone stages differentiable
+    and content-adaptive; physics-informed priors and a self-boost mechanism coordinate stages during task-driven training.
   note: README also has a Google Drive link; describes itself as the official implementation
 - name: HDR Tone Mapping for Detection
   title: Real-Time Scene-Adaptive Tone Mapping for High-Dynamic Range Object Detection
@@ -130,14 +148,16 @@
     url: https://github.com/MEYE66/Real-Time-Scene-Adaptive-Tone-Mapping-for-High-Dynamic-Range-Object-Detection/tree/HEAD/pretrained_model
   - label: Full model incl. detector (Google Drive)
     url: https://drive.google.com/drive/folders/1NVflxRPlnr1naFMG_EXgVjm1M85G9Jmm?usp=sharing
-  tldr: Real-time scene-adaptive tone mapping optimized for object detection performance.
+  tldr: To feed HDR RAW into LDR-pretrained detectors, combines neural photometric calibration and scale-invariant local
+    tone mapping; task-driven fine-tuning transfers detection while preserving details within real-time Jetson constraints.
 - name: RAW Keypoints
   title: Keypoint Detection and Description for Raw Bayer Images
   venue: arXiv
   year: 2025
   paper: https://arxiv.org/abs/2503.08673
   status: no-code
-  tldr: Keypoint detection and description performed directly on Bayer RAW images.
+  tldr: To avoid full ISP for robotic local features, designs two RAW convolution kernels preserving interchannel information;
+    jointly learns Bayer keypoints/descriptors and evaluates robustness to rotation and scale changes.
 - name: RAW-Bench
   title: 'RAW-Adapter: Adapting Pre-trained Visual Model to Camera RAW Images and A Benchmark'
   venue: arXiv
@@ -145,7 +165,8 @@
   paper: https://arxiv.org/abs/2503.17027
   code: https://github.com/cuiziteng/ECCV_RAW_Adapter
   status: code
-  tldr: Extended version of RAW-Adapter that introduces RAW-Bench, covering 17 RAW-domain degradations.
+  tldr: To test RAW-domain robustness, extends learnable ISP input adapters and model-level adaptation with 17 sensor-domain
+    corruptions and RAW augmentation; evaluates pretrained visual models under imaging and environmental shifts.
   note: RAW-Bench is marked "coming soon".
 - name: SFA RAW Detection
   title: Spatial-Frequency Aware for Object Detection in RAW Image
@@ -153,7 +174,8 @@
   year: 2025
   paper: https://arxiv.org/abs/2508.01396
   status: no-code
-  tldr: Spatial-frequency-aware object detection on RAW images.
+  tldr: To expose frequency cues to detection without opaque spectral manipulation, inverse-transforms separate frequency
+    bands into spatial maps; fuses these with spatial features for contour- and texture-aware RAW enhancement.
 - name: γ-Quant
   title: 'γ-Quant: Towards Learnable Quantization for Low-bit Pattern Recognition'
   venue: GCPR
@@ -161,7 +183,8 @@
   paper: https://arxiv.org/abs/2509.22448
   code: https://github.com/Mishalfatima/Gamma-Quant
   status: code
-  tldr: Learns non-linear low-bit quantization curves directly on RAW sensor data for recognition, replacing the ISP.
+  tldr: To retain recognition accuracy with low sensor bandwidth, learns task-specific nonlinear quantization rather
+    than fixed uniform levels; demonstrates RAW detection using four-bit measurements against a twelve-bit reference.
   note: Only the inertial-sensor part is released so far; vision experiment code is "coming later".
 - name: AdaptiveISP
   title: 'AdaptiveISP: Learning an Adaptive Image Signal Processor for Object Detection'
@@ -178,20 +201,24 @@
   - label: yolov3.pt (Release)
     url: https://github.com/OpenImagingLab/AdaptiveISP/releases/download/v1.0/yolov3.pt
   framework: PyTorch
-  tldr: Uses reinforcement learning to choose an ISP module sequence and parameters per image, with detection accuracy as the reward.
-  note: In the README the text labels of the two ckpts are swapped relative to their file names; tell them apart by file name after downloading
+  tldr: To adapt processing structure and settings per scene, trains a reinforcement-learning policy to choose ISP modules
+    and parameters using detection rewards; jointly optimizes the pipeline rather than a fixed viewing-quality objective.
+  note: In the README the text labels of the two ckpts are swapped relative to their file names; tell them apart by file
+    name after downloading
 - name: ISP-Teacher
-  title: 'ISP-Teacher: Image Signal Process with Disentanglement Regularization for Unsupervised Domain Adaptive Dark Object Detection'
+  title: 'ISP-Teacher: Image Signal Process with Disentanglement Regularization for Unsupervised Domain Adaptive Dark
+    Object Detection'
   venue: AAAI
   year: 2024
-  paper: https://github.com/zhangyin1996/ISP-Teacher
+  paper: https://doi.org/10.1609/aaai.v38i7.28569
   code: https://github.com/zhangyin1996/ISP-Teacher
   status: weights
   weights:
   - label: BDD100k pretrained models (Baidu, code 1234)
     url: https://pan.baidu.com/s/1vYYKX9BdlQIHY-Y7E9n5nA?pwd=1234
   framework: PyTorch
-  tldr: ISP-guided teacher-student framework for unsupervised domain-adaptive detection from daytime to nighttime.
+  tldr: To adapt daytime detection to unlabeled dark scenes, uses ISP-guided teacher–student learning with disentanglement
+    regularization; couples imaging transformations and domain adaptation rather than requiring target detection labels.
   note: Published in the AAAI 2024 proceedings (no arXiv version); README also has a Google Drive mirror
 - name: RAW-Adapter
   title: 'RAW-Adapter: Adapting Pre-trained Visual Model to Camera RAW Images'
@@ -201,7 +228,8 @@
   code: https://github.com/cuiziteng/ECCV_RAW_Adapter
   status: code
   framework: PyTorch (mmdet/mmseg)
-  tldr: Input-level and model-level adapters that let sRGB-pretrained detection/segmentation models take RAW input directly.
+  tldr: To reuse sRGB-pretrained detection/segmentation, learns ISP-based input adapters and intermediate model adapters
+    for RAW; adjusts both the rendered input distribution and task-network features during adaptation.
   note: No weights in the README; extended version RAW-Bench at arXiv 2503.17027
 - name: ρ-Vision
   title: Efficient Visual Computing with Camera RAW Snapshots
@@ -214,7 +242,8 @@
   - label: pretrained model (NJU Box)
     url: https://box.nju.edu.cn/f/d1e199cd5ada49b88ad9/
   framework: PyTorch
-  tldr: Unpaired RAW↔RGB translation (CycleR2R) lets vision models train and deploy directly on RAW, removing the ISP.
+  tldr: To train ISP-free vision despite scarce RAW data, CycleR2R learns unpaired modular RAW/RGB mappings with a CycleGAN
+    objective; simulated RAW adapts existing detectors and compression models to sensor measurements.
   note: The MultiRAW dataset is also on NJU Box.
 - name: DynamicISP
   title: 'DynamicISP: Dynamically Controlled Image Signal Processor for Image Recognition'
@@ -222,21 +251,24 @@
   year: 2023
   paper: https://arxiv.org/abs/2211.01146
   status: no-code
-  tldr: Dynamically adjusts the parameters of a traditional ISP based on the recognition results of the previous frame.
+  tldr: To keep task-aware processing light, controls classical ISP parameters for each frame using the previous frame's
+    recognition result; gains adaptivity without replacing every stage with a large neural renderer.
 - name: Fully-Quantized Face Detector
   title: Fully Quantized Always-on Face Detector Considering Mobile Image Sensors
   venue: ICCVW (LBQNN)
   year: 2023
   paper: https://arxiv.org/abs/2311.01001
   status: no-code
-  tldr: Fully quantized always-on face detector designed around mobile image sensor output characteristics, studying low-bit sensor input.
+  tldr: To enable always-on sensing inside image sensors, uses sensor-aware synthetic RAW with a shallow face detector
+    and ternary weights; evaluates low-bit processing before ISP under tight compute and bandwidth constraints.
 - name: ISP-less CV
   title: Enabling ISP-less Low-Power Computer Vision
   venue: WACV
   year: 2023
   paper: https://arxiv.org/abs/2210.05451
   status: no-code
-  tldr: Removes the ISP and runs computer vision directly on RAW to reduce energy consumption.
+  tldr: To train low-power vision without an ISP, inverts existing RGB datasets into RAW and combines direct RAW inference
+    with analog in-pixel demosaicing; contributes RAW COCO and evaluates accuracy/energy/bandwidth trade-offs.
 - name: LIS
   title: Instance Segmentation in the Dark
   venue: IJCV
@@ -248,7 +280,8 @@
   - label: Mask R-CNN and other models (Baidu)
     url: https://pan.baidu.com/s/16GdAxJ7GX3I9v8Mtm2xpIQ
   framework: PyTorch
-  tldr: Low-light RAW instance segmentation with adaptive downsampling, smoothed denoising features and the LIS dataset.
+  tldr: To suppress noise in low-light segmentation features, uses adaptive weighted downsampling, smooth-oriented convolution
+    and disturbance-suppression learning; contributes synthetic RAW augmentation and over 2,000 annotated paired captures.
   note: The README table links models for multiple backbones
 - name: RAOD / ROD
   title: 'Toward RAW Object Detection: A New Benchmark and A New Model'
@@ -257,7 +290,8 @@
   paper: https://openaccess.thecvf.com/content/CVPR2023/html/Xu_Toward_RAW_Object_Detection_A_New_Benchmark_and_a_New_CVPR_2023_paper.html
   code: https://github.com/CVL-UESTC/TA-ISP/tree/main/RAOD
   status: code
-  tldr: Introduces ROD, a 24-bit high-dynamic-range RAW detection dataset, together with a learnable RAW preprocessing module.
+  tldr: To exploit HDR sensor information for detection, introduces the ROD RAW benchmark and learns image-adaptive dynamic-range
+    adjustment jointly with a detector; analyzes effects of texture and pixel distributions.
   note: RAOD code is distributed with the TA-ISP repo (with a Huawei third-party notice); ROD data on Baidu, code udqg
 - name: Raw Instinct
   title: 'Raw Instinct: Trust Your Classifiers and Skip the Conversion'
@@ -265,7 +299,8 @@
   year: 2023
   paper: https://arxiv.org/abs/2403.14439
   status: no-code
-  tldr: Trains classifiers directly on RAW images and compares their accuracy when the ISP conversion is skipped.
+  tldr: To test whether RGB conversion is necessary for classification, trains two CNNs on paired RAW/RGB captures and
+    compares accuracy and total latency; contributes a dataset for direct sensor-domain recognition.
   note: Dataset released on Kaggle (raw-instinct).
 - name: Raw or Cooked
   title: Raw or Cooked? Object Detection on RAW Images
@@ -273,28 +308,32 @@
   year: 2023
   paper: https://arxiv.org/abs/2301.08965
   status: no-code
-  tldr: Compares RAW images and ISP-processed images as inputs for object detection.
+  tldr: To align preprocessing with detection rather than viewing, jointly learns RAW-processing operations and detector
+    weights; compares the learned pipeline against conventional RGB and earlier RAW methods on PASCALRAW.
 - name: Rawgment
   title: 'Rawgment: Noise-Accounted RAW Augmentation Enables Recognition in a Wide Variety of Environments'
   venue: CVPR
   year: 2023
   paper: https://openaccess.thecvf.com/content/CVPR2023/html/Yoshimura_Rawgment_Noise-Accounted_RAW_Augmentation_Enables_Recognition_in_a_Wide_Variety_CVPR_2023_paper.html
   status: no-code
-  tldr: Noise-accounted data augmentation in the RAW domain that makes recognition more robust across varied lighting conditions.
+  tldr: To improve recognition under unseen capture conditions, augments in RAW with explicit noise accounting and aligns
+    noise magnitude after augmentation; reduces the sensor-noise domain gap without collecting every environment.
 - name: Shadow Detection in RAW
   title: Adaptive Illumination Mapping for Shadow Detection in Raw Images
   venue: ICCV
   year: 2023
   paper: https://openaccess.thecvf.com/content/ICCV2023/html/Sun_Adaptive_Illumination_Mapping_for_Shadow_Detection_in_Raw_Images_ICCV_2023_paper.html
   status: no-code
-  tldr: Shadow detection on RAW images using adaptive illumination mapping.
+  tldr: To retain both local and global contrast, maps high-dynamic-range RAW into multiple illumination ranges with
+    an adaptive module; shadow-aware feedback trains the mapping alongside detection using a 7,000-image RAW benchmark.
 - name: All You Need is RAW
   title: 'All You Need is RAW: Defending Against Adversarial Attacks with Camera Image Pipelines'
   venue: ECCV
   year: 2022
   paper: https://arxiv.org/abs/2112.09219
   status: no-code
-  tldr: Defends against adversarial attacks by mapping images back to RAW and re-running them through an ISP.
+  tldr: To remove adversarial patterns without attack-specific training, projects RGB into learned Bayer RAW and back
+    through a camera pipeline; uses the RAW distribution as a model-agnostic preprocessing prior.
 - name: GenISP
   title: 'GenISP: Neural ISP for Low-Light Machine Cognition'
   venue: CVPRW (NTIRE)
@@ -302,7 +341,8 @@
   paper: https://arxiv.org/abs/2205.03688
   code: https://github.com/Capsar/DL-GenISP
   status: unofficial
-  tldr: Minimal neural ISP for low-light detection that first applies a device-agnostic color space conversion; releases the RAW-NOD dataset.
+  tldr: To generalize low-light detection across sensors, first transforms RAW into device-independent color, then predicts
+    two stages of global color parameters; trains with a frozen detector and contributes annotated RAW-NOD data.
   note: Third-party reimplementation; dataset at igor-morawski/RAW-NOD
 - name: IA-YOLO
   title: Image-Adaptive YOLO for Object Detection in Adverse Weather Conditions
@@ -317,14 +357,16 @@
   - label: Mirror (Baidu, code iayl)
     url: https://pan.baidu.com/s/1GQE_80rEzs0uCrzauHxwdw
   framework: TensorFlow
-  tldr: A small network predicts differentiable ISP filter parameters and is trained jointly with YOLO to handle fog and low light.
+  tldr: To adapt detection to fog and darkness, a small CNN predicts differentiable image-filter parameters and trains
+    jointly with YOLOv3; learns per-image enhancement from detection feedback instead of clean-image targets.
 - name: Log-Gradient Input
   title: Improving the Energy Efficiency and Robustness of tinyML Computer Vision using Log-Gradient Input Images
   venue: arXiv
   year: 2022
   paper: https://arxiv.org/abs/2203.02571
   status: no-code
-  tldr: Uses log-gradient images instead of ISP-processed images as tinyML input, allowing lower bit widths.
+  tldr: To reduce tinyML input bandwidth and illumination sensitivity, feeds quantized log-gradient images to CNNs; evaluates
+    aggressive first-layer quantization, pruning potential and recognition stability across exposure changes.
 - name: Dirty Pixels
   title: 'Dirty Pixels: Towards End-to-End Image Processing and Perception'
   venue: ACM TOG
@@ -336,7 +378,9 @@
   - label: 'README: code, data and trained models'
     url: https://github.com/princeton-computational-imaging/DirtyPixels
   framework: TensorFlow
-  tldr: Trains the ISP jointly end to end with classification/detection networks, outperforming separate optimization in low-light and noisy scenes.
+  tldr: To optimize imaging for recognition, jointly trains differentiable demosaicing, denoising, deblurring, tone mapping
+    and classification; replaces isolated perceptual tuning with downstream task supervision on simulated and captured
+    data.
   note: MIT License
 - name: ISP Distillation
   title: ISP Distillation
@@ -344,14 +388,17 @@
   year: 2021
   paper: https://arxiv.org/abs/2101.10203
   status: no-code
-  tldr: Distills an RGB model into a RAW-input model so that the ISP can be skipped.
+  tldr: To skip ISP without losing pretrained recognition knowledge, distills predictions from an RGB teacher into a
+    RAW-input student using unlabeled paired captures; adapts the input domain without new human annotations.
 - name: Lightweight HDR ISP
-  title: Lightweight HDR Camera ISP for Robust Perception in Dynamic Illumination Conditions via Fourier Adversarial Networks
+  title: Lightweight HDR Camera ISP for Robust Perception in Dynamic Illumination Conditions via Fourier Adversarial
+    Networks
   venue: BMVC
   year: 2021
   paper: https://arxiv.org/abs/2204.01795
   status: no-code
-  tldr: A lightweight HDR camera ISP designed for perception tasks.
+  tldr: To maintain perception across illumination, sequentially balances light and removes noise using frequency priors;
+    Fourier-spectrum adversarial learning regularizes a compact CNN and evaluates detection/segmentation effects.
 - name: LOD
   title: Crafting Object Detection in Very Low Light
   venue: BMVC
@@ -359,7 +406,8 @@
   paper: https://github.com/ying-fu/LODDataset
   code: https://github.com/ying-fu/LODDataset
   status: code
-  tldr: LOD, a paired low-light / normal-light RAW detection dataset, plus a study of how RAW preprocessing affects detection.
+  tldr: To study detection in very low light, captures paired low-/normal-light RAW images with object annotations and
+    evaluates sensor-domain processing; provides a benchmark linking illumination restoration choices to detector performance.
   note: Dataset repo (Baidu, code 2021); AdaptiveISP and others provide curated versions.
 - name: MAET
   title: Multitask AET with Orthogonal Tangent Regularity for Dark Object Detection
@@ -374,7 +422,9 @@
   - label: MAET-EXDark (Google Drive)
     url: https://drive.google.com/file/d/1XCP4IgW579WlGljegDCjYpQA0V3vq7-E/view?usp=sharing
   framework: PyTorch (mmdet)
-  tldr: Synthesizes low-light degradation with a physical ISP model and learns dark-object detection features via multi-task auto-encoding transformation.
+  tldr: To separate object content from illumination degradation, jointly learns detection and auto-encoding transformations
+    with orthogonal tangent regularization; uses synthetic low-light formation to train from ordinary labeled detection
+    datasets.
   note: Baidu mirror, code 1234.
 - name: Matching in the Dark
   title: 'Matching in the Dark: A Dataset for Matching Image Pairs of Low-light Scenes'
@@ -383,7 +433,8 @@
   paper: https://arxiv.org/abs/2109.03585
   code: https://github.com/Wenzhengchina/Matching-in-the-Dark
   status: code
-  tldr: Feature-matching dataset of low-light RAW image pairs.
+  tldr: To benchmark local matching under extreme darkness, provides paired RAW scenes in MID and compares eight enhancement
+    methods with eleven matching pipelines; studies whether preserved sensor precision improves feature correspondence.
   note: The repo provides only the MID dataset (Google Drive, about 460GB); no models.
 - name: Optical Flow in the Dark
   title: Optical Flow in the Dark
@@ -391,21 +442,24 @@
   year: 2020
   paper: https://openaccess.thecvf.com/content_CVPR_2020/html/Zheng_Optical_Flow_in_the_Dark_CVPR_2020_paper.html
   status: no-code
-  tldr: Synthesizes low-light RAW training data to study optical flow estimation under extremely dark conditions.
+  tldr: To avoid enhancement breaking motion consistency, trains optical flow directly on noisy low-light images using
+    physically synthesized RAW noise; contributes a real RAW benchmark spanning exposure levels.
 - name: ISP4ML
   title: 'ISP4ML: Understanding the Role of Image Signal Processing in Efficient Deep Learning Vision Systems'
   venue: arXiv
   year: 2019
   paper: https://arxiv.org/abs/1911.07954
   status: no-code
-  tldr: Quantitatively analyzes how each ISP module affects downstream DNN accuracy and energy consumption.
+  tldr: To quantify which imaging stages matter to classification, simulates a configurable sensor/ISP and trains ImageNet
+    CNNs across pipeline settings; measures accuracy against processing cost to guide efficient vision design.
 - name: Reconfiguring Pipeline
   title: Reconfiguring the Imaging Pipeline for Computer Vision
   venue: ICCV
   year: 2017
   paper: https://arxiv.org/abs/1705.04352
   status: no-code
-  tldr: Analyzes which ISP stages are necessary for vision tasks and proposes a simplified low-power pipeline.
+  tldr: To save vision-system energy, tests eight algorithms with reversible imaging simulation and proposes configurable
+    photography/vision modes; adjustable resolution and ADC precision enable an ISP-free low-power sensor configuration.
 - name: POS-ISP
   title: 'POS-ISP: Pipeline Optimization at the Sequence Level for Task-aware ISP'
   venue: CVPR Findings
@@ -417,4 +471,5 @@
   - label: 'weights/*.pth (in repo: LOD / LIS / KITTI)'
     url: https://github.com/w1jyun/POS-ISP/tree/main/weights
   framework: PyTorch
-  tldr: Predicts the entire ISP module sequence and all its parameters in a single forward pass, optimized with downstream task rewards.
+  tldr: To avoid repeated sequential pipeline execution during search, predicts the full ISP module sequence and parameters
+    in one pass; sequence-level reinforcement learning uses only terminal task rewards without intermediate supervision.

@@ -1,4 +1,47 @@
-# burst: one entry per paper; see CONTRIBUTING.md for the schema
+- name: DRIFT
+  title: 'DRIFT: Deep Restoration, ISP Fusion, and Tone-mapping'
+  venue: CVPRW (NTIRE)
+  year: 2026
+  paper: https://openaccess.thecvf.com/content/CVPR2026W/NTIRE/html/Majee_DRIFT_Deep_Restoration_ISP_Fusion_and_Tone-mapping_CVPRW_2026_paper.html
+  status: no-code
+  tldr: To combine mobile multi-frame restoration with controllable tone rendering, a perceptually trained MFP network
+    aligns, denoises, demosaics and super-resolves RAW bursts; a separate tone-mapping network provides reference-consistent,
+    tunable high-resolution output.
+- name: CoDISP
+  title: 'CoDISP: Exploring Compressed Domain Camera ISP with RGB-guided Encoder'
+  venue: CVPRW (MAI)
+  year: 2024
+  paper: https://openaccess.thecvf.com/content/CVPR2024W/MAI/html/Zhang_CoDISP_Exploring_Compressed_Domain_Camera_ISP_with_RGB-guided_Encoder_CVPRW_2024_paper.html
+  status: no-code
+  tldr: To reduce high-resolution multi-frame memory traffic, transfers RAW into a learned RGB-compression latent space;
+    performs registration, denoising and demosaicing in that compact domain while retaining semantic and high-frequency
+    information.
+- name: RawMetaDiff
+  title: 'RawMetaDiff: Unlocking Extreme Darkness from Dual-Exposure RAW with Meta-Guided Diffusion'
+  venue: CVPR
+  year: 2026
+  paper: https://openaccess.thecvf.com/content/CVPR2026/html/Liu_RawMetaDiff_Unlocking_Extreme_Darkness_from_Dual-Exposure_RAW_with_Meta-Guided_Diffusion_CVPR_2026_paper.html
+  status: no-code
+  tldr: 'To fuse misaligned dual exposures in extreme darkness, conditions diffusion on RAW metadata: channel-wise color
+    transfer aligns global statistics and metadata-normalized cross-attention restores shadow detail; contributes the
+    1K DERaw dataset.'
+- name: Burst Dark Enhancement
+  title: Burst Photography for Learning to Enhance Extremely Dark Images
+  venue: IEEE TIP
+  year: 2021
+  paper: https://arxiv.org/abs/2006.09845
+  status: no-code
+  tldr: To recover detail from extremely dark bursts, first predicts low-resolution clean RAW, then refines textures
+    in a fine network; permutation-invariant feature fusion combines multiple frames without depending on their input
+    order.
+- name: Short/Long Raw Pairs
+  title: Low-light Image Restoration with Short- and Long-exposure Raw Pairs
+  venue: arXiv
+  year: 2020
+  paper: https://arxiv.org/abs/2007.00199
+  status: no-code
+  tldr: To combine sharp but noisy short exposure with clean but blurred long exposure, synthesizes realistic paired
+    RAW degradations and trains LSFNet for alignment-aware fusion; jointly handles motion blur, noise and color distortion.
 - name: BRACE
   title: 'Bricker to BRACE: A Bracket Exposure RAW Dataset and Restoration Model for Flicker-Banding'
   venue: arXiv
@@ -6,7 +49,8 @@
   paper: https://arxiv.org/abs/2606.29845
   code: https://github.com/ZZH-qwq/BRACE
   status: coming-soon
-  tldr: Bracket-exposure RAW dataset and restoration model for flicker banding caused by rolling shutter and screen dimming when photographing screens.
+  tldr: To remove exposure-dependent flicker bands, fuses bracketed RAW with a frequency-aware prior and multiscale spatial
+    cross-attention; contributes synthetic/real Bricker captures and a stripe-frequency consistency metric.
   note: Model and data downloads in the README are still TODO.
 - name: BurstGP
   title: 'BurstGP: Enhancing Raw Burst Image Super Resolution with Generative Priors'
@@ -14,7 +58,9 @@
   year: 2026
   paper: https://arxiv.org/abs/2604.23508
   status: no-code
-  tldr: RAW burst super-resolution that incorporates generative priors.
+  tldr: To add realistic texture to burst SR, augments a conventional reconstructor with multiframe diffusion priors,
+    degradation-aware conditioning and an sRGB-to-linear inverter; controls generative detail while retaining linear-domain
+    fidelity.
 - name: DEBIR
   title: Dynamic Exposure Burst Image Restoration
   venue: CVPR
@@ -26,42 +72,52 @@
   - label: Official weights (Google Drive)
     url: https://drive.google.com/drive/folders/13MfH52gQVCwDvasXscaVnv6zUwokCBJe
   framework: PyTorch
-  tldr: Burst image restoration under dynamic exposure (from the same group as ParamISP).
+  tldr: To adapt burst acquisition to motion and lighting, BAENet predicts per-frame exposure from a preview, motion
+    and gain; a differentiable burst simulator and staged training jointly optimize capture and restoration.
 - name: GenMFSR
   title: 'GenMFSR: Generative Multi-Frame Image Restoration and Super-Resolution'
   venue: arXiv
   year: 2026
   paper: https://arxiv.org/abs/2603.19187
   status: no-code
-  tldr: Generative multi-frame image restoration and super-resolution.
+  tldr: To use foundation-model priors for multiframe RAW reconstruction, aligns burst measurements and constrains generation
+    to high-frequency RAW regions; jointly performs denoising, demosaicing and super-resolution while limiting low-frequency
+    artifacts.
 - name: Keyframe SSM Burst SR
   title: Keyframe-Centric State-Space Modeling for Burst Image Super-Resolution
   venue: SIGGRAPH Asia
   year: 2026
   paper: https://arxiv.org/abs/2503.19634
   status: no-code
-  tldr: Keyframe-centric state-space modeling for multi-frame RAW super-resolution, reducing computation on long sequences.
+  tldr: To scale burst SR efficiently, concentrates reconstruction compute on the keyframe and extracts subpixel priors
+    through Gather–Aggregate–Scatter transfer; wavelet-conditioned state-space routing emphasizes high-frequency information
+    while preserving native-view features.
 - name: LatentBurst
   title: 'LatentBurst: A Fast and Efficient Multi Frame Super-Resolution for Hexadeca-Bayer Pattern CIS images'
   venue: arXiv
   year: 2026
   paper: https://arxiv.org/abs/2604.23268
   status: no-code
-  tldr: Efficient multi-frame super-resolution for 16-in-1 (Hexadeca-Bayer) image sensors.
+  tldr: To reconstruct Hexadeca-Bayer bursts on mobile hardware, uses latent pyramid alignment/fusion and an efficient
+    U-Net; optical-flow fine-tuning and two-step distillation address motion and synthetic-to-real domain gaps.
 - name: QMambaBSR
   title: 'QMambaBSR: Burst Image Super-Resolution with Query State Space Model'
   venue: CVPR
   year: 2025
   paper: https://arxiv.org/abs/2408.08665
   status: no-code
-  tldr: Burst super-resolution with a query-based state space model.
+  tldr: To distinguish consistent subpixel detail from random burst noise, combines interframe queries with intraframe
+    state-space scanning; adaptive upsampling predicts kernels from the recovered subpixel distribution for scene-dependent
+    reconstruction.
 - name: Bracket Restoration
   title: Improving Bracket Image Restoration and Enhancement with Flow-guided Alignment and Enhanced Feature Aggregation
   venue: CVPRW (NTIRE)
   year: 2024
   paper: https://arxiv.org/abs/2404.10358
   status: no-code
-  tldr: NTIRE 2024 bracketing image restoration solution built on optical-flow-guided alignment.
+  tldr: To align noisy blurred exposures, IREANet guides deformable alignment and spatial attention with optical flow;
+    recurrent enhanced residual aggregation merges aligned features, with Bayer-preserving augmentation for robust RAW
+    training.
 - name: BurstM
   title: 'BurstM: Deep Burst Multi-scale SR using Fourier Space with Optical Flow'
   venue: ECCV
@@ -75,7 +131,8 @@
   - label: BurstSR models (Google Drive)
     url: https://drive.google.com/file/d/1id83q_IOF7qawO5_4WJ4ZGOFvxkcwbFw/view?usp=sharing
   framework: PyTorch
-  tldr: Multi-scale burst super-resolution that combines Fourier-space processing with optical flow.
+  tldr: To support flexible-scale burst SR, estimates optical flow for frame alignment and continuous Fourier coefficients
+    for high-frequency textures; one model reconstructs several output scale factors.
 - name: Burstormer
   title: 'Burstormer: Burst Image Restoration and Enhancement Transformer'
   venue: CVPR
@@ -87,7 +144,8 @@
   - label: synthetic burst SR checkpoint (OneDrive)
     url: https://mbzuaiac-my.sharepoint.com/:u:/g/personal/akshay_dudhane_mbzuai_ac_ae/ER8mPnjoSIZAnaKA8YyCeE8BA_uQr_73b5qRZx9sh9Rzvw?e=Sc4HFJ
   framework: PyTorch
-  tldr: Transformer version of BIPNet with multi-scale local and non-local alignment.
+  tldr: To exchange information under complex burst motion, uses a Transformer with deformable alignment, reference-feature
+    enrichment and cyclic burst sampling; progressively fuses local/nonlocal context before upsampling.
   note: Weights for the other tasks are listed in the subdirectory READMEs.
 - name: Efficient Raw HDR
   title: Efficient HDR Reconstruction from Real-World Raw Images
@@ -95,7 +153,8 @@
   year: 2023
   paper: https://arxiv.org/abs/2306.10311
   status: no-code
-  tldr: Efficient HDR reconstruction from real-world smartphone RAW images.
+  tldr: To deploy RAW HDR reconstruction efficiently, RepUNet uses structural reparameterization and a motion-alignment
+    loss against ghosting; contributes the RealRaw-HDR data-formation pipeline and real-capture benchmark.
 - name: FBANet
   title: 'Towards Real-World Burst Image Super-Resolution: Benchmark and Method'
   venue: ICCV
@@ -107,7 +166,8 @@
   - label: RealBSR checkpoint model_best.pth (Baidu, code f9ew)
     url: https://pan.baidu.com/s/1y0OSXD9ExMj4mQ8Sj0VpoA?pwd=f9ew
   framework: PyTorch
-  tldr: Introduces the real-world burst super-resolution dataset RealBSR and a federated affine fusion network.
+  tldr: To aggregate real bursts without dense pixelwise alignment, combines homography registration with federated affinity
+    fusion; contributes RealBSR-RAW/RGB data for studying real degradation and complementary interframe detail.
   note: The Google Drive copy of the checkpoint returns 404 (checked 2026-10-11).
 - name: GMTNet
   title: Gated Multi-Resolution Transfer Network for Burst Restoration and Enhancement
@@ -115,7 +175,8 @@
   year: 2023
   paper: https://arxiv.org/abs/2304.06703
   status: no-code
-  tldr: Burst restoration and enhancement via gated multi-resolution feature transfer.
+  tldr: To reconstruct precise detail from degraded bursts, combines multiscale feature alignment, transposed-attention
+    merging and resolution-transfer upsampling; specializes each module for alignment, aggregation and output reconstruction.
 - name: KBNet
   title: Kernel-Aware Burst Blind Super-Resolution
   venue: WACV
@@ -124,14 +185,8 @@
   code: https://github.com/shermanlian/KBNet
   status: code
   framework: PyTorch
-  tldr: Blind burst super-resolution that estimates the blur kernel.
-- name: Raw/sRGB HDR Video
-  title: HDR Video Reconstruction with a Large Dynamic Dataset in Raw and sRGB Domains
-  venue: arXiv
-  year: 2023
-  paper: https://arxiv.org/abs/2304.04773
-  status: no-code
-  tldr: Large-scale HDR video reconstruction dataset and method covering both the RAW and sRGB domains.
+  tldr: To handle unknown burst blur, estimates kernel-related priors and conditions pyramid deformable alignment on
+    them; integrates degradation awareness into RAW-frame fusion for blind super-resolution.
 - name: RawHDR
   title: 'RawHDR: High Dynamic Range Image Reconstruction from a Single Raw Image'
   venue: ICCV
@@ -143,14 +198,17 @@
   - label: pretrained model (OneDrive)
     url: https://1drv.ms/u/c/451f7e5b32aa37e0/EaqD9NpDCCFDlHQ68yWLYFQBsNFXk1fBvWkDWcy6Dq95Gw?e=gqyglJ
   framework: PyTorch
-  tldr: Reconstructs HDR from a single RAW image, exploiting the high bit depth of RAW to recover highlights and dark regions separately.
+  tldr: To recover HDR from a single RAW, learns hard/easy exposure masks and combines informative-channel intensity
+    guidance with global spatial guidance; contributes paired RAW/HDR data for highlights and shadow reconstruction.
 - name: Self-Supervised Burst SR
   title: Self-Supervised Burst Super-Resolution
   venue: ICCV
   year: 2023
   paper: https://openaccess.thecvf.com/content/ICCV2023/html/Bhat_Self-Supervised_Burst_Super-Resolution_ICCV_2023_paper.html
   status: no-code
-  tldr: Trains burst super-resolution self-supervised from multi-frame RAW only, without high-resolution ground truth.
+  tldr: To train without high-resolution references, uses a learned forward imaging model to supervise reconstruction
+    from only noisy low-resolution bursts; exploits aliased high frequencies and accommodates dynamic motion in real
+    captures.
 - name: Single-Shot HDR Demosaic
   title: Joint Demosaicing and Deghosting of Time-Varying Exposures for Single-Shot HDR Imaging
   venue: ICCV
@@ -162,7 +220,9 @@
   - label: pretrained best_psnr_mu.pt (Google Drive)
     url: https://drive.google.com/file/d/19W4kWG1YngX10CCT-f9rn7TdqIIpunjc/view?usp=sharing
   framework: PyTorch
-  tldr: Joint demosaicing and deghosting for sensors with spatially varying exposures.
+  tldr: To combine time-varying Quad-Bayer exposures without ghosting, extracts mosaicked exposure features and registers
+    spatial/color displacements with a multiscale Transformer; contributes matching sensor-pattern data for joint HDR
+    demosaicing.
 - name: 2StageAlign
   title: A Differentiable Two-stage Alignment Scheme for Burst Image Reconstruction with Large Shift
   venue: CVPR
@@ -174,7 +234,8 @@
   - label: experiments/.../models (in repo)
     url: https://github.com/GuoShi28/2StageAlign/tree/main/experiments/J0007_JDDB_PBMNet_wgr_ncc_gt_s2h/models
   framework: PyTorch
-  tldr: Differentiable two-stage alignment for burst joint denoising and demosaicing under large shifts.
+  tldr: To handle large burst shifts efficiently, first performs differentiable progressive block matching at patch level,
+    then refines alignment implicitly in full-resolution features; supports joint burst denoising and demosaicing.
 - name: BIPNet
   title: Burst Image Restoration and Enhancement
   venue: CVPR
@@ -186,7 +247,9 @@
   - label: synthetic burst SR model BIPNet.ckpt (OneDrive)
     url: https://mbzuaiac-my.sharepoint.com/:u:/g/personal/akshay_dudhane_mbzuai_ac_ae/EYlxq0X49fRGiFD3kMxnM6IB7VNtwhd3atNr4oc1b1psbA?e=pLN14I
   framework: PyTorch
-  tldr: Pseudo-burst feature fusion that handles burst super-resolution, denoising, and low-light enhancement in one framework.
+  tldr: To fuse complementary burst details while rejecting degradation, aligns features with an edge-boosting module
+    and constructs pseudo-burst representations; adaptive aggregation progressively merges these features and increases
+    resolution.
   note: Weights for each subtask are listed in the subdirectory READMEs (Burst_Super_Resolution / Burst De-noising).
 - name: BSRT
   title: 'BSRT: Improving Burst Super-Resolution with Swin Transformer and Flow-Guided Deformable Alignment'
@@ -199,14 +262,17 @@
   - label: all pretrained weights (Google Drive)
     url: https://drive.google.com/file/d/1Bv1ZwoE3s8trhG--wjB0Yt6WJIQPpvsn/view?usp=sharing
   framework: PyTorch
-  tldr: Winner of the NTIRE 2022 burst super-resolution challenge, using Swin Transformer with flow-guided deformable alignment.
+  tldr: To recover burst detail under motion, combines a Swin Transformer backbone with pyramid flow-guided deformable
+    alignment; models long-range structure while merging complementary textures from accurately aligned RAW frames.
 - name: HDR+SR Bursts
   title: High Dynamic Range and Super-Resolution from Raw Image Bursts
   venue: SIGGRAPH (TOG)
   year: 2022
   paper: https://arxiv.org/abs/2207.14671
   status: no-code
-  tldr: Processes RAW bursts with varying exposures in a single pass, producing HDR and super-resolved output at the same time.
+  tldr: To reconstruct HDR and resolution together, jointly processes exposure-bracketed handheld RAW bursts rather than
+    cascading separate merging and upscaling stages; exploits spatial and exposure diversity for a high-resolution HDR
+    color output.
 - name: DBSR
   title: Deep Burst Super-Resolution
   venue: CVPR
@@ -218,7 +284,8 @@
   - label: Model Zoo (auto-downloaded by install script)
     url: https://github.com/goutamgmb/deep-burst-sr#model-zoo
   framework: PyTorch
-  tldr: Multi-frame RAW super-resolution with optical-flow alignment and attention-based fusion; releases the real-world BurstSR dataset and the NTIRE 2021 track.
+  tldr: To learn multiframe RAW zoom, aligns noisy frames with optical flow and fuses them with attention before denoised
+    RGB upsampling; contributes BurstSR smartphone bursts paired with DSLR high-resolution references.
   note: 'Challenge toolkit: goutamgmb/NTIRE21_BURSTSR.'
 - name: Deep-Rep
   title: Deep Reparametrization of Multi-Frame Super-Resolution and Denoising
@@ -231,7 +298,8 @@
   - label: Model Zoo (auto-downloaded by install script)
     url: https://github.com/goutamgmb/deep-rep#model-zoo
   framework: PyTorch
-  tldr: Performs multi-frame MAP optimization in a learned deep reparametrization space, unifying burst super-resolution and denoising (ICCV 2021 Oral).
+  tldr: To combine physical fusion and learned priors, reparameterizes a multi-frame MAP objective using learned error
+    metrics and latent image features; applies the same latent-space optimization to burst denoising and super-resolution.
 - name: EBSR
   title: 'EBSR: Feature Enhanced Burst Super-Resolution with Deformable Alignment'
   venue: CVPRW (NTIRE)
@@ -245,7 +313,8 @@
   - label: Real track model (Google Drive)
     url: https://drive.google.com/file/d/1Zz21YwNtiKZCjerrZsdvcWyubqTJBwaD/view?usp=sharing
   framework: PyTorch
-  tldr: Winning solution of NTIRE 2021 burst super-resolution, using deformable alignment and feature enhancement.
+  tldr: To align and reconstruct burst textures, combines feature-enhanced pyramid deformable alignment, cross-nonlocal
+    fusion and long-range concatenation reconstruction; cascading residual paths improve information flow across stages.
 - name: GCP-Net
   title: Joint Denoising and Demosaicking with Green Channel Prior for Real-world Burst Images
   venue: IEEE TIP
@@ -257,28 +326,25 @@
   - label: experiments/gcpnet_model/600000_G.pth (in repo)
     url: https://github.com/GuoShi28/GCP-Net/blob/main/experiments/gcpnet_model/600000_G.pth
   framework: PyTorch
-  tldr: Joint denoising and demosaicking of real-world burst images using a green channel prior.
+  tldr: To preserve structure in noisy real bursts, uses Bayer's denser and cleaner green channel as a prior for joint
+    denoising/demosaicing; guides missing-color recovery with this more reliable sampled information.
 - name: Lucas-Kanade Reloaded
   title: 'Lucas-Kanade Reloaded: End-to-End Super-Resolution from Raw Image Bursts'
   venue: ICCV
   year: 2021
   paper: https://openaccess.thecvf.com/content/ICCV2021/html/Lecouat_Lucas-Kanade_Reloaded_End-to-End_Super-Resolution_From_Raw_Image_Bursts_ICCV_2021_paper.html
   status: no-code
-  tldr: Unrolls Lucas-Kanade registration into a learnable multi-frame RAW super-resolution pipeline.
+  tldr: To align bursts with subpixel precision while retaining physical interpretation, embeds learnable Lucas–Kanade
+    registration and an image prior in an end-to-end RAW reconstruction algorithm; exploits aliasing as super-resolution
+    information.
 - name: Merging-ISP
   title: 'Merging-ISP: Multi-Exposure High Dynamic Range Image Signal Processing'
   venue: GCPR
   year: 2021
   paper: https://arxiv.org/abs/1911.04762
   status: no-code
-  tldr: Combines multi-exposure HDR merging and the ISP in one network, outputting a rendered HDR image directly from multi-frame RAW.
-- name: Tri-Exposure Quad-Bayer HDR
-  title: HDR Video Reconstruction with Tri-Exposure Quad-Bayer Sensors
-  venue: arXiv
-  year: 2021
-  paper: https://arxiv.org/abs/2103.10982
-  status: no-code
-  tldr: Reconstructs HDR video within single frames using a Quad-Bayer sensor with three interleaved exposures.
+  tldr: To avoid error propagation through independent HDR and ISP stages, jointly learns multi-exposure merging, demosaicing
+    and rendering in one neural pipeline; maps RAW measurements directly to the final HDR image.
 - name: BPN
   title: Basis Prediction Networks for Effective Burst Denoising with Large Kernels
   venue: CVPR
@@ -287,7 +353,9 @@
   code: https://github.com/likesum/bpn
   status: code
   framework: TensorFlow
-  tldr: Predicts a set of shared basis kernels plus coefficients for efficient large-kernel burst denoising.
+  tldr: To use large burst-denoising kernels efficiently, predicts a shared set of global basis kernels and pixel-specific
+    mixing coefficients; low-dimensional kernel factorization exploits spatiotemporal self-similarity without dense per-pixel
+    kernel tensors.
   note: The model file (Google Drive) linked in the README and in scripts/download_models.sh returns 404 (checked 2026-10-11).
 - name: Decoupled Burst Denoising
   title: A Decoupled Learning Scheme for Real-world Burst Denoising from Raw Images
@@ -295,42 +363,48 @@
   year: 2020
   paper: https://www.ecva.net/papers/eccv_2020/papers_ECCV/html/4913_ECCV_2020_paper.php
   status: no-code
-  tldr: Decomposes real-world RAW burst denoising into subproblems that can be learned separately.
+  tldr: To avoid entangling motion estimation with sensor noise, designs a multiframe CNN that learns motion and noise
+    statistics separately; evaluates the decoupled fusion scheme on synthetic and real dynamic RAW sequences.
 - name: Deep Snapshot HDR
   title: Deep Snapshot HDR Imaging Using Multi-Exposure Color Filter Array
   venue: ACCV
   year: 2020
   paper: https://arxiv.org/abs/2011.10232
   status: no-code
-  tldr: Joint demosaicing and fusion for single-shot HDR imaging from a multi-exposure CFA.
+  tldr: To reconstruct HDR from a multi-exposure CFA, jointly learns missing colors and exposure fusion with luminance-normalized
+    inputs/losses; balances errors in bright and dark regions regardless of absolute radiance.
 - name: TSWT Burst
   title: Burst Denoising via Temporally Shifted Wavelet Transforms
   venue: ECCV
   year: 2020
   paper: https://www.ecva.net/papers/eccv_2020/papers_ECCV/html/1848_ECCV_2020_paper.php
   status: no-code
-  tldr: Burst denoising with temporally shifted wavelet transforms.
+  tldr: To support variable-length burst denoising cheaply, shifts wavelet-derived temporal features; high-frequency
+    bands preserve local detail while low-frequency bands carry structure, trained with realistic sensor noise for deployment.
 - name: Iterative Residual Burst
   title: Iterative Residual CNNs for Burst Photography Applications
   venue: CVPR
   year: 2019
   paper: https://arxiv.org/abs/1811.12197
   status: no-code
-  tldr: Iterative residual network for burst denoising and demosaicking.
+  tldr: To retain a physical model in learned burst processing, unfolds proximal-gradient-style optimization into an
+    iterative residual CNN; handles denoising/demosaicing with no inherent restriction on burst length or frame order.
 - name: Night Sight
   title: Handheld Mobile Photography in Very Low Light
   venue: ACM TOG (SIGGRAPH Asia)
   year: 2019
   paper: https://arxiv.org/abs/1910.11336
   status: no-code
-  tldr: 'Google Night Sight: a mobile pipeline for handheld extreme low-light photography with multi-frame fusion and learned AWB.'
+  tldr: To capture handheld low-light scenes sharply, motion metering selects exposure/count, noise-aware alignment merges
+    frames and learned white balance restores color; specialized tone mapping preserves the visual appearance of nighttime.
 - name: Deep Burst Denoising
   title: Deep Burst Denoising
   venue: ECCV
   year: 2018
   paper: https://arxiv.org/abs/1712.05790
   status: no-code
-  tldr: Recurrent network that fuses burst frames one by one for multi-frame denoising.
+  tldr: To fuse an arbitrary number of noisy frames, adds recurrent fully convolutional integration to a single-frame
+    denoiser; incrementally reuses past observations and evaluates the design for denoising and super-resolution.
 - name: KPN
   title: Burst Denoising with Kernel Prediction Networks
   venue: CVPR
@@ -339,7 +413,8 @@
   code: https://github.com/google/burst-denoising
   status: code
   framework: TensorFlow
-  tldr: Predicts per-pixel convolution kernels to align and denoise multi-frame RAW, taking a noise-level input.
+  tldr: To align and denoise handheld bursts jointly, predicts spatially varying spatiotemporal kernels from noisy frames
+    and noise levels; realistic noise simulation and annealed training losses help avoid poor local minima.
   note: Training code and synthetic data pipeline only
 - name: Neural Block-wise Auto-exposure
   title: Neural Block-wise Auto-exposure for Single-Shot High Dynamic Range Imaging
@@ -347,6 +422,16 @@
   year: 2026
   paper: https://arxiv.org/abs/2610.18733
   status: no-code
-  tldr: Predicts exposure times for non-overlapping 16 x 16 sensor blocks from a preview and its exposure time; compares RAW and sRGB previews for single-shot HDR
-    capture.
-  note: Posted 2026-10-09 and revised 2026-10-16. No implementation or pretrained checkpoint link was found in the paper or repository search on 2026-10-28.
+  tldr: To adapt single-shot HDR capture to local brightness, predicts exposure for every nonoverlapping 16×16 sensor
+    block from a preview image and its exposure time; compares RAW- and sRGB-preview conditioning.
+  note: Posted 2026-10-09 and revised 2026-10-16. No implementation or pretrained checkpoint link was found in the paper
+    or repository search on 2026-10-28.
+- name: Single-Frame HDR ISP
+  title: End-to-End Single-Frame Image Signal Processing for High Dynamic Range Scenes
+  venue: WACV
+  year: 2023
+  paper: https://openaccess.thecvf.com/content/WACV2023/html/Dinh_End-to-End_Single-Frame_Image_Signal_Processing_for_High_Dynamic_Range_Scenes_WACV_2023_paper.html
+  status: no-code
+  tldr: To render shadows and highlights without burst capture, trains a single-frame Bayer ISP against multi-frame-merged
+    targets; multi-head mixtures handle brightness and camera color settings using supervised, unsupervised and adversarial
+    losses.
